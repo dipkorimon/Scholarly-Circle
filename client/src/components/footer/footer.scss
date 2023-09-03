@@ -1,0 +1,42 @@
+@import "../../styles/global.scss";
+@import "../../styles/variables.scss";
+
+.footer {
+  text-align: center;
+  padding: 5px;
+
+  .top {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+
+    a {
+      color: $black-color;
+
+      &:hover {
+        color: $red-color;
+      }
+    }
+  }
+
+  .mid {
+    p {
+      font-size: 15px;
+
+      span {
+        font-weight: bold;
+      }
+    }
+  }
+
+  .bottom {
+    p {
+      font-size: 15px;
+
+      span {
+        font-weight: bold;
+      }
+    }
+  }
+}
