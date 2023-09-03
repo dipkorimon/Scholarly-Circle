@@ -1,0 +1,88 @@
+@import "../../styles/global.scss";
+@import "../../styles/variables.scss";
+
+* {
+  font-family: "Poppins";
+}
+
+.register {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+
+  h1 {
+    font-size: 30px;
+    color: $dark-color;
+    text-align: center;
+  }
+
+  p {
+    font-size: 16px;
+    span {
+      a {
+        color: $red-color;
+        font-weight: bold;
+      }
+    }
+  }
+
+  form {
+    display: flex;
+    flex-direction: column;
+
+    label {
+      margin-top: 20px;
+      font-size: 16px;
+      color: $dark-color;
+    }
+
+    input {
+      padding: 10px;
+      width: 400px;
+      outline: none;
+      border: none;
+      background-color: $soft-color;
+      border-radius: 5px;
+
+      @include mobile {
+        width: 250px;
+      }
+    }
+  }
+  button {
+    padding: 10px;
+    margin-top: 20px;
+    width: 400px;
+    border: none;
+    border-radius: 5px;
+    background-color: $red-color;
+    color: $white-color;
+    font-weight: bold;
+    font-size: 16px;
+    margin-bottom: 20px;
+
+    @include mobile {
+      width: 250px;
+    }
+
+    &:hover {
+      background-color: $dark-red;
+    }
+  }
+  .pass {
+    width: 500px;
+
+    @include mobile {
+      width: 300px;
+    }
+
+    p {
+      font-size: 13px;
+      color: $dark-color;
+    }
+  }
+}

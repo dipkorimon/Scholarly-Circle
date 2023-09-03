@@ -6,6 +6,8 @@ import Home from "./pages/home/Home";
 import About from "./pages/about/About";
 import Contact from "./pages/contact/Contact";
 import DeveloperInfo from "./pages/developerInfo/DeveloperInfo";
+import Login from "./pages/login/Login";
+import Register from "./pages/register/Register";
 
 function App() {
   const Layout = () => {
@@ -40,6 +42,14 @@ function App() {
           element: <Contact />,
         },
       ],
+    },
+    {
+      path: "/register",
+      element: <Register />,
+    },
+    {
+      path: "/login",
+      element: <Login />,
     },
   ]);
   return (
