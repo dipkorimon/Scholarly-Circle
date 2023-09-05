@@ -6,31 +6,57 @@ const Register = () => {
     <div className="register">
       <h1>Register for Scholarly Circle</h1>
       <p>
-        Or{" "}
-        <span>
-          <a href="/login">already have an account</a>
-        </span>
+        An asterisk (<span>*</span>) indicates a required field
       </p>
       <form action="">
-        <label htmlFor="">Full name</label>
+        <label htmlFor="">
+          Full name <span>*</span>
+        </label>
         <input type="text" required />
-        <label htmlFor="">Email address</label>
+        <label htmlFor="">
+          Email address <span>*</span>
+        </label>
         <input type="text" required />
-        <label htmlFor="">Skills and expertise</label>
+        <label htmlFor="">
+          Skills and expertise <span>*</span>
+        </label>
         <input type="text" required />
-        <label htmlFor="">Research interest</label>
+        <label htmlFor="">
+          Research interest <span>*</span>
+        </label>
         <input type="text" required />
-        <label htmlFor="">Department</label>
+        <label htmlFor="">
+          Department <span>*</span>
+        </label>
         <input type="text" required />
-        <label htmlFor="">Password</label>
+        <label htmlFor="">
+          Current position <span>*</span>
+        </label>
+        <input type="text" required />
+        <label htmlFor="">LinkedIn profile</label>
+        <input type="text" />
+        <label htmlFor="">
+          Password <span>*</span>
+        </label>
         <input type="password" required />
+        <div className="pass">
+          <p>
+            *Password must be a minimum of 8 characters, contain one lower case,
+            one upper case, one number and one special of these special
+            characters #?!,.@$ %^&*_()=+-
+          </p>
+        </div>
+        <div className="checkbox">
+          <input type="checkbox" /> I understand and agree to the terms of use
+          and privacy policy. <br />
+          <input type="checkbox" /> Please send me occasional Scholarly Circle
+          news and updates.
+        </div>
+        <button>Sign up</button>
       </form>
-      <button>Sign up</button>
-      <div className="pass">
+      <div className="sign">
         <p>
-          Password must be a minimum of 8 characters, contain one lower case,
-          one upper case, one number and one special of these special characters
-          #?!,.@$ %^&*_()=+-
+          Already have an account? <a href="/login">Sign in</a>
         </p>
       </div>
     </div>

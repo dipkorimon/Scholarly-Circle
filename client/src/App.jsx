@@ -5,7 +5,6 @@ import Footer from "./components/footer/Footer";
 import Home from "./pages/home/Home";
 import About from "./pages/about/About";
 import Contact from "./pages/contact/Contact";
-import DeveloperInfo from "./pages/developerInfo/DeveloperInfo";
 import Login from "./pages/login/Login";
 import Register from "./pages/register/Register";
 
@@ -32,10 +31,6 @@ function App() {
         {
           path: "/about",
           element: <About />,
-        },
-        {
-          path: "/developerInfo",
-          element: <DeveloperInfo />,
         },
         {
           path: "/contact",

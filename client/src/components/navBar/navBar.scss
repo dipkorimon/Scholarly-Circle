@@ -9,6 +9,12 @@
   @include mobile {
     display: flex;
     flex-direction: column;
+    padding: 5px 10px;
+  }
+
+  @include tablet {
+    display: flex;
+    flex-direction: column;
   }
 
   .left {
@@ -21,69 +27,122 @@
       color: $black-color;
       font-weight: bold;
 
+      @include mobile {
+        font-size: 18px;
+      }
+
+      @include tablet {
+        font-size: 20px;
+      }
+
       img {
         width: 50px;
         height: 50px;
+
+        @include mobile {
+          width: 30px;
+          height: 30px;
+        }
+
+        @include tablet {
+          width: 40px;
+          height: 40px;
+        }
       }
     }
   }
 
-  .middle {
+  .links {
     display: flex;
-    align-items: center;
-    justify-content: center;
+    flex-direction: row;
+    justify-content: space-between;
     gap: 20px;
 
-    a {
-      color: $red-color;
-      font-weight: bold;
-      font-size: 17px;
-      text-decoration: none;
-      display: inline-block;
-
-      &::after {
-        content: "";
-        display: block;
-        width: 0;
-        height: 2px;
-        background: $red-color;
-        transition: width 0.3s ease;
-      }
-
-      &:hover::after {
-        width: 100%;
-      }
-    }
-  }
-
-  .right {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
-
-    a {
-      font-size: 15px;
-      font-weight: bold;
-      color: $white-color;
-      padding: 7px 20px;
-      border-radius: 5px;
+    @include mobile {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
     }
 
-    .regi {
-      background-color: $red-color;
+    .middle {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 20px;
 
-      &:hover {
-        background-color: $dark-red;
+      @include mobile {
+        display: flex;
+        gap: 10px;
+      }
+
+      @include tablet {
+        display: flex;
+        gap: 10px;
+      }
+
+      a {
+        color: $red-color;
+        font-weight: bold;
+        font-size: 17px;
+        text-decoration: none;
+        display: inline-block;
+
+        @include mobile {
+          font-size: 14px;
+        }
+
+        @include tablet {
+          font-size: 15px;
+        }
+
+        &::after {
+          content: "";
+          display: block;
+          width: 0;
+          height: 2px;
+          background: $red-color;
+          transition: width 0.3s ease;
+        }
+
+        &:hover::after {
+          width: 100%;
+        }
       }
     }
 
-    .log {
-      background-color: $button-bg;
-      color: $red-color;
+    .right {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
 
-      &:hover {
-        background-color: $soft-red;
+      a {
+        font-size: 15px;
+        font-weight: bold;
+        color: $white-color;
+        padding: 7px 20px;
+        border-radius: 5px;
+
+        @include mobile {
+          padding: 3px 15px;
+        }
+      }
+
+      .regi {
+        background-color: $red-color;
+
+        &:hover {
+          background-color: $dark-red;
+        }
+      }
+
+      .log {
+        background-color: $button-bg;
+        color: $red-color;
+
+        &:hover {
+          background-color: $soft-red;
+        }
       }
     }
   }

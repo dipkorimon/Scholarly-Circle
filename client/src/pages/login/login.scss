@@ -15,6 +15,10 @@
   h1 {
     font-size: 30px;
     color: $dark-color;
+
+    @include mobile {
+      font-size: 20px;
+    }
   }
 
   p {
@@ -39,7 +43,7 @@
 
     input {
       padding: 10px;
-      width: 400px;
+      width: 450px;
       outline: none;
       border: none;
       background-color: $soft-color;
@@ -53,7 +57,7 @@
   button {
     padding: 10px;
     margin-top: 20px;
-    width: 400px;
+    width: 450px;
     border: none;
     border-radius: 5px;
     background-color: $red-color;
@@ -68,6 +72,7 @@
 
     &:hover {
       background-color: $dark-red;
+      cursor: pointer;
     }
   }
   .forgot {

@@ -1,0 +1,61 @@
+@import "../../styles/global.scss";
+@import "../../styles/variables.scss";
+
+.about {
+  .header {
+    padding: 20px 100px;
+
+    @include tablet {
+      padding: 5px 10px;
+    }
+
+    p {
+      font-size: 30px;
+
+      @include tablet {
+        font-size: 20px;
+      }
+    }
+  }
+
+  .desc {
+    padding: 10px 100px;
+
+    @include tablet {
+      padding: 10px 20px;
+    }
+
+    .incl {
+      font-size: 18px;
+      font-weight: bold;
+      margin-bottom: 10px;
+
+      @include tablet {
+        font-size: 17px;
+      }
+    }
+
+    .list {
+      padding: 0 50px;
+
+      @include tablet {
+        padding: 10px 20px;
+      }
+    }
+  }
+
+  .bottom {
+    padding: 20px 100px;
+
+    p {
+      a {
+        font-weight: bold;
+        color: $red-color;
+      }
+    }
+
+    @include tablet {
+      padding: 5px 10px;
+    }
+  }
+}
