@@ -14,22 +14,32 @@ const Contact = () => {
         referrerpolicy="no-referrer-when-downgrade"
       ></iframe>
       <h1>Feel free to contact with us</h1>
+      <p>
+        An asterisk (<span>*</span>) indicates a required field
+      </p>
       <div className="contact-form">
         <form action="https://formspree.io/f/mdorzdaq" method="POST">
-          <label htmlFor="">Full Name</label>
+          <label htmlFor="">
+            Full Name <span>*</span>
+          </label>
           <input type="text" name="username" required />
-          <label htmlFor="">Phone</label>
+          <label htmlFor="">
+            Phone <span>*</span>
+          </label>
           <input type="text" name="phone" required />
-          <label htmlFor="">Email</label>
+          <label htmlFor="">
+            Email <span>*</span>
+          </label>
           <input type="email" name="Email" required />
-          <label htmlFor="">Message</label>
+          <label htmlFor="">
+            Message <span>*</span>
+          </label>
           <textarea
             name="message"
             id=""
             cols="30"
             rows="10"
             required
-            placeholder="Write a Message"
           ></textarea>
           <button value="send">Submit</button>
         </form>

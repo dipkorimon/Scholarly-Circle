@@ -12,6 +12,19 @@
     }
   }
 
+  p {
+    font-size: 16px;
+    text-align: center;
+
+    @include mobile {
+      font-size: 13px;
+    }
+
+    span {
+      color: $red-color;
+    }
+  }
+
   .contact-form {
     display: flex;
     align-items: center;
@@ -30,6 +43,10 @@
         margin-top: 20px;
         font-size: 16px;
         color: $dark-color;
+
+        span {
+          color: $red-color;
+        }
       }
       input {
         padding: 10px;
@@ -45,6 +62,10 @@
       }
       textarea {
         height: 100px;
+        outline: none;
+        border: none;
+        background-color: $soft-color;
+        border-radius: 5px;
 
         @include mobile {
           width: 250px;

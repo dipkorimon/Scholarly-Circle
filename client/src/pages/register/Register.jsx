@@ -18,6 +18,10 @@ const Register = () => {
         </label>
         <input type="text" required />
         <label htmlFor="">
+          Password <span>*</span>
+        </label>
+        <input type="password" required />
+        <label htmlFor="">
           Skills and expertise <span>*</span>
         </label>
         <input type="text" required />
@@ -36,9 +40,13 @@ const Register = () => {
         <label htmlFor="">LinkedIn profile</label>
         <input type="text" />
         <label htmlFor="">
-          Password <span>*</span>
+          Hometown <span>*</span>
         </label>
-        <input type="password" required />
+        <input type="text" required />
+        <label htmlFor="">
+          Upload profile photo <span>*</span>
+        </label>
+        <input type="file" required />
         <div className="pass">
           <p>
             *Password must be a minimum of 8 characters, contain one lower case,

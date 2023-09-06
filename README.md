@@ -5,7 +5,7 @@ Scholarly Circle is a social networking website for scientists and researchers t
 Scholarly Circle offers a variety of features for researchers, including:
 
 <ul>
-  <li>A paper sharing platform: Researchers can upload their papers to ResearchGate and share them with other researchers.</li>
+  <li>A paper sharing platform: Researchers can upload their papers to Scholarly Circle and share them with other researchers.</li>
   <li>A collaborator search tool: Researchers can search for other researchers who are working in their field.</li>
   <li>A news feed: Researchers can stay up-to-date on the latest research news.</li>
   <li>A profile page: Researchers can create a profile page to showcase their research and experience.</li>
