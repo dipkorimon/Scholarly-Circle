@@ -1,6 +1,11 @@
 import React from "react";
 import "./profile.scss";
 import Photo from "../../../public/profile.jpg";
+import Nstu from "../../../public/nstu.png";
+import Dept from "../../../public/dept.png";
+import Location from "../../../public/location.png";
+import Research from "../../../public/research.png";
+import Skill from "../../../public/skill.png";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import EmailIcon from "@mui/icons-material/Email";
 
@@ -27,24 +32,42 @@ const Profile = () => {
       <div className="right">
         <h1>Personal Information</h1>
         <p>
-          From{" "}
-          <span>Noakhali Science and Tchnology University, Bangladesh</span>.
+          <div className="data">
+            <img src={Nstu} alt="" />
+            <strong>University</strong>
+          </div>
+          <span>Noakhali Science and Tchnology University, Bangladesh.</span>
         </p>
         <p>
-          Department of{" "}
-          <span>Computer Science and Telecommunication Engineering</span>.
+          <div className="data">
+            <img src={Dept} alt="" />
+            <strong>Department</strong>
+          </div>
+          <span>Computer Science and Telecommunication Engineering.</span>
         </p>
         <p>
-          <span>Hometown:</span> Noakhali, Chittagong, Bangladesh
+          <div className="data">
+            <img src={Location} alt="" />
+            <strong>Hometown</strong>
+          </div>
+          <span>Noakhali, Chittagong, Bangladesh.</span>
         </p>
         <p>
-          <span>Research interest:</span> Natural Language Processing, Computer
-          Networking.
+          <div className="data">
+            <img src={Research} alt="" />
+            <strong>Research Interest</strong>
+          </div>
+          <span>Natural Language Processing, Computer Networking.</span>
         </p>
         <p>
-          <span>Skills and expertise:</span> C, C++, Python, Machine Learning,
-          Natural Language Processing, Computer Networking, Web Application
-          Development.
+          <div className="data">
+            <img src={Skill} alt="" />
+            <strong>Skills and Expertise</strong>
+          </div>
+          <span>
+            C, C++, Python, Machine Learning, Natural Language Processing,
+            Computer Networking, Web Application Development.
+          </span>
         </p>
       </div>
     </div>

@@ -114,7 +114,7 @@
     flex: 2;
     display: flex;
     flex-direction: column;
-    gap: 5px;
+    gap: 10px;
 
     h1 {
       color: $dark-color;
@@ -122,21 +122,44 @@
       margin-bottom: 10px;
       border-bottom: 2px solid $soft-color;
 
-      @include mobile {
+      @include tablet {
         font-size: 20px;
       }
     }
 
     p {
-      font-size: 16px;
       color: $dark-color;
 
-      @include mobile {
-        font-size: 14px;
+      .data {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 10px;
+
+        img {
+          width: 40px;
+          height: 40px;
+          object-fit: cover;
+          border-radius: 50%;
+          border: 1px solid $soft-red;
+        }
+
+        strong {
+          font-size: 18px;
+
+          @include tablet {
+            font-size: 16px;
+          }
+        }
       }
 
       span {
-        font-weight: bold;
+        font-size: 16px;
+        padding-left: 50px;
+
+        @include tablet {
+          font-size: 14px;
+        }
       }
     }
   }
