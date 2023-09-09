@@ -1,2 +1,143 @@
 @import "../../styles/global.scss";
 @import "../../styles/variables.scss";
+
+.profile {
+  display: flex;
+  padding: 50px;
+
+  @include mobile {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 10px;
+  }
+
+  @include tablet {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 10px;
+  }
+
+  .left {
+    flex: 1;
+
+    @include mobile {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+
+    @include tablet {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .img {
+      img {
+        width: 300px;
+        height: 300px;
+        object-fit: cover;
+        border-radius: 50%;
+
+        @include mobile {
+          width: 150px;
+          height: 150px;
+        }
+
+        @include tablet {
+          width: 200px;
+          height: 200px;
+        }
+      }
+
+      @include mobile {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+    }
+
+    .info {
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+      padding: 0 40px;
+      margin-top: 10px;
+
+      h1 {
+        font-size: 25px;
+        color: $dark-color;
+
+        @include mobile {
+          font-size: 20px;
+        }
+      }
+
+      p {
+        font-size: 16px;
+        color: $dark-color;
+
+        @include mobile {
+          font-size: 14px;
+        }
+
+        span {
+          font-weight: bold;
+        }
+      }
+
+      a {
+        display: flex;
+        align-items: center;
+        justify-content: start;
+        gap: 5px;
+        color: $dark-color;
+        font-weight: bold;
+        font-size: 16px;
+
+        @include mobile {
+          font-size: 14px;
+        }
+
+        &:hover {
+          color: $red-color;
+        }
+      }
+    }
+  }
+
+  .right {
+    flex: 2;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+
+    h1 {
+      color: $dark-color;
+      font-size: 25px;
+      margin-bottom: 10px;
+      border-bottom: 2px solid $soft-color;
+
+      @include mobile {
+        font-size: 20px;
+      }
+    }
+
+    p {
+      font-size: 16px;
+      color: $dark-color;
+
+      @include mobile {
+        font-size: 14px;
+      }
+
+      span {
+        font-weight: bold;
+      }
+    }
+  }
+}

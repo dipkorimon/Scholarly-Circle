@@ -4,6 +4,7 @@
 .about {
   .header {
     padding: 20px 100px;
+    color: $dark-color;
 
     @include tablet {
       padding: 5px 10px;
@@ -20,6 +21,7 @@
 
   .desc {
     padding: 10px 100px;
+    color: $dark-color;
 
     @include tablet {
       padding: 10px 20px;
@@ -46,6 +48,7 @@
 
   .bottom {
     padding: 20px 100px;
+    color: $dark-color;
 
     p {
       a {

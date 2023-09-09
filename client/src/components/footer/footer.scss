@@ -12,7 +12,7 @@
     gap: 10px;
 
     a {
-      color: $black-color;
+      color: $dark-color;
 
       &:hover {
         color: $red-color;
@@ -23,6 +23,7 @@
   .mid {
     p {
       font-size: 15px;
+      color: $dark-color;
 
       span {
         font-weight: bold;
@@ -33,6 +34,7 @@
   .bottom {
     p {
       font-size: 15px;
+      color: $dark-color;
 
       span {
         font-weight: bold;

@@ -15,6 +15,7 @@
   p {
     font-size: 16px;
     text-align: center;
+    color: $dark-color;
 
     @include mobile {
       font-size: 13px;
