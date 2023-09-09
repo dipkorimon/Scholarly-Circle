@@ -1,0 +1,19 @@
+@import "../../styles/global.scss";
+@import "../../styles/variables.scss";
+
+.category {
+  p {
+    font-size: 18px;
+    color: $dark-color;
+    border-bottom: 2px solid $soft-color;
+    margin-bottom: 5px;
+  }
+
+  .category-list {
+    padding-left: 10px;
+
+    a {
+      color: $red-color;
+    }
+  }
+}

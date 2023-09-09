@@ -1,5 +1,6 @@
 import React from "react";
 import "./navBar.scss";
+import Photo from "../../../public/profile.jpg";
 
 const NavBar = () => {
   return (
@@ -24,6 +25,7 @@ const NavBar = () => {
             <a href="/login" className="log">
               Sign in
             </a>
+            <img src={Photo} alt="" />
           </div>
         </div>
       </div>

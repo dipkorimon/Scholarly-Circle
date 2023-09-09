@@ -1,0 +1,20 @@
+@import "../../styles/global.scss";
+@import "../../styles/variables.scss";
+
+.faculty {
+  p {
+    font-size: 18px;
+    color: $dark-color;
+    border-bottom: 2px solid $soft-color;
+    margin-bottom: 5px;
+    margin-top: 10px;
+  }
+
+  .faculty-list {
+    padding-left: 10px;
+
+    a {
+      color: $red-color;
+    }
+  }
+}
