@@ -115,11 +115,15 @@
         padding: 7px 20px;
         border-radius: 5px;
         background-color: $red-color;
-        width: 100%;
+        width: 70%;
 
         &:hover {
           background-color: $dark-red;
           color: $white-color;
+        }
+
+        @include mobile {
+          width: 100%;
         }
       }
     }

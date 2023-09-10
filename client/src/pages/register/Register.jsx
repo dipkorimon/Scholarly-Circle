@@ -42,11 +42,11 @@ const Register = () => {
         <label htmlFor="">
           Hometown <span>*</span>
         </label>
-        <input type="text" required />
-        <label htmlFor="">
-          Upload profile photo <span>*</span>
+        <input type="text" />
+        <input style={{ display: "none" }} type="file" id="file" required />
+        <label className="upload" htmlFor="file">
+          Upload Profile Photo
         </label>
-        <input type="file" required />
         <div className="pass">
           <p>
             *Password must be a minimum of 8 characters, contain one lower case,

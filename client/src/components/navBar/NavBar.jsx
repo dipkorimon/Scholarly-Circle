@@ -25,6 +25,7 @@ const NavBar = () => {
             <a href="/login" className="log">
               Sign in
             </a>
+            <button>Sign out</button>
             <img src={Photo} alt="" />
           </div>
         </div>

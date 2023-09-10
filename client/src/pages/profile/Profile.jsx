@@ -1,38 +1,33 @@
 import React, { useState } from "react";
 import "./profile.scss";
 import Photo from "../../../public/profile.jpg";
-import Nstu from "../../../public/nstu.png";
-import Dept from "../../../public/dept.png";
-import Location from "../../../public/location.png";
-import Research from "../../../public/research.png";
-import Skill from "../../../public/skill.png";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import EmailIcon from "@mui/icons-material/Email";
 
 const Profile = () => {
   const [profile] = useState([
     {
-      img: { Nstu },
+      img: "../../../public/nstu.png",
       title: "University",
       desc: "Noakhali Science and Technology University",
     },
     {
-      img: { Dept },
+      img: "../../../public/dept.png",
       title: "Department",
       desc: "Computer Science and Telecommunicaion Engineering",
     },
     {
-      img: { Location },
+      img: "../../../public/location.png",
       title: "Location",
       desc: "Noakhali, Chittagong, Bangladesh",
     },
     {
-      img: { Research },
+      img: "../../../public/research.png",
       title: "Research Interest",
       desc: "Machine Learning, Image Processing, Computer Networking",
     },
     {
-      img: { Skill },
+      img: "../../../public/skill.png",
       title: "Skills and Expertise",
       desc: "C, C++, Pyhton, Machine Learning, Natural Language Processing, Computer Networking, Web Application Development",
     },
