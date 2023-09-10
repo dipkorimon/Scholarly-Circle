@@ -8,6 +8,11 @@
     border-bottom: 2px solid $soft-color;
     margin-bottom: 5px;
     margin-top: 10px;
+    font-weight: bold;
+
+    @include mobile {
+      font-size: 16px;
+    }
   }
 
   .institutes-list {
@@ -15,6 +20,17 @@
 
     a {
       color: $red-color;
+      font-size: 16px;
+      padding: 3px;
+
+      @include mobile {
+        font-size: 14px;
+      }
+
+      &:hover {
+        background-color: $soft-red;
+        border-radius: 20px;
+      }
     }
   }
 }

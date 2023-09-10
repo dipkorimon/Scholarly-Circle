@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import "./profile.scss";
 import Photo from "../../../public/profile.jpg";
 import Nstu from "../../../public/nstu.png";
@@ -10,6 +10,34 @@ import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import EmailIcon from "@mui/icons-material/Email";
 
 const Profile = () => {
+  const [profile] = useState([
+    {
+      img: { Nstu },
+      title: "University",
+      desc: "Noakhali Science and Technology University",
+    },
+    {
+      img: { Dept },
+      title: "Department",
+      desc: "Computer Science and Telecommunicaion Engineering",
+    },
+    {
+      img: { Location },
+      title: "Location",
+      desc: "Noakhali, Chittagong, Bangladesh",
+    },
+    {
+      img: { Research },
+      title: "Research Interest",
+      desc: "Machine Learning, Image Processing, Computer Networking",
+    },
+    {
+      img: { Skill },
+      title: "Skills and Expertise",
+      desc: "C, C++, Pyhton, Machine Learning, Natural Language Processing, Computer Networking, Web Application Development",
+    },
+  ]);
+
   return (
     <div className="profile">
       <div className="left">
@@ -27,48 +55,22 @@ const Profile = () => {
           <a href="#">
             <EmailIcon /> Contact
           </a>
+          <a href="/singlePost" className="post">
+            Post New Item
+          </a>
         </div>
       </div>
       <div className="right">
         <h1>Personal Information</h1>
-        <p>
-          <div className="data">
-            <img src={Nstu} alt="" />
-            <strong>University</strong>
-          </div>
-          <span>Noakhali Science and Tchnology University, Bangladesh.</span>
-        </p>
-        <p>
-          <div className="data">
-            <img src={Dept} alt="" />
-            <strong>Department</strong>
-          </div>
-          <span>Computer Science and Telecommunication Engineering.</span>
-        </p>
-        <p>
-          <div className="data">
-            <img src={Location} alt="" />
-            <strong>Hometown</strong>
-          </div>
-          <span>Noakhali, Chittagong, Bangladesh.</span>
-        </p>
-        <p>
-          <div className="data">
-            <img src={Research} alt="" />
-            <strong>Research Interest</strong>
-          </div>
-          <span>Natural Language Processing, Computer Networking.</span>
-        </p>
-        <p>
-          <div className="data">
-            <img src={Skill} alt="" />
-            <strong>Skills and Expertise</strong>
-          </div>
-          <span>
-            C, C++, Python, Machine Learning, Natural Language Processing,
-            Computer Networking, Web Application Development.
-          </span>
-        </p>
+        {profile.map((item, index) => (
+          <p>
+            <div className="data">
+              <img src={item.img} alt="" />
+              <strong>{item.title}</strong>
+            </div>
+            <span>{item.desc}</span>
+          </p>
+        ))}
       </div>
     </div>
   );

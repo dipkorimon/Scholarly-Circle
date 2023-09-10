@@ -107,6 +107,21 @@
           color: $red-color;
         }
       }
+
+      .post {
+        font-size: 15px;
+        font-weight: bold;
+        color: $white-color;
+        padding: 7px 20px;
+        border-radius: 5px;
+        background-color: $red-color;
+        width: 100%;
+
+        &:hover {
+          background-color: $dark-red;
+          color: $white-color;
+        }
+      }
     }
   }
 

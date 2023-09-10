@@ -4,7 +4,17 @@
 .home {
   display: flex;
   flex-direction: row;
+  gap: 20px;
   padding: 5px 20px;
+
+  @include mobile {
+    padding: 5px 10px;
+  }
+
+  @include tablet {
+    display: flex;
+    flex-direction: column;
+  }
 
   .post {
     flex: 3;
