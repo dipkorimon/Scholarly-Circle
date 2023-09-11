@@ -10,6 +10,10 @@ const SinglePost = () => {
     <div className="single-post">
       <div className="content">
         <input type="text" placeholder="Title" />
+        <input
+          type="text"
+          placeholder="Tags (Ex: Machine Learning, Artificial Intelligence)"
+        />
         <div className="editor">
           <ReactQuill
             className="edit"
