@@ -3,7 +3,7 @@
 
 .about {
   .header {
-    padding: 20px 100px;
+    padding: 0px 20px;
     color: $dark-color;
 
     @include tablet {
@@ -20,11 +20,11 @@
   }
 
   .desc {
-    padding: 10px 100px;
+    padding: 10px 20px;
     color: $dark-color;
 
     @include tablet {
-      padding: 10px 20px;
+      padding: 5px 10px;
     }
 
     .incl {
@@ -41,13 +41,13 @@
       padding: 0 50px;
 
       @include tablet {
-        padding: 10px 20px;
+        padding: 5px 20px;
       }
     }
   }
 
   .bottom {
-    padding: 20px 100px;
+    padding: 5px 20px;
     color: $dark-color;
 
     p {

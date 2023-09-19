@@ -8,7 +8,7 @@ const Post = () => {
     {
       id: 1,
       profilePhoto: "../../../public/profile.jpg",
-      userName: "Ada Lovelace",
+      userName: "Bjarne Stroustrup",
       title: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
       tags: "Machine Learning",
       desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores tempore vitae omnis nobis quae praesentium esse excepturi a placeat aspernatur.",
@@ -17,7 +17,7 @@ const Post = () => {
     {
       id: 2,
       profilePhoto: "../../../public/profile.jpg",
-      userName: "Ada Lovelace",
+      userName: "Bjarne Stroustrup",
       title: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
       tags: "Natural Languge Processing",
       desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores tempore vitae omnis nobis quae praesentium esse excepturi a placeat aspernatur.",
@@ -26,7 +26,7 @@ const Post = () => {
     {
       id: 3,
       profilePhoto: "../../../public/profile.jpg",
-      userName: "Ada Lovelace",
+      userName: "Bjarne Stroustrup",
       title: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
       tags: "Computer Networking",
       desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores tempore vitae omnis nobis quae praesentium esse excepturi a placeat aspernatur.",
@@ -35,7 +35,7 @@ const Post = () => {
     {
       id: 4,
       profilePhoto: "../../../public/profile.jpg",
-      userName: "Ada Lovelace",
+      userName: "Bjarne Stroustrup",
       title: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
       tags: "Computer Networking",
       desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores tempore vitae omnis nobis quae praesentium esse excepturi a placeat aspernatur.",
@@ -63,7 +63,10 @@ const Post = () => {
             <h1>{item.title}</h1>
             <span>Tags: {item.tags}</span>
             <p>{item.desc}</p>
-            <button>Download pdf</button>
+            <div className="btn">
+              <button>Download full-text</button>
+              <button>Cite</button>
+            </div>
           </div>
           <div className="document">
             <iframe src={item.document}></iframe>

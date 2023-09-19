@@ -4,6 +4,11 @@
 .footer {
   text-align: center;
   padding: 5px;
+  margin-top: 10px;
+
+  @include tablet {
+    margin-top: 5px;
+  }
 
   .top {
     display: flex;

@@ -12,6 +12,9 @@ const Home = () => {
         <Post />
       </div>
       <div className="sidebar">
+        <form action="">
+          <input type="text" placeholder="Ex: Category, Tags, Author" />
+        </form>
         <Category />
         <Faculty />
         <Institues />

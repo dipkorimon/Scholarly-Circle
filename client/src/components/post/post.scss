@@ -63,10 +63,10 @@
 
       span {
         color: $red-color;
-        font-size: 18px;
+        font-size: 14px;
 
         @include tablet {
-          font-size: 16px;
+          font-size: 12px;
         }
       }
 
@@ -79,23 +79,47 @@
         }
       }
 
-      button {
-        font-size: 15px;
-        font-weight: bold;
-        color: $white-color;
-        padding: 7px 20px;
-        border-radius: 5px;
-        background-color: $red-color;
-        color: $white-color;
-        border: none;
-        cursor: pointer;
+      .btn {
+        display: flex;
+        gap: 10px;
+        margin-top: 5px;
 
-        @include mobile {
-          padding: 3px 15px;
+        :first-child {
+          font-size: 15px;
+          font-weight: bold;
+          padding: 7px 20px;
+          border-radius: 5px;
+          background-color: $red-color;
+          color: $white-color;
+          border: none;
+          cursor: pointer;
+
+          @include mobile {
+            padding: 3px 15px;
+          }
+
+          &:hover {
+            background-color: $dark-red;
+          }
         }
 
-        &:hover {
-          background-color: $dark-red;
+        :last-child {
+          font-size: 15px;
+          font-weight: bold;
+          padding: 7px 20px;
+          border-radius: 5px;
+          background-color: $button-bg;
+          color: $red-color;
+          border: none;
+          cursor: pointer;
+
+          @include mobile {
+            padding: 3px 15px;
+          }
+
+          &:hover {
+            background-color: $soft-red;
+          }
         }
       }
     }
