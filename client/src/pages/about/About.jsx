@@ -23,8 +23,9 @@ const About = () => {
           <li>
             A collaborator search tool: Researchers can search for other
             researchers who are working in their field. All users can filter all
-            kinds of research papers department-wise and topic-wise and can
-            search research papers by their tags added by authors.
+            kinds of research papers department-wise and category-wise and can
+            search research papers by their tags and categories added by
+            authors.
           </li>
           <li>
             A news feed: Researchers can stay up-to-date on the latest
@@ -39,7 +40,7 @@ const About = () => {
             material in your work came from another source. It also gives your
             readers the information necessary to find the location details of
             that source on the reference or Works Cited page. All users can give
-            citation in any posts that are helpful for them.
+            citations in any posts that are helpful for them.
           </li>
         </ul>
       </div>
