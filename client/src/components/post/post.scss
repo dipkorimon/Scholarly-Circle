@@ -69,6 +69,12 @@
         display: flex;
         justify-content: space-between;
 
+        @include mobile {
+          display: flex;
+          flex-direction: column;
+          gap: 5px;
+        }
+
         :first-child {
           font-size: 10px;
           background-color: $yellow-bg;
