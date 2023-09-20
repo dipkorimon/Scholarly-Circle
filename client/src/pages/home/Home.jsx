@@ -8,14 +8,13 @@ import Post from "../../components/post/Post";
 const Home = () => {
   return (
     <div className="home">
+      <div className="left-sidebar">
+        <Category />
+      </div>
       <div className="post">
         <Post />
       </div>
-      <div className="sidebar">
-        <form action="">
-          <input type="text" placeholder="Ex: Category, Tags, Author" />
-        </form>
-        <Category />
+      <div className="right-sidebar">
         <Faculty />
         <Institues />
       </div>

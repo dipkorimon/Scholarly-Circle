@@ -14,35 +14,38 @@ const Contact = () => {
         referrerpolicy="no-referrer-when-downgrade"
       ></iframe>
       <h1>Feel free to contact with us</h1>
-      <p>
-        An asterisk (<span>*</span>) indicates a required field
-      </p>
-      <div className="contact-form">
-        <form action="https://formspree.io/f/mdorzdaq" method="POST">
-          <label htmlFor="">
-            Full Name <span>*</span>
-          </label>
-          <input type="text" name="username" required />
-          <label htmlFor="">
-            Phone <span>*</span>
-          </label>
-          <input type="text" name="phone" required />
-          <label htmlFor="">
-            Email <span>*</span>
-          </label>
-          <input type="email" name="Email" required />
-          <label htmlFor="">
-            Message <span>*</span>
-          </label>
-          <textarea
-            name="message"
-            id=""
-            cols="30"
-            rows="10"
-            required
-          ></textarea>
-          <button value="send">Submit</button>
-        </form>
+
+      <div className="contact-area">
+        <div className="contact-form">
+          <form action="https://formspree.io/f/mdorzdaq" method="POST">
+            <p>
+              An asterisk (<span>*</span>) indicates a required field
+            </p>
+            <label htmlFor="">
+              Full Name <span>*</span>
+            </label>
+            <input type="text" name="username" required />
+            <label htmlFor="">
+              Phone <span>*</span>
+            </label>
+            <input type="text" name="phone" required />
+            <label htmlFor="">
+              Email <span>*</span>
+            </label>
+            <input type="email" name="Email" required />
+            <label htmlFor="">
+              Message <span>*</span>
+            </label>
+            <textarea
+              name="message"
+              id=""
+              cols="30"
+              rows="10"
+              required
+            ></textarea>
+            <button value="send">Submit</button>
+          </form>
+        </div>
       </div>
     </div>
   );

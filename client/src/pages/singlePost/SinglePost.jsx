@@ -9,6 +9,10 @@ const SinglePost = () => {
   return (
     <div className="single-post">
       <div className="content">
+        <p>
+          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Magnam,
+          blanditiis?
+        </p>
         <input type="text" placeholder="Title" />
         <input
           type="text"
@@ -37,7 +41,7 @@ const SinglePost = () => {
             Upload Research Paper
           </label>
           <div className="buttons">
-            <button>Save as a draft</button>
+            <button>Save as draft</button>
             <button>Update</button>
           </div>
         </div>

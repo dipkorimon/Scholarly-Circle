@@ -40,7 +40,7 @@ const Register = () => {
         <label htmlFor="">LinkedIn profile</label>
         <input type="text" />
         <label htmlFor="">
-          Hometown <span>*</span>
+          Location <span>*</span>
         </label>
         <input type="text" />
         <input style={{ display: "none" }} type="file" id="file" required />

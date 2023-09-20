@@ -5,9 +5,8 @@
   p {
     font-size: 18px;
     color: $dark-color;
-    border-bottom: 2px solid $soft-color;
+    border-bottom: 2px solid $soft-red;
     margin-bottom: 5px;
-    margin-top: 10px;
     font-weight: bold;
 
     @include mobile {
@@ -16,20 +15,22 @@
   }
 
   .institutes-list {
-    padding-left: 10px;
+    display: flex;
+    flex-direction: column;
 
     a {
-      color: $red-color;
+      color: $dark-color;
       font-size: 16px;
-      padding: 3px;
+      padding: 6px;
 
       @include mobile {
         font-size: 14px;
+        padding: 4px;
       }
 
       &:hover {
         background-color: $soft-red;
-        border-radius: 20px;
+        border-radius: 10px;
       }
     }
   }

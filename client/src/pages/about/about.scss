@@ -2,63 +2,76 @@
 @import "../../styles/variables.scss";
 
 .about {
-  .header {
-    padding: 0px 20px;
-    color: $dark-color;
+  background-color: $soft-color;
+  margin-top: 20px;
+  padding: 5px 150px;
 
-    @include tablet {
-      padding: 5px 10px;
-    }
-
-    p {
-      font-size: 30px;
-
-      @include tablet {
-        font-size: 20px;
-      }
-    }
+  @include tablet {
+    padding: 5px 10px;
   }
 
-  .desc {
-    padding: 10px 20px;
-    color: $dark-color;
+  .about-page {
+    background-color: $white-color;
+    border-radius: 10px;
 
-    @include tablet {
+    .header {
       padding: 5px 10px;
-    }
-
-    .incl {
-      font-size: 18px;
-      font-weight: bold;
-      margin-bottom: 10px;
+      color: $dark-color;
 
       @include tablet {
-        font-size: 17px;
+        padding: 0px 10px;
+      }
+
+      p {
+        font-size: 30px;
+
+        @include tablet {
+          font-size: 20px;
+        }
       }
     }
 
-    .list {
-      padding: 0 50px;
+    .desc {
+      padding: 10px 20px;
+      color: $dark-color;
 
       @include tablet {
-        padding: 5px 20px;
+        padding: 5px 10px;
       }
-    }
-  }
 
-  .bottom {
-    padding: 5px 20px;
-    color: $dark-color;
-
-    p {
-      a {
+      .incl {
+        font-size: 18px;
         font-weight: bold;
-        color: $red-color;
+        margin-bottom: 10px;
+
+        @include tablet {
+          font-size: 17px;
+        }
+      }
+
+      .list {
+        padding: 0 50px;
+
+        @include tablet {
+          padding: 5px 20px;
+        }
       }
     }
 
-    @include tablet {
-      padding: 5px 10px;
+    .bottom {
+      padding: 5px 20px;
+      color: $dark-color;
+
+      p {
+        a {
+          font-weight: bold;
+          color: $red-color;
+        }
+      }
+
+      @include tablet {
+        padding: 5px 10px;
+      }
     }
   }
 }

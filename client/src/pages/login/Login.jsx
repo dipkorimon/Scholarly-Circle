@@ -5,16 +5,24 @@ const Login = () => {
   return (
     <div className="login">
       <h1>Sign in</h1>
+
       <p>
         Or{" "}
         <span>
           <a href="/register">register for an account</a>
         </span>
       </p>
+      <p>
+        An asterisk (<span>*</span>) indicates a required field
+      </p>
       <form action="">
-        <label htmlFor="">Email address</label>
+        <label htmlFor="">
+          Email address <span>*</span>
+        </label>
         <input type="text" required />
-        <label htmlFor="">Password</label>
+        <label htmlFor="">
+          Password <span>*</span>
+        </label>
         <input type="password" required />
       </form>
       <button>Sign in</button>
