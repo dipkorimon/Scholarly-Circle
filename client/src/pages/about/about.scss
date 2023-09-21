@@ -2,18 +2,15 @@
 @import "../../styles/variables.scss";
 
 .about {
-  background-color: $soft-color;
-  margin-top: 20px;
-  padding: 5px 150px;
+  margin-top: 60px;
+  padding: 10px 20px;
 
   @include tablet {
     padding: 5px 10px;
+    margin-top: 122px;
   }
 
   .about-page {
-    background-color: $white-color;
-    border-radius: 10px;
-
     .header {
       padding: 5px 10px;
       color: $dark-color;

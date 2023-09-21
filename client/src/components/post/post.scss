@@ -6,12 +6,21 @@
   flex-direction: column;
   gap: 10px;
 
+  @include tablet {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+  }
+
   .post-item {
     display: flex;
     gap: 20px;
     background-color: $white-color;
     padding: 10px;
     border-radius: 10px;
+    box-shadow: 0px 0px 3px 2px rgba(0, 0, 0, 0.09);
+    -webkit-box-shadow: 0px 0px 3px 2px rgba(0, 0, 0, 0.09);
+    -moz-box-shadow: 0px 0px 3px 2px rgba(0, 0, 0, 0.09);
 
     @include mobile {
       display: flex;

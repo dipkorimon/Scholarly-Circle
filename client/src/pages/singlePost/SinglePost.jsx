@@ -10,8 +10,8 @@ const SinglePost = () => {
     <div className="single-post">
       <div className="content">
         <p>
-          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Magnam,
-          blanditiis?
+          Publish your research paper with a title, tags, a short description
+          about your research paper and select a category also.
         </p>
         <input type="text" placeholder="Title" />
         <input

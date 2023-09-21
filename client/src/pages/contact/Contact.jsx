@@ -13,14 +13,14 @@ const Contact = () => {
         loading="lazy"
         referrerpolicy="no-referrer-when-downgrade"
       ></iframe>
-      <h1>Feel free to contact with us</h1>
 
       <div className="contact-area">
         <div className="contact-form">
+          <h1>Feel free to contact with us</h1>
+          <p>
+            An asterisk (<span>*</span>) indicates a required field
+          </p>
           <form action="https://formspree.io/f/mdorzdaq" method="POST">
-            <p>
-              An asterisk (<span>*</span>) indicates a required field
-            </p>
             <label htmlFor="">
               Full Name <span>*</span>
             </label>

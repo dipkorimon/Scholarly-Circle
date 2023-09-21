@@ -3,26 +3,29 @@
 
 .profile-page {
   background-color: $soft-color;
-  margin-top: 20px;
+  margin-top: 60px;
+
+  @include tablet {
+    margin-top: 122px;
+  }
 
   .profile {
     display: flex;
-    padding: 5px 150px;
+    padding: 10px 10px;
     gap: 10px;
-    margin-bottom: 10px;
 
     @include mobile {
       display: flex;
       flex-direction: column;
-      gap: 10px;
-      padding: 10px;
+      gap: 5px;
+      padding: 5px;
     }
 
     @include tablet {
       display: flex;
       flex-direction: column;
-      gap: 10px;
-      padding: 10px;
+      gap: 5px;
+      padding: 5px;
     }
 
     .left {
@@ -30,6 +33,16 @@
       background-color: $white-color;
       padding: 20px;
       border-radius: 10px;
+      position: sticky;
+      top: 65px;
+      height: calc(100vh - 65px);
+      box-shadow: 0px 0px 3px 2px rgba(0, 0, 0, 0.09);
+      -webkit-box-shadow: 0px 0px 3px 2px rgba(0, 0, 0, 0.09);
+      -moz-box-shadow: 0px 0px 3px 2px rgba(0, 0, 0, 0.09);
+
+      &::-webkit-scrollbar {
+        display: none;
+      }
 
       @include mobile {
         display: flex;
@@ -143,90 +156,77 @@
     }
 
     .right {
-      flex: 2;
       display: flex;
       flex-direction: column;
-      gap: 10px;
-      background-color: $white-color;
-      padding: 20px;
-      border-radius: 10px;
+      flex: 3;
 
-      h1 {
-        color: $dark-color;
-        font-size: 25px;
-        margin-bottom: 10px;
-        border-bottom: 2px solid $soft-color;
+      .per-info {
+        flex: 2;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        background-color: $white-color;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0px 0px 3px 2px rgba(0, 0, 0, 0.09);
+        -webkit-box-shadow: 0px 0px 3px 2px rgba(0, 0, 0, 0.09);
+        -moz-box-shadow: 0px 0px 3px 2px rgba(0, 0, 0, 0.09);
 
-        @include tablet {
-          font-size: 20px;
+        h1 {
+          color: $dark-color;
+          font-size: 25px;
+          margin-bottom: 10px;
+          border-bottom: 2px solid $soft-color;
+
+          @include tablet {
+            font-size: 20px;
+          }
         }
-      }
 
-      p {
-        color: $dark-color;
+        p {
+          color: $dark-color;
 
-        .data {
-          display: flex;
-          flex-direction: row;
-          align-items: center;
-          gap: 10px;
+          .data {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            gap: 10px;
 
-          img {
-            width: 40px;
-            height: 40px;
-            object-fit: cover;
-            border-radius: 50%;
-            border: 1px solid $soft-color;
+            img {
+              width: 40px;
+              height: 40px;
+              object-fit: cover;
+              border-radius: 50%;
+              border: 1px solid $soft-color;
+            }
+
+            strong {
+              font-size: 18px;
+
+              @include tablet {
+                font-size: 16px;
+              }
+            }
           }
 
-          strong {
-            font-size: 18px;
+          span {
+            font-size: 16px;
+            padding-left: 50px;
 
             @include tablet {
-              font-size: 16px;
+              font-size: 14px;
             }
           }
         }
-
-        span {
-          font-size: 16px;
-          padding-left: 50px;
-
-          @include tablet {
-            font-size: 14px;
-          }
-        }
       }
-    }
-  }
+      .posts-details {
+        display: flex;
+        flex-direction: column;
+        padding-top: 10px;
 
-  .posts-details {
-    display: flex;
-    flex-direction: column;
-    padding: 5px 150px;
-
-    @include mobile {
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-      padding: 10px;
-    }
-
-    @include tablet {
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-      padding: 10px;
-    }
-
-    h2 {
-      color: $dark-color;
-      font-size: 25px;
-      margin-bottom: 5px;
-      text-align: center;
-
-      @include tablet {
-        font-size: 20px;
+        @include tablet {
+          padding-top: 5px;
+        }
       }
     }
   }

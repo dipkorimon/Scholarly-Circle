@@ -3,16 +3,36 @@
 
 .category {
   padding: 10px;
+  position: sticky;
+  top: 60px;
+  height: calc(100vh - 60px);
+  overflow: scroll;
 
-  p {
-    font-size: 18px;
-    color: $dark-color;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+
+  .title {
+    display: flex;
+    align-items: center;
+    gap: 10px;
     border-bottom: 2px solid $soft-red;
-    margin-bottom: 5px;
-    font-weight: bold;
 
-    @include mobile {
-      font-size: 16px;
+    p {
+      font-size: 18px;
+      color: $dark-color;
+      margin-bottom: 5px;
+      font-weight: bold;
+
+      @include mobile {
+        font-size: 16px;
+      }
+    }
+
+    img {
+      width: 30px;
+      height: 30px;
+      object-fit: cover;
     }
   }
 
@@ -21,6 +41,8 @@
     flex-direction: column;
 
     a {
+      display: flex;
+      align-items: center;
       color: $dark-color;
       font-size: 16px;
       padding: 6px;
@@ -32,7 +54,7 @@
 
       &:hover {
         background-color: $soft-red;
-        border-radius: 10px;
+        border-radius: 5px;
       }
     }
   }

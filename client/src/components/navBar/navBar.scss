@@ -4,8 +4,13 @@
 .navBar {
   display: flex;
   justify-content: space-between;
-  padding: 5px 20px;
-  margin-bottom: -20px;
+  padding: 0px 20px;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  overflow: hidden;
+  background-color: $white-color;
+  z-index: 1;
 
   @include mobile {
     display: flex;

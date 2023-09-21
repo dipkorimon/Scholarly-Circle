@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import "./category.scss";
+import Category_photo from "../../../public/category.png";
 
-const SideBar = () => {
+const Category = () => {
   const [category] = useState([
     {
       name: "Machine Learning",
@@ -34,7 +35,10 @@ const SideBar = () => {
 
   return (
     <div className="category">
-      <p>Popular Categories</p>
+      <div className="title">
+        <img src={Category_photo} alt="" />
+        <p>Popular Categories</p>
+      </div>
       <div className="category-list">
         {category.map((item, index) => (
           <a href="">
@@ -47,4 +51,4 @@ const SideBar = () => {
   );
 };
 
-export default SideBar;
+export default Category;

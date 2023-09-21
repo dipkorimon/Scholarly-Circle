@@ -58,21 +58,22 @@ const Profile = () => {
           </div>
         </div>
         <div className="right">
-          <h1>Personal Information</h1>
-          {profile.map((item, index) => (
-            <p>
-              <div className="data">
-                <img src={item.img} alt="" />
-                <strong>{item.title}</strong>
-              </div>
-              <span>{item.desc}</span>
-            </p>
-          ))}
+          <div className="per-info">
+            <h1>Personal Information</h1>
+            {profile.map((item, index) => (
+              <p>
+                <div className="data">
+                  <img src={item.img} alt="" />
+                  <strong>{item.title}</strong>
+                </div>
+                <span>{item.desc}</span>
+              </p>
+            ))}
+          </div>
+          <div className="posts-details">
+            <Post />
+          </div>
         </div>
-      </div>
-      <div className="posts-details">
-        <h2>All posts added by Author</h2>
-        <Post />
       </div>
     </div>
   );

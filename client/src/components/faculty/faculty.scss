@@ -2,15 +2,37 @@
 @import "../../styles/variables.scss";
 
 .faculty {
-  p {
-    font-size: 18px;
-    color: $dark-color;
-    border-bottom: 2px solid $soft-red;
-    margin-bottom: 5px;
-    font-weight: bold;
+  padding: 10px;
+  position: sticky;
+  top: 60px;
+  height: calc(100vh - 60px);
+  overflow: scroll;
 
-    @include mobile {
-      font-size: 16px;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+
+  .title {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    border-bottom: 2px solid $soft-red;
+
+    p {
+      font-size: 18px;
+      color: $dark-color;
+      margin-bottom: 5px;
+      font-weight: bold;
+
+      @include mobile {
+        font-size: 16px;
+      }
+    }
+
+    img {
+      width: 30px;
+      height: 30px;
+      object-fit: cover;
     }
   }
 
@@ -30,7 +52,7 @@
 
       &:hover {
         background-color: $soft-red;
-        border-radius: 10px;
+        border-radius: 5px;
       }
     }
   }

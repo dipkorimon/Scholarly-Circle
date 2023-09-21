@@ -5,36 +5,91 @@
   display: flex;
   flex-direction: row;
   gap: 10px;
-  padding: 5px 10px;
-  margin-top: 20px;
+  padding: 10px 10px;
+  margin-top: 60px;
   background-color: $soft-color;
 
   @include mobile {
-    padding: 5px 10px;
+    padding: 5px 5px;
+  }
+
+  @include tablet {
+    padding: 5px 5px;
   }
 
   @include tablet {
     display: flex;
     flex-direction: column;
+    margin-top: 122px;
   }
 
   .left-sidebar {
     display: flex;
     flex-direction: column;
-    border-radius: 10px;
     flex: 2;
+
+    @include mobile {
+      display: none;
+    }
   }
 
-  .post {
+  .middle {
+    display: flex;
+    flex-direction: column;
     flex: 4;
+    gap: 10px;
+
+    @include tablet {
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+    }
+
+    .search {
+      background-color: $white-color;
+      padding: 10px;
+      border-radius: 5px;
+      box-shadow: 0px 0px 3px 2px rgba(0, 0, 0, 0.09);
+      -webkit-box-shadow: 0px 0px 3px 2px rgba(0, 0, 0, 0.09);
+      -moz-box-shadow: 0px 0px 3px 2px rgba(0, 0, 0, 0.09);
+
+      .icon {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        p {
+          font-size: 16px;
+          text-align: center;
+          color: $dark-color;
+          font-weight: bold;
+
+          @include mobile {
+            font-size: 14px;
+          }
+        }
+      }
+
+      form {
+        input {
+          padding: 10px;
+          width: 100%;
+          outline: none;
+          border: none;
+          background-color: $soft-color;
+          border-radius: 5px;
+        }
+      }
+    }
   }
 
   .right-sidebar {
-    flex: 2;
     display: flex;
     flex-direction: column;
-    gap: 10px;
-    padding: 10px;
-    border-radius: 10px;
+    flex: 2;
+
+    @include mobile {
+      display: none;
+    }
   }
 }

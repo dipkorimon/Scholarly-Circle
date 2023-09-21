@@ -2,61 +2,52 @@
 @import "../../styles/variables.scss";
 
 .contact {
-  margin-top: 20px;
-  background-color: $soft-color;
-  padding: 5px 10px;
+  padding: 10px 10px;
 
-  iframe {
-    padding: 5px 150px;
-
-    @include tablet {
-      padding: 5px 10px;
-    }
-
-    @include mobile {
-      padding: 5px 10px;
-    }
-  }
-
-  h1 {
-    font-size: 30px;
-    color: $dark-color;
-    text-align: center;
-    padding-top: 10px;
-
-    @include mobile {
-      font-size: 20px;
-    }
-  }
-
-  p {
-    font-size: 16px;
-    text-align: center;
-    color: $dark-color;
-
-    @include mobile {
-      font-size: 13px;
-    }
-
-    span {
-      color: $red-color;
-    }
+  @include tablet {
+    margin-top: 122px;
+    padding: 5px 5px;
   }
 
   .contact-area {
-    padding: 10px;
     display: flex;
     align-items: center;
     justify-content: center;
-    flex-direction: row;
+    flex-direction: column;
 
     .contact-form {
       display: flex;
       align-items: center;
       justify-content: center;
+      flex-direction: column;
       background-color: $white-color;
       padding: 10px;
       border-radius: 10px;
+
+      h1 {
+        font-size: 30px;
+        color: $dark-color;
+        text-align: center;
+        padding-top: 10px;
+
+        @include mobile {
+          font-size: 20px;
+        }
+      }
+
+      p {
+        font-size: 16px;
+        text-align: center;
+        color: $dark-color;
+
+        @include mobile {
+          font-size: 13px;
+        }
+
+        span {
+          color: $red-color;
+        }
+      }
 
       form {
         display: flex;
