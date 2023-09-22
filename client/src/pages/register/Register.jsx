@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import "./register.scss";
 
 const Register = () => {
@@ -42,11 +42,11 @@ const Register = () => {
         <label htmlFor="">
           Location <span>*</span>
         </label>
-        <input type="text" />
-        <input style={{ display: "none" }} type="file" id="file" required />
+        <input type="text" required />
         <label className="upload" htmlFor="file">
           Upload Profile Photo
         </label>
+        <input style={{ display: "none" }} type="file" id="file" />
         <div className="pass">
           <p>
             *Password must be a minimum of 8 characters, contain one lower case,

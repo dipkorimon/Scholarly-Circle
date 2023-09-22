@@ -39,13 +39,16 @@
   .category-list {
     display: flex;
     flex-direction: column;
+    margin-top: 5px;
 
-    a {
-      display: flex;
-      align-items: center;
+    button {
       color: $dark-color;
       font-size: 16px;
       padding: 6px;
+      background-color: $soft-color;
+      border: none;
+      text-align: left;
+      cursor: pointer;
 
       @include mobile {
         font-size: 14px;

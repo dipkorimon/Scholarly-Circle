@@ -41,10 +41,10 @@ const Category = () => {
       </div>
       <div className="category-list">
         {category.map((item, index) => (
-          <a href="">
+          <button href="">
             {item.name}
             <br />
-          </a>
+          </button>
         ))}
       </div>
     </div>

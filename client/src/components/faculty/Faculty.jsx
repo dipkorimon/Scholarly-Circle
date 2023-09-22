@@ -38,10 +38,10 @@ const Faculty = () => {
       </div>
       <div className="faculty-list">
         {faculty.map((item, index) => (
-          <a href="">
+          <button href="">
             {item.name}
             <br />
-          </a>
+          </button>
         ))}
       </div>
     </div>
