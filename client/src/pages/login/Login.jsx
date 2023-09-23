@@ -16,11 +16,11 @@ const Login = () => {
         An asterisk (<span>*</span>) indicates a required field
       </p>
       <form action="">
-        <label htmlFor="">
+        <label htmlFor="email">
           Email address <span>*</span>
         </label>
-        <input type="text" required />
-        <label htmlFor="">
+        <input type="email" required />
+        <label htmlFor="password">
           Password <span>*</span>
         </label>
         <input type="password" required />
