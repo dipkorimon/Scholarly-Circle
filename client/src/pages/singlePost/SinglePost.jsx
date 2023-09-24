@@ -14,6 +14,7 @@ const SinglePost = () => {
           about your research paper and select a category also.
         </p>
         <input type="text" placeholder="Title" />
+        <input type="text" placeholder="Department" />
         <input
           type="text"
           placeholder="Tags (Ex: Machine Learning, Artificial Intelligence)"
