@@ -5,10 +5,10 @@ Scholarly Circle is a social networking website for scientists and researchers t
 Scholarly Circle offers a variety of features for researchers, including:
 
 <ul>
-  <li>A paper-sharing platform: Supervisers can upload their papers which are under their supervision to Scholarly Circle and share them with other researchers.</li>
+  <li>A paper-sharing platform: Supervisors can upload their papers which are under their supervision to Scholarly Circle and share them with other researchers.</li>
   <li>A collaborator search tool: Researchers can search for other researchers who are working in their field. All users can filter all kinds of research papers department-wise and category-wise and can search research papers by their tags and categories added by authors.</li>
   <li>A news feed: Researchers can stay up-to-date on the latest research-related posts.</li>
-  <li>A profile page: Supervisers can create a profile page to showcase their research and experience.</li>
+  <li>A profile page: Supervisors can create a profile page to showcase their research and experience.</li>
   <li>Citation: A “citation” is the way you tell your readers that certain material in your work came from another source. It also gives your readers the information necessary to find the
   location details of that source on the reference or Works Cited page. All users can give citations in any posts that are helpful for them.</li>
 </ul>
