@@ -94,7 +94,10 @@ const Post = () => {
           <div className="desc">
             <div className="info">
               <img src={item.profilePhoto} alt="" />
-              <a href="/profile">{item.userName}</a>
+              <div className="supervisor">
+                <a href="/profile">{item.userName}</a>
+                <p>Supervisor</p>
+              </div>
               <a href="/singlePost">
                 <EditIcon
                   sx={{ color: "rgb(255, 230, 0)", cursor: "pointer" }}
