@@ -17,16 +17,29 @@ Scholarly Circle is a valuable resource for scientists and researchers. It provi
 
 It is specially made for <strong>Noakhali Science and Technology University</strong>.
 
-# Tech Stack
+# Technologies and Tools:
+
+<strong>Client-Side Scripting Technologies:</strong>
 
 <ul>
-  <li>HTML</li>
-  <li>CSS</li>
-  <li>JavaScript</li>
-  <li>React.js</li>
-  <li>Node.js</li>
-  <li>Express.js</li>
-  <li>MySQL</li>
+  <li>HTML (HyperText Markup Language)</li>
+  <li>CSS (Cascading Style Sheets)</li>
+  <li>JavaScript (Programming Language)</li>
+  <li>React.js (JavaScript Library)</li>
+</ul>
+
+<strong>Server-Side Scripting Technologies:</strong>
+
+<ul>
+  <li>Node.js (JavaScript Run-time Environment)</li>
+  <li>Express.js (Node.js Framework)</li>
+  <li>MySQL (Relational Database)</li>
+</ul>
+
+<strong>Version Control System:</strong>
+
+<ul>
+  <li>Git (For Version Control System)</li>
 </ul>
 
 # Deployment link
