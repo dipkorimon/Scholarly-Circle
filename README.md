@@ -13,7 +13,7 @@ Scholarly Circle offers a variety of features, including:
   location details of that source on the reference or Works Cited page. All users can give citations in any research papers that are helpful for them.</li>
 </ul>
 
-It is specially made for the<strong>Department of Computer Science and Telecommunication Engineering</strong>, Noakhali Science and Technology University.
+It is specially made for the <strong>Department of Computer Science and Telecommunication Engineering</strong>, Noakhali Science and Technology University.
 
 # Technologies and Tools:
 
