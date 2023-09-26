@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import "./home.scss";
 import Category from "../../components/category/Category.jsx";
-import Faculty from "../../components/faculty/Faculty";
 import Post from "../../components/post/Post";
 import SearchIcon from "@mui/icons-material/Search";
 
@@ -25,9 +24,7 @@ const Home = () => {
           <Post />
         </div>
       </div>
-      <div className="right-sidebar">
-        <Faculty />
-      </div>
+      <div className="right-sidebar"></div>
     </div>
   );
 };

@@ -9,7 +9,7 @@ const About = () => {
           <p>
             Scholarly Circle is a social networking website for Department of
             Computer Science and Telecommunication Engineering to share research
-            papers, and find collaborators.
+            papers.
           </p>
         </div>
         <div className="desc">
@@ -23,9 +23,9 @@ const About = () => {
               them with other researchers.
             </li>
             <li>
-              A collaborator search tool: All users can filter all kinds of
-              research papers category-wise and can search research papers by
-              their tags and categories added by supervisors.
+              A search tool: All users can filter all kinds of research papers
+              category-wise and can search research papers by their tags and
+              categories added by supervisors.
             </li>
             <li>
               A news feed: All users can stay up-to-date on the latest
@@ -33,7 +33,7 @@ const About = () => {
             </li>
             <li>
               A profile page: All users can create a profile page to showcase
-              their research and experience.
+              their research interest and experience.
             </li>
             <li>
               Citation: A “citation” is the way you tell your readers that
