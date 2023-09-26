@@ -101,6 +101,17 @@
         }
       }
 
+      .authors {
+        span {
+          font-size: 15px;
+          color: $dark-color;
+
+          @include mobile {
+            font-size: 13px;
+          }
+        }
+      }
+
       p {
         font-size: 16px;
         color: $dark-color;

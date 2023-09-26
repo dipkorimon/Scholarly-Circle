@@ -29,11 +29,11 @@
     }
 
     .desc {
-      padding: 10px 20px;
+      padding: 10px 10px;
       color: $dark-color;
 
       @include tablet {
-        padding: 5px 10px;
+        padding: 5px 5px;
       }
 
       .incl {
@@ -60,7 +60,7 @@
       color: $dark-color;
 
       p {
-        a {
+        span {
           font-weight: bold;
           color: $red-color;
         }

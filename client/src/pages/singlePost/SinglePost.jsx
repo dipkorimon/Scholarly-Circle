@@ -10,10 +10,15 @@ const SinglePost = () => {
     <div className="single-post">
       <div className="content">
         <p>
-          Publish your research paper with a title, tags, a short description
-          about your research paper and select a category also.
+          Publish your research paper with a title, authors name, department,
+          tags, a short description about your research paper and select a
+          category also.
         </p>
         <input type="text" placeholder="Title" />
+        <input
+          type="text"
+          placeholder="Authors Name (Ex: Author_1, Author_2)"
+        />
         <input
           type="text"
           placeholder="Department (Ex: Computer Science and Telecommunication Engineering)"

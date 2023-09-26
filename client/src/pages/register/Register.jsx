@@ -8,6 +8,10 @@ const Register = () => {
       <p>
         An asterisk (<span>*</span>) indicates a required field
       </p>
+      <p className="note">
+        <span>Note:</span> Only for Supervisors. Students are not allowed to
+        register here.
+      </p>
       <form action="">
         <label htmlFor="">
           Full name <span>*</span>

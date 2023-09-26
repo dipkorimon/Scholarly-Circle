@@ -15,6 +15,10 @@ const Login = () => {
       <p>
         An asterisk (<span>*</span>) indicates a required field
       </p>
+      <p className="note">
+        <span>Note:</span> Only for Supervisors. Students are not allowed to
+        login here.
+      </p>
       <form action="">
         <label htmlFor="email">
           Email address <span>*</span>

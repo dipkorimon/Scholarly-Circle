@@ -10,6 +10,7 @@ const Post = () => {
       profilePhoto: "../../../public/profile.jpg",
       userName: "Bjarne Stroustrup",
       title: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
+      authors: "Unknown name",
       tags: "Machine Learning",
       category: "Natural Language Processing",
       desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores tempore vitae omnis nobis quae praesentium esse excepturi a placeat aspernatur.",
@@ -20,6 +21,7 @@ const Post = () => {
       profilePhoto: "../../../public/profile.jpg",
       userName: "Bjarne Stroustrup",
       title: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
+      authors: "Unknown name",
       tags: "Natural Languge Processing",
       category: "Artificial Intelligence",
       desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores tempore vitae omnis nobis quae praesentium esse excepturi a placeat aspernatur.",
@@ -30,6 +32,7 @@ const Post = () => {
       profilePhoto: "../../../public/profile.jpg",
       userName: "Bjarne Stroustrup",
       title: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
+      authors: "Unknown name",
       tags: "Computer Networking",
       category: "Artificial Intelligence",
       desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores tempore vitae omnis nobis quae praesentium esse excepturi a placeat aspernatur.",
@@ -40,6 +43,7 @@ const Post = () => {
       profilePhoto: "../../../public/profile.jpg",
       userName: "Bjarne Stroustrup",
       title: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
+      authors: "Unknown name",
       tags: "Computer Networking",
       category: "Artificial Intelligence",
       desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores tempore vitae omnis nobis quae praesentium esse excepturi a placeat aspernatur.",
@@ -50,6 +54,7 @@ const Post = () => {
       profilePhoto: "../../../public/profile.jpg",
       userName: "Bjarne Stroustrup",
       title: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
+      authors: "Unknown name",
       tags: "Computer Networking",
       category: "Artificial Intelligence",
       desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores tempore vitae omnis nobis quae praesentium esse excepturi a placeat aspernatur.",
@@ -60,6 +65,7 @@ const Post = () => {
       profilePhoto: "../../../public/profile.jpg",
       userName: "Bjarne Stroustrup",
       title: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
+      authors: "Unknown name",
       tags: "Computer Networking",
       category: "Artificial Intelligence",
       desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores tempore vitae omnis nobis quae praesentium esse excepturi a placeat aspernatur.",
@@ -70,6 +76,7 @@ const Post = () => {
       profilePhoto: "../../../public/profile.jpg",
       userName: "Bjarne Stroustrup",
       title: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
+      authors: "Unknown name",
       tags: "Computer Networking",
       category: "Artificial Intelligence",
       desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores tempore vitae omnis nobis quae praesentium esse excepturi a placeat aspernatur.",
@@ -80,6 +87,7 @@ const Post = () => {
       profilePhoto: "../../../public/profile.jpg",
       userName: "Bjarne Stroustrup",
       title: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
+      authors: "Unknown name",
       tags: "Computer Networking",
       category: "Artificial Intelligence",
       desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores tempore vitae omnis nobis quae praesentium esse excepturi a placeat aspernatur.",
@@ -109,6 +117,9 @@ const Post = () => {
               <p>Published {item.date} ago.</p>
             </div>
             <h1>{item.title}</h1>
+            <div className="authors">
+              <span>Authors: {item.authors}</span>
+            </div>
             <div className="tags">
               <span>Tags: {item.tags}</span>
               <span>Category: {item.category}</span>

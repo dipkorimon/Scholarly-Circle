@@ -38,15 +38,15 @@
     }
 
     p {
-      font-size: 20px;
+      font-size: 18px;
       color: $dark-color;
 
       @include tablet {
-        font-size: 18px;
+        font-size: 16px;
       }
 
       @include mobile {
-        font-size: 16px;
+        font-size: 14px;
       }
     }
 
@@ -58,7 +58,7 @@
     }
 
     .editor {
-      height: 300px;
+      height: 250px;
       overflow: scroll;
 
       .edit {
@@ -88,7 +88,7 @@
       justify-content: space-between;
       color: $dark-color;
       gap: 10px;
-      border-radius: 5px;
+      border-radius: 10px;
       background-color: $white-color;
       box-shadow: $shadow;
 
@@ -176,12 +176,11 @@
           }
         }
       }
+    }
 
-      .cat {
-        display: flex;
-        align-items: center;
-        gap: 5px;
-      }
+    .cat {
+      display: flex;
+      gap: 5px;
     }
   }
 }
