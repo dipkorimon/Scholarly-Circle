@@ -3,6 +3,7 @@ import "./home.scss";
 import Category from "../../components/category/Category.jsx";
 import Post from "../../components/post/Post";
 import SearchIcon from "@mui/icons-material/Search";
+import FacultyMembers from "../../components/facultyMembers/FacultyMembers";
 
 const Home = () => {
   return (
@@ -24,7 +25,9 @@ const Home = () => {
           <Post />
         </div>
       </div>
-      <div className="right-sidebar"></div>
+      <div className="right-sidebar">
+        <FacultyMembers />
+      </div>
     </div>
   );
 };

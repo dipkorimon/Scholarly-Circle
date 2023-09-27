@@ -130,8 +130,9 @@
         padding: 7px 20px;
         border-radius: 5px;
 
-        @include mobile {
+        @include tablet {
           padding: 3px 15px;
+          margin-bottom: 10px;
         }
       }
 
@@ -166,7 +167,7 @@
           background-color: $dark-red;
         }
 
-        @include mobile {
+        @include tablet {
           padding: 3px 15px;
         }
       }

@@ -2,43 +2,96 @@
 @import "../../styles/variables.scss";
 
 .footer {
+  display: flex;
+  justify-content: space-around;
   text-align: center;
-  padding: 5px;
+  padding: 10px 20px;
   background-color: $soft-color;
 
-  .top {
+  @include tablet {
     display: flex;
-    justify-content: center;
-    align-items: center;
+    flex-direction: column;
     gap: 10px;
+  }
 
-    a {
-      color: $dark-color;
+  .left {
+    .top {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 10px;
 
-      &:hover {
-        color: $red-color;
+      a {
+        color: $dark-color;
+
+        &:hover {
+          color: $red-color;
+        }
+      }
+    }
+
+    .mid {
+      p {
+        font-size: 15px;
+        color: $dark-color;
+
+        span {
+          font-weight: bold;
+        }
+
+        @include mobile {
+          font-size: 13px;
+        }
+      }
+    }
+
+    .bottom {
+      p {
+        font-size: 15px;
+        color: $dark-color;
+
+        span {
+          font-weight: bold;
+        }
+
+        @include mobile {
+          font-size: 13px;
+        }
       }
     }
   }
 
-  .mid {
-    p {
-      font-size: 15px;
-      color: $dark-color;
+  .right {
+    .top {
+      p {
+        font-size: 15px;
+        color: $dark-color;
 
-      span {
-        font-weight: bold;
+        @include mobile {
+          font-size: 13px;
+        }
       }
     }
-  }
 
-  .bottom {
-    p {
-      font-size: 15px;
-      color: $dark-color;
+    .mid {
+      p {
+        font-size: 15px;
+        color: $dark-color;
 
-      span {
-        font-weight: bold;
+        @include mobile {
+          font-size: 13px;
+        }
+      }
+    }
+
+    .bottom {
+      p {
+        font-size: 15px;
+        color: $dark-color;
+
+        @include mobile {
+          font-size: 13px;
+        }
       }
     }
   }

@@ -23,13 +23,40 @@ const Category = () => {
       name: "Web Engineering",
     },
     {
-      name: "Electronics",
+      name: "Computer Vision",
     },
     {
-      name: "Optics",
+      name: "Internet of Things",
     },
     {
-      name: "Power Engineering",
+      name: "Human Computer Interaction",
+    },
+    {
+      name: "Ethical Hacking",
+    },
+    {
+      name: "Role of the Blockchain",
+    },
+    {
+      name: "Wireless Sensor Networks",
+    },
+    {
+      name: "Cognitive Radio Networks",
+    },
+    {
+      name: "Cyber Physical Systems",
+    },
+    {
+      name: "Theory and Algorithms",
+    },
+    {
+      name: "Distributed Data Clustering",
+    },
+    {
+      name: "Mobile Systems",
+    },
+    {
+      name: "3-D Object Modelling",
     },
   ]);
 

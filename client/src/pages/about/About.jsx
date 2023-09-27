@@ -7,9 +7,9 @@ const About = () => {
       <div className="about-page">
         <div className="header">
           <p>
-            Scholarly Circle is a social networking website for Department of
-            Computer Science and Telecommunication Engineering to share research
-            papers.
+            Scholarly Circle is a social networking website for the Department
+            of Computer Science and Telecommunication Engineering to share
+            research papers.
           </p>
         </div>
         <div className="desc">
@@ -47,7 +47,7 @@ const About = () => {
         </div>
         <div className="bottom">
           <p>
-            It is specially made for It is specially made for{" "}
+            It is specially made for It is specially made for the{" "}
             <span>
               Department of Computer Science and Telecommunication Engineering
             </span>
