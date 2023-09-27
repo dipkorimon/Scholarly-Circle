@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "./category.scss";
-import Category_photo from "../../../public/category.png";
+import Category_photo from "/category.png";
 
 const Category = () => {
   const [category] = useState([

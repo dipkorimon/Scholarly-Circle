@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "./profile.scss";
-import Photo from "../../../public/profile.jpg";
+import Photo from "/profile.jpg";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import EmailIcon from "@mui/icons-material/Email";
 import Post from "../../components/post/Post";
@@ -8,27 +8,27 @@ import Post from "../../components/post/Post";
 const Profile = () => {
   const [profile] = useState([
     {
-      img: "../../../public/nstu.png",
+      img: "/nstu.png",
       title: "University",
       desc: "Noakhali Science and Technology University",
     },
     {
-      img: "../../../public/dept.png",
+      img: "/dept.png",
       title: "Department",
       desc: "Computer Science and Telecommunicaion Engineering",
     },
     {
-      img: "../../../public/location.png",
+      img: "/location.png",
       title: "Location",
       desc: "Noakhali, Chittagong, Bangladesh",
     },
     {
-      img: "../../../public/research.png",
+      img: "/research.png",
       title: "Research Interest",
       desc: "Machine Learning, Image Processing, Computer Networking",
     },
     {
-      img: "../../../public/skill.png",
+      img: "/skill.png",
       title: "Skills and Expertise",
       desc: "C, C++, Pyhton, Machine Learning, Natural Language Processing, Computer Networking, Web Application Development",
     },

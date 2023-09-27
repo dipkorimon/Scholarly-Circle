@@ -7,7 +7,7 @@ const Post = () => {
   const [institutes] = useState([
     {
       id: 1,
-      profilePhoto: "../../../public/profile.jpg",
+      profilePhoto: "/profile.jpg",
       userName: "Bjarne Stroustrup",
       title: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
       authors: "Unknown name",
@@ -18,7 +18,7 @@ const Post = () => {
     },
     {
       id: 2,
-      profilePhoto: "../../../public/profile.jpg",
+      profilePhoto: "/profile.jpg",
       userName: "Bjarne Stroustrup",
       title: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
       authors: "Unknown name",
@@ -29,7 +29,7 @@ const Post = () => {
     },
     {
       id: 3,
-      profilePhoto: "../../../public/profile.jpg",
+      profilePhoto: "/profile.jpg",
       userName: "Bjarne Stroustrup",
       title: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
       authors: "Unknown name",
@@ -40,7 +40,7 @@ const Post = () => {
     },
     {
       id: 4,
-      profilePhoto: "../../../public/profile.jpg",
+      profilePhoto: "/profile.jpg",
       userName: "Bjarne Stroustrup",
       title: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
       authors: "Unknown name",
@@ -51,7 +51,7 @@ const Post = () => {
     },
     {
       id: 4,
-      profilePhoto: "../../../public/profile.jpg",
+      profilePhoto: "/profile.jpg",
       userName: "Bjarne Stroustrup",
       title: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
       authors: "Unknown name",
@@ -62,7 +62,7 @@ const Post = () => {
     },
     {
       id: 4,
-      profilePhoto: "../../../public/profile.jpg",
+      profilePhoto: "/profile.jpg",
       userName: "Bjarne Stroustrup",
       title: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
       authors: "Unknown name",
@@ -73,7 +73,7 @@ const Post = () => {
     },
     {
       id: 4,
-      profilePhoto: "../../../public/profile.jpg",
+      profilePhoto: "/profile.jpg",
       userName: "Bjarne Stroustrup",
       title: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
       authors: "Unknown name",
@@ -84,7 +84,7 @@ const Post = () => {
     },
     {
       id: 4,
-      profilePhoto: "../../../public/profile.jpg",
+      profilePhoto: "/profile.jpg",
       userName: "Bjarne Stroustrup",
       title: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
       authors: "Unknown name",

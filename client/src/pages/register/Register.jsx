@@ -30,10 +30,6 @@ const Register = () => {
         </label>
         <input type="text" required />
         <label htmlFor="">
-          Department <span>*</span>
-        </label>
-        <input type="text" required />
-        <label htmlFor="">
           Current position <span>*</span>
         </label>
         <input type="text" required />

@@ -1,6 +1,6 @@
 import React from "react";
 import "./navBar.scss";
-import Photo from "../../../public/profile.jpg";
+import Photo from "/profile.jpg";
 
 const NavBar = () => {
   return (
@@ -8,7 +8,7 @@ const NavBar = () => {
       <div className="navBar">
         <div className="left">
           <a href="/">
-            <img src="./../../public/logo.png" alt="" />
+            <img src="/logo.png" alt="" />
           </a>
           <a href="/">ScholarlyCircle</a>
         </div>
