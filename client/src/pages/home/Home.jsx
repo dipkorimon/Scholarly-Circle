@@ -15,10 +15,10 @@ const Home = () => {
         <div className="search">
           <div className="icon">
             <SearchIcon sx={{ color: "rgb(229, 18, 46)" }} />
-            <p>Search with Category, Tags or Author</p>
+            <p>Search with Category, Session or Author</p>
           </div>
           <form action="">
-            <input type="text" placeholder="Ex: Category, Tags, Author" />
+            <input type="text" placeholder="Ex: Category, Session, Author" />
           </form>
         </div>
         <div className="post">

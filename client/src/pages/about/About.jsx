@@ -24,7 +24,7 @@ const About = () => {
             </li>
             <li>
               A search tool: All users can filter all kinds of research papers
-              category-wise and can search research papers by their tags and
+              category-wise and can search research papers by sessions and their
               categories added by supervisors.
             </li>
             <li>
@@ -33,7 +33,7 @@ const About = () => {
             </li>
             <li>
               A profile page: All users can create a profile page to showcase
-              their research interest and experience.
+              their research interests and experience.
             </li>
             <li>
               Citation: A “citation” is the way you tell your readers that

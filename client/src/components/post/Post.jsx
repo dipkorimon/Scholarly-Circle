@@ -11,7 +11,8 @@ const Post = () => {
       userName: "Bjarne Stroustrup",
       title: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
       authors: "Unknown name",
-      tags: "Machine Learning",
+      citations: "10",
+      session: "2017-2018",
       category: "Natural Language Processing",
       desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores tempore vitae omnis nobis quae praesentium esse excepturi a placeat aspernatur.",
       date: "10 months",
@@ -22,7 +23,8 @@ const Post = () => {
       userName: "Bjarne Stroustrup",
       title: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
       authors: "Unknown name",
-      tags: "Natural Languge Processing",
+      citations: "10",
+      session: "2017-2018",
       category: "Artificial Intelligence",
       desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores tempore vitae omnis nobis quae praesentium esse excepturi a placeat aspernatur.",
       date: "10 months",
@@ -33,7 +35,8 @@ const Post = () => {
       userName: "Bjarne Stroustrup",
       title: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
       authors: "Unknown name",
-      tags: "Computer Networking",
+      citations: "10",
+      session: "2017-2018",
       category: "Artificial Intelligence",
       desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores tempore vitae omnis nobis quae praesentium esse excepturi a placeat aspernatur.",
       date: "10 months",
@@ -44,7 +47,8 @@ const Post = () => {
       userName: "Bjarne Stroustrup",
       title: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
       authors: "Unknown name",
-      tags: "Computer Networking",
+      citations: "10",
+      session: "2017-2018",
       category: "Artificial Intelligence",
       desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores tempore vitae omnis nobis quae praesentium esse excepturi a placeat aspernatur.",
       date: "10 months",
@@ -55,7 +59,8 @@ const Post = () => {
       userName: "Bjarne Stroustrup",
       title: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
       authors: "Unknown name",
-      tags: "Computer Networking",
+      citations: "10",
+      session: "2017-2018",
       category: "Artificial Intelligence",
       desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores tempore vitae omnis nobis quae praesentium esse excepturi a placeat aspernatur.",
       date: "10 months",
@@ -66,7 +71,8 @@ const Post = () => {
       userName: "Bjarne Stroustrup",
       title: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
       authors: "Unknown name",
-      tags: "Computer Networking",
+      citations: "10",
+      session: "2017-2018",
       category: "Artificial Intelligence",
       desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores tempore vitae omnis nobis quae praesentium esse excepturi a placeat aspernatur.",
       date: "10 months",
@@ -77,7 +83,8 @@ const Post = () => {
       userName: "Bjarne Stroustrup",
       title: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
       authors: "Unknown name",
-      tags: "Computer Networking",
+      citations: "10",
+      session: "2017-2018",
       category: "Artificial Intelligence",
       desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores tempore vitae omnis nobis quae praesentium esse excepturi a placeat aspernatur.",
       date: "10 months",
@@ -88,7 +95,8 @@ const Post = () => {
       userName: "Bjarne Stroustrup",
       title: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
       authors: "Unknown name",
-      tags: "Computer Networking",
+      citations: "10",
+      session: "2017-2018",
       category: "Artificial Intelligence",
       desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores tempore vitae omnis nobis quae praesentium esse excepturi a placeat aspernatur.",
       date: "10 months",
@@ -119,9 +127,10 @@ const Post = () => {
             <h1>{item.title}</h1>
             <div className="authors">
               <span>Authors: {item.authors}</span>
+              <span>Citations: {item.citations}</span>
             </div>
-            <div className="tags">
-              <span>Tags: {item.tags}</span>
+            <div className="session-cat">
+              <span>Session: {item.session}</span>
               <span>Category: {item.category}</span>
             </div>
             <p>{item.desc}</p>
