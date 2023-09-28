@@ -11,7 +11,10 @@ const Category = () => {
       name: "Natural Language Processing",
     },
     {
-      name: "Image Processing",
+      name: "Artificial Intelligence",
+    },
+    {
+      name: "Digital Image Processing",
     },
     {
       name: "Computer Networking",
