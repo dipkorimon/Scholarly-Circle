@@ -83,21 +83,21 @@
         }
 
         :first-child {
-          font-size: 10px;
-          background-color: $yellow-bg;
-          padding: 3px;
-          border-radius: 10px;
+          font-size: 12px;
+          background-color: $soft-color;
+          padding: 5px 10px;
+          border-radius: 5px;
           font-weight: bold;
           color: $dark-color;
         }
 
         :last-child {
-          font-size: 10px;
-          background-color: $blue-bg;
-          padding: 3px;
-          border-radius: 10px;
+          font-size: 12px;
+          background-color: $soft-color;
+          padding: 5px 10px;
+          border-radius: 5px;
           font-weight: bold;
-          color: $white-color;
+          color: $dark-color;
         }
       }
 

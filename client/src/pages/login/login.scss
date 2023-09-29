@@ -47,10 +47,6 @@
       margin-top: 20px;
       font-size: 16px;
       color: $dark-color;
-
-      span {
-        color: $red-color;
-      }
     }
 
     input {
@@ -65,28 +61,30 @@
         width: 250px;
       }
     }
-  }
-  button {
-    padding: 10px;
-    margin-top: 20px;
-    width: 450px;
-    border: none;
-    border-radius: 5px;
-    background-color: $red-color;
-    color: $white-color;
-    font-weight: bold;
-    font-size: 16px;
-    margin-bottom: 20px;
 
-    @include mobile {
-      width: 250px;
-    }
+    button {
+      padding: 10px;
+      margin-top: 20px;
+      width: 450px;
+      border: none;
+      border-radius: 5px;
+      background-color: $red-color;
+      color: $white-color;
+      font-weight: bold;
+      font-size: 16px;
+      margin-bottom: 20px;
 
-    &:hover {
-      background-color: $dark-red;
-      cursor: pointer;
+      @include mobile {
+        width: 250px;
+      }
+
+      &:hover {
+        background-color: $dark-red;
+        cursor: pointer;
+      }
     }
   }
+
   .forgot {
     a {
       color: $red-color;

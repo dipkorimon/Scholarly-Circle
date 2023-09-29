@@ -116,7 +116,7 @@ const Post = () => {
               </div>
               <a href="/singlePost">
                 <EditIcon
-                  sx={{ color: "rgb(255, 230, 0)", cursor: "pointer" }}
+                  sx={{ color: "rgb(42, 52, 71)", cursor: "pointer" }}
                 />
               </a>
               <DeleteIcon
@@ -130,8 +130,8 @@ const Post = () => {
               <span>Citations: {item.citations}</span>
             </div>
             <div className="session-cat">
-              <span>Session: {item.session}</span>
-              <span>Category: {item.category}</span>
+              <span>{item.session}</span>
+              <span>{item.category}</span>
             </div>
             <p>{item.desc}</p>
             <div className="btn">
