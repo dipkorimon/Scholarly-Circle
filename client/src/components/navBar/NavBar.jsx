@@ -30,6 +30,7 @@ const NavBar = () => {
       .get("http://localhost:8800/logout")
       .then((res) => {
         location.reload(true);
+        localStorage.removeItem("login");
       })
       .catch((err) => {
         console.log(err);

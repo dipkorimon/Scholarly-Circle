@@ -23,6 +23,7 @@ const Login = () => {
         .then((res) => {
           if (res.data.Status === "Success") {
             navigate("/");
+            localStorage.setItem("login", true);
           } else {
             alert("Wrong email or password !!!");
           }

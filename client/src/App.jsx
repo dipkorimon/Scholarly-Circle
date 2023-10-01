@@ -9,6 +9,7 @@ import Login from "./pages/login/Login";
 import Register from "./pages/register/Register";
 import Profile from "./pages/profile/Profile";
 import SinglePost from "./pages/singlePost/SinglePost";
+import Protect from "./components/Protected";
 
 function App() {
   const Layout = () => {
@@ -40,11 +41,11 @@ function App() {
         },
         {
           path: "/profile",
-          element: <Profile />,
+          element: <Protect Component={Profile} />,
         },
         {
           path: "/singlePost",
-          element: <SinglePost />,
+          element: <Protect Component={SinglePost} />,
         },
       ],
     },

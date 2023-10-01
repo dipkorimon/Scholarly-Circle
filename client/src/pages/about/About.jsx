@@ -32,16 +32,8 @@ const About = () => {
               research-related posts.
             </li>
             <li>
-              A profile page: All users can create a profile page to showcase
-              their research interests and experience.
-            </li>
-            <li>
-              Citation: A “citation” is the way you tell your readers that
-              certain material in your work came from another source. It also
-              gives your readers the information necessary to find the location
-              details of that source on the reference or Works Cited page. All
-              users can give citations in any research papers that are helpful
-              for them.
+              Download research papers: All users can download the research
+              papers that they need.
             </li>
           </ul>
         </div>
