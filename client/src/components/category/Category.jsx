@@ -71,7 +71,7 @@ const Category = () => {
       </div>
       <div className="category-list">
         {category.map((item, index) => (
-          <button href="">
+          <button>
             {item.name}
             <br />
           </button>

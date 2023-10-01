@@ -54,12 +54,13 @@ const NavBar = () => {
         <div className="right">
           {auth ? (
             <div className="out">
-              <a href="/profile" className="name">
+              <p href="/profile" className="name">
                 {name}
-              </a>
+              </p>
+              <a href="/singlePost">Post</a>
               <button onClick={handleLogout} className="icon">
                 <LogoutIcon
-                  sx={{ color: "rgb(229, 18, 46)", cursor: "pointer" }}
+                  sx={{ color: "rgb(255, 255, 255)", cursor: "pointer" }}
                 />
               </button>
             </div>

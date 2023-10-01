@@ -64,56 +64,6 @@ const Register = () => {
           onChange={(e) => setValues({ ...values, password: e.target.value })}
         />
         {errors.password && <span>{errors.password}</span>}
-        <label htmlFor="">Skills and expertise</label>
-        <input
-          type="text"
-          name="skills_and_expertise"
-          onChange={(e) =>
-            setValues({ ...values, skills_and_expertise: e.target.value })
-          }
-        />
-        <label htmlFor="">Research interest</label>
-        <input
-          type="text"
-          name="research_interest"
-          onChange={(e) =>
-            setValues({ ...values, research_interest: e.target.value })
-          }
-        />
-        <label htmlFor="">Current position</label>
-        <input
-          type="text"
-          name="current_position"
-          onChange={(e) =>
-            setValues({ ...values, current_position: e.target.value })
-          }
-        />
-        <label htmlFor="">LinkedIn profile</label>
-        <input
-          type="text"
-          name="linkedin_profile"
-          onChange={(e) =>
-            setValues({ ...values, linkedin_profile: e.target.value })
-          }
-        />
-        <label htmlFor="">Location</label>
-        <input
-          type="text"
-          name="location"
-          onChange={(e) => setValues({ ...values, location: e.target.value })}
-        />
-        <label className="upload" htmlFor="file">
-          Upload Profile Photo
-        </label>
-        <input
-          style={{ display: "none" }}
-          name="profile_photo"
-          onChange={(e) =>
-            setValues({ ...values, profile_photo: e.target.value })
-          }
-          type="file"
-          id="file"
-        />
         <div className="pass">
           <p>
             *Password must be a minimum of 8 characters, contain one lower case,

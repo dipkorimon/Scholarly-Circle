@@ -7,9 +7,8 @@ import About from "./pages/about/About";
 import Contact from "./pages/contact/Contact";
 import Login from "./pages/login/Login";
 import Register from "./pages/register/Register";
-import Profile from "./pages/profile/Profile";
 import SinglePost from "./pages/singlePost/SinglePost";
-import Protect from "./components/Protected";
+import Protect from "./components/Protect";
 
 function App() {
   const Layout = () => {
@@ -38,10 +37,6 @@ function App() {
         {
           path: "/contact",
           element: <Contact />,
-        },
-        {
-          path: "/profile",
-          element: <Protect Component={Profile} />,
         },
         {
           path: "/singlePost",

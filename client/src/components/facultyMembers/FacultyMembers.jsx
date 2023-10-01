@@ -89,15 +89,17 @@ const FacultyMembers = () => {
       </div>
       <div className="members-list">
         {facultyMembers.map((item, index) => (
-          <div className="info">
-            <div className="img">
-              <img src={item.photo} alt="" />
+          <a href="">
+            <div className="info">
+              <div className="img">
+                <img src={item.photo} alt="" />
+              </div>
+              <div className="name">
+                <p>{item.name}</p>
+                <span>{item.position}</span>
+              </div>
             </div>
-            <div className="name">
-              <p>{item.name}</p>
-              <span>{item.position}</span>
-            </div>
-          </div>
+          </a>
         ))}
       </div>
     </div>

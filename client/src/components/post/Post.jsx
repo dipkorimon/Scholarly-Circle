@@ -4,14 +4,13 @@ import DeleteIcon from "@mui/icons-material/Delete";
 import EditIcon from "@mui/icons-material/Edit";
 
 const Post = () => {
-  const [institutes] = useState([
+  const [posts] = useState([
     {
       id: 1,
-      profilePhoto: "/profile.jpg",
-      userName: "Bjarne Stroustrup",
+      profilePhoto: "/profile.png",
+      userName: "Supervisor Name",
       title: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
       authors: "Unknown name",
-      citations: "10",
       session: "2017-2018",
       category: "Natural Language Processing",
       desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores tempore vitae omnis nobis quae praesentium esse excepturi a placeat aspernatur.",
@@ -19,11 +18,10 @@ const Post = () => {
     },
     {
       id: 2,
-      profilePhoto: "/profile.jpg",
-      userName: "Bjarne Stroustrup",
+      profilePhoto: "/profile.png",
+      userName: "Supervisor Name",
       title: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
       authors: "Unknown name",
-      citations: "10",
       session: "2017-2018",
       category: "Artificial Intelligence",
       desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores tempore vitae omnis nobis quae praesentium esse excepturi a placeat aspernatur.",
@@ -31,11 +29,10 @@ const Post = () => {
     },
     {
       id: 3,
-      profilePhoto: "/profile.jpg",
-      userName: "Bjarne Stroustrup",
+      profilePhoto: "/profile.png",
+      userName: "Supervisor Name",
       title: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
       authors: "Unknown name",
-      citations: "10",
       session: "2017-2018",
       category: "Artificial Intelligence",
       desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores tempore vitae omnis nobis quae praesentium esse excepturi a placeat aspernatur.",
@@ -43,11 +40,10 @@ const Post = () => {
     },
     {
       id: 4,
-      profilePhoto: "/profile.jpg",
-      userName: "Bjarne Stroustrup",
+      profilePhoto: "/profile.png",
+      userName: "Supervisor Name",
       title: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
       authors: "Unknown name",
-      citations: "10",
       session: "2017-2018",
       category: "Artificial Intelligence",
       desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores tempore vitae omnis nobis quae praesentium esse excepturi a placeat aspernatur.",
@@ -55,11 +51,10 @@ const Post = () => {
     },
     {
       id: 4,
-      profilePhoto: "/profile.jpg",
-      userName: "Bjarne Stroustrup",
+      profilePhoto: "/profile.png",
+      userName: "Supervisor Name",
       title: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
       authors: "Unknown name",
-      citations: "10",
       session: "2017-2018",
       category: "Artificial Intelligence",
       desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores tempore vitae omnis nobis quae praesentium esse excepturi a placeat aspernatur.",
@@ -67,11 +62,10 @@ const Post = () => {
     },
     {
       id: 4,
-      profilePhoto: "/profile.jpg",
-      userName: "Bjarne Stroustrup",
+      profilePhoto: "/profile.png",
+      userName: "Supervisor Name",
       title: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
       authors: "Unknown name",
-      citations: "10",
       session: "2017-2018",
       category: "Artificial Intelligence",
       desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores tempore vitae omnis nobis quae praesentium esse excepturi a placeat aspernatur.",
@@ -79,11 +73,10 @@ const Post = () => {
     },
     {
       id: 4,
-      profilePhoto: "/profile.jpg",
-      userName: "Bjarne Stroustrup",
+      profilePhoto: "/profile.png",
+      userName: "Supervisor Name",
       title: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
       authors: "Unknown name",
-      citations: "10",
       session: "2017-2018",
       category: "Artificial Intelligence",
       desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores tempore vitae omnis nobis quae praesentium esse excepturi a placeat aspernatur.",
@@ -91,11 +84,10 @@ const Post = () => {
     },
     {
       id: 4,
-      profilePhoto: "/profile.jpg",
-      userName: "Bjarne Stroustrup",
+      profilePhoto: "/profile.png",
+      userName: "Supervisor Name",
       title: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
       authors: "Unknown name",
-      citations: "10",
       session: "2017-2018",
       category: "Artificial Intelligence",
       desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores tempore vitae omnis nobis quae praesentium esse excepturi a placeat aspernatur.",
@@ -105,13 +97,13 @@ const Post = () => {
 
   return (
     <div className="post">
-      {institutes.map((item, index) => (
+      {posts.map((item, index) => (
         <div className="post-item">
           <div className="desc">
             <div className="info">
               <img src={item.profilePhoto} alt="" />
               <div className="supervisor">
-                <a href="/profile">{item.userName}</a>
+                <h3>{item.userName}</h3>
                 <p>Supervisor</p>
               </div>
               <a href="/singlePost">
@@ -127,7 +119,6 @@ const Post = () => {
             <h1>{item.title}</h1>
             <div className="authors">
               <span>Authors: {item.authors}</span>
-              <span>Citations: {item.citations}</span>
             </div>
             <div className="session-cat">
               <span>{item.session}</span>
@@ -136,7 +127,6 @@ const Post = () => {
             <p>{item.desc}</p>
             <div className="btn">
               <button>Download full-text</button>
-              <button>Cite</button>
             </div>
           </div>
         </div>

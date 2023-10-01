@@ -63,67 +63,109 @@
       }
     }
 
-    input {
-      padding: 10px;
-      border: 1px solid $soft-color;
-      border-radius: 5px;
-      outline: none;
-    }
-
-    .editor {
-      height: 250px;
-      overflow: scroll;
-
-      .edit {
-        height: 300px;
-        border: none;
-      }
-    }
-
-    .btn {
+    form {
       display: flex;
-      align-items: center;
-      justify-content: space-between;
+      flex-direction: column;
+      gap: 20px;
 
       @include tablet {
         display: flex;
         flex-direction: column;
-        gap: 5px;
+        gap: 10px;
       }
 
-      p {
-        font-size: 16px;
-
-        span {
-          font-weight: bold;
-        }
-
-        @include tablet {
-          font-size: 14px;
-        }
-
-        @include mobile {
-          font-size: 12px;
-        }
-      }
-
-      button {
-        font-size: 15px;
-        font-weight: bold;
-        color: $white-color;
-        padding: 7px 20px;
+      input {
+        padding: 10px;
+        border: 1px solid $soft-color;
         border-radius: 5px;
-        background-color: $red-color;
-        border: none;
-        width: 100px;
-        cursor: pointer;
+        outline: none;
+      }
 
-        &:hover {
-          background-color: $dark-red;
+      .editor {
+        height: 250px;
+        overflow: scroll;
+
+        .edit {
+          height: 300px;
+          border: none;
+        }
+      }
+
+      .paper-upload {
+        display: flex;
+        align-items: center;
+
+        label {
+          font-size: 15px;
+          font-weight: bold;
+          text-align: center;
+          color: $red-color;
+          padding: 7px 20px;
+          border-radius: 5px;
+          background-color: $button-bg;
+          border: none;
+          width: 250px;
+          cursor: pointer;
+
+          &:hover {
+            background-color: $soft-red;
+          }
+
+          @include tablet {
+            padding: 3px 15px;
+          }
         }
 
+        input {
+          display: none;
+        }
+      }
+
+      .btn {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
         @include tablet {
-          padding: 3px 15px;
+          display: flex;
+          flex-direction: column;
+          gap: 5px;
+        }
+
+        p {
+          font-size: 16px;
+
+          span {
+            font-weight: bold;
+          }
+
+          @include tablet {
+            font-size: 14px;
+          }
+
+          @include mobile {
+            font-size: 12px;
+          }
+        }
+
+        button {
+          font-size: 15px;
+          font-weight: bold;
+          color: $white-color;
+          padding: 7px 20px;
+          border-radius: 5px;
+          background-color: $red-color;
+          border: none;
+          width: 100px;
+          cursor: pointer;
+
+          &:hover {
+            background-color: $dark-red;
+          }
+
+          @include tablet {
+            padding: 3px 15px;
+          }
         }
       }
     }

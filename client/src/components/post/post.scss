@@ -37,6 +37,7 @@
           height: 50px;
           object-fit: cover;
           border-radius: 50%;
+          border: 1px solid $soft-red;
 
           @include mobile {
             width: 40px;
@@ -44,13 +45,20 @@
           }
         }
 
-        a {
-          font-size: 18px;
-          font-weight: bold;
-          color: $dark-color;
+        .supervisor {
+          h3 {
+            font-size: 18px;
+            font-weight: bold;
+            color: $dark-color;
 
-          @include mobile {
-            font-size: 16px;
+            @include mobile {
+              font-size: 16px;
+            }
+          }
+
+          p {
+            font-size: 12px;
+            color: $dark-color;
           }
         }
 
@@ -129,26 +137,7 @@
         gap: 10px;
         margin-top: 5px;
 
-        :first-child {
-          font-size: 15px;
-          font-weight: bold;
-          padding: 7px 20px;
-          border-radius: 5px;
-          background-color: $red-color;
-          color: $white-color;
-          border: none;
-          cursor: pointer;
-
-          @include mobile {
-            padding: 3px 15px;
-          }
-
-          &:hover {
-            background-color: $dark-red;
-          }
-        }
-
-        :last-child {
+        button {
           font-size: 15px;
           font-weight: bold;
           padding: 7px 20px;

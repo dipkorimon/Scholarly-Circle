@@ -26,21 +26,10 @@ const db = mysql.createConnection({
 
 // For register new users
 app.post("/register", (req, res) => {
-  const sql =
-    "INSERT INTO users (`full_name`, `email`, `password`, `skills_and_expertise`, `research_interest`, `current_position`, `linkedin_profile`, `location`, `profile_photo`) VALUES (?)";
+  const sql = "INSERT INTO users (`full_name`, `email`, `password`) VALUES (?)";
   bcrypt.hash(req.body.password.toString(), salt, (err, hash) => {
     if (err) return res.json({ Error: "Error for hashing password" });
-    const values = [
-      req.body.full_name,
-      req.body.email,
-      hash,
-      req.body.skills_and_expertise,
-      req.body.research_interest,
-      req.body.current_position,
-      req.body.linkedin_profile,
-      req.body.location,
-      req.body.profile_photo,
-    ];
+    const values = [req.body.full_name, req.body.email, hash];
     db.query(sql, [values], (err, data) => {
       if (err) {
         return res.json({ Error: "Inserting data error in server" });

@@ -4,10 +4,29 @@ import ReactQuill from "react-quill";
 import "react-quill/dist/quill.snow.css";
 import Select from "react-select";
 import makeAnimated from "react-select/animated";
+import { useNavigate } from "react-router-dom";
+import axios from "axios";
 
 const animatedComponents = makeAnimated();
 
 const SinglePost = () => {
+  const [values, setValues] = useState({
+    full_name: "",
+    email: "",
+    password: "",
+    skills_and_expertise: "",
+    research_interest: "",
+    current_position: "",
+    linkedin_profile: "",
+    location: "",
+    profile_photo: "",
+  });
+
+  const navigate = useNavigate();
+  const [errors, setErrors] = useState({});
+
+  const handleSubmit = (event) => {};
+
   const deptOptions = [
     {
       value: "computer science and telecommunication engineering",
@@ -147,85 +166,96 @@ const SinglePost = () => {
           category also. <br />
           <span>Note: This page is only for supervisors.</span>
         </p>
-        <input type="text" placeholder="Title" />
-        <input
-          type="text"
-          placeholder="Authors Name (Ex: Author_1, Author_2)"
-        />
-        <Select
-          options={deptOptions}
-          defaultValue={department}
-          placeholder="Select Department"
-          onChange={setDepartment}
-          components={animatedComponents}
-          isMulti
-          isSearchable
-          noOptionsMessage={() => "No department available"}
-          styles={{
-            placeholder: (baseStyles, state) => ({
-              ...baseStyles,
-              fontSize: 14,
-            }),
-            control: (baseStyles, state) => ({
-              ...baseStyles,
-              boxShadow: "none",
-            }),
-          }}
-        />
-        <Select
-          options={sessionOptions}
-          defaultValue={session}
-          placeholder="Select Session"
-          onChange={setSession}
-          components={animatedComponents}
-          isMulti
-          isSearchable
-          noOptionsMessage={() => "No session available"}
-          styles={{
-            placeholder: (baseStyles, state) => ({
-              ...baseStyles,
-              fontSize: 14,
-            }),
-            control: (baseStyles, state) => ({
-              ...baseStyles,
-              boxShadow: "none",
-            }),
-          }}
-        />
-        <Select
-          options={categoryOptions}
-          defaultValue={category}
-          placeholder="Select Category"
-          onChange={setCategory}
-          components={animatedComponents}
-          isMulti
-          isSearchable
-          noOptionsMessage={() => "No category available"}
-          styles={{
-            placeholder: (baseStyles, state) => ({
-              ...baseStyles,
-              fontSize: 14,
-            }),
-            control: (baseStyles, state) => ({
-              ...baseStyles,
-              boxShadow: "none",
-            }),
-          }}
-        />
-        <div className="editor">
-          <ReactQuill
-            className="edit"
-            theme="snow"
-            value={value}
-            onChange={setValue}
+        <form action="" onSubmit={handleSubmit}>
+          <input type="text" placeholder="Title" />
+          <input
+            type="text"
+            placeholder="Supervisor Name (Ex: Supervisor Name)"
           />
-        </div>
-        <div className="btn">
-          <p>
-            <span>Status:</span> Public
-          </p>
-          <button>Publish</button>
-        </div>
+          <input
+            type="text"
+            placeholder="Authors Name (Ex: Author_1, Author_2)"
+          />
+
+          <Select
+            options={deptOptions}
+            defaultValue={department}
+            placeholder="Select Department"
+            onChange={setDepartment}
+            components={animatedComponents}
+            isMulti
+            isSearchable
+            noOptionsMessage={() => "No department available"}
+            styles={{
+              placeholder: (baseStyles, state) => ({
+                ...baseStyles,
+                fontSize: 14,
+              }),
+              control: (baseStyles, state) => ({
+                ...baseStyles,
+                boxShadow: "none",
+              }),
+            }}
+          />
+          <Select
+            options={sessionOptions}
+            defaultValue={session}
+            placeholder="Select Session"
+            onChange={setSession}
+            components={animatedComponents}
+            isMulti
+            isSearchable
+            noOptionsMessage={() => "No session available"}
+            styles={{
+              placeholder: (baseStyles, state) => ({
+                ...baseStyles,
+                fontSize: 14,
+              }),
+              control: (baseStyles, state) => ({
+                ...baseStyles,
+                boxShadow: "none",
+              }),
+            }}
+          />
+          <Select
+            options={categoryOptions}
+            defaultValue={category}
+            placeholder="Select Category"
+            onChange={setCategory}
+            components={animatedComponents}
+            isMulti
+            isSearchable
+            noOptionsMessage={() => "No category available"}
+            styles={{
+              placeholder: (baseStyles, state) => ({
+                ...baseStyles,
+                fontSize: 14,
+              }),
+              control: (baseStyles, state) => ({
+                ...baseStyles,
+                boxShadow: "none",
+              }),
+            }}
+          />
+          <div className="editor">
+            <ReactQuill
+              className="edit"
+              theme="snow"
+              value={value}
+              onChange={setValue}
+            />
+          </div>
+          <div className="paper-upload">
+            <label htmlFor="file">Upload research paper</label>
+            <input type="file" id="file" />
+          </div>
+          <div className="btn">
+            <p>
+              <span>Status:</span> Public
+            </p>
+            <button type="submit">Publish</button>
+          </div>
+        </form>
       </div>
     </div>
   );
