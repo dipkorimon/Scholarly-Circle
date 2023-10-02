@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import "./navBar.scss";
 import axios from "axios";
 import LogoutIcon from "@mui/icons-material/Logout";
+import Profile from "/profile.png";
 
 const NavBar = () => {
   const [auth, setAuth] = useState(false);
@@ -54,6 +55,7 @@ const NavBar = () => {
         <div className="right">
           {auth ? (
             <div className="out">
+              <img src={Profile} alt="" />
               <p href="/profile" className="name">
                 {name}
               </p>

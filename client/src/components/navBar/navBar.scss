@@ -171,15 +171,20 @@
         align-items: center;
         gap: 10px;
 
+        img {
+          width: 40px;
+          height: 40px;
+          border-radius: 50%;
+          object-fit: cover;
+          border: 1px solid $soft-red;
+        }
+
         .name {
           border: none;
           background: none;
           font-size: 18px;
           font-weight: bold;
           color: $dark-color;
-          border-left: 5px solid $red-color;
-          border-radius: 50%;
-          padding-left: 10px;
 
           @include mobile {
             font-size: 14px;
