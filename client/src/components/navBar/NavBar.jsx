@@ -55,18 +55,26 @@ const NavBar = () => {
         <div className="right">
           {auth ? (
             <div className="out">
-              <img src={Profile} alt="" />
-              <p href="/profile" className="name">
-                {name}
-              </p>
-              <a href="/addSupervisor">Add Supervisor</a>
-              <a href="/addAuthor">Add Author</a>
-              <a href="/addReport">Add Report</a>
-              <button onClick={handleLogout} className="icon">
-                <LogoutIcon
-                  sx={{ color: "rgb(255, 255, 255)", cursor: "pointer" }}
-                />
-              </button>
+              <div className="profile">
+                <img src={Profile} alt="" />
+                <p href="/profile" className="name">
+                  {name}
+                </p>
+              </div>
+              <div className="add-btn">
+                <div className="add">
+                  <a href="/addSupervisor">Add Supervisor</a>
+                  <a href="/addAuthor">Add Author</a>
+                  <a href="/addReport">Add Report</a>
+                </div>
+                <div className="button">
+                  <button onClick={handleLogout} className="icon">
+                    <LogoutIcon
+                      sx={{ color: "rgb(255, 255, 255)", cursor: "pointer" }}
+                    />
+                  </button>
+                </div>
+              </div>
             </div>
           ) : (
             <div className="in-up">

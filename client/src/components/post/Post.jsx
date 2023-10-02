@@ -99,35 +99,29 @@ const Post = () => {
     <div className="post">
       {posts.map((item, index) => (
         <div className="post-item">
-          <div className="desc">
-            <div className="info">
-              <img src={item.profilePhoto} alt="" />
-              <div className="supervisor">
-                <h3>{item.userName}</h3>
-                <p>Supervisor</p>
-              </div>
-              <a href="/singlePost">
-                <EditIcon
-                  sx={{ color: "rgb(42, 52, 71)", cursor: "pointer" }}
-                />
-              </a>
-              <DeleteIcon
-                sx={{ color: "rgb(229, 18, 46)", cursor: "pointer" }}
-              />
-              <p>Published {item.date} ago.</p>
+          <div className="info">
+            <img src={item.profilePhoto} alt="" />
+            <div className="sup">
+              <p className="sup-name">{item.userName}</p>
+              <p>Supervisor</p>
             </div>
-            <h1>{item.title}</h1>
-            <div className="authors">
-              <span>Authors: {item.authors}</span>
-            </div>
-            <div className="session-cat">
-              <span>{item.session}</span>
-              <span>{item.category}</span>
-            </div>
+            <EditIcon sx={{ color: "rgb(42, 52, 71)", cursor: "pointer" }} />
+            <DeleteIcon sx={{ color: "rgb(229, 18, 46)", cursor: "pointer" }} />
+            <p>Published {item.date} ago.</p>
+          </div>
+          <div className="title">
+            <p>{item.title}</p>
+          </div>
+          <div className="abstract">
             <p>{item.desc}</p>
-            <div className="btn">
-              <button>Download full-text</button>
-            </div>
+          </div>
+          <div className="session">
+            <p>{item.session}</p>
+            <p>{item.category}</p>
+          </div>
+          <div className="buttons">
+            <button>Download Full-Text</button>
+            <button>Download Presentation</button>
           </div>
         </div>
       ))}

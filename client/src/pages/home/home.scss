@@ -11,16 +11,14 @@
 
   @include mobile {
     padding: 5px 5px;
-  }
-
-  @include tablet {
-    padding: 5px 5px;
+    margin-top: 188px;
   }
 
   @include tablet {
     display: flex;
     flex-direction: column;
-    margin-top: 122px;
+    margin-top: 165px;
+    padding: 5px 5px;
   }
 
   .left-sidebar {
@@ -62,8 +60,12 @@
           color: $dark-color;
           font-weight: bold;
 
-          @include mobile {
+          @include tablet {
             font-size: 14px;
+          }
+
+          @include mobile {
+            font-size: 12px;
           }
         }
       }

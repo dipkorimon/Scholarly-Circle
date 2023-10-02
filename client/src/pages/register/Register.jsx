@@ -116,7 +116,7 @@ const Register = () => {
           name="about"
           onChange={(e) => setValues({ ...values, about: e.target.value })}
         />
-        <div className="paper-upload">
+        <div className="photo-upload">
           <label htmlFor="file">Upload photo</label>
           <input
             type="file"
