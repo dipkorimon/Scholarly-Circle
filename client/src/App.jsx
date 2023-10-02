@@ -7,9 +7,10 @@ import About from "./pages/about/About";
 import Contact from "./pages/contact/Contact";
 import Login from "./pages/login/Login";
 import Register from "./pages/register/Register";
-import SinglePost from "./pages/singlePost/SinglePost";
+import AddReport from "./pages/addReport/AddReport";
+import AddSupervisor from "./pages/addSupervisor/AddSupervisor";
+import AddAuthor from "./pages/addAuthor/AddAuthor";
 import Protect from "./components/Protect";
-import FacultyMembers from "./pages/facultyMembers/FacultyMembers";
 
 function App() {
   const Layout = () => {
@@ -40,12 +41,16 @@ function App() {
           element: <Contact />,
         },
         {
-          path: "/facultyMembers",
-          element: <FacultyMembers />,
+          path: "/addReport",
+          element: <Protect Component={AddReport} />,
         },
         {
-          path: "/singlePost",
-          element: <Protect Component={SinglePost} />,
+          path: "/addSupervisor",
+          element: <Protect Component={AddSupervisor} />,
+        },
+        {
+          path: "/addAuthor",
+          element: <Protect Component={AddAuthor} />,
         },
       ],
     },

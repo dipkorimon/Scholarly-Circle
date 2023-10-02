@@ -132,12 +132,6 @@ const Register = () => {
             characters #?!,.@$ %^&*_()=+-
           </p>
         </div>
-        <div className="checkbox">
-          <input type="checkbox" /> I understand and agree to the terms of use
-          and privacy policy. <br />
-          <input type="checkbox" /> Please send me occasional Scholarly Circle
-          news and updates.
-        </div>
         <button type="submit">Sign up</button>
       </form>
       <div className="sign">
