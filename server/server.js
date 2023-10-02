@@ -24,12 +24,25 @@ const db = mysql.createConnection({
   database: "scholarly_circle",
 });
 
-// For register new users
+// For register
 app.post("/register", (req, res) => {
-  const sql = "INSERT INTO users (`full_name`, `email`, `password`) VALUES (?)";
+  const sql =
+    "INSERT INTO chairman (`full_name`, `email`, `password`, `current_position`, `phd`, `phone`, `blood_group`, `joining_date`, `research_interests`, `about`, `photo`) VALUES (?)";
   bcrypt.hash(req.body.password.toString(), salt, (err, hash) => {
     if (err) return res.json({ Error: "Error for hashing password" });
-    const values = [req.body.full_name, req.body.email, hash];
+    const values = [
+      req.body.full_name,
+      req.body.email,
+      hash,
+      req.body.current_position,
+      req.body.phd,
+      req.body.phone,
+      req.body.blood_group,
+      req.body.joining_date,
+      req.body.research_interests,
+      req.body.about,
+      req.body.photo,
+    ];
     db.query(sql, [values], (err, data) => {
       if (err) {
         return res.json({ Error: "Inserting data error in server" });
@@ -39,9 +52,9 @@ app.post("/register", (req, res) => {
   });
 });
 
-// For login existing users
+// For login
 app.post("/login", (req, res) => {
-  const sql = "SELECT * FROM users WHERE email = ?";
+  const sql = "SELECT * FROM chairman WHERE email = ?";
   db.query(sql, [req.body.email], (err, data) => {
     if (err) {
       return res.json({ Error: "Login error in server" });
@@ -70,7 +83,7 @@ app.post("/login", (req, res) => {
   });
 });
 
-// For users login
+// For verify
 const verifyUser = (req, res, next) => {
   const token = req.cookies.token;
   if (!token) {
@@ -91,11 +104,13 @@ app.get("/", verifyUser, (req, res) => {
   return res.json({ Status: "Success", full_name: req.name });
 });
 
-// For users logout
+// For logout
 app.get("/logout", (req, res) => {
   res.clearCookie("token");
   return res.json({ Status: "Success" });
 });
+
+// For post an item
 
 app.listen(8800, () => {
   console.log("Connected");

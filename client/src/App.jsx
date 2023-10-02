@@ -9,6 +9,7 @@ import Login from "./pages/login/Login";
 import Register from "./pages/register/Register";
 import SinglePost from "./pages/singlePost/SinglePost";
 import Protect from "./components/Protect";
+import FacultyMembers from "./pages/facultyMembers/FacultyMembers";
 
 function App() {
   const Layout = () => {
@@ -37,6 +38,10 @@ function App() {
         {
           path: "/contact",
           element: <Contact />,
+        },
+        {
+          path: "/facultyMembers",
+          element: <FacultyMembers />,
         },
         {
           path: "/singlePost",

@@ -9,12 +9,14 @@ const Register = () => {
     full_name: "",
     email: "",
     password: "",
-    skills_and_expertise: "",
-    research_interest: "",
     current_position: "",
-    linkedin_profile: "",
-    location: "",
-    profile_photo: "",
+    phd: "",
+    phone: "",
+    blood_group: "",
+    joining_date: "",
+    research_interests: "",
+    about: "",
+    photo: "",
   });
 
   const navigate = useNavigate();
@@ -64,6 +66,65 @@ const Register = () => {
           onChange={(e) => setValues({ ...values, password: e.target.value })}
         />
         {errors.password && <span>{errors.password}</span>}
+        <label htmlFor="password">Current position</label>
+        <input
+          type="text"
+          name="current_position"
+          onChange={(e) =>
+            setValues({ ...values, current_position: e.target.value })
+          }
+        />
+        <label htmlFor="password">ph.d (University name)</label>
+        <input
+          type="text"
+          name="phd"
+          onChange={(e) => setValues({ ...values, phd: e.target.value })}
+        />
+        <label htmlFor="password">Phone</label>
+        <input
+          type="text"
+          name="phone"
+          onChange={(e) => setValues({ ...values, phone: e.target.value })}
+        />
+        <label htmlFor="password">Blood group</label>
+        <input
+          type="text"
+          name="blood_group"
+          onChange={(e) =>
+            setValues({ ...values, blood_group: e.target.value })
+          }
+        />
+        <label htmlFor="password">Joining date</label>
+        <input
+          type="date"
+          name="joining_date"
+          onChange={(e) =>
+            setValues({ ...values, joining_date: e.target.value })
+          }
+        />
+        <label htmlFor="password">Research interests</label>
+        <input
+          type="text"
+          name="research_interests"
+          onChange={(e) =>
+            setValues({ ...values, research_interests: e.target.value })
+          }
+        />
+        <label htmlFor="password">About</label>
+        <input
+          type="text"
+          name="about"
+          onChange={(e) => setValues({ ...values, about: e.target.value })}
+        />
+        <div className="paper-upload">
+          <label htmlFor="file">Upload photo</label>
+          <input
+            type="file"
+            id="file"
+            name="photo"
+            onChange={(e) => setValues({ ...values, photo: e.target.value })}
+          />
+        </div>
         <div className="pass">
           <p>
             *Password must be a minimum of 8 characters, contain one lower case,

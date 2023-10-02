@@ -60,6 +60,37 @@
       }
     }
 
+    .paper-upload {
+      display: flex;
+      align-items: center;
+
+      label {
+        font-size: 15px;
+        font-weight: bold;
+        text-align: center;
+        color: $red-color;
+        padding: 7px 20px;
+        border-radius: 5px;
+        background-color: $button-bg;
+        border: none;
+        width: 450px;
+        cursor: pointer;
+
+        &:hover {
+          background-color: $soft-red;
+        }
+
+        @include tablet {
+          width: 250px;
+          padding: 3px 15px;
+        }
+      }
+
+      input {
+        display: none;
+      }
+    }
+
     .pass {
       width: 450px;
       margin-top: 20px;
