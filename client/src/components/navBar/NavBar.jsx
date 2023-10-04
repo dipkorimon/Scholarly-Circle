@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import "./navBar.scss";
 import axios from "axios";
-import Profile from "/profile.png";
 import SupervisorAccountIcon from "@mui/icons-material/SupervisorAccount";
 import PersonIcon from "@mui/icons-material/Person";
 import ArticleIcon from "@mui/icons-material/Article";
@@ -20,6 +19,7 @@ const NavBar = () => {
         if (res.data.Status === "Success") {
           setAuth(true);
           setName(res.data.full_name);
+          setPhoto(res.data.photo);
         } else {
           setAuth(false);
           setMessage(res.data.Error);
@@ -58,7 +58,7 @@ const NavBar = () => {
         <div className="right">
           {auth ? (
             <div className="profile">
-              <img src={Profile} alt="" />
+              <img src="" alt="" />
               <button className="name">{name}</button>
               <div id="drop-down">
                 <a href="/addSupervisor">

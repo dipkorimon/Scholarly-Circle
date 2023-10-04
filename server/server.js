@@ -24,7 +24,7 @@ const db = mysql.createConnection({
   database: "scholarly_circle",
 });
 
-// For register
+// For chairman register
 app.post("/register", (req, res) => {
   const sql =
     "INSERT INTO chairman (`full_name`, `email`, `password`, `current_position`, `phd`, `phone`, `blood_group`, `joining_date`, `research_interests`, `about`, `photo`) VALUES (?)";
@@ -52,7 +52,7 @@ app.post("/register", (req, res) => {
   });
 });
 
-// For login
+// For chairman login
 app.post("/login", (req, res) => {
   const sql = "SELECT * FROM chairman WHERE email = ?";
   db.query(sql, [req.body.email], (err, data) => {
@@ -83,7 +83,7 @@ app.post("/login", (req, res) => {
   });
 });
 
-// For verify
+// For verify account
 const verifyUser = (req, res, next) => {
   const token = req.cookies.token;
   if (!token) {
