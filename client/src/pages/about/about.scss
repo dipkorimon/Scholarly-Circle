@@ -7,7 +7,12 @@
 
   @include tablet {
     padding: 5px 10px;
-    margin-top: 122px;
+    margin-top: 175px;
+  }
+
+  @include mobile {
+    padding: 1px 10px;
+    margin-top: 175px;
   }
 
   .about-page {
