@@ -1,0 +1,111 @@
+@import "../../styles/global.scss";
+@import "../../styles/variables.scss";
+
+.welcome {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 20px;
+
+  @include tablet {
+    margin-top: 10px;
+  }
+
+  @include mobile {
+    margin-top: 10px;
+  }
+
+  h1 {
+    font-size: 40px;
+    color: $dark-color;
+    text-align: center;
+
+    @include tablet {
+      font-size: 30px;
+    }
+
+    @include mobile {
+      font-size: 20px;
+    }
+  }
+
+  .about {
+    display: flex;
+    flex-direction: column;
+
+    p {
+      font-size: 20px;
+      color: $dark-color;
+      text-align: center;
+      font-weight: bold;
+
+      @include tablet {
+        font-size: 18px;
+      }
+
+      @include mobile {
+        font-size: 16px;
+      }
+    }
+  }
+
+  .explore {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+
+    a {
+      font-size: 16px;
+      font-weight: bold;
+      color: $white-color;
+      background-color: $red-color;
+      padding: 10px 20px;
+      border-radius: 5px;
+      outline: none;
+      border: none;
+      cursor: pointer;
+
+      &:hover {
+        background-color: $dark-red;
+      }
+
+      @include mobile {
+        font-size: 10px;
+        padding: 3px 15px;
+      }
+
+      @include tablet {
+        padding: 3px 15px;
+      }
+    }
+  }
+
+  .photo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+
+    img {
+      width: 600px;
+      height: 250px;
+      object-fit: cover;
+    }
+  }
+
+  p {
+    font-size: 16px;
+    color: $dark-color;
+    text-align: center;
+    font-weight: bold;
+
+    @include tablet {
+      font-size: 14px;
+    }
+
+    @include mobile {
+      font-size: 12px;
+    }
+  }
+}

@@ -1,0 +1,24 @@
+@import "../../styles/global.scss";
+@import "../../styles/variables.scss";
+
+.carousel {
+  display: flex;
+  gap: 20px;
+  border-radius: 5px;
+
+  img {
+    width: 250px;
+    height: 200px;
+    object-fit: cover;
+
+    @include tablet {
+      width: 200px;
+      height: 150px;
+    }
+
+    @include mobile {
+      width: 150px;
+      height: 100px;
+    }
+  }
+}

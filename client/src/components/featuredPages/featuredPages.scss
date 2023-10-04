@@ -1,0 +1,209 @@
+@import "../../styles/global.scss";
+@import "../../styles/variables.scss";
+
+.featuredPages {
+  h1 {
+    font-size: 30px;
+    color: $dark-color;
+    text-align: center;
+    margin-bottom: 20px;
+
+    @include tablet {
+      font-size: 25px;
+    }
+
+    @include mobile {
+      font-size: 20px;
+    }
+  }
+
+  .pages {
+    display: flex;
+    gap: 20px;
+    padding: 0px 50px;
+
+    @include tablet {
+      padding: 0 20px;
+    }
+
+    @include mobile {
+      display: flex;
+      flex-direction: column;
+      padding: 0 20px;
+    }
+
+    .left {
+      flex: 1;
+
+      .members {
+        display: flex;
+        align-items: center;
+        gap: 5px;
+
+        h3 {
+          font-size: 22px;
+          color: $dark-color;
+
+          @include tablet {
+            font-size: 20px;
+          }
+
+          @include mobile {
+            font-size: 18px;
+          }
+        }
+      }
+
+      p {
+        font-size: 18px;
+        color: $dark-color;
+
+        @include tablet {
+          font-size: 16px;
+        }
+
+        @include mobile {
+          font-size: 14px;
+        }
+      }
+
+      .link {
+        color: $red-color;
+        display: flex;
+        align-items: center;
+        gap: 5px;
+        margin-top: 10px;
+
+        a {
+          color: $red-color;
+          font-weight: bold;
+          font-size: 16px;
+
+          @include tablet {
+            font-size: 14px;
+          }
+
+          @include mobile {
+            font-size: 12px;
+          }
+        }
+      }
+    }
+
+    .middle {
+      flex: 1;
+
+      .authors {
+        display: flex;
+        align-items: center;
+        gap: 5px;
+
+        h3 {
+          font-size: 22px;
+          color: $dark-color;
+
+          @include tablet {
+            font-size: 20px;
+          }
+
+          @include mobile {
+            font-size: 18px;
+          }
+        }
+      }
+
+      p {
+        font-size: 18px;
+        color: $dark-color;
+
+        @include tablet {
+          font-size: 16px;
+        }
+
+        @include mobile {
+          font-size: 14px;
+        }
+      }
+
+      .link {
+        color: $red-color;
+        display: flex;
+        align-items: center;
+        gap: 5px;
+        margin-top: 10px;
+
+        a {
+          color: $red-color;
+          font-weight: bold;
+          font-size: 16px;
+
+          @include tablet {
+            font-size: 14px;
+          }
+
+          @include mobile {
+            font-size: 12px;
+          }
+        }
+      }
+    }
+
+    .right {
+      flex: 1;
+
+      .reports {
+        display: flex;
+        align-items: center;
+        gap: 5px;
+
+        h3 {
+          font-size: 22px;
+          color: $dark-color;
+
+          @include tablet {
+            font-size: 20px;
+          }
+
+          @include mobile {
+            font-size: 18px;
+          }
+        }
+      }
+
+      p {
+        font-size: 18px;
+        color: $dark-color;
+
+        @include tablet {
+          font-size: 16px;
+        }
+
+        @include mobile {
+          font-size: 14px;
+        }
+      }
+
+      .link {
+        color: $red-color;
+        display: flex;
+        align-items: center;
+        gap: 5px;
+        margin-top: 10px;
+
+        a {
+          color: $red-color;
+          font-weight: bold;
+          font-size: 16px;
+
+          @include tablet {
+            font-size: 14px;
+          }
+
+          @include mobile {
+            font-size: 12px;
+          }
+        }
+      }
+    }
+  }
+}

@@ -5,8 +5,7 @@
   display: flex;
   justify-content: space-around;
   text-align: center;
-  padding: 10px 20px;
-  background-color: $soft-color;
+  padding: 10px 10px;
 
   @include tablet {
     display: flex;

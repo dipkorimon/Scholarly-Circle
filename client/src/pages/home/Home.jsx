@@ -1,32 +1,29 @@
 import React, { useState } from "react";
 import "./home.scss";
-import Category from "../../components/category/Category.jsx";
-import Post from "../../components/post/Post";
-import SearchIcon from "@mui/icons-material/Search";
-import FacultyMembers from "../../components/facultyMembers/FacultyMembers";
+import ScrollCarousel from "../../components/scrollCarouselComponent/ScrollCarouselComponent";
+import Welcome from "../../components/welcome/Welcome";
+import About from "../../components/about/About";
+import FeaturedPages from "../../components/featuredPages/FeaturedPages";
+import Contact from "../../components/contact/Contact";
 
 const Home = () => {
   return (
     <div className="home">
-      <div className="left-sidebar">
-        <Category />
+      <div className="welcome">
+        <Welcome />
       </div>
-      <div className="middle">
-        <div className="search">
-          <div className="icon">
-            <SearchIcon sx={{ color: "rgb(229, 18, 46)" }} />
-            <p>Search with Category, Session or Author</p>
-          </div>
-          <form action="">
-            <input type="text" placeholder="Ex: Category, Session, Author" />
-          </form>
-        </div>
-        <div className="post">
-          <Post />
-        </div>
+      <div className="pages">
+        <FeaturedPages />
       </div>
-      <div className="right-sidebar">
-        <FacultyMembers />
+      <div className="works">
+        <About />
+      </div>
+      <div className="gallery">
+        <h1>Photo Gallery</h1>
+        <ScrollCarousel />
+      </div>
+      <div className="contact">
+        <Contact />
       </div>
     </div>
   );

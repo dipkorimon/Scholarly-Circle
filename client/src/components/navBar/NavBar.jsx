@@ -1,8 +1,10 @@
 import React, { useEffect, useState } from "react";
 import "./navBar.scss";
 import axios from "axios";
-import LogoutIcon from "@mui/icons-material/Logout";
 import Profile from "/profile.png";
+import SupervisorAccountIcon from "@mui/icons-material/SupervisorAccount";
+import PersonIcon from "@mui/icons-material/Person";
+import ArticleIcon from "@mui/icons-material/Article";
 
 const NavBar = () => {
   const [auth, setAuth] = useState(false);
@@ -49,31 +51,31 @@ const NavBar = () => {
       <div className="links">
         <div className="middle">
           <a href="/">Home</a>
-          <a href="/about">About</a>
-          <a href="/contact">Contact</a>
+          <a href="/supervisors">Supervisors</a>
+          <a href="/authors">Authors</a>
+          <a href="/reports">Reports</a>
         </div>
         <div className="right">
           {auth ? (
-            <div className="out">
-              <div className="profile">
-                <img src={Profile} alt="" />
-                <p href="/profile" className="name">
-                  {name}
-                </p>
-              </div>
-              <div className="add-btn">
-                <div className="add">
-                  <a href="/addSupervisor">Add Supervisor</a>
-                  <a href="/addAuthor">Add Author</a>
-                  <a href="/addReport">Add Report</a>
-                </div>
-                <div className="button">
-                  <button onClick={handleLogout} className="icon">
-                    <LogoutIcon
-                      sx={{ color: "rgb(255, 255, 255)", cursor: "pointer" }}
-                    />
-                  </button>
-                </div>
+            <div className="profile">
+              <img src={Profile} alt="" />
+              <button className="name">{name}</button>
+              <div id="drop-down">
+                <a href="/addSupervisor">
+                  <SupervisorAccountIcon />
+                  Add Supervisor
+                </a>
+                <a href="/addAuthor">
+                  <PersonIcon />
+                  Add Author
+                </a>
+                <a href="/addReport">
+                  <ArticleIcon />
+                  Add Report
+                </a>
+                <button onClick={handleLogout} className="icon">
+                  Sign Out
+                </button>
               </div>
             </div>
           ) : (

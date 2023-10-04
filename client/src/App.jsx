@@ -3,14 +3,15 @@ import "./styles/global.scss";
 import NavBar from "./components/navBar/NavBar";
 import Footer from "./components/footer/Footer";
 import Home from "./pages/home/Home";
-import About from "./pages/about/About";
-import Contact from "./pages/contact/Contact";
 import Login from "./pages/login/Login";
 import Register from "./pages/register/Register";
 import AddReport from "./pages/addReport/AddReport";
 import AddSupervisor from "./pages/addSupervisor/AddSupervisor";
 import AddAuthor from "./pages/addAuthor/AddAuthor";
 import Protect from "./components/Protect";
+import Supervisors from "./pages/supervisors/Supervisors";
+import Authors from "./pages/authors/Authors";
+import Reports from "./pages/reports/Reports";
 
 function App() {
   const Layout = () => {
@@ -33,12 +34,16 @@ function App() {
           element: <Home />,
         },
         {
-          path: "/about",
-          element: <About />,
+          path: "/supervisors",
+          element: <Supervisors />,
         },
         {
-          path: "/contact",
-          element: <Contact />,
+          path: "/authors",
+          element: <Authors />,
+        },
+        {
+          path: "/reports",
+          element: <Reports />,
         },
         {
           path: "/addReport",

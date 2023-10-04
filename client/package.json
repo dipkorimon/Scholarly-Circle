@@ -20,7 +20,8 @@
     "react-quill": "^2.0.0",
     "react-router-dom": "^6.15.0",
     "react-select": "^5.7.5",
-    "sass": "^1.66.1"
+    "sass": "^1.66.1",
+    "scroll-carousel-react": "^1.0.0"
   },
   "devDependencies": {
     "@types/react": "^18.2.15",
