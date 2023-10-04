@@ -11,7 +11,7 @@ const FeaturedPages = () => {
       <h1>Featured Pages</h1>
       <div className="pages">
         <div className="left">
-          <div className="members">
+          <div className="members-page">
             <SupervisorAccountIcon
               style={{ fontSize: "35", color: "rgb(229, 18, 46)" }}
             />
@@ -20,22 +20,22 @@ const FeaturedPages = () => {
           <p>You can find all faculty members information here.</p>
           <div className="link">
             <a href="/supervisors">More info</a>
-            <EastIcon />
+            <EastIcon style={{ fontSize: "20" }} />
           </div>
         </div>
         <div className="middle">
-          <div className="authors">
+          <div className="authors-page">
             <PersonIcon style={{ fontSize: "35", color: "rgb(229, 18, 46)" }} />
             <h3>Authors</h3>
           </div>
           <p>You can find all authors information here.</p>
           <div className="link">
             <a href="/authors">More info</a>
-            <EastIcon />
+            <EastIcon style={{ fontSize: "20" }} />
           </div>
         </div>
         <div className="right">
-          <div className="reports">
+          <div className="reports-page">
             <ArticleIcon
               style={{ fontSize: "35", color: "rgb(229, 18, 46)" }}
             />
@@ -44,7 +44,7 @@ const FeaturedPages = () => {
           <p>You can find all projects and research papers information here.</p>
           <div className="link">
             <a href="/reports">More info</a>
-            <EastIcon />
+            <EastIcon style={{ fontSize: "20" }} />
           </div>
         </div>
       </div>

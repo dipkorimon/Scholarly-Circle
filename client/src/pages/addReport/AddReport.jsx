@@ -12,7 +12,7 @@ const AddReport = () => {
         <label htmlFor="">Title</label>
         <input type="text" />
         <label htmlFor="">Abstract</label>
-        <input type="text" />
+        <textarea type="text" />
         <label htmlFor="">Date</label>
         <input type="date" />
         <label htmlFor="">Category</label>

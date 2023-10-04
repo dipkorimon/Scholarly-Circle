@@ -3,7 +3,7 @@ import "./addSupervisor.scss";
 
 const AddSupervisor = () => {
   return (
-    <div className="supervisor">
+    <div className="addSupervisor">
       <h1>
         Add supervisor with full name, email, password, current position,
         university name from where PhD degree owned, phone number, blood group,
@@ -29,7 +29,7 @@ const AddSupervisor = () => {
         <label htmlFor="">Research in interests</label>
         <input type="text" />
         <label htmlFor="">About</label>
-        <input type="text" />
+        <textarea type="text" />
         <div className="photo-upload">
           <label htmlFor="file">Upload Photo</label>
           <input type="file" id="file" />

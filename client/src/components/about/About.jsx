@@ -1,12 +1,13 @@
 import React from "react";
 import "./about.scss";
 import BlurOnIcon from "@mui/icons-material/BlurOn";
+import Photo from "/about.jpg";
 
-const HowItWorks = () => {
+const About = () => {
   return (
     <div className="about">
       <div className="left">
-        <img src="" alt="" />
+        <img src={Photo} alt="" />
       </div>
       <div className="right">
         <div className="features">
@@ -59,4 +60,4 @@ const HowItWorks = () => {
   );
 };
 
-export default HowItWorks;
+export default About;

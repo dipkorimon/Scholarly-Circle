@@ -44,6 +44,21 @@
       }
     }
 
+    textarea {
+      padding: 10px;
+      width: 450px;
+      height: 150px;
+      outline: none;
+      border: none;
+      background-color: $soft-color;
+      border-radius: 5px;
+
+      @include mobile {
+        width: 250px;
+        height: 100px;
+      }
+    }
+
     .doc-upload {
       display: flex;
       align-items: center;

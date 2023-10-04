@@ -2,12 +2,26 @@
 @import "../../styles/variables.scss";
 
 .post {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  padding: 10px 10px;
+  gap: 20px;
+
+  @include tablet {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @include mobile {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+  }
 
   .post-item {
     background-color: $white-color;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: $shadow;
 
     .info {
       display: flex;
@@ -91,6 +105,20 @@
       }
     }
 
+    .report-authors {
+      margin-bottom: 5px;
+
+      p {
+        font-size: 14px;
+        color: $dark-color;
+        font-weight: bold;
+
+        @include mobile {
+          font-size: 12px;
+        }
+      }
+    }
+
     .session {
       display: flex;
       justify-content: space-between;
@@ -112,6 +140,8 @@
 
     .buttons {
       display: flex;
+      align-items: center;
+      justify-content: space-between;
       gap: 10px;
 
       button {
@@ -119,7 +149,7 @@
         font-weight: bold;
         color: $red-color;
         background-color: $button-bg;
-        padding: 7px 20px;
+        padding: 5px 10px;
         border-radius: 5px;
         outline: none;
         border: none;
@@ -129,14 +159,15 @@
           background-color: $soft-red;
         }
 
-        @include mobile {
+        @include tablet {
           font-size: 10px;
-          padding: 3px 15px;
+          padding: 3px 10px;
           margin-bottom: 5px;
         }
 
-        @include tablet {
-          padding: 3px 15px;
+        @include mobile {
+          font-size: 10px;
+          padding: 3px 10px;
           margin-bottom: 5px;
         }
       }

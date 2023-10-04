@@ -35,7 +35,7 @@
     .left {
       flex: 1;
 
-      .members {
+      .members-page {
         display: flex;
         align-items: center;
         gap: 5px;
@@ -93,7 +93,7 @@
     .middle {
       flex: 1;
 
-      .authors {
+      .authors-page {
         display: flex;
         align-items: center;
         gap: 5px;
@@ -151,7 +151,7 @@
     .right {
       flex: 1;
 
-      .reports {
+      .reports-page {
         display: flex;
         align-items: center;
         gap: 5px;

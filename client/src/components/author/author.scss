@@ -1,0 +1,92 @@
+@import "../../styles/global.scss";
+@import "../../styles/variables.scss";
+
+.author {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+
+  @include tablet {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @include mobile {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  .aut-info {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 10px;
+    background-color: $white-color;
+    box-shadow: $shadow;
+    border-radius: 10px;
+
+    .img {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      img {
+        width: 80px;
+        height: 80px;
+        object-fit: cover;
+        border-radius: 50%;
+        border: 1px solid $soft-red;
+
+        @include tablet {
+          width: 70px;
+          height: 70px;
+        }
+
+        @include mobile {
+          width: 60px;
+          height: 60px;
+        }
+      }
+    }
+
+    .name {
+      h3 {
+        font-size: 20px;
+        color: $dark-color;
+        text-align: center;
+
+        @include tablet {
+          font-size: 18px;
+        }
+
+        @include mobile {
+          font-size: 16px;
+        }
+      }
+    }
+
+    .info {
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+
+      .info-desc {
+        display: flex;
+        gap: 10px;
+
+        p {
+          font-size: 16px;
+          color: $dark-color;
+
+          @include tablet {
+            font-size: 14px;
+          }
+
+          @include mobile {
+            font-size: 12px;
+          }
+        }
+      }
+    }
+  }
+}

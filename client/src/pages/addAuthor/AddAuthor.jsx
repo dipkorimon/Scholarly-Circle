@@ -3,7 +3,7 @@ import "./addAuthor.scss";
 
 const AddAuthor = () => {
   return (
-    <div className="author">
+    <div className="addAuthor">
       <h1>
         Add author with student ID, full name, email, session, batch, defense
         date and a photo.

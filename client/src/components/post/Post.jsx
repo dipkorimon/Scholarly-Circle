@@ -115,6 +115,9 @@ const Post = () => {
           <div className="abstract">
             <p>{item.desc}</p>
           </div>
+          <div className="report-authors">
+            <p>Authors: {item.authors}</p>
+          </div>
           <div className="session">
             <p>{item.session}</p>
             <p>{item.category}</p>
