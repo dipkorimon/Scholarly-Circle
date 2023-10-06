@@ -1,23 +1,47 @@
 @import "../../styles/global.scss";
 @import "../../styles/variables.scss";
 
-.addSupervisor {
-  padding: 10px 10px;
+* {
+  font-family: "Poppins";
+}
+
+.login {
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
+  height: 100vh;
 
   h1 {
-    font-size: 25px;
+    font-size: 30px;
     color: $dark-color;
-    text-align: center;
 
     @include tablet {
-      font-size: 22px;
+      font-size: 25px;
     }
 
     @include mobile {
       font-size: 20px;
+    }
+  }
+
+  p {
+    font-size: 16px;
+    color: $dark-color;
+
+    @include tablet {
+      font-size: 14px;
+    }
+
+    @include mobile {
+      font-size: 12px;
+    }
+
+    span {
+      a {
+        color: $red-color;
+        font-weight: bold;
+      }
     }
   }
 
@@ -44,42 +68,10 @@
       }
     }
 
-    .photo-upload {
-      display: flex;
-      align-items: center;
-      flex-direction: column;
-
-      label {
-        font-size: 15px;
-        font-weight: bold;
-        text-align: center;
-        color: $red-color;
-        padding: 7px 20px;
-        border-radius: 5px;
-        background-color: $button-bg;
-        border: none;
-        width: 450px;
-        cursor: pointer;
-
-        &:hover {
-          background-color: $soft-red;
-        }
-
-        @include mobile {
-          width: 250px;
-          padding: 3px 15px;
-        }
-      }
-
-      input {
-        display: none;
-      }
-    }
-
     button {
       padding: 10px;
       margin-top: 20px;
-      width: 100%;
+      width: 450px;
       border: none;
       border-radius: 5px;
       background-color: $red-color;
@@ -95,6 +87,22 @@
       &:hover {
         background-color: $dark-red;
         cursor: pointer;
+      }
+    }
+  }
+
+  .forgot {
+    a {
+      font-size: 16px;
+      font-weight: bold;
+      color: $red-color;
+
+      @include tablet {
+        font-size: 14px;
+      }
+
+      @include mobile {
+        font-size: 12px;
       }
     }
   }

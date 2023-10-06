@@ -3,15 +3,15 @@ import "./styles/global.scss";
 import NavBar from "./components/navBar/NavBar";
 import Footer from "./components/footer/Footer";
 import Home from "./pages/home/Home";
-import Login from "./pages/login/Login";
-import Register from "./pages/register/Register";
+import ChairmanLogin from "./pages/chairmanLogin/ChairmanLogin";
+import ChairmanRegister from "./pages/chairmanRegister/ChairmanRegister";
 import AddReport from "./pages/addReport/AddReport";
 import AddSupervisor from "./pages/addSupervisor/AddSupervisor";
 import AddAuthor from "./pages/addAuthor/AddAuthor";
-import Protect from "./components/Protect";
 import Supervisors from "./pages/supervisors/Supervisors";
 import Authors from "./pages/authors/Authors";
 import Reports from "./pages/reports/Reports";
+import SupervisorLogin from "./pages/supervisorLogin/SupervisorLogin";
 
 function App() {
   const Layout = () => {
@@ -47,25 +47,29 @@ function App() {
         },
         {
           path: "/addReport",
-          element: <Protect Component={AddReport} />,
+          element: <AddReport />,
         },
         {
           path: "/addSupervisor",
-          element: <Protect Component={AddSupervisor} />,
+          element: <AddSupervisor />,
         },
         {
           path: "/addAuthor",
-          element: <Protect Component={AddAuthor} />,
+          element: <AddAuthor />,
         },
       ],
     },
     {
-      path: "/register",
-      element: <Register />,
+      path: "/chairmanRegister",
+      element: <ChairmanRegister />,
     },
     {
-      path: "/login",
-      element: <Login />,
+      path: "/chairmanLogin",
+      element: <ChairmanLogin />,
+    },
+    {
+      path: "/supervisorLogin",
+      element: <SupervisorLogin />,
     },
   ]);
   return (

@@ -147,22 +147,60 @@
           }
         }
 
-        .logi {
-          font-size: 15px;
-          font-weight: bold;
-          color: $red-color;
-          background-color: $button-bg;
-          padding: 7px 20px;
-          border-radius: 5px;
-          cursor: pointer;
+        .login-as {
+          button {
+            font-size: 15px;
+            font-weight: bold;
+            color: $red-color;
+            background-color: $button-bg;
+            padding: 7px 20px;
+            border-radius: 5px;
+            border: none;
+            cursor: pointer;
 
-          &:hover {
-            background-color: $soft-red;
+            &:hover {
+              background-color: $soft-red;
+            }
+
+            @include tablet {
+              padding: 3px 15px;
+              margin-bottom: 10px;
+            }
           }
 
-          @include tablet {
-            padding: 3px 15px;
-            margin-bottom: 10px;
+          &:hover #drop-down {
+            display: flex;
+          }
+
+          &:focus-within #drop-down {
+            display: flex;
+          }
+
+          #drop-down {
+            position: absolute;
+            width: fit-content;
+            display: none;
+            flex-direction: column;
+            top: 60px;
+            right: 20px;
+            padding: 10px;
+            border-radius: 5px;
+            background-color: $soft-color;
+            box-shadow: $shadow;
+
+            a {
+              display: flex;
+              color: $dark-color;
+              font-weight: bold;
+              font-size: 15px;
+              padding: 5px;
+              border-radius: 5px;
+              gap: 10px;
+
+              &:hover {
+                background-color: $soft-red;
+              }
+            }
           }
         }
       }

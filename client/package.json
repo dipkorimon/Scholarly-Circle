@@ -17,11 +17,8 @@
     "axios": "^1.5.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "react-quill": "^2.0.0",
     "react-router-dom": "^6.15.0",
-    "react-select": "^5.7.5",
-    "sass": "^1.66.1",
-    "scroll-carousel-react": "^1.0.0"
+    "sass": "^1.66.1"
   },
   "devDependencies": {
     "@types/react": "^18.2.15",

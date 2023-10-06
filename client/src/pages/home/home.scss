@@ -18,25 +18,4 @@
     flex-direction: column;
     gap: 60px;
   }
-
-  .gallery {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-
-    h1 {
-      font-size: 30px;
-      color: $dark-color;
-      text-align: center;
-      margin-bottom: 20px;
-
-      @include tablet {
-        font-size: 25px;
-      }
-
-      @include mobile {
-        font-size: 20px;
-      }
-    }
-  }
 }

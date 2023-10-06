@@ -1,130 +1,64 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./post.scss";
 import DeleteIcon from "@mui/icons-material/Delete";
-import EditIcon from "@mui/icons-material/Edit";
+import PersonIcon from "@mui/icons-material/Person";
+import DateRangeIcon from "@mui/icons-material/DateRange";
+import axios from "axios";
 
 const Post = () => {
-  const [posts] = useState([
-    {
-      id: 1,
-      profilePhoto: "/profile.png",
-      userName: "Supervisor Name",
-      title: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
-      authors: "Unknown name",
-      session: "2017-2018",
-      category: "Natural Language Processing",
-      desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores tempore vitae omnis nobis quae praesentium esse excepturi a placeat aspernatur.",
-      date: "10 months",
-    },
-    {
-      id: 2,
-      profilePhoto: "/profile.png",
-      userName: "Supervisor Name",
-      title: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
-      authors: "Unknown name",
-      session: "2017-2018",
-      category: "Artificial Intelligence",
-      desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores tempore vitae omnis nobis quae praesentium esse excepturi a placeat aspernatur.",
-      date: "10 months",
-    },
-    {
-      id: 3,
-      profilePhoto: "/profile.png",
-      userName: "Supervisor Name",
-      title: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
-      authors: "Unknown name",
-      session: "2017-2018",
-      category: "Artificial Intelligence",
-      desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores tempore vitae omnis nobis quae praesentium esse excepturi a placeat aspernatur.",
-      date: "10 months",
-    },
-    {
-      id: 4,
-      profilePhoto: "/profile.png",
-      userName: "Supervisor Name",
-      title: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
-      authors: "Unknown name",
-      session: "2017-2018",
-      category: "Artificial Intelligence",
-      desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores tempore vitae omnis nobis quae praesentium esse excepturi a placeat aspernatur.",
-      date: "10 months",
-    },
-    {
-      id: 4,
-      profilePhoto: "/profile.png",
-      userName: "Supervisor Name",
-      title: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
-      authors: "Unknown name",
-      session: "2017-2018",
-      category: "Artificial Intelligence",
-      desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores tempore vitae omnis nobis quae praesentium esse excepturi a placeat aspernatur.",
-      date: "10 months",
-    },
-    {
-      id: 4,
-      profilePhoto: "/profile.png",
-      userName: "Supervisor Name",
-      title: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
-      authors: "Unknown name",
-      session: "2017-2018",
-      category: "Artificial Intelligence",
-      desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores tempore vitae omnis nobis quae praesentium esse excepturi a placeat aspernatur.",
-      date: "10 months",
-    },
-    {
-      id: 4,
-      profilePhoto: "/profile.png",
-      userName: "Supervisor Name",
-      title: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
-      authors: "Unknown name",
-      session: "2017-2018",
-      category: "Artificial Intelligence",
-      desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores tempore vitae omnis nobis quae praesentium esse excepturi a placeat aspernatur.",
-      date: "10 months",
-    },
-    {
-      id: 4,
-      profilePhoto: "/profile.png",
-      userName: "Supervisor Name",
-      title: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
-      authors: "Unknown name",
-      session: "2017-2018",
-      category: "Artificial Intelligence",
-      desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores tempore vitae omnis nobis quae praesentium esse excepturi a placeat aspernatur.",
-      date: "10 months",
-    },
-  ]);
+  const [report, setReport] = useState([]);
+
+  useEffect(() => {
+    axios
+      .get("http://localhost:8800/reports")
+      .then((res) => setReport(res.data))
+      .catch((err) => console.log(err));
+  });
 
   return (
     <div className="post">
-      {posts.map((item, index) => (
+      {report.map((item, index) => (
         <div className="post-item">
           <div className="info">
-            <img src={item.profilePhoto} alt="" />
+            <div className="img">
+              <img src="" alt="" />
+            </div>
             <div className="sup">
-              <p className="sup-name">{item.userName}</p>
+              <h5>{item.supervisor_name}</h5>
               <p>Supervisor</p>
             </div>
-            <EditIcon sx={{ color: "rgb(42, 52, 71)", cursor: "pointer" }} />
-            <DeleteIcon sx={{ color: "rgb(229, 18, 46)", cursor: "pointer" }} />
-            <p>Published {item.date} ago.</p>
           </div>
-          <div className="title">
-            <p>{item.title}</p>
-          </div>
-          <div className="abstract">
-            <p>{item.desc}</p>
-          </div>
-          <div className="report-authors">
-            <p>Authors: {item.authors}</p>
-          </div>
-          <div className="session">
-            <p>{item.session}</p>
-            <p>{item.category}</p>
+          <div className="post-details">
+            <div className="title">
+              <h3>{item.title}</h3>
+            </div>
+            <div className="category">
+              <p>{item.session}</p>
+              <p>{item.category}</p>
+            </div>
+            <div className="abstract">
+              <p>{item.abstract}</p>
+            </div>
+            <div className="authors-name">
+              <PersonIcon />
+              <p>{item.authors_name}</p>
+            </div>
+            <div className="date">
+              <DateRangeIcon />
+              <p>{item.date}</p>
+            </div>
           </div>
           <div className="buttons">
-            <button>Download Full-Text</button>
+            <button>Download full-text</button>
             <button>Download Presentation</button>
+            <button style={{ background: "none", padding: "0" }}>
+              <DeleteIcon
+                style={{
+                  fontSize: "25",
+                  color: "rgb(229, 18, 46)",
+                }}
+              />
+            </button>
           </div>
         </div>
       ))}

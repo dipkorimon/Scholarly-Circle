@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./supervisor.scss";
 import PersonIcon from "@mui/icons-material/Person";
 import SchoolIcon from "@mui/icons-material/School";
@@ -7,118 +7,21 @@ import PhoneIcon from "@mui/icons-material/Phone";
 import BloodtypeIcon from "@mui/icons-material/Bloodtype";
 import DateRangeIcon from "@mui/icons-material/DateRange";
 import ArchitectureIcon from "@mui/icons-material/Architecture";
+import axios from "axios";
 
 const Supervisor = () => {
-  const [supervisors] = useState([
-    {
-      id: 1,
-      photo: "/profile.png",
-      full_name: "Unknown name",
-      current_position: "Assistant Professor",
-      phd: "University name",
-      email: "example@nstu.edu.bd",
-      phone: "01600000000",
-      blood_group: "A+",
-      joining_date: "10-10-2018",
-      research_interests:
-        "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Minus, eligendi.",
-    },
-    {
-      id: 1,
-      photo: "/profile.png",
-      full_name: "Unknown name",
-      current_position: "Assistant Professor",
-      phd: "University name",
-      email: "example@nstu.edu.bd",
-      phone: "01600000000",
-      blood_group: "A+",
-      joining_date: "10-10-2018",
-      research_interests:
-        "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Minus, eligendi.",
-    },
-    {
-      id: 1,
-      photo: "/profile.png",
-      full_name: "Unknown name",
-      current_position: "Assistant Professor",
-      phd: "University name",
-      email: "example@nstu.edu.bd",
-      phone: "01600000000",
-      blood_group: "A+",
-      joining_date: "10-10-2018",
-      research_interests:
-        "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Minus, eligendi.",
-    },
-    {
-      id: 1,
-      photo: "/profile.png",
-      full_name: "Unknown name",
-      current_position: "Assistant Professor",
-      phd: "University name",
-      email: "example@nstu.edu.bd",
-      phone: "01600000000",
-      blood_group: "A+",
-      joining_date: "10-10-2018",
-      research_interests:
-        "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Minus, eligendi.",
-    },
-    {
-      id: 1,
-      photo: "/profile.png",
-      full_name: "Unknown name",
-      current_position: "Assistant Professor",
-      phd: "University name",
-      email: "example@nstu.edu.bd",
-      phone: "01600000000",
-      blood_group: "A+",
-      joining_date: "10-10-2018",
-      research_interests:
-        "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Minus, eligendi.",
-    },
-    {
-      id: 2,
-      photo: "/profile.png",
-      full_name: "Unknown name",
-      current_position: "Assistant Professor",
-      phd: "University name",
-      email: "example@nstu.edu.bd",
-      phone: "01600000000",
-      blood_group: "B+",
-      joining_date: "10-10-2018",
-      research_interests:
-        "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Minus, eligendi.",
-    },
-    {
-      id: 2,
-      photo: "/profile.png",
-      full_name: "Unknown name",
-      current_position: "Assistant Professor",
-      phd: "University name",
-      email: "example@nstu.edu.bd",
-      phone: "01600000000",
-      blood_group: "B+",
-      joining_date: "10-10-2018",
-      research_interests:
-        "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Minus, eligendi.",
-    },
-    {
-      id: 2,
-      photo: "/profile.png",
-      full_name: "Unknown name",
-      current_position: "Assistant Professor",
-      phd: "University name",
-      email: "example@nstu.edu.bd",
-      phone: "01600000000",
-      blood_group: "B+",
-      joining_date: "10-10-2018",
-      research_interests:
-        "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Minus, eligendi.",
-    },
-  ]);
+  const [supervisor, setSupervisor] = useState([]);
+
+  useEffect(() => {
+    axios
+      .get("http://localhost:8800/supervisors")
+      .then((res) => setSupervisor(res.data))
+      .catch((err) => console.log(err));
+  });
 
   return (
     <div className="supervisor">
-      {supervisors.map((item, index) => (
+      {supervisor.map((item, index) => (
         <div className="sup-info">
           <div className="img">
             <img src={item.photo} alt="" />

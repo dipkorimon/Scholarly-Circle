@@ -21,24 +21,6 @@
     }
   }
 
-  p {
-    font-size: 16px;
-    color: $dark-color;
-
-    @include mobile {
-      font-size: 13px;
-    }
-
-    span {
-      color: $red-color;
-
-      a {
-        color: $red-color;
-        font-weight: bold;
-      }
-    }
-  }
-
   form {
     display: flex;
     flex-direction: column;

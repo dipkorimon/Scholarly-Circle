@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./author.scss";
 import PersonIcon from "@mui/icons-material/Person";
 import EmailIcon from "@mui/icons-material/Email";
@@ -7,135 +7,21 @@ import BloodtypeIcon from "@mui/icons-material/Bloodtype";
 import DateRangeIcon from "@mui/icons-material/DateRange";
 import BatchPredictionIcon from "@mui/icons-material/BatchPrediction";
 import AdjustIcon from "@mui/icons-material/Adjust";
+import axios from "axios";
 
 const Author = () => {
-  const [authors] = useState([
-    {
-      id: "1",
-      full_name: "Unknown Name",
-      photo: "/profile.png",
-      current_position: "Student",
-      email: "example@student.nstu.edu.bd",
-      session: "2017-2018",
-      batch: "13",
-      phone: "01600000000",
-      blood_group: "A+",
-      defense_date: "10-10-2023",
-    },
-    {
-      id: "1",
-      full_name: "Unknown Name",
-      photo: "/profile.png",
-      current_position: "Student",
-      email: "example@student.nstu.edu.bd",
-      session: "2017-2018",
-      batch: "13",
-      phone: "01600000000",
-      blood_group: "A+",
-      defense_date: "10-10-2023",
-    },
-    {
-      id: "1",
-      full_name: "Unknown Name",
-      photo: "/profile.png",
-      current_position: "Student",
-      email: "example@student.nstu.edu.bd",
-      session: "2017-2018",
-      batch: "13",
-      phone: "01600000000",
-      blood_group: "A+",
-      defense_date: "10-10-2023",
-    },
-    {
-      id: "1",
-      full_name: "Unknown Name",
-      photo: "/profile.png",
-      current_position: "Student",
-      email: "example@student.nstu.edu.bd",
-      session: "2017-2018",
-      batch: "13",
-      phone: "01600000000",
-      blood_group: "A+",
-      defense_date: "10-10-2023",
-    },
-    {
-      id: "1",
-      full_name: "Unknown Name",
-      photo: "/profile.png",
-      current_position: "Student",
-      email: "example@student.nstu.edu.bd",
-      photo: "/profile.png",
-      session: "2017-2018",
-      batch: "13",
-      phone: "01600000000",
-      blood_group: "A+",
-      defense_date: "10-10-2023",
-    },
-    {
-      id: "1",
-      full_name: "Unknown Name",
-      photo: "/profile.png",
-      current_position: "Student",
-      email: "example@student.nstu.edu.bd",
-      session: "2017-2018",
-      batch: "13",
-      phone: "01600000000",
-      blood_group: "A+",
-      defense_date: "10-10-2023",
-    },
-    {
-      id: "1",
-      full_name: "Unknown Name",
-      photo: "/profile.png",
-      current_position: "Student",
-      email: "example@student.nstu.edu.bd",
-      session: "2017-2018",
-      batch: "13",
-      phone: "01600000000",
-      blood_group: "A+",
-      defense_date: "10-10-2023",
-    },
-    {
-      id: "1",
-      full_name: "Unknown Name",
-      photo: "/profile.png",
-      current_position: "Student",
-      email: "example@student.nstu.edu.bd",
-      session: "2017-2018",
-      batch: "13",
-      phone: "01600000000",
-      blood_group: "A+",
-      defense_date: "10-10-2023",
-    },
-    {
-      id: "1",
-      full_name: "Unknown Name",
-      photo: "/profile.png",
-      current_position: "Student",
-      email: "example@student.nstu.edu.bd",
-      session: "2017-2018",
-      batch: "13",
-      phone: "01600000000",
-      blood_group: "A+",
-      defense_date: "10-10-2023",
-    },
-    {
-      id: "1",
-      full_name: "Unknown Name",
-      photo: "/profile.png",
-      current_position: "Student",
-      email: "example@student.nstu.edu.bd",
-      session: "2017-2018",
-      batch: "13",
-      phone: "01600000000",
-      blood_group: "A+",
-      defense_date: "10-10-2023",
-    },
-  ]);
+  const [author, setAuthor] = useState([]);
+
+  useEffect(() => {
+    axios
+      .get("http://localhost:8800/authors")
+      .then((res) => setAuthor(res.data))
+      .catch((err) => console.log(err));
+  });
 
   return (
     <div className="author">
-      {authors.map((item, index) => (
+      {author.map((item, index) => (
         <div className="aut-info">
           <div className="img">
             <img src={item.photo} alt="" />

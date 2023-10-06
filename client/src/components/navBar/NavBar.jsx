@@ -4,6 +4,7 @@ import axios from "axios";
 import SupervisorAccountIcon from "@mui/icons-material/SupervisorAccount";
 import PersonIcon from "@mui/icons-material/Person";
 import ArticleIcon from "@mui/icons-material/Article";
+import LoginIcon from "@mui/icons-material/Login";
 
 const NavBar = () => {
   const [auth, setAuth] = useState(false);
@@ -19,7 +20,6 @@ const NavBar = () => {
         if (res.data.Status === "Success") {
           setAuth(true);
           setName(res.data.full_name);
-          setPhoto(res.data.photo);
         } else {
           setAuth(false);
           setMessage(res.data.Error);
@@ -33,7 +33,7 @@ const NavBar = () => {
       .get("http://localhost:8800/logout")
       .then((res) => {
         location.reload(true);
-        localStorage.removeItem("login");
+        localStorage.removeItem("ChairmanLogin");
       })
       .catch((err) => {
         console.log(err);
@@ -80,12 +80,22 @@ const NavBar = () => {
             </div>
           ) : (
             <div className="in-up">
-              <a href="/register" className="regi">
+              <a href="/chairmanRegister" className="regi">
                 Sign up
               </a>
-              <a href="/login" className="logi">
-                Sign in
-              </a>
+              <div className="login-as">
+                <button className="name">Sign in</button>
+                <div id="drop-down">
+                  <a href="/chairmanLogin">
+                    <LoginIcon />
+                    Sign in as Chairman
+                  </a>
+                  <a href="/supervisorLogin">
+                    <LoginIcon />
+                    Sign in as Supervisor
+                  </a>
+                </div>
+              </div>
             </div>
           )}
         </div>

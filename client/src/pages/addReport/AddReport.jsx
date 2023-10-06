@@ -1,29 +1,125 @@
-import React from "react";
+import React, { useState } from "react";
 import "./addReport.scss";
+import { useNavigate } from "react-router-dom";
+import axios from "axios";
+import validation from "../validation/ReportValidation";
 
 const AddReport = () => {
+  const [values, setValues] = useState({
+    title: "",
+    abstract: "",
+    supervisor_name: "",
+    authors_name: "",
+    session: "",
+    date: "",
+    category: "",
+    document: "",
+    presentation: "",
+  });
+
+  console.log(values);
+
+  const navigate = useNavigate();
+  const [errors, setErrors] = useState({});
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    setErrors(validation(values));
+    if (
+      errors.title == "" &&
+      errors.abstract === "" &&
+      errors.supervisor_name === "" &&
+      errors.authors_name === "" &&
+      errors.document === ""
+    ) {
+      axios
+        .post("http://localhost:8800/addReport", values)
+        .then((res) => {
+          if (res.data.Status === "Success") {
+            navigate("/");
+          }
+        })
+        .catch((err) => console.log(err));
+    }
+  };
+
   return (
     <div className="report">
       <h1>
         Add a new report in Scholarly Circle with a title, abstract, current
         date, category, document(docx or pdf) and a presentation silde(pptx).
       </h1>
-      <form action="">
+      <form action="" onSubmit={handleSubmit}>
         <label htmlFor="">Title</label>
-        <input type="text" />
+        <input
+          type="text"
+          name="title"
+          onChange={(e) => setValues({ ...values, title: e.target.value })}
+        />
+        {errors.title && <span>{errors.title}</span>}
         <label htmlFor="">Abstract</label>
-        <textarea type="text" />
+        <textarea
+          type="text"
+          name="abstract"
+          onChange={(e) => setValues({ ...values, abstract: e.target.value })}
+        />
+        {errors.abstract && <span>{errors.abstract}</span>}
+        <label htmlFor="">Supervisor name</label>
+        <input
+          type="text"
+          name="supervisor_name"
+          onChange={(e) =>
+            setValues({ ...values, supervisor_name: e.target.value })
+          }
+        />
+        {errors.supervisor_name && <span>{errors.supervisor_name}</span>}
+        <label htmlFor="">Authors name</label>
+        <input
+          type="text"
+          name="authors_name"
+          onChange={(e) =>
+            setValues({ ...values, authors_name: e.target.value })
+          }
+        />
+        {errors.authors_name && <span>{errors.authors_name}</span>}
+        <label htmlFor="">Session</label>
+        <input
+          type="text"
+          name="session"
+          onChange={(e) => setValues({ ...values, session: e.target.value })}
+        />
         <label htmlFor="">Date</label>
-        <input type="date" />
+        <input
+          type="date"
+          name="date"
+          onChange={(e) => setValues({ ...values, date: e.target.value })}
+        />
         <label htmlFor="">Category</label>
-        <input type="text" />
+        <input
+          type="text"
+          name="category"
+          onChange={(e) => setValues({ ...values, category: e.target.value })}
+        />
         <div className="doc-upload">
-          <label htmlFor="file">Upload Document</label>
-          <input type="file" id="file" />
-          <label htmlFor="file">Upload Presentation Slide</label>
-          <input type="file" id="file" />
+          <label htmlFor="file1">Upload Document</label>
+          <input
+            type="file"
+            id="file1"
+            name="document"
+            onChange={(e) => setValues({ ...values, document: e.target.value })}
+          />
+          {errors.document && <span>{errors.document}</span>}
+          <label htmlFor="file2">Upload Presentation Slide</label>
+          <input
+            type="file"
+            id="file2"
+            name="presentation"
+            onChange={(e) =>
+              setValues({ ...values, presentation: e.target.value })
+            }
+          />
         </div>
-        <button>Submit</button>
+        <button type="submit">Submit</button>
       </form>
     </div>
   );

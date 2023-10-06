@@ -65,7 +65,7 @@
           background-color: $soft-red;
         }
 
-        @include tablet {
+        @include mobile {
           width: 250px;
           padding: 3px 15px;
         }

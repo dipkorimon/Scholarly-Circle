@@ -1,10 +1,10 @@
 import React, { useState } from "react";
-import "./login.scss";
-import validation from "../LoginValidation";
+import "./chairmanLogin.scss";
+import validation from "../validation/LoginValidation";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 
-const Login = () => {
+const ChairmanLogin = () => {
   const [values, setValues] = useState({
     email: "",
     password: "",
@@ -19,11 +19,11 @@ const Login = () => {
     setErrors(validation(values));
     if (errors.email === "" && errors.password === "") {
       axios
-        .post("http://localhost:8800/login", values)
+        .post("http://localhost:8800/chairmanLogin", values)
         .then((res) => {
           if (res.data.Status === "Success") {
             navigate("/");
-            localStorage.setItem("login", true);
+            localStorage.setItem("ChairmanLogin", true);
           } else {
             alert("Wrong email or password !!!");
           }
@@ -34,11 +34,11 @@ const Login = () => {
 
   return (
     <div className="login">
-      <h1>Sign in</h1>
+      <h1>Sign in as Chairman</h1>
       <p>
-        Or{" "}
+        Don't have an account?{" "}
         <span>
-          <a href="/register">register for an account</a>
+          <a href="/chairmanRegister">Sign up</a>
         </span>
       </p>
       <form action="" onSubmit={handleSubmit}>
@@ -65,4 +65,4 @@ const Login = () => {
   );
 };
 
-export default Login;
+export default ChairmanLogin;

@@ -1,10 +1,10 @@
 import React, { useState } from "react";
-import "./register.scss";
-import validation from "../RegisterValidation";
+import "./chairmanRegister.scss";
+import validation from "../validation/RegisterValidation";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 
-const Register = () => {
+const ChairmanRegister = () => {
   const [values, setValues] = useState({
     full_name: "",
     email: "",
@@ -15,7 +15,6 @@ const Register = () => {
     blood_group: "",
     joining_date: "",
     research_interests: "",
-    about: "",
     photo: "",
   });
 
@@ -43,7 +42,7 @@ const Register = () => {
 
   return (
     <div className="register">
-      <h1>Register for Scholarly Circle</h1>
+      <h1>Register for Scholarly Circle as Chairman</h1>
       <form action="" onSubmit={handleSubmit}>
         <label htmlFor="">Full name</label>
         <input
@@ -66,7 +65,7 @@ const Register = () => {
           onChange={(e) => setValues({ ...values, password: e.target.value })}
         />
         {errors.password && <span>{errors.password}</span>}
-        <label htmlFor="password">Current position</label>
+        <label htmlFor="">Current position</label>
         <input
           type="text"
           name="current_position"
@@ -74,19 +73,19 @@ const Register = () => {
             setValues({ ...values, current_position: e.target.value })
           }
         />
-        <label htmlFor="password">ph.d (University name)</label>
+        <label htmlFor="">ph.d (University name)</label>
         <input
           type="text"
           name="phd"
           onChange={(e) => setValues({ ...values, phd: e.target.value })}
         />
-        <label htmlFor="password">Phone</label>
+        <label htmlFor="">Phone</label>
         <input
           type="text"
           name="phone"
           onChange={(e) => setValues({ ...values, phone: e.target.value })}
         />
-        <label htmlFor="password">Blood group</label>
+        <label htmlFor="">Blood group</label>
         <input
           type="text"
           name="blood_group"
@@ -94,7 +93,7 @@ const Register = () => {
             setValues({ ...values, blood_group: e.target.value })
           }
         />
-        <label htmlFor="password">Joining date</label>
+        <label htmlFor="">Joining date</label>
         <input
           type="date"
           name="joining_date"
@@ -102,7 +101,7 @@ const Register = () => {
             setValues({ ...values, joining_date: e.target.value })
           }
         />
-        <label htmlFor="password">Research interests</label>
+        <label htmlFor="">Research interests</label>
         <input
           type="text"
           name="research_interests"
@@ -110,7 +109,7 @@ const Register = () => {
             setValues({ ...values, research_interests: e.target.value })
           }
         />
-        <label htmlFor="password">About</label>
+        <label htmlFor="">About</label>
         <input
           type="text"
           name="about"
@@ -136,11 +135,11 @@ const Register = () => {
       </form>
       <div className="sign">
         <p>
-          Already have an account? <a href="/login">Sign in</a>
+          Already have an account? <a href="/chairmanLogin">Sign in</a>
         </p>
       </div>
     </div>
   );
 };
 
-export default Register;
+export default ChairmanRegister;
