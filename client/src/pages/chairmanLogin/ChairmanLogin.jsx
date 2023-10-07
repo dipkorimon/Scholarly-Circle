@@ -23,7 +23,6 @@ const ChairmanLogin = () => {
         .then((res) => {
           if (res.data.Status === "Success") {
             navigate("/");
-            localStorage.setItem("ChairmanLogin", true);
           } else {
             alert("Wrong email or password !!!");
           }

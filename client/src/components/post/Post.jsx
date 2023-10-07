@@ -1,9 +1,11 @@
 import React, { useEffect, useState } from "react";
 import "./post.scss";
+import EditIcon from "@mui/icons-material/Edit";
 import DeleteIcon from "@mui/icons-material/Delete";
 import PersonIcon from "@mui/icons-material/Person";
 import DateRangeIcon from "@mui/icons-material/DateRange";
 import axios from "axios";
+import FileDownload from "js-file-download";
 
 const Post = () => {
   const [report, setReport] = useState([]);
@@ -51,6 +53,14 @@ const Post = () => {
           <div className="buttons">
             <button>Download full-text</button>
             <button>Download Presentation</button>
+            <button style={{ background: "none", padding: "0" }}>
+              <EditIcon
+                style={{
+                  fontSize: "25",
+                  color: "rgb(42, 52, 71)",
+                }}
+              />
+            </button>
             <button style={{ background: "none", padding: "0" }}>
               <DeleteIcon
                 style={{

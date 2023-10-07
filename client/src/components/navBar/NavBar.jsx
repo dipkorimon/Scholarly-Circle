@@ -33,7 +33,6 @@ const NavBar = () => {
       .get("http://localhost:8800/logout")
       .then((res) => {
         location.reload(true);
-        localStorage.removeItem("ChairmanLogin");
       })
       .catch((err) => {
         console.log(err);
@@ -60,23 +59,39 @@ const NavBar = () => {
             <div className="profile">
               <img src="" alt="" />
               <button className="name">{name}</button>
-              <div id="drop-down">
-                <a href="/addSupervisor">
-                  <SupervisorAccountIcon />
-                  Add Supervisor
-                </a>
-                <a href="/addAuthor">
-                  <PersonIcon />
-                  Add Author
-                </a>
-                <a href="/addReport">
-                  <ArticleIcon />
-                  Add Report
-                </a>
-                <button onClick={handleLogout} className="icon">
-                  Sign Out
-                </button>
-              </div>
+              {name == "Chairman" ? (
+                <div id="drop-down">
+                  <a href="/addSupervisor">
+                    <SupervisorAccountIcon />
+                    Add Supervisor
+                  </a>
+                  <a href="/addAuthor">
+                    <PersonIcon />
+                    Add Author
+                  </a>
+                  <a href="/addReport">
+                    <ArticleIcon />
+                    Add Report
+                  </a>
+                  <button onClick={handleLogout} className="icon">
+                    Sign Out
+                  </button>
+                </div>
+              ) : (
+                <div id="drop-down">
+                  <a href="/addAuthor">
+                    <PersonIcon />
+                    Add Author
+                  </a>
+                  <a href="/addReport">
+                    <ArticleIcon />
+                    Add Report
+                  </a>
+                  <button onClick={handleLogout} className="icon">
+                    Sign Out
+                  </button>
+                </div>
+              )}
             </div>
           ) : (
             <div className="in-up">

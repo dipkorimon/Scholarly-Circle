@@ -65,6 +65,53 @@
       }
     }
 
+    .update-delete {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 20px;
+
+      :first-child {
+        font-size: 15px;
+        font-weight: bold;
+        color: $red-color;
+        background-color: $button-bg;
+        padding: 5px 20px;
+        border-radius: 5px;
+        border: none;
+        cursor: pointer;
+
+        &:hover {
+          background-color: $soft-red;
+        }
+
+        @include tablet {
+          padding: 3px 15px;
+          margin-bottom: 10px;
+        }
+      }
+
+      :last-child {
+        font-size: 15px;
+        font-weight: bold;
+        color: $white-color;
+        background-color: $red-color;
+        padding: 5px 20px;
+        border-radius: 5px;
+        border: none;
+        cursor: pointer;
+
+        &:hover {
+          background-color: $dark-red;
+        }
+
+        @include tablet {
+          padding: 3px 15px;
+          margin-bottom: 10px;
+        }
+      }
+    }
+
     .info {
       display: flex;
       flex-direction: column;

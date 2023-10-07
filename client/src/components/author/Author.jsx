@@ -29,6 +29,10 @@ const Author = () => {
           <div className="name">
             <h3>{item.full_name}</h3>
           </div>
+          <div className="update-delete">
+            <button>Update</button>
+            <button>Delete</button>
+          </div>
           <div className="info">
             <div className="info-desc">
               <PersonIcon />
