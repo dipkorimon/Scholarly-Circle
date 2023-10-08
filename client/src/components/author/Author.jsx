@@ -3,7 +3,6 @@ import "./author.scss";
 import PersonIcon from "@mui/icons-material/Person";
 import EmailIcon from "@mui/icons-material/Email";
 import PhoneIcon from "@mui/icons-material/Phone";
-import BloodtypeIcon from "@mui/icons-material/Bloodtype";
 import DateRangeIcon from "@mui/icons-material/DateRange";
 import BatchPredictionIcon from "@mui/icons-material/BatchPrediction";
 import AdjustIcon from "@mui/icons-material/Adjust";
@@ -43,6 +42,7 @@ const Author = () => {
             <a href={`/updateAuthor/${item.id}`}>
               <EditIcon
                 style={{
+                  fontSize: "25",
                   color: "rgb(42, 52, 71)",
                 }}
               />
@@ -50,6 +50,7 @@ const Author = () => {
             <button onClick={() => handleDelete(item.id)}>
               <DeleteIcon
                 style={{
+                  fontSize: "25",
                   color: "rgb(229, 18, 46)",
                 }}
               />
@@ -79,10 +80,6 @@ const Author = () => {
             <div className="info-desc">
               <BatchPredictionIcon />
               <p>Batch: {item.batch}</p>
-            </div>
-            <div className="info-desc">
-              <BloodtypeIcon />
-              <p>Blood Group: {item.blood_group}</p>
             </div>
             <div className="info-desc">
               <DateRangeIcon />

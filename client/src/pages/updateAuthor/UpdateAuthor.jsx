@@ -20,8 +20,6 @@ const AddAuthor = () => {
         <input type="text" />
         <label htmlFor="">Phone</label>
         <input type="text" />
-        <label htmlFor="">Blood Group</label>
-        <input type="text" />
         <label htmlFor="">Defense date</label>
         <input type="date" name="defense_date" />
         <div className="photo-upload">

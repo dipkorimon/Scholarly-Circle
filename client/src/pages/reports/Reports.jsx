@@ -63,6 +63,7 @@ const Reports = () => {
                 <div className="category">
                   <p>{item.session}</p>
                   <p>{item.category}</p>
+                  <p>{item.report_type}</p>
                 </div>
                 <div className="abstract">
                   <p>{item.abstract}</p>

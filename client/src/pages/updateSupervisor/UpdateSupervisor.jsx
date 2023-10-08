@@ -18,8 +18,6 @@ const AddSupervisor = () => {
         <input type="text" />
         <label htmlFor="">Phone</label>
         <input type="text" />
-        <label htmlFor="">Blood group</label>
-        <input type="text" />
         <label htmlFor="">Joining date</label>
         <input type="date" />
         <label htmlFor="">Research in interests</label>

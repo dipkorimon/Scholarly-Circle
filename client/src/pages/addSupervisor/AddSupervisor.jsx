@@ -12,7 +12,6 @@ const AddSupervisor = () => {
     current_position: "",
     phd: "",
     phone: "",
-    blood_group: "",
     joining_date: "",
     research_interests: "",
     photo: "",
@@ -88,14 +87,6 @@ const AddSupervisor = () => {
           type="text"
           name="phone"
           onChange={(e) => setValues({ ...values, phone: e.target.value })}
-        />
-        <label htmlFor="">Blood group</label>
-        <input
-          type="text"
-          name="blood_group"
-          onChange={(e) =>
-            setValues({ ...values, blood_group: e.target.value })
-          }
         />
         <label htmlFor="">Joining date</label>
         <input

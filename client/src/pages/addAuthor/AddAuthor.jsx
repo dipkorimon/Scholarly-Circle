@@ -13,7 +13,6 @@ const AddAuthor = () => {
     batch: "",
     current_position: "",
     phone: "",
-    blood_group: "",
     defense_date: "",
     photo: "",
   });
@@ -93,14 +92,6 @@ const AddAuthor = () => {
           type="text"
           name="phone"
           onChange={(e) => setValues({ ...values, phone: e.target.value })}
-        />
-        <label htmlFor="">Blood Group</label>
-        <input
-          type="text"
-          name="blood_group"
-          onChange={(e) =>
-            setValues({ ...values, blood_group: e.target.value })
-          }
         />
         <label htmlFor="">Defense date</label>
         <input

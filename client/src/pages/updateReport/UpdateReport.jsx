@@ -20,6 +20,8 @@ const AddReport = () => {
         <input type="date" />
         <label htmlFor="">Category</label>
         <input type="text" />
+        <label htmlFor="">Report type</label>
+        <input type="text" />
         <div className="doc-upload">
           <label htmlFor="file1">Upload Document</label>
           <input type="file" id="file1" />

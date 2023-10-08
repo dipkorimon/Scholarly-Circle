@@ -4,7 +4,6 @@ import PersonIcon from "@mui/icons-material/Person";
 import SchoolIcon from "@mui/icons-material/School";
 import EmailIcon from "@mui/icons-material/Email";
 import PhoneIcon from "@mui/icons-material/Phone";
-import BloodtypeIcon from "@mui/icons-material/Bloodtype";
 import DateRangeIcon from "@mui/icons-material/DateRange";
 import ArchitectureIcon from "@mui/icons-material/Architecture";
 import DeleteIcon from "@mui/icons-material/Delete";
@@ -42,6 +41,7 @@ const Supervisor = () => {
             <a href={`/updateSupervisor/${item.id}`}>
               <EditIcon
                 style={{
+                  fontSize: "25",
                   color: "rgb(42, 52, 71)",
                 }}
               />
@@ -49,6 +49,7 @@ const Supervisor = () => {
             <button onClick={() => handleDelete(item.id)}>
               <DeleteIcon
                 style={{
+                  fontSize: "25",
                   color: "rgb(229, 18, 46)",
                 }}
               />
@@ -70,10 +71,6 @@ const Supervisor = () => {
             <div className="info-desc">
               <PhoneIcon />
               <p>{item.phone}</p>
-            </div>
-            <div className="info-desc">
-              <BloodtypeIcon />
-              <p>Blood Group: {item.blood_group}</p>
             </div>
             <div className="info-desc">
               <DateRangeIcon />

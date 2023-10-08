@@ -13,6 +13,7 @@ const AddReport = () => {
     session: "",
     date: "",
     category: "",
+    report_type: "",
     document: "",
     presentation: "",
   });
@@ -47,7 +48,8 @@ const AddReport = () => {
     <div className="report">
       <h1>
         Add a new report in Scholarly Circle with a title, abstract, current
-        date, category, document(docx or pdf) and a presentation silde(pptx).
+        date, category, report type(project or thesis), document(docx or pdf)
+        and a presentation silde(pptx).
       </h1>
       <form action="" onSubmit={handleSubmit}>
         <label htmlFor="">Title</label>
@@ -99,6 +101,14 @@ const AddReport = () => {
           type="text"
           name="category"
           onChange={(e) => setValues({ ...values, category: e.target.value })}
+        />
+        <label htmlFor="">Report type</label>
+        <input
+          type="text"
+          name="category"
+          onChange={(e) =>
+            setValues({ ...values, report_type: e.target.value })
+          }
         />
         <div className="doc-upload">
           <label htmlFor="file1">Upload Document</label>

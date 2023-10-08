@@ -27,7 +27,7 @@ const db = mysql.createConnection({
 // For chairman register
 app.post("/chairmanRegister", (req, res) => {
   const sql =
-    "INSERT INTO chairman (`full_name`, `email`, `password`, `current_position`, `phd`, `phone`, `blood_group`, `joining_date`, `research_interests`, `photo`) VALUES (?)";
+    "INSERT INTO chairman (`full_name`, `email`, `password`, `current_position`, `phd`, `phone`, `joining_date`, `research_interests`, `photo`) VALUES (?)";
   bcrypt.hash(req.body.password.toString(), salt, (err, hash) => {
     if (err) return res.json({ Error: "Error for hashing password" });
     const values = [
@@ -37,7 +37,6 @@ app.post("/chairmanRegister", (req, res) => {
       req.body.current_position,
       req.body.phd,
       req.body.phone,
-      req.body.blood_group,
       req.body.joining_date,
       req.body.research_interests,
       req.body.photo,
@@ -85,7 +84,7 @@ app.post("/chairmanLogin", (req, res) => {
 // For add supervisor
 app.post("/addSupervisor", (req, res) => {
   const sql =
-    "INSERT INTO supervisor (`full_name`, `email`, `password`, `current_position`, `phd`, `phone`, `blood_group`, `joining_date`, `research_interests`, `photo`) VALUES (?)";
+    "INSERT INTO supervisor (`full_name`, `email`, `password`, `current_position`, `phd`, `phone`, `joining_date`, `research_interests`, `photo`) VALUES (?)";
   bcrypt.hash(req.body.password.toString(), salt, (err, hash) => {
     if (err) return res.json({ Error: "Error for hashing password" });
     const values = [
@@ -95,7 +94,6 @@ app.post("/addSupervisor", (req, res) => {
       req.body.current_position,
       req.body.phd,
       req.body.phone,
-      req.body.blood_group,
       req.body.joining_date,
       req.body.research_interests,
       req.body.photo,
@@ -170,7 +168,7 @@ app.get("/logout", (req, res) => {
 // For add author
 app.post("/addAuthor", (req, res) => {
   const sql =
-    "INSERT INTO author (`student_id`,`full_name`, `email`, `session`, `batch`, `current_position`, `phone`, `blood_group`, `defense_date`, `photo`) VALUES (?)";
+    "INSERT INTO author (`student_id`,`full_name`, `email`, `session`, `batch`, `current_position`, `phone`, `defense_date`, `photo`) VALUES (?)";
   const values = [
     req.body.student_id,
     req.body.full_name,
@@ -179,7 +177,6 @@ app.post("/addAuthor", (req, res) => {
     req.body.batch,
     req.body.current_position,
     req.body.phone,
-    req.body.blood_group,
     req.body.defense_date,
     req.body.photo,
   ];

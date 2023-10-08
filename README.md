@@ -5,11 +5,11 @@ Scholarly Circle is a project and research paper-sharing platform for the Depart
 Scholarly Circle offers a variety of features, including:
 
 <ul>
-  <li>A project and research paper sharing platform: The Chairman and Supervisors can upload research papers that are under their supervision to Scholarly Circle and share them with other supervisors and authors.</li>
-  <li>A search tool: All users can filter all kinds of research papers and projects category-wise and can search research papers by sessions, authors, and their categories added by supervisors.</li>
-  <li>Download research papers: All users can download the research papers that they need.</li>
-  <li>Roles of Chairman: The Chairman can create supervisors and add authors and also can share projects and research papers.</li>
-  <li>Roles of supervisors: Supervisors can add authors and can share projects and research papers.</li>
+  <li>A project and research paper sharing platform: The Chairman and Supervisors can upload research papers and project reports that are under their supervision to Scholarly Circle and share them with other supervisors and authors.</li>
+  <li>A search tool: All users can filter all kinds of research papers and project reports category-wise and can search research papers by sessions, authors, and their categories added by supervisors.</li>
+  <li>Download reports: All users can download the research papers and project reports that they need.</li>
+  <li>Roles of Chairman: The Chairman can create supervisors and add authors and also can share project reports and research papers.</li>
+  <li>Roles of supervisors: Supervisors can add authors and can share project reports and research papers.</li>
 </ul>
 
 # Technologies and Tools:
