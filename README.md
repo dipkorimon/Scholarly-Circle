@@ -8,9 +8,6 @@ Scholarly Circle offers a variety of features, including:
   <li>A project and thesis reports sharing platform: The Chairman and Supervisors can upload project and thesis reports that are under their supervision to Scholarly Circle and share them with other supervisors and authors.</li>
   <li>A search tool: All users can filter all kinds of project and thesis reports category-wise and can search project and thesis reports by sessions, authors, and their categories added by supervisors or chairman.</li>
   <li>Download reports: All users can download the project and thesis reports that they need.</li>
-  <li>Roles of Chairman: The Chairman can create supervisors and add authors and also can share project and thesis reports.</li>
-  <li>A search tool: All users can search project and thesis reports by sessions, authors, and their categories added by supervisors or chairman.</li>
-  <li>Download reports: All users can download the project and thesis reports that they need.</li>
   <li>Roles of Chairman: The Chairman can add supervisors and authors and also can share project and thesis reports.</li>
   <li>Roles of supervisors: Supervisors can add authors and can share project and thesis reports.</li>
 </ul>
