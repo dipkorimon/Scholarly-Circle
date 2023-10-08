@@ -20,42 +20,41 @@ const About = () => {
             <h3>A project and research paper sharing platform</h3>
           </div>
           <p>
-            The Chairman and Supervisors can upload research papers and project
-            reports that are under their supervision to Scholarly Circle and
-            share them with other supervisors and authors.
+            The Chairman and Supervisors can upload project and thesis reports
+            that are under their supervision to Scholarly Circle and share them
+            with other supervisors and authors.
           </p>
           <div className="icon">
             <BlurOnIcon style={{ color: "rgb(229, 18, 46)" }} />
             <h3>A search tool</h3>
           </div>
           <p>
-            All users can filter all kinds of research papers and project
-            reports category-wise and can search research papers by sessions,
-            authors, and their categories added by supervisors.
+            All users can search project and thesis reports by sessions,
+            authors, and their categories added by supervisors or chairman.
           </p>
           <div className="icon">
             <BlurOnIcon style={{ color: "rgb(229, 18, 46)" }} />
             <h3>Download reports</h3>
           </div>
           <p>
-            All users can download the research papers and project reports that
-            they need.
+            All users can download the project and thesis reports that they
+            need.
           </p>
           <div className="icon">
             <BlurOnIcon style={{ color: "rgb(229, 18, 46)" }} />
             <h3>Roles of Chairman</h3>
           </div>
           <p>
-            The Chairman can create supervisors and add authors and also can
-            share project reports and research papers.
+            The Chairman can add supervisors and authors and also can share
+            project and thesis reports.
           </p>
           <div className="icon">
             <BlurOnIcon style={{ color: "rgb(229, 18, 46)" }} />
             <h3>Roles of supervisors</h3>
           </div>
           <p>
-            Supervisors can add authors and can share project reports and
-            research papers.
+            Supervisors can add authors and can share project and thesis
+            reports.
           </p>
         </div>
       </div>
