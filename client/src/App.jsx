@@ -12,6 +12,9 @@ import Supervisors from "./pages/supervisors/Supervisors";
 import Authors from "./pages/authors/Authors";
 import Reports from "./pages/reports/Reports";
 import SupervisorLogin from "./pages/supervisorLogin/SupervisorLogin";
+import UpdateAuthor from "./pages/updateAuthor/UpdateAuthor";
+import UpdateReport from "./pages/updateReport/UpdateReport";
+import UpdateSupervisor from "./pages/updateSupervisor/UpdateSupervisor";
 
 function App() {
   const Layout = () => {
@@ -56,6 +59,18 @@ function App() {
         {
           path: "/addAuthor",
           element: <AddAuthor />,
+        },
+        {
+          path: "/updateReport/:id",
+          element: <UpdateReport />,
+        },
+        {
+          path: "/updateSupervisor/:id",
+          element: <UpdateSupervisor />,
+        },
+        {
+          path: "/updateAuthor/:id",
+          element: <UpdateAuthor />,
         },
       ],
     },

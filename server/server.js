@@ -10,7 +10,7 @@ const app = express();
 app.use(
   cors({
     origin: ["http://localhost:5173"],
-    methods: ["POST", "GET"],
+    methods: ["POST", "GET", "PUT", "DELETE"],
     credentials: true,
   })
 );
@@ -238,6 +238,42 @@ app.get("/authors", (req, res) => {
   db.query(sql, (err, data) => {
     if (err) return res.json("Error");
     return res.json(data);
+  });
+});
+
+// For delete author
+app.delete("/authors/:id", (req, res) => {
+  const id = req.params.id;
+  const sql = "DELETE FROM author WHERE id = ?";
+  db.query(sql, [id], (err, data) => {
+    if (err) {
+      res.json(err);
+    }
+    return res.json("Author has been deleted");
+  });
+});
+
+// For delete supervisor
+app.delete("/supervisors/:id", (req, res) => {
+  const id = req.params.id;
+  const sql = "DELETE FROM supervisor WHERE id = ?";
+  db.query(sql, [id], (err, data) => {
+    if (err) {
+      res.json(err);
+    }
+    return res.json("Supervisor has been deleted");
+  });
+});
+
+// For delete report
+app.delete("/reports/:id", (req, res) => {
+  const id = req.params.id;
+  const sql = "DELETE FROM report WHERE id = ?";
+  db.query(sql, [id], (err, data) => {
+    if (err) {
+      res.json(err);
+    }
+    return res.json("Report has been deleted");
   });
 });
 

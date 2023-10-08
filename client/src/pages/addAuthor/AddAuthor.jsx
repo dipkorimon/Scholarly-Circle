@@ -43,8 +43,8 @@ const AddAuthor = () => {
   return (
     <div className="addAuthor">
       <h1>
-        Add author with student ID, full name, email, session, batch, blood
-        group, defense date and a photo.
+        Add author with student ID, full name, email, session, batch,
+        current_position, phone, blood group, defense date and a photo.
       </h1>
       <form action="" onSubmit={handleSubmit}>
         <label htmlFor="">Student ID</label>

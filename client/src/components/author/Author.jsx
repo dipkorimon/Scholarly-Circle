@@ -7,6 +7,9 @@ import BloodtypeIcon from "@mui/icons-material/Bloodtype";
 import DateRangeIcon from "@mui/icons-material/DateRange";
 import BatchPredictionIcon from "@mui/icons-material/BatchPrediction";
 import AdjustIcon from "@mui/icons-material/Adjust";
+import NumbersIcon from "@mui/icons-material/Numbers";
+import DeleteIcon from "@mui/icons-material/Delete";
+import EditIcon from "@mui/icons-material/Edit";
 import axios from "axios";
 
 const Author = () => {
@@ -19,6 +22,15 @@ const Author = () => {
       .catch((err) => console.log(err));
   });
 
+  const handleDelete = async (id) => {
+    try {
+      await axios.delete("http://localhost:8800/authors/" + id);
+      window.location.reload();
+    } catch (err) {
+      console.log(err);
+    }
+  };
+
   return (
     <div className="author">
       {author.map((item, index) => (
@@ -28,15 +40,29 @@ const Author = () => {
           </div>
           <div className="name">
             <h3>{item.full_name}</h3>
-          </div>
-          <div className="update-delete">
-            <button>Update</button>
-            <button>Delete</button>
+            <a href={`/updateAuthor/${item.id}`}>
+              <EditIcon
+                style={{
+                  color: "rgb(42, 52, 71)",
+                }}
+              />
+            </a>
+            <button onClick={() => handleDelete(item.id)}>
+              <DeleteIcon
+                style={{
+                  color: "rgb(229, 18, 46)",
+                }}
+              />
+            </button>
           </div>
           <div className="info">
             <div className="info-desc">
               <PersonIcon />
               <p>{item.current_position}</p>
+            </div>
+            <div className="info-desc">
+              <NumbersIcon />
+              <p>{item.student_id}</p>
             </div>
             <div className="info-desc">
               <EmailIcon />
