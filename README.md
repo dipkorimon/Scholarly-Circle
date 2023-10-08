@@ -1,6 +1,6 @@
 # Scholarly Circle
 
-Scholarly Circle is a project and research paper-sharing platform for the Department of Computer Science and Telecommunication Engineering, Noakhali Science and Technology University.
+Scholarly Circle is a project reports and research paper-sharing platform for the Department of Computer Science and Telecommunication Engineering, Noakhali Science and Technology University.
 
 Scholarly Circle offers a variety of features, including:
 
