@@ -41,6 +41,8 @@ const NavBar = () => {
       });
   };
 
+  const login = localStorage.getItem("ChairmanLogin");
+
   return (
     <div className="navBar">
       <div className="left">
@@ -61,7 +63,7 @@ const NavBar = () => {
             <div className="profile">
               <img src="" alt="" />
               <button className="name">{name}</button>
-              {name == "Chairman" ? (
+              {login ? (
                 <div id="drop-down">
                   <a href="/addSupervisor">
                     <SupervisorAccountIcon />
