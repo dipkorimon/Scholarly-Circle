@@ -26,6 +26,9 @@ const Reports = () => {
     }
   };
 
+  const chairmanLogin = localStorage.getItem("ChairmanLogin");
+  const supervisorLogin = localStorage.getItem("SupervisorLogin");
+
   return (
     <div className="reports">
       <div className="search">
@@ -80,31 +83,37 @@ const Reports = () => {
               <div className="buttons">
                 <button>Download full-text</button>
                 <button>Download Presentation</button>
-                <a
-                  href={`/updateReport/${item.id}`}
-                  style={{
-                    background: "none",
-                    padding: "0",
-                  }}
-                >
-                  <EditIcon
-                    style={{
-                      fontSize: "25",
-                      color: "rgb(42, 52, 71)",
-                    }}
-                  />
-                </a>
-                <button
-                  style={{ background: "none", padding: "0" }}
-                  onClick={() => handleDelete(item.id)}
-                >
-                  <DeleteIcon
-                    style={{
-                      fontSize: "25",
-                      color: "rgb(229, 18, 46)",
-                    }}
-                  />
-                </button>
+                {chairmanLogin || supervisorLogin ? (
+                  <div>
+                    <a
+                      href={`/updateReport/${item.id}`}
+                      style={{
+                        background: "none",
+                        padding: "0",
+                      }}
+                    >
+                      <EditIcon
+                        style={{
+                          fontSize: "25",
+                          color: "rgb(42, 52, 71)",
+                        }}
+                      />
+                    </a>
+                    <button
+                      style={{ background: "none", padding: "0" }}
+                      onClick={() => handleDelete(item.id)}
+                    >
+                      <DeleteIcon
+                        style={{
+                          fontSize: "25",
+                          color: "rgb(229, 18, 46)",
+                        }}
+                      />
+                    </button>
+                  </div>
+                ) : (
+                  <div></div>
+                )}
               </div>
             </div>
           ))}

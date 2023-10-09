@@ -39,7 +39,7 @@ const FeaturedPages = () => {
             <ArticleIcon
               style={{ fontSize: "35", color: "rgb(229, 18, 46)" }}
             />
-            <h3>Projects and Research Papers</h3>
+            <h3>Project and Thesis Reports</h3>
           </div>
           <p>You can find all projects and research papers information here.</p>
           <div className="link">

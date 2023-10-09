@@ -30,6 +30,9 @@ const Author = () => {
     }
   };
 
+  const chairmanLogin = localStorage.getItem("ChairmanLogin");
+  const supervisorLogin = localStorage.getItem("SupervisorLogin");
+
   return (
     <div className="author">
       {author.map((item, index) => (
@@ -39,22 +42,28 @@ const Author = () => {
           </div>
           <div className="name">
             <h3>{item.full_name}</h3>
-            <a href={`/updateAuthor/${item.id}`}>
-              <EditIcon
-                style={{
-                  fontSize: "25",
-                  color: "rgb(42, 52, 71)",
-                }}
-              />
-            </a>
-            <button onClick={() => handleDelete(item.id)}>
-              <DeleteIcon
-                style={{
-                  fontSize: "25",
-                  color: "rgb(229, 18, 46)",
-                }}
-              />
-            </button>
+            {chairmanLogin || supervisorLogin ? (
+              <div>
+                <a href={`/updateAuthor/${item.id}`}>
+                  <EditIcon
+                    style={{
+                      fontSize: "25",
+                      color: "rgb(42, 52, 71)",
+                    }}
+                  />
+                </a>
+                <button onClick={() => handleDelete(item.id)}>
+                  <DeleteIcon
+                    style={{
+                      fontSize: "25",
+                      color: "rgb(229, 18, 46)",
+                    }}
+                  />
+                </button>
+              </div>
+            ) : (
+              <div></div>
+            )}
           </div>
           <div className="info">
             <div className="info-desc">

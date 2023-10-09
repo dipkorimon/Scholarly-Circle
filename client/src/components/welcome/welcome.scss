@@ -70,12 +70,12 @@
         background-color: $dark-red;
       }
 
-      @include mobile {
-        font-size: 10px;
+      @include tablet {
         padding: 3px 15px;
       }
 
-      @include tablet {
+      @include mobile {
+        font-size: 10px;
         padding: 3px 15px;
       }
     }
@@ -91,6 +91,16 @@
       width: 600px;
       height: 250px;
       object-fit: cover;
+
+      @include tablet {
+        width: 500px;
+        height: 200px;
+      }
+
+      @include mobile {
+        width: 400px;
+        height: 150px;
+      }
     }
   }
 

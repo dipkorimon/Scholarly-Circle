@@ -22,6 +22,7 @@ const ChairmanLogin = () => {
         .post("http://localhost:8800/chairmanLogin", values)
         .then((res) => {
           if (res.data.Status === "Success") {
+            localStorage.setItem("ChairmanLogin", true);
             navigate("/");
           } else {
             alert("Wrong email or password !!!");

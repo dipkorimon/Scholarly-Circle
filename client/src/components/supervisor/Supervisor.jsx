@@ -29,6 +29,8 @@ const Supervisor = () => {
     }
   };
 
+  const login = localStorage.getItem("ChairmanLogin");
+
   return (
     <div className="supervisor">
       {supervisor.map((item, index) => (
@@ -38,22 +40,28 @@ const Supervisor = () => {
           </div>
           <div className="name">
             <h3>{item.full_name}</h3>
-            <a href={`/updateSupervisor/${item.id}`}>
-              <EditIcon
-                style={{
-                  fontSize: "25",
-                  color: "rgb(42, 52, 71)",
-                }}
-              />
-            </a>
-            <button onClick={() => handleDelete(item.id)}>
-              <DeleteIcon
-                style={{
-                  fontSize: "25",
-                  color: "rgb(229, 18, 46)",
-                }}
-              />
-            </button>
+            {login ? (
+              <div>
+                <a href={`/updateSupervisor/${item.id}`}>
+                  <EditIcon
+                    style={{
+                      fontSize: "25",
+                      color: "rgb(42, 52, 71)",
+                    }}
+                  />
+                </a>
+                <button onClick={() => handleDelete(item.id)}>
+                  <DeleteIcon
+                    style={{
+                      fontSize: "25",
+                      color: "rgb(229, 18, 46)",
+                    }}
+                  />
+                </button>
+              </div>
+            ) : (
+              <div></div>
+            )}
           </div>
           <div className="info">
             <div className="info-desc">
