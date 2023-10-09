@@ -198,6 +198,16 @@
             background-color: $soft-color;
             box-shadow: $shadow;
 
+            @include tablet {
+              top: 140px;
+              right: 270px;
+            }
+
+            @include mobile {
+              top: 120px;
+              right: 70px;
+            }
+
             a {
               display: flex;
               color: $dark-color;
@@ -239,6 +249,16 @@
           border-radius: 5px;
           background-color: $soft-color;
           box-shadow: $shadow;
+
+          @include tablet {
+            top: 140px;
+            right: 270px;
+          }
+
+          @include mobile {
+            top: 120px;
+            right: 70px;
+          }
 
           a {
             display: flex;
