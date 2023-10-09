@@ -145,6 +145,11 @@
             padding: 3px 15px;
             margin-bottom: 10px;
           }
+
+          @include mobile {
+            padding: 3px 15px;
+            margin-bottom: 10px;
+          }
         }
 
         .login-as {
@@ -163,6 +168,11 @@
             }
 
             @include tablet {
+              padding: 3px 15px;
+              margin-bottom: 10px;
+            }
+
+            @include mobile {
               padding: 3px 15px;
               margin-bottom: 10px;
             }
@@ -260,13 +270,13 @@
               background-color: $dark-red;
             }
 
-            @include mobile {
-              font-size: 10px;
+            @include tablet {
               padding: 3px 15px;
               margin-bottom: 5px;
             }
 
-            @include tablet {
+            @include mobile {
+              font-size: 10px;
               padding: 3px 15px;
               margin-bottom: 5px;
             }

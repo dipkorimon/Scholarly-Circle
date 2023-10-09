@@ -38,18 +38,14 @@ const Reports = () => {
         </div>
         <div className="search-box">
           <form action="">
-            <input
-              type="text"
-              placeholder="Ex: Session, Category, Author"
-              onChange={(e) => setQuery(e.target.value)}
-            />
+            <input type="text" placeholder="Ex: Session, Category, Author" />
           </form>
         </div>
       </div>
       <div className="items">
         <div className="post">
-          {report.map((item, index) => (
-            <div className="post-item">
+          {report.map((item) => (
+            <div className="post-item" key={item.id}>
               <div className="info">
                 <div className="img">
                   <img src="" alt="" />

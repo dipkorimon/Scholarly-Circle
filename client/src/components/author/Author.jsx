@@ -35,8 +35,8 @@ const Author = () => {
 
   return (
     <div className="author">
-      {author.map((item, index) => (
-        <div className="aut-info">
+      {author.map((item) => (
+        <div className="aut-info" key={item.id}>
           <div className="img">
             <img src={item.photo} alt="" />
           </div>

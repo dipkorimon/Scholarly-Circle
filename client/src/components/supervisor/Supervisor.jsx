@@ -33,8 +33,8 @@ const Supervisor = () => {
 
   return (
     <div className="supervisor">
-      {supervisor.map((item, index) => (
-        <div className="sup-info">
+      {supervisor.map((item) => (
+        <div className="sup-info" key={item.id}>
           <div className="img">
             <img src={item.photo} alt="" />
           </div>
