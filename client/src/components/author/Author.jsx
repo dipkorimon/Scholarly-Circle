@@ -10,6 +10,7 @@ import NumbersIcon from "@mui/icons-material/Numbers";
 import DeleteIcon from "@mui/icons-material/Delete";
 import EditIcon from "@mui/icons-material/Edit";
 import axios from "axios";
+import moment from "moment";
 
 const Author = () => {
   const [author, setAuthor] = useState([]);
@@ -92,7 +93,9 @@ const Author = () => {
             </div>
             <div className="info-desc">
               <DateRangeIcon />
-              <p>Defense Date: {item.defense_date}</p>
+              <p>
+                Defense Date: {moment(item.defense_date).format("MMMM Do YYYY")}
+              </p>
             </div>
           </div>
         </div>

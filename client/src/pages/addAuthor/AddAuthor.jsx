@@ -32,7 +32,7 @@ const AddAuthor = () => {
         .post("http://localhost:8800/addAuthor", values)
         .then((res) => {
           if (res.data.Status === "Success") {
-            navigate("/");
+            navigate("/authors");
           }
         })
         .catch((err) => console.log(err));

@@ -32,7 +32,7 @@ const AddSupervisor = () => {
         .post("http://localhost:8800/addSupervisor", values)
         .then((res) => {
           if (res.data.Status === "Success") {
-            navigate("/");
+            navigate("/supervisors");
           }
         })
         .catch((err) => console.log(err));

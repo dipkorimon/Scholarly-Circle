@@ -9,6 +9,7 @@ import ArchitectureIcon from "@mui/icons-material/Architecture";
 import DeleteIcon from "@mui/icons-material/Delete";
 import EditIcon from "@mui/icons-material/Edit";
 import axios from "axios";
+import moment from "moment";
 
 const Supervisor = () => {
   const [supervisor, setSupervisor] = useState([]);
@@ -82,7 +83,9 @@ const Supervisor = () => {
             </div>
             <div className="info-desc">
               <DateRangeIcon />
-              <p>Joining Date: {item.joining_date}</p>
+              <p>
+                Joining Date: {moment(item.joining_date).format("MMMM Do YYYY")}
+              </p>
             </div>
             <div className="research">
               <div className="r-int">

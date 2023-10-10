@@ -16,8 +16,6 @@ const AddReport = () => {
         <input type="text" />
         <label htmlFor="">Session</label>
         <input type="text" />
-        <label htmlFor="">Date</label>
-        <input type="date" />
         <label htmlFor="">Category</label>
         <input type="text" />
         <label htmlFor="">Report type</label>

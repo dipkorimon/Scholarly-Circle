@@ -168,7 +168,7 @@ app.get("/logout", (req, res) => {
 // For add author
 app.post("/addAuthor", (req, res) => {
   const sql =
-    "INSERT INTO author (`student_id`,`full_name`, `email`, `session`, `batch`, `current_position`, `phone`, `defense_date`, `photo`) VALUES (?)";
+    "INSERT INTO author (`student_id`, `full_name`, `email`, `session`, `batch`, `current_position`, `phone`, `defense_date`, `photo`) VALUES (?)";
   const values = [
     req.body.student_id,
     req.body.full_name,
@@ -191,15 +191,16 @@ app.post("/addAuthor", (req, res) => {
 // For add report
 app.post("/addReport", (req, res) => {
   const sql =
-    "INSERT INTO report (`title`, `abstract`, `supervisor_name`, `authors_name`, `session`, `date`, `category`, `document`, `presentation`) VALUES (?)";
+    "INSERT INTO report (`title`, `abstract`, `supervisor_name`, `authors_name`, `session`, `category`, `published_date`, `report_type`, `document`, `presentation`) VALUES (?)";
   const values = [
     req.body.title,
     req.body.abstract,
     req.body.supervisor_name,
     req.body.authors_name,
     req.body.session,
-    req.body.date,
     req.body.category,
+    req.body.published_date,
+    req.body.report_type,
     req.body.document,
     req.body.presentation,
   ];

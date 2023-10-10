@@ -6,6 +6,7 @@ import EditIcon from "@mui/icons-material/Edit";
 import PersonIcon from "@mui/icons-material/Person";
 import DateRangeIcon from "@mui/icons-material/DateRange";
 import axios from "axios";
+import moment from "moment";
 
 const Reports = () => {
   const [report, setReport] = useState([]);
@@ -73,7 +74,7 @@ const Reports = () => {
                 </div>
                 <div className="date">
                   <DateRangeIcon />
-                  <p>{item.date}</p>
+                  <p>{moment(item.published_date).format("MMMM Do YYYY")}</p>
                 </div>
               </div>
               <div className="buttons">

@@ -11,14 +11,12 @@ const AddReport = () => {
     supervisor_name: "",
     authors_name: "",
     session: "",
-    date: "",
+    published_date: "",
     category: "",
     report_type: "",
     document: "",
     presentation: "",
   });
-
-  console.log(values);
 
   const navigate = useNavigate();
   const [errors, setErrors] = useState({});
@@ -37,7 +35,7 @@ const AddReport = () => {
         .post("http://localhost:8800/addReport", values)
         .then((res) => {
           if (res.data.Status === "Success") {
-            navigate("/");
+            navigate("/reports");
           }
         })
         .catch((err) => console.log(err));
@@ -47,7 +45,7 @@ const AddReport = () => {
   return (
     <div className="report">
       <h1>
-        Add a new report in Scholarly Circle with a title, abstract, current
+        Add a new report in Scholarly Circle with a title, abstract, published
         date, category, report type(project or thesis), document(docx or pdf)
         and a presentation silde(pptx).
       </h1>
@@ -90,11 +88,13 @@ const AddReport = () => {
           name="session"
           onChange={(e) => setValues({ ...values, session: e.target.value })}
         />
-        <label htmlFor="">Date</label>
+        <label htmlFor="">Published date</label>
         <input
           type="date"
-          name="date"
-          onChange={(e) => setValues({ ...values, date: e.target.value })}
+          name="published_date"
+          onChange={(e) =>
+            setValues({ ...values, published_date: e.target.value })
+          }
         />
         <label htmlFor="">Category</label>
         <input
@@ -105,7 +105,7 @@ const AddReport = () => {
         <label htmlFor="">Report type</label>
         <input
           type="text"
-          name="category"
+          name="report_type"
           onChange={(e) =>
             setValues({ ...values, report_type: e.target.value })
           }
