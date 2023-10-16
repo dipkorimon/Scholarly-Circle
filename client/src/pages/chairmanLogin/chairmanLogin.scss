@@ -14,7 +14,6 @@
 
   h1 {
     font-size: 30px;
-    color: $dark-color;
 
     @include tablet {
       font-size: 25px;
@@ -27,7 +26,6 @@
 
   p {
     font-size: 16px;
-    color: $dark-color;
 
     @include tablet {
       font-size: 14px;
@@ -52,7 +50,6 @@
     label {
       margin-top: 20px;
       font-size: 16px;
-      color: $dark-color;
     }
 
     input {

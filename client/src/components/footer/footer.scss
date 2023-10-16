@@ -21,8 +21,6 @@
       gap: 10px;
 
       a {
-        color: $dark-color;
-
         &:hover {
           color: $red-color;
         }
@@ -32,10 +30,13 @@
     .mid {
       p {
         font-size: 15px;
-        color: $dark-color;
 
         span {
           font-weight: bold;
+        }
+
+        @include tablet {
+          font-size: 14px;
         }
 
         @include mobile {
@@ -47,10 +48,13 @@
     .bottom {
       p {
         font-size: 15px;
-        color: $dark-color;
 
         span {
           font-weight: bold;
+        }
+
+        @include tablet {
+          font-size: 14px;
         }
 
         @include mobile {
@@ -64,7 +68,10 @@
     .top {
       p {
         font-size: 15px;
-        color: $dark-color;
+
+        @include tablet {
+          font-size: 14px;
+        }
 
         @include mobile {
           font-size: 13px;
@@ -75,7 +82,10 @@
     .mid {
       p {
         font-size: 15px;
-        color: $dark-color;
+
+        @include tablet {
+          font-size: 14px;
+        }
 
         @include mobile {
           font-size: 13px;
@@ -86,7 +96,10 @@
     .bottom {
       p {
         font-size: 15px;
-        color: $dark-color;
+
+        @include tablet {
+          font-size: 14px;
+        }
 
         @include mobile {
           font-size: 13px;

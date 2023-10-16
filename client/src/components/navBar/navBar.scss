@@ -26,7 +26,6 @@
 
     a {
       font-size: 22px;
-      color: $dark-color;
       font-weight: bold;
 
       @include tablet {
@@ -210,7 +209,6 @@
 
             a {
               display: flex;
-              color: $dark-color;
               font-weight: bold;
               font-size: 15px;
               padding: 5px;
@@ -316,7 +314,6 @@
           background: none;
           font-size: 18px;
           font-weight: bold;
-          color: $dark-color;
           cursor: pointer;
 
           @include tablet {

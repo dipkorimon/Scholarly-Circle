@@ -17,7 +17,6 @@
 
   h1 {
     font-size: 40px;
-    color: $dark-color;
     text-align: center;
 
     @include tablet {
@@ -35,7 +34,6 @@
 
     p {
       font-size: 20px;
-      color: $dark-color;
       text-align: center;
       font-weight: bold;
 
@@ -106,7 +104,6 @@
 
   p {
     font-size: 16px;
-    color: $dark-color;
     text-align: center;
     font-weight: bold;
 

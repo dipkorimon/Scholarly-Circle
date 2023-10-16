@@ -10,12 +10,13 @@
 a {
   text-decoration: none;
   cursor: pointer;
+  color: $dark-color;
 }
 
 .main {
   font-family: "Poppins", sans-serif;
   background-color: $white-color;
-  color: $black-color;
+  color: $dark-color;
 }
 
 @mixin mobile {

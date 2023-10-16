@@ -16,7 +16,6 @@
 
   h1 {
     font-size: 30px;
-    color: $dark-color;
     text-align: center;
 
     @include mobile {
@@ -31,7 +30,6 @@
     label {
       margin-top: 20px;
       font-size: 16px;
-      color: $dark-color;
     }
 
     input {
@@ -117,7 +115,6 @@
 
   .sign {
     p {
-      color: $dark-color;
       font-size: 16px;
 
       @include tablet {

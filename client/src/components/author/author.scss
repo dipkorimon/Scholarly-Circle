@@ -57,7 +57,6 @@
 
       h3 {
         font-size: 20px;
-        color: $dark-color;
         text-align: center;
 
         @include tablet {
@@ -87,7 +86,6 @@
 
         p {
           font-size: 16px;
-          color: $dark-color;
 
           @include tablet {
             font-size: 14px;

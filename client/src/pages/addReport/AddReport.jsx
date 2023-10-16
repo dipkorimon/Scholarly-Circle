@@ -116,7 +116,9 @@ const AddReport = () => {
             type="file"
             id="file1"
             name="document"
-            onChange={(e) => setValues({ ...values, document: e.target.value })}
+            onChange={(e) =>
+              setValues({ ...values, document: e.target.files[0] })
+            }
           />
           {errors.document && <span>{errors.document}</span>}
           <label htmlFor="file2">Upload Presentation Slide</label>
@@ -125,7 +127,7 @@ const AddReport = () => {
             id="file2"
             name="presentation"
             onChange={(e) =>
-              setValues({ ...values, presentation: e.target.value })
+              setValues({ ...values, presentation: e.target.files[0] })
             }
           />
         </div>
