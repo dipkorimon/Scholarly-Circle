@@ -11,7 +11,7 @@ const AddReport = () => {
     supervisor_name: "",
     authors_name: "",
     session: "",
-    published_date: "",
+    defense_date: "",
     category: "",
     report_type: "",
     document: "",
@@ -45,9 +45,9 @@ const AddReport = () => {
   return (
     <div className="report">
       <h1>
-        Add a new report in Scholarly Circle with a title, abstract, published
-        date, category, report type(project or thesis), document(docx or pdf)
-        and a presentation silde(pptx).
+        Add a new report in Scholarly Circle with a title, abstract, supervisor
+        name, authors name, defense date, category, report type(project or
+        thesis), document(docx or pdf) and a presentation silde(pptx).
       </h1>
       <form action="" onSubmit={handleSubmit}>
         <label htmlFor="">Title</label>
@@ -56,14 +56,18 @@ const AddReport = () => {
           name="title"
           onChange={(e) => setValues({ ...values, title: e.target.value })}
         />
-        {errors.title && <span>{errors.title}</span>}
+        {errors.title && (
+          <span style={{ color: "rgb(229, 18, 46)" }}>{errors.title}</span>
+        )}
         <label htmlFor="">Abstract</label>
         <textarea
           type="text"
           name="abstract"
           onChange={(e) => setValues({ ...values, abstract: e.target.value })}
         />
-        {errors.abstract && <span>{errors.abstract}</span>}
+        {errors.abstract && (
+          <span style={{ color: "rgb(229, 18, 46)" }}>{errors.abstract}</span>
+        )}
         <label htmlFor="">Supervisor name</label>
         <input
           type="text"
@@ -72,7 +76,11 @@ const AddReport = () => {
             setValues({ ...values, supervisor_name: e.target.value })
           }
         />
-        {errors.supervisor_name && <span>{errors.supervisor_name}</span>}
+        {errors.supervisor_name && (
+          <span style={{ color: "rgb(229, 18, 46)" }}>
+            {errors.supervisor_name}
+          </span>
+        )}
         <label htmlFor="">Authors name</label>
         <input
           type="text"
@@ -81,19 +89,23 @@ const AddReport = () => {
             setValues({ ...values, authors_name: e.target.value })
           }
         />
-        {errors.authors_name && <span>{errors.authors_name}</span>}
+        {errors.authors_name && (
+          <span style={{ color: "rgb(229, 18, 46)" }}>
+            {errors.authors_name}
+          </span>
+        )}
         <label htmlFor="">Session</label>
         <input
           type="text"
           name="session"
           onChange={(e) => setValues({ ...values, session: e.target.value })}
         />
-        <label htmlFor="">Published date</label>
+        <label htmlFor="">Defense date</label>
         <input
           type="date"
-          name="published_date"
+          name="defense_date"
           onChange={(e) =>
-            setValues({ ...values, published_date: e.target.value })
+            setValues({ ...values, defense_date: e.target.value })
           }
         />
         <label htmlFor="">Category</label>
@@ -120,7 +132,9 @@ const AddReport = () => {
               setValues({ ...values, document: e.target.files[0] })
             }
           />
-          {errors.document && <span>{errors.document}</span>}
+          {errors.document && (
+            <span style={{ color: "rgb(229, 18, 46)" }}>{errors.document}</span>
+          )}
           <label htmlFor="file2">Upload Presentation Slide</label>
           <input
             type="file"

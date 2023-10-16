@@ -191,7 +191,7 @@ app.post("/addAuthor", (req, res) => {
 // For add report
 app.post("/addReport", (req, res) => {
   const sql =
-    "INSERT INTO report (`title`, `abstract`, `supervisor_name`, `authors_name`, `session`, `category`, `published_date`, `report_type`, `document`, `presentation`) VALUES (?)";
+    "INSERT INTO report (`title`, `abstract`, `supervisor_name`, `authors_name`, `session`, `category`, `defense_date`, `report_type`, `document`, `presentation`) VALUES (?)";
   const values = [
     req.body.title,
     req.body.abstract,
@@ -199,7 +199,7 @@ app.post("/addReport", (req, res) => {
     req.body.authors_name,
     req.body.session,
     req.body.category,
-    req.body.published_date,
+    req.body.defense_date,
     req.body.report_type,
     req.body.document,
     req.body.presentation,
