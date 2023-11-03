@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import "./addReport.scss";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
-import validation from "../validation/ReportValidation";
+import validation from "../../validation/ReportValidation";
 
 const AddReport = () => {
   const [values, setValues] = useState({

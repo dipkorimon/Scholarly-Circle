@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "./chairmanRegister.scss";
-import validation from "../validation/RegisterValidation";
+import validation from "../../validation/RegisterValidation";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 
@@ -50,21 +50,27 @@ const ChairmanRegister = () => {
           name="full_name"
           onChange={(e) => setValues({ ...values, full_name: e.target.value })}
         />
-        {errors.full_name && <span>{errors.full_name}</span>}
+        {errors.full_name && (
+          <span style={{ color: "rgb(229, 18, 46)" }}>{errors.full_name}</span>
+        )}
         <label htmlFor="email">Email address</label>
         <input
           type="email"
           name="email"
           onChange={(e) => setValues({ ...values, email: e.target.value })}
         />
-        {errors.email && <span>{errors.email}</span>}
+        {errors.email && (
+          <span style={{ color: "rgb(229, 18, 46)" }}>{errors.email}</span>
+        )}
         <label htmlFor="password">Password</label>
         <input
           type="password"
           name="password"
           onChange={(e) => setValues({ ...values, password: e.target.value })}
         />
-        {errors.password && <span>{errors.password}</span>}
+        {errors.password && (
+          <span style={{ color: "rgb(229, 18, 46)" }}>{errors.password}</span>
+        )}
         <label htmlFor="">Current position</label>
         <input
           type="text"

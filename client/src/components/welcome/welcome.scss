@@ -86,17 +86,17 @@
     margin-bottom: 10px;
 
     img {
-      width: 600px;
+      width: 450px;
       height: 250px;
       object-fit: cover;
 
       @include tablet {
-        width: 500px;
+        width: 350px;
         height: 200px;
       }
 
       @include mobile {
-        width: 400px;
+        width: 250px;
         height: 150px;
       }
     }

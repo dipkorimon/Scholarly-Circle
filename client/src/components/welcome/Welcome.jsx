@@ -1,11 +1,11 @@
 import React from "react";
 import "./welcome.scss";
-import welcome from "/welcome.jpg";
+import welcome from "/welcome.svg";
 
 const Welcome = () => {
   return (
     <div className="welcome">
-      <h1>A project and research paper-sharing platform</h1>
+      <h1>A project and thesis reports sharing platform</h1>
       <div className="about">
         <p>
           For the Department of Computer Science and Telecommunication
@@ -20,8 +20,8 @@ const Welcome = () => {
         <img src={welcome} alt="" />
       </div>
       <p>
-        Offers a search tool for searching your expected research papers or
-        projects
+        Offers a search tool for searching your expected project or thesis
+        reports
       </p>
     </div>
   );

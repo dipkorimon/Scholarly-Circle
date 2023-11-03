@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import "./addSupervisor.scss";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
-import validation from "../validation/RegisterValidation";
+import validation from "../../validation/RegisterValidation";
 
 const AddSupervisor = () => {
   const [values, setValues] = useState({

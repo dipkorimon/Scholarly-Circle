@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import "./addAuthor.scss";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
-import validation from "../validation/AuthorValidation";
+import validation from "../../validation/AuthorValidation";
 
 const AddAuthor = () => {
   const [values, setValues] = useState({

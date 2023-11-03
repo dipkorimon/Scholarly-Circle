@@ -1,7 +1,7 @@
 import React from "react";
 import "./about.scss";
 import BlurOnIcon from "@mui/icons-material/BlurOn";
-import Photo from "/about.jpg";
+import Photo from "/about.svg";
 
 const About = () => {
   return (
