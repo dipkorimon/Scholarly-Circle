@@ -47,7 +47,7 @@ const NavBar = () => {
     <div className="navBar">
       <div className="left">
         <a href="/">
-          <img src="/logo.svg" alt="" />
+          <img src="/logo.png" alt="" />
         </a>
         <a href="/">ScholarlyCircle</a>
       </div>
