@@ -78,8 +78,7 @@ const Reports = () => {
                 </div>
               </div>
               <div className="buttons">
-                <button>Download full-text</button>
-                <button>Download Presentation</button>
+                <a>Read full-text</a>
                 {chairmanLogin || supervisorLogin ? (
                   <div>
                     <a

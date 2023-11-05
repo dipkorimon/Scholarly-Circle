@@ -261,7 +261,6 @@
 
           a {
             display: flex;
-            color: $dark-color;
             font-weight: bold;
             font-size: 15px;
             padding: 5px;
@@ -313,6 +312,7 @@
         .name {
           border: none;
           background: none;
+          color: $dark-color;
           font-size: 18px;
           font-weight: bold;
           cursor: pointer;
@@ -323,6 +323,19 @@
 
           @include mobile {
             font-size: 14px;
+          }
+        }
+
+        .logInfo {
+          font-size: 14px;
+          color: $dark-color;
+
+          @include tablet {
+            font-size: 12px;
+          }
+
+          @include mobile {
+            font-size: 10px;
           }
         }
       }
