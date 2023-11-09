@@ -41,7 +41,7 @@ const FeaturedPages = () => {
             />
             <h3>Project and Thesis Reports</h3>
           </div>
-          <p>You can find all projects and research papers information here.</p>
+          <p>You can find all projects and thesis reports here.</p>
           <div className="link">
             <a href="/reports">More info</a>
             <EastIcon style={{ fontSize: "20" }} />

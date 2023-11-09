@@ -78,7 +78,7 @@ const Reports = () => {
                 </div>
               </div>
               <div className="buttons">
-                <a>
+                <a href={`/singleReport/${item.id}`}>
                   <button>Read full-text</button>
                 </a>
                 {chairmanLogin || supervisorLogin ? (

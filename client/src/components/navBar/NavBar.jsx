@@ -5,6 +5,7 @@ import SupervisorAccountIcon from "@mui/icons-material/SupervisorAccount";
 import PersonIcon from "@mui/icons-material/Person";
 import ArticleIcon from "@mui/icons-material/Article";
 import LoginIcon from "@mui/icons-material/Login";
+import AccountBoxIcon from "@mui/icons-material/AccountBox";
 
 const NavBar = () => {
   const [auth, setAuth] = useState(false);
@@ -62,7 +63,7 @@ const NavBar = () => {
         <div className="right">
           {auth ? (
             <div className="profile">
-              <img src="" alt="" />
+              <AccountBoxIcon />
               <button className="name">{name}</button>
               {chairman ? (
                 <span className="logInfo">(Chairman)</span>

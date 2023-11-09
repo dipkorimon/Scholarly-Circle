@@ -17,6 +17,7 @@ app.use(
 );
 app.use(cookieParser());
 app.use(express.json());
+app.use(express.static("public"));
 
 const db = mysql.createConnection({
   host: "localhost",

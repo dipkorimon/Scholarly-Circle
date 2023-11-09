@@ -39,7 +39,7 @@ const Author = () => {
       {author.map((item) => (
         <div className="aut-info" key={item.id}>
           <div className="img">
-            <img src={item.photo} alt="" />
+            <img src={`http://localhost:8800/documents/` + item.photo} alt="" />
           </div>
           <div className="name">
             <h3>{item.full_name}</h3>

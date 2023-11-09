@@ -11,6 +11,7 @@ import AddAuthor from "./pages/addAuthor/AddAuthor";
 import Supervisors from "./pages/supervisors/Supervisors";
 import Authors from "./pages/authors/Authors";
 import Reports from "./pages/reports/Reports";
+import SingleReport from "./pages/singleReport/SingleReport";
 import SupervisorLogin from "./pages/supervisorLogin/SupervisorLogin";
 import UpdateAuthor from "./pages/updateAuthor/UpdateAuthor";
 import UpdateReport from "./pages/updateReport/UpdateReport";
@@ -47,6 +48,10 @@ function App() {
         {
           path: "/reports",
           element: <Reports />,
+        },
+        {
+          path: "/singleReport/:id",
+          element: <SingleReport />,
         },
         {
           path: "/addReport",
