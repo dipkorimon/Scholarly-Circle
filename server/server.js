@@ -4,6 +4,7 @@ const cors = require("cors");
 const jwt = require("jsonwebtoken");
 const bcrypt = require("bcrypt");
 const cookieParser = require("cookie-parser");
+const multer = require("multer");
 const salt = 10;
 
 const app = express();
@@ -24,10 +25,21 @@ const db = mysql.createConnection({
   database: "scholarly_circle",
 });
 
+const storage = multer.diskStorage({
+  destination: function (req, file, cb) {
+    return cb(null, "./public/documents");
+  },
+  filename: function (req, file, cb) {
+    return cb(null, `${Date.now()}_${file.originalname}`);
+  },
+});
+
+const upload = multer({ storage });
+
 // For chairman register
 app.post("/chairmanRegister", (req, res) => {
   const sql =
-    "INSERT INTO chairman (`full_name`, `email`, `password`, `current_position`, `phd`, `phone`, `joining_date`, `research_interests`, `photo`) VALUES (?)";
+    "INSERT INTO chairman (`full_name`, `email`, `password`, `current_position`, `phd`, `phone`, `joining_date`, `research_interests`) VALUES (?)";
   bcrypt.hash(req.body.password.toString(), salt, (err, hash) => {
     if (err) return res.json({ Error: "Error for hashing password" });
     const values = [
@@ -39,7 +51,6 @@ app.post("/chairmanRegister", (req, res) => {
       req.body.phone,
       req.body.joining_date,
       req.body.research_interests,
-      req.body.photo,
     ];
     db.query(sql, [values], (err, data) => {
       if (err) {
@@ -82,7 +93,7 @@ app.post("/chairmanLogin", (req, res) => {
 });
 
 // For add supervisor
-app.post("/addSupervisor", (req, res) => {
+app.post("/addSupervisor", upload.single("file"), (req, res) => {
   const sql =
     "INSERT INTO supervisor (`full_name`, `email`, `password`, `current_position`, `phd`, `phone`, `joining_date`, `research_interests`, `photo`) VALUES (?)";
   bcrypt.hash(req.body.password.toString(), salt, (err, hash) => {
@@ -96,7 +107,7 @@ app.post("/addSupervisor", (req, res) => {
       req.body.phone,
       req.body.joining_date,
       req.body.research_interests,
-      req.body.photo,
+      req.file.filename,
     ];
     db.query(sql, [values], (err, data) => {
       if (err) {
@@ -166,7 +177,7 @@ app.get("/logout", (req, res) => {
 });
 
 // For add author
-app.post("/addAuthor", (req, res) => {
+app.post("/addAuthor", upload.single("file"), (req, res) => {
   const sql =
     "INSERT INTO author (`student_id`, `full_name`, `email`, `session`, `batch`, `current_position`, `phone`, `defense_date`, `photo`) VALUES (?)";
   const values = [
@@ -178,7 +189,7 @@ app.post("/addAuthor", (req, res) => {
     req.body.current_position,
     req.body.phone,
     req.body.defense_date,
-    req.body.photo,
+    req.file.filename,
   ];
   db.query(sql, [values], (err, data) => {
     if (err) {
@@ -189,9 +200,9 @@ app.post("/addAuthor", (req, res) => {
 });
 
 // For add report
-app.post("/addReport", (req, res) => {
+app.post("/addReport", upload.single("file"), (req, res) => {
   const sql =
-    "INSERT INTO report (`title`, `abstract`, `supervisor_name`, `authors_name`, `session`, `category`, `defense_date`, `report_type`, `document`, `presentation`) VALUES (?)";
+    "INSERT INTO report (`title`, `abstract`, `supervisor_name`, `authors_name`, `session`, `category`, `defense_date`, `report_type`, `document`) VALUES (?)";
   const values = [
     req.body.title,
     req.body.abstract,
@@ -201,8 +212,7 @@ app.post("/addReport", (req, res) => {
     req.body.category,
     req.body.defense_date,
     req.body.report_type,
-    req.body.document,
-    req.body.presentation,
+    req.file.filename,
   ];
   db.query(sql, [values], (err, data) => {
     if (err) {

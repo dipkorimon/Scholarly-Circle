@@ -2,44 +2,40 @@ import React, { useState } from "react";
 import "./addReport.scss";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
-import validation from "../../validation/ReportValidation";
 
 const AddReport = () => {
-  const [values, setValues] = useState({
-    title: "",
-    abstract: "",
-    supervisor_name: "",
-    authors_name: "",
-    session: "",
-    defense_date: "",
-    category: "",
-    report_type: "",
-    document: "",
-    presentation: "",
-  });
+  const [title, setTitle] = useState("");
+  const [abstract, setAbstract] = useState("");
+  const [supervisor_name, setSupervisorName] = useState("");
+  const [authors_name, setAuthorsName] = useState("");
+  const [session, setSession] = useState("");
+  const [category, setCategory] = useState("");
+  const [defense_date, setDefenseDate] = useState("");
+  const [report_type, setReportType] = useState("");
+  const [file, setFile] = useState("");
 
   const navigate = useNavigate();
-  const [errors, setErrors] = useState({});
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    setErrors(validation(values));
-    if (
-      errors.title == "" &&
-      errors.abstract === "" &&
-      errors.supervisor_name === "" &&
-      errors.authors_name === "" &&
-      errors.document === ""
-    ) {
-      axios
-        .post("http://localhost:8800/addReport", values)
-        .then((res) => {
-          if (res.data.Status === "Success") {
-            navigate("/reports");
-          }
-        })
-        .catch((err) => console.log(err));
-    }
+    const formData = new FormData();
+    formData.append("title", title);
+    formData.append("abstract", abstract);
+    formData.append("supervisor_name", supervisor_name);
+    formData.append("authors_name", authors_name);
+    formData.append("session", session);
+    formData.append("category", category);
+    formData.append("defense_date", defense_date);
+    formData.append("report_type", report_type);
+    formData.append("file", file);
+    axios
+      .post("http://localhost:8800/addReport", formData)
+      .then((res) => {
+        if (res.data.Status === "Success") {
+          navigate("/reports");
+        }
+      })
+      .catch((err) => console.log(err));
   };
 
   return (
@@ -47,102 +43,34 @@ const AddReport = () => {
       <h1>
         Add a new report in Scholarly Circle with a title, abstract, supervisor
         name, authors name, defense date, category, report type(project or
-        thesis), document(docx or pdf) and a presentation silde(pptx).
+        thesis), document(docx or pdf).
       </h1>
       <form action="" onSubmit={handleSubmit}>
         <label htmlFor="">Title</label>
-        <input
-          type="text"
-          name="title"
-          onChange={(e) => setValues({ ...values, title: e.target.value })}
-        />
-        {errors.title && (
-          <span style={{ color: "rgb(229, 18, 46)" }}>{errors.title}</span>
-        )}
+        <input type="text" onChange={(e) => setTitle(e.target.value)} />
         <label htmlFor="">Abstract</label>
-        <textarea
-          type="text"
-          name="abstract"
-          onChange={(e) => setValues({ ...values, abstract: e.target.value })}
-        />
-        {errors.abstract && (
-          <span style={{ color: "rgb(229, 18, 46)" }}>{errors.abstract}</span>
-        )}
+        <textarea type="text" onChange={(e) => setAbstract(e.target.value)} />
         <label htmlFor="">Supervisor name</label>
         <input
           type="text"
-          name="supervisor_name"
-          onChange={(e) =>
-            setValues({ ...values, supervisor_name: e.target.value })
-          }
+          onChange={(e) => setSupervisorName(e.target.value)}
         />
-        {errors.supervisor_name && (
-          <span style={{ color: "rgb(229, 18, 46)" }}>
-            {errors.supervisor_name}
-          </span>
-        )}
         <label htmlFor="">Authors name</label>
-        <input
-          type="text"
-          name="authors_name"
-          onChange={(e) =>
-            setValues({ ...values, authors_name: e.target.value })
-          }
-        />
-        {errors.authors_name && (
-          <span style={{ color: "rgb(229, 18, 46)" }}>
-            {errors.authors_name}
-          </span>
-        )}
+        <input type="text" onChange={(e) => setAuthorsName(e.target.value)} />
         <label htmlFor="">Session</label>
-        <input
-          type="text"
-          name="session"
-          onChange={(e) => setValues({ ...values, session: e.target.value })}
-        />
+        <input type="text" onChange={(e) => setSession(e.target.value)} />
         <label htmlFor="">Defense date</label>
-        <input
-          type="date"
-          name="defense_date"
-          onChange={(e) =>
-            setValues({ ...values, defense_date: e.target.value })
-          }
-        />
+        <input type="date" onChange={(e) => setDefenseDate(e.target.value)} />
         <label htmlFor="">Category</label>
-        <input
-          type="text"
-          name="category"
-          onChange={(e) => setValues({ ...values, category: e.target.value })}
-        />
+        <input type="text" onChange={(e) => setCategory(e.target.value)} />
         <label htmlFor="">Report type</label>
-        <input
-          type="text"
-          name="report_type"
-          onChange={(e) =>
-            setValues({ ...values, report_type: e.target.value })
-          }
-        />
+        <input type="text" onChange={(e) => setReportType(e.target.value)} />
         <div className="doc-upload">
           <label htmlFor="file1">Upload Document</label>
           <input
             type="file"
             id="file1"
-            name="document"
-            onChange={(e) =>
-              setValues({ ...values, document: e.target.files[0] })
-            }
-          />
-          {errors.document && (
-            <span style={{ color: "rgb(229, 18, 46)" }}>{errors.document}</span>
-          )}
-          <label htmlFor="file2">Upload Presentation Slide</label>
-          <input
-            type="file"
-            id="file2"
-            name="presentation"
-            onChange={(e) =>
-              setValues({ ...values, presentation: e.target.files[0] })
-            }
+            onChange={(e) => setFile(e.target.files[0])}
           />
         </div>
         <button type="submit">Submit</button>

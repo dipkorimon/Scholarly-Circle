@@ -261,14 +261,26 @@
 
           a {
             display: flex;
-            font-weight: bold;
-            font-size: 15px;
-            padding: 5px;
-            border-radius: 5px;
-            gap: 10px;
+            align-items: center;
+            button {
+              font-weight: bold;
+              font-size: 15px;
+              padding: 5px;
+              border: none;
+              border-radius: 5px;
+              gap: 10px;
 
-            &:hover {
-              background-color: $soft-red;
+              &:hover {
+                background-color: $soft-red;
+              }
+
+              @include tablet {
+                font-size: 13px;
+              }
+
+              @include mobile {
+                font-size: 11px;
+              }
             }
           }
 

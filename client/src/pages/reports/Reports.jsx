@@ -4,7 +4,9 @@ import SearchIcon from "@mui/icons-material/Search";
 import DeleteIcon from "@mui/icons-material/Delete";
 import EditIcon from "@mui/icons-material/Edit";
 import PersonIcon from "@mui/icons-material/Person";
+import SupervisorAccountIcon from "@mui/icons-material/SupervisorAccount";
 import DateRangeIcon from "@mui/icons-material/DateRange";
+import SummarizeIcon from "@mui/icons-material/Summarize";
 import axios from "axios";
 import moment from "moment";
 
@@ -48,18 +50,12 @@ const Reports = () => {
           {report.map((item) => (
             <div className="post-item" key={item.id}>
               <div className="info">
-                <div className="img">
-                  <img src="" alt="" />
-                </div>
-                <div className="sup">
-                  <h5>{item.supervisor_name}</h5>
-                  <p>Supervisor</p>
+                <div className="title">
+                  <SummarizeIcon />
+                  <h3>{item.title}</h3>
                 </div>
               </div>
               <div className="post-details">
-                <div className="title">
-                  <h3>{item.title}</h3>
-                </div>
                 <div className="category">
                   <p>{item.session}</p>
                   <p>{item.category}</p>
@@ -67,6 +63,10 @@ const Reports = () => {
                 </div>
                 <div className="abstract">
                   <p>{item.abstract}</p>
+                </div>
+                <div className="supervisor-name">
+                  <SupervisorAccountIcon />
+                  <p>{item.supervisor_name} (Supervisor)</p>
                 </div>
                 <div className="authors-name">
                   <PersonIcon />
@@ -78,7 +78,9 @@ const Reports = () => {
                 </div>
               </div>
               <div className="buttons">
-                <a>Read full-text</a>
+                <a>
+                  <button>Read full-text</button>
+                </a>
                 {chairmanLogin || supervisorLogin ? (
                   <div>
                     <a

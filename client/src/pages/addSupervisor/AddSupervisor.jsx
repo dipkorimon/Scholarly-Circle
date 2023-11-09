@@ -2,121 +2,78 @@ import React, { useState } from "react";
 import "./addSupervisor.scss";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
-import validation from "../../validation/RegisterValidation";
 
 const AddSupervisor = () => {
-  const [values, setValues] = useState({
-    full_name: "",
-    email: "",
-    password: "",
-    current_position: "",
-    phd: "",
-    phone: "",
-    joining_date: "",
-    research_interests: "",
-    photo: "",
-  });
+  const [full_name, setFullName] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [current_position, setCurrentPosition] = useState("");
+  const [phd, setPhd] = useState("");
+  const [phone, setPhone] = useState("");
+  const [joining_date, setJoiningDate] = useState("");
+  const [research_interests, setResearchInterests] = useState("");
+  const [file, setFile] = useState("");
 
   const navigate = useNavigate();
-  const [errors, setErrors] = useState({});
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    setErrors(validation(values));
-    if (
-      errors.full_name === "" &&
-      errors.email === "" &&
-      errors.password === ""
-    ) {
-      axios
-        .post("http://localhost:8800/addSupervisor", values)
-        .then((res) => {
-          if (res.data.Status === "Success") {
-            navigate("/supervisors");
-          }
-        })
-        .catch((err) => console.log(err));
-    }
+    const formData = new FormData();
+    formData.append("full_name", full_name);
+    formData.append("email", email);
+    formData.append("password", password);
+    formData.append("current_position", current_position);
+    formData.append("phd", phd);
+    formData.append("phone", phone);
+    formData.append("joining_date", joining_date);
+    formData.append("research_interests", research_interests);
+    formData.append("file", file);
+    axios
+      .post("http://localhost:8800/addSupervisor", formData)
+      .then((res) => {
+        if (res.data.Status === "Success") {
+          navigate("/supervisors");
+        }
+      })
+      .catch((err) => console.log(err));
   };
 
   return (
     <div className="addSupervisor">
       <h1>
         Add supervisor with full name, email, password, current position,
-        university name from where PhD degree owned, phone number, blood group,
-        joining date, research interests, about and a photo.
+        university name from where PhD degree owned, phone number, joining date,
+        research interests and a photo.
       </h1>
       <form action="" onSubmit={handleSubmit}>
         <label htmlFor="">Full name</label>
-        <input
-          type="text"
-          name="full_name"
-          onChange={(e) => setValues({ ...values, full_name: e.target.value })}
-        />
-        {errors.full_name && (
-          <span style={{ color: "rgb(229, 18, 46)" }}>{errors.full_name}</span>
-        )}
+        <input type="text" onChange={(e) => setFullName(e.target.value)} />
         <label htmlFor="email">email</label>
-        <input
-          type="email"
-          name="email"
-          onChange={(e) => setValues({ ...values, email: e.target.value })}
-        />
-        {errors.email && (
-          <span style={{ color: "rgb(229, 18, 46)" }}>{errors.email}</span>
-        )}
+        <input type="email" onChange={(e) => setEmail(e.target.value)} />
         <label htmlFor="password">password</label>
-        <input
-          type="password"
-          name="password"
-          onChange={(e) => setValues({ ...values, password: e.target.value })}
-        />
-        {errors.password && (
-          <span style={{ color: "rgb(229, 18, 46)" }}>{errors.password}</span>
-        )}
+        <input type="password" onChange={(e) => setPassword(e.target.value)} />
         <label htmlFor="">Current position</label>
         <input
           type="text"
-          name="current_position"
-          onChange={(e) =>
-            setValues({ ...values, current_position: e.target.value })
-          }
+          onChange={(e) => setCurrentPosition(e.target.value)}
         />
         <label htmlFor="">PhD (University name)</label>
-        <input
-          type="text"
-          name="phd"
-          onChange={(e) => setValues({ ...values, phd: e.target.value })}
-        />
+        <input type="text" onChange={(e) => setPhd(e.target.value)} />
         <label htmlFor="">Phone</label>
-        <input
-          type="text"
-          name="phone"
-          onChange={(e) => setValues({ ...values, phone: e.target.value })}
-        />
+        <input type="text" onChange={(e) => setPhone(e.target.value)} />
         <label htmlFor="">Joining date</label>
-        <input
-          type="date"
-          name="joining_date"
-          onChange={(e) =>
-            setValues({ ...values, joining_date: e.target.value })
-          }
-        />
+        <input type="date" onChange={(e) => setJoiningDate(e.target.value)} />
         <label htmlFor="">Research in interests</label>
         <input
           type="text"
-          name="research_interests"
-          onChange={(e) =>
-            setValues({ ...values, research_interests: e.target.value })
-          }
+          onChange={(e) => setResearchInterests(e.target.value)}
         />
         <div className="photo-upload">
           <label htmlFor="file">Upload Photo</label>
           <input
             type="file"
             id="file"
-            name="photo"
-            onChange={(e) => setValues({ ...values, photo: e.target.value })}
+            onChange={(e) => setFile(e.target.files[0])}
           />
         </div>
         <button type="submit">Submit</button>

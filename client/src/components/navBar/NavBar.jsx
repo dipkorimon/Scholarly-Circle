@@ -73,15 +73,15 @@ const NavBar = () => {
                 <div id="drop-down">
                   <a href="/addSupervisor">
                     <SupervisorAccountIcon />
-                    Add Supervisor
+                    <button>Add Supervisor</button>
                   </a>
                   <a href="/addAuthor">
                     <PersonIcon />
-                    Add Author
+                    <button>Add Author</button>
                   </a>
                   <a href="/addReport">
                     <ArticleIcon />
-                    Add Report
+                    <button>Add Report</button>
                   </a>
                   <button onClick={handleLogout} className="icon">
                     Sign Out
@@ -91,11 +91,11 @@ const NavBar = () => {
                 <div id="drop-down">
                   <a href="/addAuthor">
                     <PersonIcon />
-                    Add Author
+                    <button>Add Author</button>
                   </a>
                   <a href="/addReport">
                     <ArticleIcon />
-                    Add Report
+                    <button>Add Report</button>
                   </a>
                   <button onClick={handleLogout} className="icon">
                     Sign Out
