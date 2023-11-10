@@ -45,31 +45,82 @@ const AddReport = () => {
         name, authors name, defense date, category, report type(project or
         thesis), document(docx or pdf).
       </h1>
+      <p>
+        An asterisk (<span>*</span>) indicates a required field
+      </p>
       <form action="" onSubmit={handleSubmit}>
-        <label htmlFor="">Title</label>
-        <input type="text" onChange={(e) => setTitle(e.target.value)} />
-        <label htmlFor="">Abstract</label>
-        <textarea type="text" onChange={(e) => setAbstract(e.target.value)} />
-        <label htmlFor="">Supervisor name</label>
+        <label htmlFor="">
+          Title<span>*</span>
+        </label>
         <input
           type="text"
+          required
+          onChange={(e) => setTitle(e.target.value)}
+        />
+        <label htmlFor="">
+          Abstract<span>*</span>
+        </label>
+        <textarea
+          type="text"
+          required
+          onChange={(e) => setAbstract(e.target.value)}
+        />
+        <label htmlFor="">
+          Supervisor name<span>*</span>
+        </label>
+        <input
+          type="text"
+          required
           onChange={(e) => setSupervisorName(e.target.value)}
         />
-        <label htmlFor="">Authors name</label>
-        <input type="text" onChange={(e) => setAuthorsName(e.target.value)} />
-        <label htmlFor="">Session</label>
-        <input type="text" onChange={(e) => setSession(e.target.value)} />
-        <label htmlFor="">Defense date</label>
-        <input type="date" onChange={(e) => setDefenseDate(e.target.value)} />
-        <label htmlFor="">Category</label>
-        <input type="text" onChange={(e) => setCategory(e.target.value)} />
-        <label htmlFor="">Report type</label>
-        <input type="text" onChange={(e) => setReportType(e.target.value)} />
+        <label htmlFor="">
+          Authors name<span>*</span>
+        </label>
+        <input
+          type="text"
+          required
+          onChange={(e) => setAuthorsName(e.target.value)}
+        />
+        <label htmlFor="">
+          Session<span>*</span>
+        </label>
+        <input
+          type="text"
+          required
+          onChange={(e) => setSession(e.target.value)}
+        />
+        <label htmlFor="">
+          Defense date<span>*</span>
+        </label>
+        <input
+          type="date"
+          required
+          onChange={(e) => setDefenseDate(e.target.value)}
+        />
+        <label htmlFor="">
+          Category<span>*</span>
+        </label>
+        <input
+          type="text"
+          required
+          onChange={(e) => setCategory(e.target.value)}
+        />
+        <label htmlFor="">
+          Report type<span>*</span>
+        </label>
+        <input
+          type="text"
+          required
+          onChange={(e) => setReportType(e.target.value)}
+        />
         <div className="doc-upload">
-          <label htmlFor="file1">Upload Document</label>
+          <label htmlFor="file1">
+            Upload Document<span>*</span>
+          </label>
           <input
             type="file"
             id="file1"
+            required
             onChange={(e) => setFile(e.target.files[0])}
           />
         </div>

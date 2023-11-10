@@ -30,16 +30,25 @@ const ChairmanLogin = () => {
   return (
     <div className="login">
       <h1>Sign in as Chairman</h1>
+      <p>
+        An asterisk (<span>*</span>) indicates a required field
+      </p>
       <form action="" onSubmit={handleSubmit}>
-        <label htmlFor="email">Email address</label>
+        <label htmlFor="email">
+          Email address<span>*</span>
+        </label>
         <input
           type="email"
+          required
           onChange={(e) => setValues({ ...values, email: e.target.value })}
           name="email"
         />
-        <label htmlFor="password">Password</label>
+        <label htmlFor="password">
+          Password<span>*</span>
+        </label>
         <input
           type="password"
+          required
           onChange={(e) => setValues({ ...values, password: e.target.value })}
           name="password"
         />

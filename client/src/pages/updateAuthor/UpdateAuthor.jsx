@@ -5,26 +5,47 @@ const AddAuthor = () => {
   return (
     <div className="updateAuthor">
       <h1>Update author</h1>
+      <p>
+        An asterisk (<span>*</span>) indicates a required field
+      </p>
       <form action="">
-        <label htmlFor="">Student ID</label>
-        <input type="text" />
-        <label htmlFor="">Full name</label>
-        <input type="text" />
-        <label htmlFor="">Email</label>
-        <input type="email" />
-        <label htmlFor="">Session</label>
-        <input type="text" />
-        <label htmlFor="">Batch</label>
-        <input type="text" />
-        <label htmlFor="">Current Position</label>
-        <input type="text" />
-        <label htmlFor="">Phone</label>
-        <input type="text" />
-        <label htmlFor="">Defense date</label>
-        <input type="date" name="defense_date" />
+        <label htmlFor="">
+          Student ID<span>*</span>
+        </label>
+        <input type="text" required />
+        <label htmlFor="">
+          Full name<span>*</span>
+        </label>
+        <input type="text" required />
+        <label htmlFor="">
+          Email<span>*</span>
+        </label>
+        <input type="email" required />
+        <label htmlFor="">
+          Session<span>*</span>
+        </label>
+        <input type="text" required />
+        <label htmlFor="">
+          Batch<span>*</span>
+        </label>
+        <input type="text" required />
+        <label htmlFor="">
+          Current Position<span>*</span>
+        </label>
+        <input type="text" required />
+        <label htmlFor="">
+          Phone<span>*</span>
+        </label>
+        <input type="text" required />
+        <label htmlFor="">
+          Defense date<span>*</span>
+        </label>
+        <input type="date" name="defense_date" required />
         <div className="photo-upload">
-          <label htmlFor="file">Upload Photo</label>
-          <input type="file" id="file" />
+          <label htmlFor="file">
+            Upload Photo<span>*</span>
+          </label>
+          <input type="file" id="file" required />
         </div>
         <button type="submit">Submit</button>
       </form>

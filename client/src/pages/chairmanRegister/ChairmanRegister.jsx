@@ -11,7 +11,6 @@ const ChairmanRegister = () => {
     current_position: "",
     phd: "",
     phone: "",
-    blood_group: "",
     joining_date: "",
     research_interests: "",
   });
@@ -33,29 +32,44 @@ const ChairmanRegister = () => {
   return (
     <div className="register">
       <h1>Register for Scholarly Circle as Chairman</h1>
+      <p>
+        An asterisk (<span>*</span>) indicates a required field
+      </p>
       <form action="" onSubmit={handleSubmit}>
-        <label htmlFor="">Full name</label>
+        <label htmlFor="">
+          Full name<span>*</span>
+        </label>
         <input
           type="text"
           name="full_name"
+          required
           onChange={(e) => setValues({ ...values, full_name: e.target.value })}
         />
-        <label htmlFor="email">Email address</label>
+        <label htmlFor="email">
+          Email address<span>*</span>
+        </label>
         <input
           type="email"
           name="email"
+          required
           onChange={(e) => setValues({ ...values, email: e.target.value })}
         />
-        <label htmlFor="password">Password</label>
+        <label htmlFor="password">
+          Password<span>*</span>
+        </label>
         <input
           type="password"
           name="password"
+          required
           onChange={(e) => setValues({ ...values, password: e.target.value })}
         />
-        <label htmlFor="">Current position</label>
+        <label htmlFor="">
+          Current position<span>*</span>
+        </label>
         <input
           type="text"
           name="current_position"
+          required
           onChange={(e) =>
             setValues({ ...values, current_position: e.target.value })
           }
@@ -66,40 +80,44 @@ const ChairmanRegister = () => {
           name="phd"
           onChange={(e) => setValues({ ...values, phd: e.target.value })}
         />
-        <label htmlFor="">Phone</label>
+        <label htmlFor="">
+          Phone<span>*</span>
+        </label>
         <input
           type="text"
           name="phone"
+          required
           onChange={(e) => setValues({ ...values, phone: e.target.value })}
         />
-        <label htmlFor="">Blood group</label>
-        <input
-          type="text"
-          name="blood_group"
-          onChange={(e) =>
-            setValues({ ...values, blood_group: e.target.value })
-          }
-        />
-        <label htmlFor="">Joining date</label>
+        <label htmlFor="">
+          Joining date<span>*</span>
+        </label>
         <input
           type="date"
           name="joining_date"
+          required
           onChange={(e) =>
             setValues({ ...values, joining_date: e.target.value })
           }
         />
-        <label htmlFor="">Research interests</label>
+        <label htmlFor="">
+          Research interests<span>*</span>
+        </label>
         <input
           type="text"
           name="research_interests"
+          required
           onChange={(e) =>
             setValues({ ...values, research_interests: e.target.value })
           }
         />
-        <label htmlFor="">About</label>
+        <label htmlFor="">
+          About<span>*</span>
+        </label>
         <input
           type="text"
           name="about"
+          required
           onChange={(e) => setValues({ ...values, about: e.target.value })}
         />
         <div className="pass">

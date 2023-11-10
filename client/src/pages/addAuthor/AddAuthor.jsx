@@ -44,31 +44,82 @@ const AddAuthor = () => {
         Add author with student ID, full name, email, session, batch,
         current_position, phone, blood group, defense date and a photo.
       </h1>
+      <p>
+        An asterisk (<span>*</span>) indicates a required field
+      </p>
       <form action="" onSubmit={handleSubmit}>
-        <label htmlFor="">Student ID</label>
-        <input type="text" onChange={(e) => setStudentId(e.target.value)} />
-        <label htmlFor="">Full name</label>
-        <input type="text" onChange={(e) => setFullName(e.target.value)} />
-        <label htmlFor="">Email</label>
-        <input type="email" onChange={(e) => setEmail(e.target.value)} />
-        <label htmlFor="">Session</label>
-        <input type="text" onChange={(e) => setSession(e.target.value)} />
-        <label htmlFor="">Batch</label>
-        <input type="text" onChange={(e) => setBatch(e.target.value)} />
-        <label htmlFor="">Current Position</label>
+        <label htmlFor="">
+          Student ID<span>*</span>
+        </label>
         <input
           type="text"
+          required
+          onChange={(e) => setStudentId(e.target.value)}
+        />
+        <label htmlFor="">
+          Full name<span>*</span>
+        </label>
+        <input
+          type="text"
+          required
+          onChange={(e) => setFullName(e.target.value)}
+        />
+        <label htmlFor="">
+          Email<span>*</span>
+        </label>
+        <input
+          type="email"
+          required
+          onChange={(e) => setEmail(e.target.value)}
+        />
+        <label htmlFor="">
+          Session<span>*</span>
+        </label>
+        <input
+          type="text"
+          required
+          onChange={(e) => setSession(e.target.value)}
+        />
+        <label htmlFor="">
+          Batch<span>*</span>
+        </label>
+        <input
+          type="text"
+          required
+          onChange={(e) => setBatch(e.target.value)}
+        />
+        <label htmlFor="">
+          Current Position<span>*</span>
+        </label>
+        <input
+          type="text"
+          required
           onChange={(e) => setCurrentPosition(e.target.value)}
         />
-        <label htmlFor="">Phone</label>
-        <input type="text" onChange={(e) => setPhone(e.target.value)} />
-        <label htmlFor="">Defense date</label>
-        <input type="date" onChange={(e) => setDefenseDate(e.target.value)} />
+        <label htmlFor="">
+          Phone<span>*</span>
+        </label>
+        <input
+          type="text"
+          required
+          onChange={(e) => setPhone(e.target.value)}
+        />
+        <label htmlFor="">
+          Defense date<span>*</span>
+        </label>
+        <input
+          type="date"
+          required
+          onChange={(e) => setDefenseDate(e.target.value)}
+        />
         <div className="photo-upload">
-          <label htmlFor="file">Upload Photo</label>
+          <label htmlFor="file">
+            Upload Photo<span>*</span>
+          </label>
           <input
             type="file"
             id="file"
+            required
             onChange={(e) => setFile(e.target.files[0])}
           />
         </div>

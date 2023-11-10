@@ -22,19 +22,19 @@ const Contact = () => {
           </p>
           <form action="https://formspree.io/f/mdorzdaq" method="POST">
             <label htmlFor="">
-              Full Name <span>*</span>
+              Full Name<span>*</span>
             </label>
             <input type="text" name="username" required />
             <label htmlFor="">
-              Phone <span>*</span>
+              Phone<span>*</span>
             </label>
             <input type="text" name="phone" required />
             <label htmlFor="">
-              Email <span>*</span>
+              Email<span>*</span>
             </label>
             <input type="email" name="Email" required />
             <label htmlFor="">
-              Message <span>*</span>
+              Message<span>*</span>
             </label>
             <textarea
               name="message"
