@@ -40,19 +40,10 @@ const upload = multer({ storage });
 // For chairman register
 app.post("/chairmanRegister", (req, res) => {
   const sql =
-    "INSERT INTO chairman (`full_name`, `email`, `password`, `current_position`, `phd`, `phone`, `joining_date`, `research_interests`) VALUES (?)";
+    "INSERT INTO chairman (`full_name`, `email`, `password`) VALUES (?)";
   bcrypt.hash(req.body.password.toString(), salt, (err, hash) => {
     if (err) return res.json({ Error: "Error for hashing password" });
-    const values = [
-      req.body.full_name,
-      req.body.email,
-      hash,
-      req.body.current_position,
-      req.body.phd,
-      req.body.phone,
-      req.body.joining_date,
-      req.body.research_interests,
-    ];
+    const values = [req.body.full_name, req.body.email, hash];
     db.query(sql, [values], (err, data) => {
       if (err) {
         return res.json({ Error: "Inserting data error in server" });
@@ -227,6 +218,16 @@ app.post("/addReport", upload.single("file"), (req, res) => {
 app.get("/reports", (req, res) => {
   const sql = "SELECT * FROM report";
   db.query(sql, (err, data) => {
+    if (err) return res.json("Error");
+    return res.json(data);
+  });
+});
+
+// For retrieve single report
+app.get("/reports/:id", (req, res) => {
+  const sql = "SELECT * FROM report WHERE id = ?";
+  const id = req.params.id;
+  db.query(sql, [id], (err, data) => {
     if (err) return res.json("Error");
     return res.json(data);
   });

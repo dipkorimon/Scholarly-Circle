@@ -135,19 +135,8 @@
             }
           }
 
-          .abstract {
-            p {
-              font-size: 14px;
-
-              @include tablet {
-                font-size: 12px;
-              }
-
-              @include mobile {
-                font-size: 10px;
-              }
-            }
-          }
+          // .abstract {
+          // }
 
           .supervisor-name {
             display: flex;

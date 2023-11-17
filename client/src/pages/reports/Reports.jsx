@@ -29,6 +29,8 @@ const Reports = () => {
     }
   };
 
+  const [showModal, setShowModal] = useState(false);
+
   const chairmanLogin = localStorage.getItem("ChairmanLogin");
   const supervisorLogin = localStorage.getItem("SupervisorLogin");
 
@@ -62,7 +64,14 @@ const Reports = () => {
                   <p>{item.report_type}</p>
                 </div>
                 <div className="abstract">
-                  <p>{item.abstract}</p>
+                  <button onClick={() => setShowModal(true)}>
+                    Show abstract
+                  </button>
+                  {showModal && (
+                    <>
+                      <h3>Abstract</h3>
+                    </>
+                  )}
                 </div>
                 <div className="supervisor-name">
                   <SupervisorAccountIcon />
