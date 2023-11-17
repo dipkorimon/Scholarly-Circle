@@ -3,6 +3,9 @@ import "./singleReport.scss";
 import PersonIcon from "@mui/icons-material/Person";
 import SupervisorAccountIcon from "@mui/icons-material/SupervisorAccount";
 import DateRangeIcon from "@mui/icons-material/DateRange";
+import AdjustIcon from "@mui/icons-material/Adjust";
+import CategoryIcon from "@mui/icons-material/Category";
+import MergeTypeIcon from "@mui/icons-material/MergeType";
 import axios from "axios";
 import moment from "moment";
 import { useParams, useNavigate } from "react-router-dom";
@@ -60,27 +63,48 @@ const SingleReport = () => {
           </div>
         </div>
         <div className="post-details">
-          <div className="category">
-            <p>{session}</p>
-            <p>{category}</p>
-            <p>{report_type}</p>
-          </div>
           <div className="abstract">
-            <p>{abstract}</p>
+            <p>
+              <span>Abstract: </span>
+              {abstract}
+            </p>
           </div>
           <div className="supervisor-name">
             <SupervisorAccountIcon />
             <p>
-              {supervisor_name} <span className="super">Supervisor</span>
+              {supervisor_name} <span>Supervisor</span>
             </p>
           </div>
           <div className="authors-name">
             <PersonIcon />
-            <p>{authors_name}</p>
+            <p>
+              {authors_name} <span>Authors</span>
+            </p>
           </div>
           <div className="date">
             <DateRangeIcon />
-            <p>{moment(defense_date).format("MMMM Do YYYY")}</p>
+            <p>
+              {moment(defense_date).format("MMMM Do YYYY")}{" "}
+              <span>Defense date</span>
+            </p>
+          </div>
+          <div className="session">
+            <AdjustIcon />
+            <p>
+              {session} <span>Session</span>
+            </p>
+          </div>
+          <div className="category">
+            <CategoryIcon />
+            <p>
+              {category} <span>Category</span>
+            </p>
+          </div>
+          <div className="report_type">
+            <MergeTypeIcon />
+            <p>
+              {report_type} <span>Report type</span>
+            </p>
           </div>
         </div>
         <div className="document">

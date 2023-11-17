@@ -19,13 +19,13 @@ const Footer = () => {
           <a href="https://github.com/dipkorimon">
             <GitHubIcon />
           </a>
-          <a href="/contact">
+          <a href="">
             <EmailIcon />
           </a>
         </div>
         <div className="mid">
           <p>
-            Copyright &copy; <span>Scholarly Circle</span>
+            Copyright &copy; <span>ScholarlyCircle</span>
           </p>
         </div>
         <div className="bottom">

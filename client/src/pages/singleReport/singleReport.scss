@@ -2,7 +2,7 @@
 @import "../../styles/variables.scss";
 
 .single-report {
-  padding: 0px 200px;
+  padding: 0px 150px;
 
   @include tablet {
     padding: 0px 50px;
@@ -50,28 +50,6 @@
       flex-direction: column;
       gap: 10px;
 
-      .category {
-        display: flex;
-        align-items: center;
-        justify-content: space-around;
-
-        p {
-          font-size: 12px;
-          font-weight: bold;
-          background-color: $soft-color;
-          padding: 3px 10px;
-          border-radius: 10px;
-
-          @include tablet {
-            font-size: 10px;
-          }
-
-          @include mobile {
-            font-size: 8px;
-          }
-        }
-      }
-
       .abstract {
         p {
           font-size: 16px;
@@ -82,6 +60,10 @@
 
           @include mobile {
             font-size: 12px;
+          }
+
+          span {
+            font-weight: bold;
           }
         }
       }
@@ -102,7 +84,7 @@
             font-size: 12px;
           }
 
-          .super {
+          span {
             font-size: 12px;
             font-weight: bold;
             background-color: $soft-color;
@@ -136,6 +118,22 @@
             font-size: 12px;
           }
         }
+
+        span {
+          font-size: 12px;
+          font-weight: bold;
+          background-color: $soft-color;
+          padding: 3px 10px;
+          border-radius: 10px;
+
+          @include tablet {
+            font-size: 10px;
+          }
+
+          @include mobile {
+            font-size: 8px;
+          }
+        }
       }
 
       .date {
@@ -152,6 +150,124 @@
 
           @include mobile {
             font-size: 12px;
+          }
+        }
+
+        span {
+          font-size: 12px;
+          font-weight: bold;
+          background-color: $soft-color;
+          padding: 3px 10px;
+          border-radius: 10px;
+
+          @include tablet {
+            font-size: 10px;
+          }
+
+          @include mobile {
+            font-size: 8px;
+          }
+        }
+      }
+
+      .session {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+
+        p {
+          font-size: 14px;
+
+          @include tablet {
+            font-size: 12px;
+          }
+
+          @include mobile {
+            font-size: 10px;
+          }
+        }
+
+        span {
+          font-size: 12px;
+          font-weight: bold;
+          background-color: $soft-color;
+          padding: 3px 10px;
+          border-radius: 10px;
+
+          @include tablet {
+            font-size: 10px;
+          }
+
+          @include mobile {
+            font-size: 8px;
+          }
+        }
+      }
+
+      .category {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+
+        p {
+          font-size: 14px;
+
+          @include tablet {
+            font-size: 12px;
+          }
+
+          @include mobile {
+            font-size: 10px;
+          }
+        }
+
+        span {
+          font-size: 12px;
+          font-weight: bold;
+          background-color: $soft-color;
+          padding: 3px 10px;
+          border-radius: 10px;
+
+          @include tablet {
+            font-size: 10px;
+          }
+
+          @include mobile {
+            font-size: 8px;
+          }
+        }
+      }
+
+      .report_type {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+
+        p {
+          font-size: 14px;
+
+          @include tablet {
+            font-size: 12px;
+          }
+
+          @include mobile {
+            font-size: 10px;
+          }
+        }
+
+        span {
+          font-size: 12px;
+          font-weight: bold;
+          background-color: $soft-color;
+          padding: 3px 10px;
+          border-radius: 10px;
+
+          @include tablet {
+            font-size: 10px;
+          }
+
+          @include mobile {
+            font-size: 8px;
           }
         }
       }

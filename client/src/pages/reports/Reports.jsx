@@ -6,7 +6,8 @@ import EditIcon from "@mui/icons-material/Edit";
 import PersonIcon from "@mui/icons-material/Person";
 import SupervisorAccountIcon from "@mui/icons-material/SupervisorAccount";
 import DateRangeIcon from "@mui/icons-material/DateRange";
-import SummarizeIcon from "@mui/icons-material/Summarize";
+import AdjustIcon from "@mui/icons-material/Adjust";
+import CategoryIcon from "@mui/icons-material/Category";
 import axios from "axios";
 import moment from "moment";
 
@@ -29,10 +30,17 @@ const Reports = () => {
     }
   };
 
-  const [showModal, setShowModal] = useState(false);
-
   const chairmanLogin = localStorage.getItem("ChairmanLogin");
   const supervisorLogin = localStorage.getItem("SupervisorLogin");
+
+  const [selected, setSelected] = useState(null);
+
+  const toggle = (i) => {
+    if (selected == i) {
+      return setSelected(null);
+    }
+    setSelected(i);
+  };
 
   return (
     <div className="reports">
@@ -49,41 +57,62 @@ const Reports = () => {
       </div>
       <div className="items">
         <div className="post">
-          {report.map((item) => (
+          {report.map((item, i) => (
             <div className="post-item" key={item.id}>
               <div className="info">
                 <div className="title">
-                  <SummarizeIcon />
                   <h3>{item.title}</h3>
+                  <span>{item.report_type}</span>
                 </div>
               </div>
               <div className="post-details">
-                <div className="category">
-                  <p>{item.session}</p>
-                  <p>{item.category}</p>
-                  <p>{item.report_type}</p>
-                </div>
                 <div className="abstract">
-                  <button onClick={() => setShowModal(true)}>
-                    Show abstract
-                  </button>
-                  {showModal && (
-                    <>
-                      <h3>Abstract</h3>
-                    </>
-                  )}
+                  <div className="accordion">
+                    <div className="item">
+                      <div className="title" onClick={() => toggle(i)}>
+                        <h3>
+                          {selected == i ? "Hide abstract" : "View abstract"}
+                        </h3>
+                        <span>{selected == i ? "-" : "+"}</span>
+                      </div>
+                      <div
+                        className={selected == i ? "content-show" : "content"}
+                      >
+                        <p>{item.abstract}</p>
+                      </div>
+                    </div>
+                  </div>
                 </div>
                 <div className="supervisor-name">
                   <SupervisorAccountIcon />
-                  <p>{item.supervisor_name} (Supervisor)</p>
+                  <p>
+                    {item.supervisor_name} <span>Supervisor</span>
+                  </p>
                 </div>
                 <div className="authors-name">
                   <PersonIcon />
-                  <p>{item.authors_name}</p>
+                  <p>
+                    {item.authors_name} <span>Authors</span>
+                  </p>
                 </div>
                 <div className="date">
                   <DateRangeIcon />
-                  <p>{moment(item.published_date).format("MMMM Do YYYY")}</p>
+                  <p>
+                    {moment(item.published_date).format("MMMM Do YYYY")}{" "}
+                    <span>Defense date</span>
+                  </p>
+                </div>
+                <div className="session">
+                  <AdjustIcon />
+                  <p>
+                    {item.session} <span>Session</span>
+                  </p>
+                </div>
+                <div className="category">
+                  <CategoryIcon />
+                  <p>
+                    {item.category} <span>Category</span>
+                  </p>
                 </div>
               </div>
               <div className="buttons">

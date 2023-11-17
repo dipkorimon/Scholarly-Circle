@@ -66,9 +66,9 @@ const NavBar = () => {
               <AccountBoxIcon />
               <button className="name">{name}</button>
               {chairman ? (
-                <span className="logInfo">(Chairman)</span>
+                <span className="logInfo">Chairman</span>
               ) : (
-                <span className="logInfo">(Supervisor)</span>
+                <span className="logInfo">Supervisor</span>
               )}
               {login ? (
                 <div id="drop-down">

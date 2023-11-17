@@ -237,6 +237,22 @@
           display: flex;
         }
 
+        span {
+          font-size: 12px;
+          font-weight: bold;
+          background-color: $soft-color;
+          padding: 3px 10px;
+          border-radius: 10px;
+
+          @include tablet {
+            font-size: 10px;
+          }
+
+          @include mobile {
+            font-size: 8px;
+          }
+        }
+
         #drop-down {
           position: absolute;
           width: fit-content;
@@ -262,6 +278,8 @@
           a {
             display: flex;
             align-items: center;
+            cursor: pointer;
+
             button {
               font-weight: bold;
               font-size: 15px;
@@ -269,6 +287,7 @@
               border: none;
               border-radius: 5px;
               gap: 10px;
+              cursor: pointer;
 
               &:hover {
                 background-color: $soft-red;
