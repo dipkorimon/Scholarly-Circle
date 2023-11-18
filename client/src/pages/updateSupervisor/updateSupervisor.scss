@@ -18,6 +18,22 @@
     @include mobile {
       font-size: 20px;
     }
+
+    sup {
+      font-size: 12px;
+      font-weight: bold;
+      background-color: $soft-color;
+      padding: 3px 10px;
+      border-radius: 10px;
+
+      @include tablet {
+        font-size: 10px;
+      }
+
+      @include mobile {
+        font-size: 8px;
+      }
+    }
   }
 
   p {

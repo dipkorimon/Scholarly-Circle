@@ -11,7 +11,7 @@ const app = express();
 app.use(
   cors({
     origin: ["http://localhost:5173"],
-    methods: ["POST", "GET", "DELETE"],
+    methods: ["POST", "GET", "PUT", "DELETE"],
     credentials: true,
   })
 );
@@ -247,6 +247,36 @@ app.get("/supervisors", (req, res) => {
 app.get("/authors", (req, res) => {
   const sql = "SELECT * FROM author";
   db.query(sql, (err, data) => {
+    if (err) return res.json("Error");
+    return res.json(data);
+  });
+});
+
+// For update author
+app.get("/updateAuthor/:id", (req, res) => {
+  const sql = "SELECT * FROM author WHERE id = ?";
+  const id = req.params.id;
+  db.query(sql, [id], (err, data) => {
+    if (err) return res.json("Error");
+    return res.json(data);
+  });
+});
+
+// For update supervisor
+app.get("/updateSupervisor/:id", (req, res) => {
+  const sql = "SELECT * FROM supervisor WHERE id = ?";
+  const id = req.params.id;
+  db.query(sql, [id], (err, data) => {
+    if (err) return res.json("Error");
+    return res.json(data);
+  });
+});
+
+// For update report
+app.get("/updateReport/:id", (req, res) => {
+  const sql = "SELECT * FROM report WHERE id = ?";
+  const id = req.params.id;
+  db.query(sql, [id], (err, data) => {
     if (err) return res.json("Error");
     return res.json(data);
   });

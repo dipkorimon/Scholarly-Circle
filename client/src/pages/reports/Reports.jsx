@@ -51,9 +51,7 @@ const Reports = () => {
           <h3>Search with Session, Category and Author</h3>
         </div>
         <div className="search-box">
-          <form action="">
-            <input type="text" placeholder="Ex: Session, Category, Author" />
-          </form>
+          <input type="text" placeholder="Ex: Session, Category, Author" />
         </div>
       </div>
       <div className="items">

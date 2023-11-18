@@ -41,18 +41,16 @@
     }
 
     .search-box {
-      form {
-        input {
-          padding: 10px;
-          width: 450px;
-          outline: none;
-          border: none;
-          background-color: $soft-color;
-          border-radius: 5px;
+      input {
+        padding: 10px;
+        width: 450px;
+        outline: none;
+        border: none;
+        background-color: $soft-color;
+        border-radius: 5px;
 
-          @include mobile {
-            width: 250px;
-          }
+        @include mobile {
+          width: 250px;
         }
       }
     }
