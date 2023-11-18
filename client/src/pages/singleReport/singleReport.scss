@@ -271,6 +271,29 @@
           }
         }
       }
+
+      .publication {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+
+        a {
+          font-size: 12px;
+          font-weight: bold;
+          background-color: $button-bg;
+          color: $red-color;
+          padding: 3px 10px;
+          border-radius: 10px;
+
+          @include tablet {
+            font-size: 10px;
+          }
+
+          @include mobile {
+            font-size: 8px;
+          }
+        }
+      }
     }
 
     .document {

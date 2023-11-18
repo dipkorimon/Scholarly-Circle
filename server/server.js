@@ -194,7 +194,7 @@ app.post("/addAuthor", upload.single("file"), (req, res) => {
 // For add report
 app.post("/addReport", upload.single("file"), (req, res) => {
   const sql =
-    "INSERT INTO report (`title`, `abstract`, `supervisor_name`, `authors_name`, `session`, `category`, `defense_date`, `report_type`, `document`) VALUES (?)";
+    "INSERT INTO report (`title`, `abstract`, `supervisor_name`, `authors_name`, `session`, `category`, `defense_date`, `report_type`, `publication`, `document`) VALUES (?)";
   const values = [
     req.body.title,
     req.body.abstract,
@@ -204,6 +204,7 @@ app.post("/addReport", upload.single("file"), (req, res) => {
     req.body.category,
     req.body.defense_date,
     req.body.report_type,
+    req.body.publication,
     req.file.filename,
   ];
   db.query(sql, [values], (err, data) => {

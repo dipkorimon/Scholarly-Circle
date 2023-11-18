@@ -8,6 +8,7 @@ import SupervisorAccountIcon from "@mui/icons-material/SupervisorAccount";
 import DateRangeIcon from "@mui/icons-material/DateRange";
 import AdjustIcon from "@mui/icons-material/Adjust";
 import CategoryIcon from "@mui/icons-material/Category";
+import LinkIcon from "@mui/icons-material/Link";
 import axios from "axios";
 import moment from "moment";
 
@@ -113,6 +114,10 @@ const Reports = () => {
                   <p>
                     {item.category} <span>Category</span>
                   </p>
+                </div>
+                <div className="publication">
+                  <LinkIcon />
+                  <a href={item.publication}>Publication link</a>
                 </div>
               </div>
               <div className="buttons">

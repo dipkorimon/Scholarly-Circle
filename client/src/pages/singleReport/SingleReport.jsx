@@ -6,6 +6,7 @@ import DateRangeIcon from "@mui/icons-material/DateRange";
 import AdjustIcon from "@mui/icons-material/Adjust";
 import CategoryIcon from "@mui/icons-material/Category";
 import MergeTypeIcon from "@mui/icons-material/MergeType";
+import LinkIcon from "@mui/icons-material/Link";
 import axios from "axios";
 import moment from "moment";
 import { useParams, useNavigate } from "react-router-dom";
@@ -20,6 +21,7 @@ const SingleReport = () => {
   const [category, setCategory] = useState("");
   const [defense_date, setDefenseDate] = useState("");
   const [report_type, setReportType] = useState("");
+  const [publication, setPublication] = useState("");
   const [document, setDocument] = useState("");
 
   const navigate = useNavigate();
@@ -36,6 +38,7 @@ const SingleReport = () => {
         setCategory(res.data[0].category);
         setDefenseDate(res.data[0].defense_date);
         setReportType(res.data[0].report_type);
+        setPublication(res.data[0].publication);
         setDocument(res.data[0].document);
       })
       .catch((err) => console.log(err));
@@ -105,6 +108,10 @@ const SingleReport = () => {
             <p>
               {report_type} <span>Report type</span>
             </p>
+          </div>
+          <div className="publication">
+            <LinkIcon />
+            <a href={publication}>Publication link</a>
           </div>
         </div>
         <div className="document">

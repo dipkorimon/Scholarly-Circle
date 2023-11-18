@@ -12,6 +12,7 @@ const AddReport = () => {
   const [category, setCategory] = useState("");
   const [defense_date, setDefenseDate] = useState("");
   const [report_type, setReportType] = useState("");
+  const [publication, setPublication] = useState("");
   const [file, setFile] = useState("");
 
   const navigate = useNavigate();
@@ -27,6 +28,7 @@ const AddReport = () => {
     formData.append("category", category);
     formData.append("defense_date", defense_date);
     formData.append("report_type", report_type);
+    formData.append("publication", publication);
     formData.append("file", file);
     axios
       .post("http://localhost:8800/addReport", formData)
@@ -112,6 +114,14 @@ const AddReport = () => {
           type="text"
           required
           onChange={(e) => setReportType(e.target.value)}
+        />
+        <label htmlFor="">
+          Publication link<span>*</span>
+        </label>
+        <input
+          type="text"
+          required
+          onChange={(e) => setPublication(e.target.value)}
         />
         <div className="doc-upload">
           <label htmlFor="file1">
