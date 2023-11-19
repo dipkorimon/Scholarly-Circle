@@ -8,19 +8,6 @@
   align-items: center;
 
   h1 {
-    font-size: 25px;
-    text-align: center;
-
-    @include tablet {
-      font-size: 22px;
-    }
-
-    @include mobile {
-      font-size: 20px;
-    }
-  }
-
-  p {
     font-size: 16px;
     text-align: center;
 
@@ -30,6 +17,19 @@
 
     @include mobile {
       font-size: 12px;
+    }
+  }
+
+  p {
+    font-size: 14px;
+    text-align: center;
+
+    @include tablet {
+      font-size: 12px;
+    }
+
+    @include mobile {
+      font-size: 10px;
     }
 
     span {
@@ -69,7 +69,7 @@
       flex-direction: column;
 
       label {
-        font-size: 15px;
+        font-size: 16px;
         font-weight: bold;
         text-align: center;
         color: $red-color;
@@ -86,7 +86,6 @@
 
         @include mobile {
           width: 250px;
-          padding: 3px 15px;
         }
       }
 

@@ -124,12 +124,12 @@ const AddReport = () => {
           onChange={(e) => setPublication(e.target.value)}
         />
         <div className="doc-upload">
-          <label htmlFor="file1">
+          <label htmlFor="file">
             Upload Document<span>*</span>
           </label>
           <input
             type="file"
-            id="file1"
+            id="file"
             required
             onChange={(e) => setFile(e.target.files[0])}
           />

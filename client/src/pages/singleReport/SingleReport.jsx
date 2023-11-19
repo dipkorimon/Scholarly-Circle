@@ -7,6 +7,7 @@ import AdjustIcon from "@mui/icons-material/Adjust";
 import CategoryIcon from "@mui/icons-material/Category";
 import MergeTypeIcon from "@mui/icons-material/MergeType";
 import LinkIcon from "@mui/icons-material/Link";
+import ArticleIcon from "@mui/icons-material/Article";
 import axios from "axios";
 import moment from "moment";
 import { useParams, useNavigate } from "react-router-dom";
@@ -111,7 +112,9 @@ const SingleReport = () => {
           </div>
           <div className="publication">
             <LinkIcon />
-            <a href={publication}>Publication link</a>
+            <a href={publication}>
+              <button>Publication link</button>
+            </a>
           </div>
         </div>
         <div className="document">
@@ -120,11 +123,12 @@ const SingleReport = () => {
         <div className="buttons">
           {chairmanLogin || supervisorLogin ? (
             <div className="update-delete">
-              <a href={`/updateReport/${id}`}>
-                <button className="update">Update</button>
-              </a>
+              <button className="update">
+                {" "}
+                <a href={`/updateReport/${id}`}>Update details</a>
+              </button>
               <button className="delete" onClick={() => handleDelete(id)}>
-                Delete
+                Delete report
               </button>
             </div>
           ) : (

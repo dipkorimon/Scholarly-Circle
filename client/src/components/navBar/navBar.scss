@@ -129,26 +129,31 @@
         gap: 10px;
 
         .regi {
-          font-size: 15px;
-          font-weight: bold;
-          color: $white-color;
-          background-color: $red-color;
-          padding: 7px 20px;
-          border-radius: 5px;
-          cursor: pointer;
+          button {
+            font-size: 15px;
+            font-weight: bold;
+            color: $white-color;
+            background-color: $red-color;
+            padding: 7px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            border: none;
 
-          &:hover {
-            background-color: $dark-red;
-          }
+            &:hover {
+              background-color: $dark-red;
+            }
 
-          @include tablet {
-            padding: 3px 15px;
-            margin-bottom: 10px;
-          }
+            @include tablet {
+              font-size: 13px;
+              padding: 3px 15px;
+              margin-bottom: 10px;
+            }
 
-          @include mobile {
-            padding: 3px 15px;
-            margin-bottom: 10px;
+            @include mobile {
+              font-size: 11px;
+              padding: 3px 15px;
+              margin-bottom: 10px;
+            }
           }
         }
 
@@ -168,11 +173,13 @@
             }
 
             @include tablet {
+              font-size: 13px;
               padding: 3px 15px;
               margin-bottom: 10px;
             }
 
             @include mobile {
+              font-size: 11px;
               padding: 3px 15px;
               margin-bottom: 10px;
             }
@@ -242,7 +249,7 @@
           font-weight: bold;
           background-color: $soft-color;
           padding: 3px 10px;
-          border-radius: 10px;
+          border-radius: 5px;
 
           @include tablet {
             font-size: 10px;
@@ -320,12 +327,13 @@
             }
 
             @include tablet {
+              font-size: 13px;
               padding: 3px 15px;
               margin-bottom: 5px;
             }
 
             @include mobile {
-              font-size: 10px;
+              font-size: 11px;
               padding: 3px 15px;
               margin-bottom: 5px;
             }

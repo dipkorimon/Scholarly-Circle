@@ -89,7 +89,7 @@
             font-weight: bold;
             background-color: $soft-color;
             padding: 3px 10px;
-            border-radius: 10px;
+            border-radius: 5px;
 
             @include tablet {
               font-size: 10px;
@@ -124,7 +124,7 @@
           font-weight: bold;
           background-color: $soft-color;
           padding: 3px 10px;
-          border-radius: 10px;
+          border-radius: 5px;
 
           @include tablet {
             font-size: 10px;
@@ -158,7 +158,7 @@
           font-weight: bold;
           background-color: $soft-color;
           padding: 3px 10px;
-          border-radius: 10px;
+          border-radius: 5px;
 
           @include tablet {
             font-size: 10px;
@@ -192,7 +192,7 @@
           font-weight: bold;
           background-color: $soft-color;
           padding: 3px 10px;
-          border-radius: 10px;
+          border-radius: 5px;
 
           @include tablet {
             font-size: 10px;
@@ -226,7 +226,7 @@
           font-weight: bold;
           background-color: $soft-color;
           padding: 3px 10px;
-          border-radius: 10px;
+          border-radius: 5px;
 
           @include tablet {
             font-size: 10px;
@@ -260,7 +260,7 @@
           font-weight: bold;
           background-color: $soft-color;
           padding: 3px 10px;
-          border-radius: 10px;
+          border-radius: 5px;
 
           @include tablet {
             font-size: 10px;
@@ -278,19 +278,27 @@
         gap: 10px;
 
         a {
-          font-size: 12px;
-          font-weight: bold;
-          background-color: $button-bg;
-          color: $red-color;
-          padding: 3px 10px;
-          border-radius: 10px;
+          display: flex;
+          button {
+            font-size: 12px;
+            font-weight: bold;
+            background-color: $button-bg;
+            color: $red-color;
+            padding: 3px 10px;
+            border-radius: 5px;
+            border: none;
 
-          @include tablet {
-            font-size: 10px;
-          }
+            &:hover {
+              background-color: $soft-red;
+            }
 
-          @include mobile {
-            font-size: 8px;
+            @include tablet {
+              font-size: 10px;
+            }
+
+            @include mobile {
+              font-size: 8px;
+            }
           }
         }
       }
@@ -336,13 +344,19 @@
           }
 
           @include tablet {
+            font-size: 13px;
             padding: 3px 15px;
             margin-bottom: 10px;
           }
 
           @include mobile {
+            font-size: 11px;
             padding: 3px 15px;
             margin-bottom: 10px;
+          }
+
+          a {
+            color: $red-color;
           }
         }
 
@@ -361,11 +375,13 @@
           }
 
           @include tablet {
+            font-size: 13px;
             padding: 3px 15px;
             margin-bottom: 10px;
           }
 
           @include mobile {
+            font-size: 11px;
             padding: 3px 15px;
             margin-bottom: 10px;
           }

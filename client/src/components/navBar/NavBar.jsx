@@ -107,7 +107,7 @@ const NavBar = () => {
           ) : (
             <div className="in-up">
               <a href="/chairmanRegister" className="regi">
-                Sign up
+                <button>Sign up</button>
               </a>
               <div className="login-as">
                 <button className="name">Sign in</button>
