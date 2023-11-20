@@ -9,6 +9,8 @@ import CategoryIcon from "@mui/icons-material/Category";
 import LinkIcon from "@mui/icons-material/Link";
 import axios from "axios";
 import moment from "moment";
+import Badge from "../../components/badge/Badge";
+import ReportDetails from "../../components/reportDetails/ReportDetails";
 
 const Reports = () => {
   const [report, setReport] = useState([]);
@@ -80,36 +82,32 @@ const Reports = () => {
                     </div>
                   </div>
                 </div>
-                <div className="supervisor-name">
+                <div className="report-details">
                   <SupervisorAccountIcon />
-                  <p>
-                    {item.supervisor_name} <span>Supervisor</span>
-                  </p>
+                  <ReportDetails value={item.supervisor_name} />
+                  <Badge value="Supervisor" />
                 </div>
-                <div className="authors-name">
+                <div className="report-details">
                   <PersonIcon />
-                  <p>
-                    {item.authors_name} <span>Authors</span>
-                  </p>
+                  <ReportDetails value={item.authors_name} />
+                  <Badge value="Authors" />
                 </div>
-                <div className="date">
+                <div className="report-details">
                   <DateRangeIcon />
-                  <p>
-                    {moment(item.published_date).format("MMMM Do YYYY")}{" "}
-                    <span>Defense date</span>
-                  </p>
+                  <ReportDetails
+                    value={moment(item.published_date).format("MMMM Do YYYY")}
+                  />
+                  <Badge value="Defense date" />
                 </div>
-                <div className="session">
+                <div className="report-details">
                   <AdjustIcon />
-                  <p>
-                    {item.session} <span>Session</span>
-                  </p>
+                  <ReportDetails value={item.session} />
+                  <Badge value="Session" />
                 </div>
-                <div className="category">
+                <div className="report-details">
                   <CategoryIcon />
-                  <p>
-                    {item.category} <span>Category</span>
-                  </p>
+                  <ReportDetails value={item.category} />
+                  <Badge value="Category" />
                 </div>
                 <div className="publication">
                   <LinkIcon />

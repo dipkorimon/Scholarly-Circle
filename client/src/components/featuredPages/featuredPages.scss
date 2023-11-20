@@ -40,14 +40,14 @@
         gap: 5px;
 
         h3 {
-          font-size: 22px;
+          font-size: 20px;
 
           @include tablet {
-            font-size: 20px;
+            font-size: 18px;
           }
 
           @include mobile {
-            font-size: 18px;
+            font-size: 16px;
           }
         }
       }
@@ -96,14 +96,14 @@
         gap: 5px;
 
         h3 {
-          font-size: 22px;
+          font-size: 20px;
 
           @include tablet {
-            font-size: 20px;
+            font-size: 18px;
           }
 
           @include mobile {
-            font-size: 18px;
+            font-size: 16px;
           }
         }
       }

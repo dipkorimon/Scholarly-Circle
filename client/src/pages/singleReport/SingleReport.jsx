@@ -7,10 +7,11 @@ import AdjustIcon from "@mui/icons-material/Adjust";
 import CategoryIcon from "@mui/icons-material/Category";
 import MergeTypeIcon from "@mui/icons-material/MergeType";
 import LinkIcon from "@mui/icons-material/Link";
-import ArticleIcon from "@mui/icons-material/Article";
 import axios from "axios";
 import moment from "moment";
 import { useParams, useNavigate } from "react-router-dom";
+import Badge from "../../components/badge/Badge";
+import ReportDetails from "../../components/reportDetails/ReportDetails";
 
 const SingleReport = () => {
   const { id } = useParams();
@@ -73,42 +74,37 @@ const SingleReport = () => {
               {abstract}
             </p>
           </div>
-          <div className="supervisor-name">
+          <div className="report-details">
             <SupervisorAccountIcon />
-            <p>
-              {supervisor_name} <span>Supervisor</span>
-            </p>
+            <ReportDetails value={supervisor_name} />
+            <Badge value="Supervisor" />
           </div>
-          <div className="authors-name">
+          <div className="report-details">
             <PersonIcon />
-            <p>
-              {authors_name} <span>Authors</span>
-            </p>
+            <ReportDetails value={authors_name} />
+            <Badge value="Authors" />
           </div>
-          <div className="date">
+          <div className="report-details">
             <DateRangeIcon />
-            <p>
-              {moment(defense_date).format("MMMM Do YYYY")}{" "}
-              <span>Defense date</span>
-            </p>
+            <ReportDetails
+              value={moment(defense_date).format("MMMM Do YYYY")}
+            />
+            <Badge value="Defense date" />
           </div>
-          <div className="session">
+          <div className="report-details">
             <AdjustIcon />
-            <p>
-              {session} <span>Session</span>
-            </p>
+            <ReportDetails value={session} />
+            <Badge value="Session" />
           </div>
-          <div className="category">
+          <div className="report-details">
             <CategoryIcon />
-            <p>
-              {category} <span>Category</span>
-            </p>
+            <ReportDetails value={category} />
+            <Badge value="Category" />
           </div>
-          <div className="report_type">
+          <div className="report-details">
             <MergeTypeIcon />
-            <p>
-              {report_type} <span>Report type</span>
-            </p>
+            <ReportDetails value={report_type} />
+            <Badge value="Report type" />
           </div>
           <div className="publication">
             <LinkIcon />
