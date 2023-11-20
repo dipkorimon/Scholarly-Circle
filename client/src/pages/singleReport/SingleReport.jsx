@@ -128,7 +128,7 @@ const SingleReport = () => {
                 <a href={`/updateReport/${id}`}>Update details</a>
               </button>
               <button className="delete" onClick={() => handleDelete(id)}>
-                Delete report
+                Remove report
               </button>
             </div>
           ) : (

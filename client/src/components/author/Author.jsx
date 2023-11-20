@@ -7,8 +7,6 @@ import DateRangeIcon from "@mui/icons-material/DateRange";
 import BatchPredictionIcon from "@mui/icons-material/BatchPrediction";
 import AdjustIcon from "@mui/icons-material/Adjust";
 import NumbersIcon from "@mui/icons-material/Numbers";
-import DeleteIcon from "@mui/icons-material/Delete";
-import EditIcon from "@mui/icons-material/Edit";
 import axios from "axios";
 import moment from "moment";
 
@@ -43,33 +41,11 @@ const Author = () => {
           </div>
           <div className="name">
             <h3>{item.full_name}</h3>
-            {chairmanLogin || supervisorLogin ? (
-              <div>
-                <a href={`/updateAuthor/${item.id}`}>
-                  <EditIcon
-                    style={{
-                      fontSize: "25",
-                      color: "rgb(42, 52, 71)",
-                    }}
-                  />
-                </a>
-                <button onClick={() => handleDelete(item.id)}>
-                  <DeleteIcon
-                    style={{
-                      fontSize: "25",
-                      color: "rgb(229, 18, 46)",
-                    }}
-                  />
-                </button>
-              </div>
-            ) : (
-              <div></div>
-            )}
           </div>
           <div className="info">
             <div className="info-desc">
               <PersonIcon />
-              <p>{item.current_position}</p>
+              <p style={{ fontWeight: "bold" }}>{item.current_position}</p>
             </div>
             <div className="info-desc">
               <NumbersIcon />
@@ -98,6 +74,18 @@ const Author = () => {
               </p>
             </div>
           </div>
+          {chairmanLogin || supervisorLogin ? (
+            <div className="update-delete">
+              <button className="update">
+                <a href={`/updateAuthor/${item.id}`}>Update details</a>
+              </button>
+              <button className="remove" onClick={() => handleDelete(item.id)}>
+                Remove
+              </button>
+            </div>
+          ) : (
+            <div></div>
+          )}
         </div>
       ))}
     </div>

@@ -126,7 +126,7 @@ const Reports = () => {
                       <button>Update details</button>
                     </a>
                     <button onClick={() => handleDelete(item.id)}>
-                      Delete report
+                      Remove Report
                     </button>
                   </div>
                 ) : (

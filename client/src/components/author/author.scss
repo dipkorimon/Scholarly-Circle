@@ -85,15 +85,76 @@
         gap: 10px;
 
         p {
-          font-size: 16px;
+          font-size: 15px;
 
           @include tablet {
-            font-size: 14px;
+            font-size: 13px;
           }
 
           @include mobile {
-            font-size: 12px;
+            font-size: 11px;
           }
+        }
+      }
+    }
+
+    .update-delete {
+      display: flex;
+      gap: 10px;
+      margin-top: 10px;
+
+      .update {
+        border: none;
+        background: none;
+        font-size: 15px;
+        padding: 7px 20px;
+        background-color: $button-bg;
+        color: $red-color;
+        font-weight: bold;
+        border-radius: 5px;
+        cursor: pointer;
+
+        &:hover {
+          background-color: $soft-red;
+        }
+
+        @include tablet {
+          font-size: 13px;
+          padding: 3px 15px;
+        }
+
+        @include mobile {
+          font-size: 11px;
+          padding: 3px 15px;
+        }
+
+        a {
+          color: $red-color;
+        }
+      }
+
+      .remove {
+        font-size: 15px;
+        padding: 7px 20px;
+        background-color: $red-color;
+        color: $white-color;
+        font-weight: bold;
+        border-radius: 5px;
+        cursor: pointer;
+        border: none;
+
+        &:hover {
+          background-color: $dark-red;
+        }
+
+        @include tablet {
+          font-size: 13px;
+          padding: 3px 15px;
+        }
+
+        @include mobile {
+          font-size: 11px;
+          padding: 3px 14px;
         }
       }
     }
