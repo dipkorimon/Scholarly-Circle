@@ -11,7 +11,7 @@ Scholarly Circle offers a variety of features, including:
   <li>Roles of Chairman: The Chairman can add supervisors and authors and also can share project and thesis reports.</li>
   <li>Roles of supervisors: Supervisors can add authors and can share project and thesis reports.</li>
   <li>Statistics of Scholarly Circle: Statistics of Scholarly Circle is a study of data: describing
-  total number of Supervisors, Authors and Reports are added.</li>
+  the total number of Supervisors, Authors, and Reports are added.</li>
 </ul>
 
 # Technologies and Tools:
