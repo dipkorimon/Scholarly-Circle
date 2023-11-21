@@ -39,6 +39,11 @@ const About = () => {
             title="Roles of supervisors"
             desc="Supervisors can add authors and can share project and thesis reports."
           />
+          <AboutInfo
+            title="Statistics of Scholarly Circle"
+            desc="Statistics of Scholarly Circle is a study of data: describing
+              total number of Supervisors, Authors and Reports are added."
+          />
         </div>
       </div>
     </div>
