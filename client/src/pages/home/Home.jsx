@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import "./home.scss";
 import Welcome from "../../components/welcome/Welcome";
 import About from "../../components/about/About";

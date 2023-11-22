@@ -318,6 +318,15 @@ app.delete("/reports/:id", (req, res) => {
   });
 });
 
+// For view statistics
+app.get("/home", (req, res) => {
+  const sql = "SELECT COUNT(id) AS totalSupervisor FROM supervisor";
+  db.query(sql, (err, data) => {
+    if (err) res.json(err);
+    res.json(data);
+  });
+});
+
 app.listen(8800, () => {
   console.log("Connected");
 });
