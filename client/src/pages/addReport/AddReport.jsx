@@ -116,7 +116,7 @@ const AddReport = () => {
           onChange={(e) => setReportType(e.target.value)}
         />
         <label htmlFor="">
-          Publication link<span>*</span>
+          Thesis Publication link or Project live demo link<span>*</span>
         </label>
         <input
           type="text"

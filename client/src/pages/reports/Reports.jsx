@@ -111,7 +111,15 @@ const Reports = () => {
                 </div>
                 <div className="publication">
                   <LinkIcon />
-                  <a href={item.publication}>Publication link</a>
+                  {item.report_type == "Thesis" ? (
+                    <div>
+                      <a href={item.publication}>Publication link</a>
+                    </div>
+                  ) : (
+                    <div>
+                      <a href={item.publication}>Live Demo link</a>
+                    </div>
+                  )}
                 </div>
               </div>
               <div className="buttons">
