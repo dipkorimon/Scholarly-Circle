@@ -8,7 +8,7 @@ const AddSupervisor = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [current_position, setCurrentPosition] = useState("");
-  const [phd, setPhd] = useState("");
+  const [education, setEducation] = useState("");
   const [phone, setPhone] = useState("");
   const [joining_date, setJoiningDate] = useState("");
   const [research_interests, setResearchInterests] = useState("");
@@ -23,7 +23,7 @@ const AddSupervisor = () => {
     formData.append("email", email);
     formData.append("password", password);
     formData.append("current_position", current_position);
-    formData.append("phd", phd);
+    formData.append("education", education);
     formData.append("phone", phone);
     formData.append("joining_date", joining_date);
     formData.append("research_interests", research_interests);
@@ -42,8 +42,7 @@ const AddSupervisor = () => {
     <div className="addSupervisor">
       <h1>
         Add supervisor with full name, email, password, current position,
-        university name from where PhD degree owned, phone number, joining date,
-        research interests and a photo.
+        education, phone number, joining date, research interests and a photo.
       </h1>
       <p>
         An asterisk (<span>*</span>) indicates a required field
@@ -58,7 +57,7 @@ const AddSupervisor = () => {
           onChange={(e) => setFullName(e.target.value)}
         />
         <label htmlFor="email">
-          email<span>*</span>
+          Email<span>*</span>
         </label>
         <input
           type="email"
@@ -66,7 +65,7 @@ const AddSupervisor = () => {
           onChange={(e) => setEmail(e.target.value)}
         />
         <label htmlFor="password">
-          password<span>*</span>
+          Password<span>*</span>
         </label>
         <input
           type="password"
@@ -82,9 +81,13 @@ const AddSupervisor = () => {
           onChange={(e) => setCurrentPosition(e.target.value)}
         />
         <label htmlFor="">
-          PhD (University name)<span>*</span>
+          Education (University name)<span>*</span>
         </label>
-        <input type="text" required onChange={(e) => setPhd(e.target.value)} />
+        <input
+          type="text"
+          required
+          onChange={(e) => setEducation(e.target.value)}
+        />
         <label htmlFor="">
           Phone<span>*</span>
         </label>

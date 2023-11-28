@@ -41,7 +41,7 @@ const AddReport = () => {
   };
 
   return (
-    <div className="report">
+    <div className="addReport">
       <h1>
         Add a new report in Scholarly Circle with a title, abstract, supervisor
         name, authors name, defense date, category, report type(project or
@@ -110,11 +110,10 @@ const AddReport = () => {
         <label htmlFor="">
           Report type<span>*</span>
         </label>
-        <input
-          type="text"
-          required
-          onChange={(e) => setReportType(e.target.value)}
-        />
+        <select name="" id="" onChange={(e) => setReportType(e.target.value)}>
+          <option value="thesis">Thesis</option>
+          <option value="project">Project</option>
+        </select>
         <label htmlFor="">
           Thesis Publication link or Project live demo link<span>*</span>
         </label>
@@ -123,6 +122,7 @@ const AddReport = () => {
           required
           onChange={(e) => setPublication(e.target.value)}
         />
+
         <div className="doc-upload">
           <label htmlFor="file">
             Upload Document<span>*</span>

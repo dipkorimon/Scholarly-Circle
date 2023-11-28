@@ -1,22 +1,22 @@
 @import "../../styles/global.scss";
 @import "../../styles/variables.scss";
 
-.report {
+.addReport {
   padding: 10px 10px;
   display: flex;
   flex-direction: column;
   align-items: center;
 
   h1 {
-    font-size: 16px;
+    font-size: 18px;
     text-align: center;
 
     @include tablet {
-      font-size: 14px;
+      font-size: 16px;
     }
 
     @include mobile {
-      font-size: 12px;
+      font-size: 14px;
     }
   }
 
@@ -44,6 +44,11 @@
     label {
       margin-top: 20px;
       font-size: 16px;
+      width: 450px;
+
+      @include mobile {
+        width: 250px;
+      }
 
       span {
         color: $red-color;
@@ -75,6 +80,19 @@
       @include mobile {
         width: 250px;
         height: 100px;
+      }
+    }
+
+    select {
+      padding: 10px;
+      width: 450px;
+      outline: none;
+      border: none;
+      background-color: $soft-color;
+      border-radius: 5px;
+
+      @include mobile {
+        width: 250px;
       }
     }
 

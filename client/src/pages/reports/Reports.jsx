@@ -53,7 +53,10 @@ const Reports = () => {
               <div className="info">
                 <div className="title">
                   <h3>{item.title}</h3>
-                  <span>{item.report_type}</span>
+                  <span>
+                    {item.report_type.charAt(0).toUpperCase() +
+                      item.report_type.slice(1)}
+                  </span>
                 </div>
               </div>
               <div className="post-details">

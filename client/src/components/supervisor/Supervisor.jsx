@@ -47,7 +47,7 @@ const Supervisor = () => {
             </div>
             <div className="info-desc">
               <SchoolIcon />
-              <p>PhD ({item.phd})</p>
+              <p>{item.education}</p>
             </div>
             <div className="info-desc">
               <EmailIcon />

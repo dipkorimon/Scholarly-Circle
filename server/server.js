@@ -87,7 +87,7 @@ app.post("/chairmanLogin", (req, res) => {
 // For add supervisor
 app.post("/addSupervisor", upload.single("file"), (req, res) => {
   const sql =
-    "INSERT INTO supervisor (`full_name`, `email`, `password`, `current_position`, `phd`, `phone`, `joining_date`, `research_interests`, `photo`) VALUES (?)";
+    "INSERT INTO supervisor (`full_name`, `email`, `password`, `current_position`, `education`, `phone`, `joining_date`, `research_interests`, `photo`) VALUES (?)";
   bcrypt.hash(req.body.password.toString(), salt, (err, hash) => {
     if (err) return res.json({ Error: "Error for hashing password" });
     const values = [
@@ -95,7 +95,7 @@ app.post("/addSupervisor", upload.single("file"), (req, res) => {
       req.body.email,
       hash,
       req.body.current_position,
-      req.body.phd,
+      req.body.education,
       req.body.phone,
       req.body.joining_date,
       req.body.research_interests,
