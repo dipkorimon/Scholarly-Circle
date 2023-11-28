@@ -1,0 +1,81 @@
+@import "../../styles/global.scss";
+@import "../../styles/variables.scss";
+
+.accordion {
+  width: 100%;
+
+  .item {
+    .title {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      cursor: pointer;
+      background-color: $soft-color;
+      padding: 3px 10px;
+      border-radius: 5px;
+
+      h3 {
+        font-size: 16px;
+
+        @include tablet {
+          font-size: 14px;
+        }
+
+        @include mobile {
+          font-size: 12px;
+        }
+      }
+
+      span {
+        font-size: 16px;
+        font-weight: bold;
+
+        @include tablet {
+          font-size: 14px;
+        }
+
+        @include mobile {
+          font-size: 12px;
+        }
+      }
+    }
+
+    .content {
+      max-height: 0;
+      padding: 5px 10px;
+      overflow: hidden;
+      transition: all 0.5s cubic-bezier(0, 1, 0, 1);
+
+      p {
+        font-size: 14px;
+
+        @include tablet {
+          font-size: 12px;
+        }
+
+        @include mobile {
+          font-size: 10px;
+        }
+      }
+    }
+
+    .content-show {
+      height: auto;
+      padding: 5px 10px;
+      max-height: 9999px;
+      transition: all 0.5s cubic-bezier(1, 0, 1, 0);
+
+      p {
+        font-size: 14px;
+
+        @include tablet {
+          font-size: 12px;
+        }
+
+        @include mobile {
+          font-size: 10px;
+        }
+      }
+    }
+  }
+}

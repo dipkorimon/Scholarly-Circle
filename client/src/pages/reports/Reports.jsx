@@ -11,6 +11,7 @@ import axios from "axios";
 import moment from "moment";
 import Badge from "../../components/badge/Badge";
 import ReportDetails from "../../components/reportDetails/ReportDetails";
+import Accordion from "../../components/accordion/Accordion";
 
 const Reports = () => {
   const [report, setReport] = useState([]);
@@ -33,15 +34,6 @@ const Reports = () => {
 
   const chairmanLogin = localStorage.getItem("ChairmanLogin");
   const supervisorLogin = localStorage.getItem("SupervisorLogin");
-
-  const [selected, setSelected] = useState(null);
-
-  const toggle = (i) => {
-    if (selected == i) {
-      return setSelected(null);
-    }
-    setSelected(i);
-  };
 
   return (
     <div className="reports">
@@ -66,21 +58,7 @@ const Reports = () => {
               </div>
               <div className="post-details">
                 <div className="abstract">
-                  <div className="accordion">
-                    <div className="item">
-                      <div className="title" onClick={() => toggle(i)}>
-                        <h3>
-                          {selected == i ? "Hide abstract" : "View abstract"}
-                        </h3>
-                        <span>{selected == i ? "-" : "+"}</span>
-                      </div>
-                      <div
-                        className={selected == i ? "content-show" : "content"}
-                      >
-                        <p>{item.abstract}</p>
-                      </div>
-                    </div>
-                  </div>
+                  <Accordion abstract={item.abstract} i={i} />
                 </div>
                 <div className="report-details">
                   <SupervisorAccountIcon />
