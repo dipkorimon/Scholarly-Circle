@@ -2,24 +2,20 @@ import React, { useEffect, useState } from "react";
 import "./statCount.scss";
 
 const StatCount = () => {
-  const [totalSupervisor, setTotalSupervisor] = useState(0);
-  const [totalAuthor, setTotalAuthor] = useState(0);
-  const [totalReport, setTotalReport] = useState(0);
+  const [tableCounts, setTableCounts] = useState({});
 
   useEffect(() => {
     fetch("http://localhost:8800/home")
       .then((res) => res.json())
-      .then((data) => {
-        setTotalSupervisor(data[0].totalSupervisor);
-      })
+      .then((data) => setTableCounts(data))
       .catch((err) => console.log(err));
-  }, []);
+  });
 
   return (
     <div className="stat-count">
       <div className="count">
         <div className="first">
-          <h2>{totalSupervisor}</h2>
+          <h2>{tableCounts.table1}</h2>
         </div>
         <div className="second">
           <p>Supervisors</p>
@@ -27,7 +23,7 @@ const StatCount = () => {
       </div>
       <div className="count">
         <div className="first">
-          <h2>{totalAuthor}</h2>
+          <h2>{tableCounts.table2}</h2>
         </div>
         <div className="second">
           <p>Authors</p>
@@ -35,7 +31,7 @@ const StatCount = () => {
       </div>
       <div className="count">
         <div className="first">
-          <h2>{totalReport}</h2>
+          <h2>{tableCounts.table3}</h2>
         </div>
         <div className="second">
           <p>Reports</p>

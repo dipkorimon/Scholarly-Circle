@@ -320,10 +320,22 @@ app.delete("/reports/:id", (req, res) => {
 
 // For view statistics
 app.get("/home", (req, res) => {
-  const sql = "SELECT COUNT(id) AS totalSupervisor FROM supervisor";
-  db.query(sql, (err, data) => {
-    if (err) res.json(err);
-    res.json(data);
+  const sql = "SELECT COUNT(*) as count FROM ";
+  db.query(sql + "supervisor", (err, result1) => {
+    if (err) throw err;
+    db.query(sql + "author", (err, result2) => {
+      if (err) throw err;
+      db.query(sql + "report", (err, result3) => {
+        if (err) throw err;
+
+        const counts = {
+          table1: result1[0].count,
+          table2: result2[0].count,
+          table3: result3[0].count,
+        };
+        res.json(counts);
+      });
+    });
   });
 });
 
