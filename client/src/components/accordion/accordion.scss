@@ -15,14 +15,14 @@
       border-radius: 5px;
 
       h3 {
-        font-size: 16px;
+        font-size: 14px;
 
         @include tablet {
-          font-size: 14px;
+          font-size: 12px;
         }
 
         @include mobile {
-          font-size: 12px;
+          font-size: 10px;
         }
       }
 
