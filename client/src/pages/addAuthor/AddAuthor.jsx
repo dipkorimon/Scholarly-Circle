@@ -7,9 +7,9 @@ const AddAuthor = () => {
   const [student_id, setStudentId] = useState("");
   const [full_name, setFullName] = useState("");
   const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
   const [session, setSession] = useState("");
   const [batch, setBatch] = useState("");
-  const [current_position, setCurrentPosition] = useState("");
   const [phone, setPhone] = useState("");
   const [defense_date, setDefenseDate] = useState("");
   const [file, setFile] = useState("");
@@ -22,9 +22,9 @@ const AddAuthor = () => {
     formData.append("student_id", student_id);
     formData.append("full_name", full_name);
     formData.append("email", email);
+    formData.append("password", password);
     formData.append("session", session);
     formData.append("batch", batch);
-    formData.append("current_position", current_position);
     formData.append("phone", phone);
     formData.append("defense_date", defense_date);
     formData.append("file", file);
@@ -41,8 +41,8 @@ const AddAuthor = () => {
   return (
     <div className="addAuthor">
       <h1>
-        Add author with student ID, full name, email, session, batch,
-        current_position, phone, blood group, defense date and a photo.
+        Add author with student ID, full name, email, session, batch, phone,
+        blood group, defense date and a photo.
       </h1>
       <p>
         An asterisk (<span>*</span>) indicates a required field
@@ -73,6 +73,14 @@ const AddAuthor = () => {
           onChange={(e) => setEmail(e.target.value)}
         />
         <label htmlFor="">
+          Password<span>*</span>
+        </label>
+        <input
+          type="password"
+          required
+          onChange={(e) => setPassword(e.target.value)}
+        />
+        <label htmlFor="">
           Session<span>*</span>
         </label>
         <input
@@ -87,14 +95,6 @@ const AddAuthor = () => {
           type="text"
           required
           onChange={(e) => setBatch(e.target.value)}
-        />
-        <label htmlFor="">
-          Current Position<span>*</span>
-        </label>
-        <input
-          type="text"
-          required
-          onChange={(e) => setCurrentPosition(e.target.value)}
         />
         <label htmlFor="">
           Phone<span>*</span>

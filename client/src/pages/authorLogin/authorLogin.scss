@@ -1,0 +1,108 @@
+@import "../../styles/global.scss";
+@import "../../styles/variables.scss";
+
+* {
+  font-family: "Poppins";
+}
+
+.login {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+
+  h1 {
+    font-size: 30px;
+
+    @include tablet {
+      font-size: 25px;
+    }
+
+    @include mobile {
+      font-size: 20px;
+    }
+  }
+
+  p {
+    font-size: 16px;
+    text-align: center;
+
+    @include tablet {
+      font-size: 14px;
+    }
+
+    @include mobile {
+      font-size: 12px;
+    }
+
+    span {
+      color: $red-color;
+    }
+  }
+
+  form {
+    display: flex;
+    flex-direction: column;
+
+    label {
+      margin-top: 20px;
+      font-size: 16px;
+
+      span {
+        color: $red-color;
+      }
+    }
+
+    input {
+      padding: 10px;
+      width: 450px;
+      outline: none;
+      border: none;
+      background-color: $soft-color;
+      border-radius: 5px;
+
+      @include mobile {
+        width: 250px;
+      }
+    }
+
+    button {
+      padding: 10px;
+      margin-top: 20px;
+      width: 450px;
+      border: none;
+      border-radius: 5px;
+      background-color: $red-color;
+      color: $white-color;
+      font-weight: bold;
+      font-size: 16px;
+      margin-bottom: 20px;
+
+      @include mobile {
+        width: 250px;
+      }
+
+      &:hover {
+        background-color: $dark-red;
+        cursor: pointer;
+      }
+    }
+  }
+
+  .forgot {
+    a {
+      font-size: 16px;
+      font-weight: bold;
+      color: $red-color;
+
+      @include tablet {
+        font-size: 14px;
+      }
+
+      @include mobile {
+        font-size: 12px;
+      }
+    }
+  }
+}

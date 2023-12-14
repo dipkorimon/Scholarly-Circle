@@ -36,14 +36,15 @@ const NavBar = () => {
         location.reload(true);
         localStorage.removeItem("ChairmanLogin");
         localStorage.removeItem("SupervisorLogin");
+        localStorage.removeItem("AuthorLogin");
       })
       .catch((err) => {
         console.log(err);
       });
   };
 
-  const login = localStorage.getItem("ChairmanLogin");
   const chairman = localStorage.getItem("ChairmanLogin");
+  const supervisor = localStorage.getItem("SupervisorLogin");
 
   return (
     <div className="navBar">
@@ -67,10 +68,12 @@ const NavBar = () => {
               <button className="name">{name}</button>
               {chairman ? (
                 <span className="logInfo">Chairman</span>
-              ) : (
+              ) : supervisor ? (
                 <span className="logInfo">Supervisor</span>
+              ) : (
+                <span className="logInfo">Author</span>
               )}
-              {login ? (
+              {chairman ? (
                 <div id="drop-down">
                   <a href="/addSupervisor">
                     <SupervisorAccountIcon />
@@ -88,12 +91,22 @@ const NavBar = () => {
                     Sign Out
                   </button>
                 </div>
-              ) : (
+              ) : supervisor ? (
                 <div id="drop-down">
                   <a href="/addAuthor">
                     <PersonIcon />
                     <button>Add Author</button>
                   </a>
+                  <a href="/addReport">
+                    <ArticleIcon />
+                    <button>Add Report</button>
+                  </a>
+                  <button onClick={handleLogout} className="icon">
+                    Sign Out
+                  </button>
+                </div>
+              ) : (
+                <div id="drop-down">
                   <a href="/addReport">
                     <ArticleIcon />
                     <button>Add Report</button>
@@ -119,6 +132,10 @@ const NavBar = () => {
                   <a href="/supervisorLogin">
                     <LoginIcon />
                     Sign in as Supervisor
+                  </a>
+                  <a href="/authorLogin">
+                    <LoginIcon />
+                    Sign in as Author
                   </a>
                 </div>
               </div>

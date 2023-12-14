@@ -141,6 +141,63 @@ app.post("/supervisorLogin", (req, res) => {
   });
 });
 
+// For add author
+app.post("/addAuthor", upload.single("file"), (req, res) => {
+  const sql =
+    "INSERT INTO author (`student_id`, `full_name`, `email`, `password`, `session`, `batch`, `phone`, `defense_date`, `photo`) VALUES (?)";
+  bcrypt.hash(req.body.password.toString(), salt, (err, hash) => {
+    if (err) return res.json({ Error: "Error for hashing password" });
+    const values = [
+      req.body.student_id,
+      req.body.full_name,
+      req.body.email,
+      hash,
+      req.body.session,
+      req.body.batch,
+      req.body.phone,
+      req.body.defense_date,
+      req.file.filename,
+    ];
+    db.query(sql, [values], (err, data) => {
+      if (err) {
+        return res.json({ Error: "Inserting data error in server" });
+      }
+      return res.json({ Status: "Success" });
+    });
+  });
+});
+
+// For author login
+app.post("/authorLogin", (req, res) => {
+  const sql = "SELECT * FROM author WHERE email = ?";
+  db.query(sql, [req.body.email], (err, data) => {
+    if (err) {
+      return res.json({ Error: "Login error in server" });
+    }
+    if (data.length > 0) {
+      bcrypt.compare(
+        req.body.password.toString(),
+        data[0].password,
+        (err, response) => {
+          if (err) return res.json({ Error: "Password compare error" });
+          if (response) {
+            const name = data[0].full_name;
+            const token = jwt.sign({ name }, "jwt-secret-key", {
+              expiresIn: "1d",
+            });
+            res.cookie("token", token);
+            return res.json({ Status: "Success" });
+          } else {
+            return res.json({ Error: "Password not matched" });
+          }
+        }
+      );
+    } else {
+      return res.json({ Error: "Login Failed" });
+    }
+  });
+});
+
 // For verify account
 const verifyUser = (req, res, next) => {
   const token = req.cookies.token;
@@ -166,29 +223,6 @@ app.get("/", verifyUser, (req, res) => {
 app.get("/logout", (req, res) => {
   res.clearCookie("token");
   return res.json({ Status: "Success" });
-});
-
-// For add author
-app.post("/addAuthor", upload.single("file"), (req, res) => {
-  const sql =
-    "INSERT INTO author (`student_id`, `full_name`, `email`, `session`, `batch`, `current_position`, `phone`, `defense_date`, `photo`) VALUES (?)";
-  const values = [
-    req.body.student_id,
-    req.body.full_name,
-    req.body.email,
-    req.body.session,
-    req.body.batch,
-    req.body.current_position,
-    req.body.phone,
-    req.body.defense_date,
-    req.file.filename,
-  ];
-  db.query(sql, [values], (err, data) => {
-    if (err) {
-      return res.json({ Error: "Inserting data error in server" });
-    }
-    return res.json({ Status: "Success" });
-  });
 });
 
 // For add report

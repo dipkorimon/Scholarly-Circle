@@ -45,7 +45,7 @@ const Author = () => {
           <div className="info">
             <div className="info-desc">
               <PersonIcon />
-              <p style={{ fontWeight: "bold" }}>{item.current_position}</p>
+              <p style={{ fontWeight: "bold" }}>Student</p>
             </div>
             <div className="info-desc">
               <NumbersIcon />
