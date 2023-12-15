@@ -103,14 +103,22 @@ const SingleReport = () => {
           </div>
           <div className="report-details">
             <MergeTypeIcon />
-            <ReportDetails value={report_type} />
+            <ReportDetails
+              value={report_type.charAt(0).toUpperCase() + report_type.slice(1)}
+            />
             <Badge value="Report type" />
           </div>
           <div className="publication">
             <LinkIcon />
-            <a href={publication}>
-              <button>Publication link</button>
-            </a>
+            {report_type == "Thesis" ? (
+              <div>
+                <a href={publication}>Publication link</a>
+              </div>
+            ) : (
+              <div>
+                <a href={publication}>Live Demo link</a>
+              </div>
+            )}
           </div>
         </div>
         <div className="document">

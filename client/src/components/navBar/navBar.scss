@@ -226,6 +226,14 @@
               &:hover {
                 background-color: $soft-red;
               }
+
+              @include tablet {
+                font-size: 13px;
+              }
+
+              @include mobile {
+                font-size: 11px;
+              }
             }
           }
         }

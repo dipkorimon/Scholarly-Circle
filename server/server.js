@@ -268,6 +268,16 @@ app.get("/reports/:id", (req, res) => {
   });
 });
 
+// For category wise report filtering
+app.get("/categories/:category", (req, res) => {
+  const sql = "SELECT * FROM report WHERE category = ?";
+  const category = req.params.category;
+  db.query(sql, [category], (err, data) => {
+    if (err) return res.json("Error");
+    return res.json(data);
+  });
+});
+
 // For retrieve supervisors
 app.get("/supervisors", (req, res) => {
   const sql = "SELECT * FROM supervisor";

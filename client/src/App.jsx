@@ -17,6 +17,7 @@ import AuthorLogin from "./pages/authorLogin/AuthorLogin";
 import UpdateAuthor from "./pages/updateAuthor/UpdateAuthor";
 import UpdateReport from "./pages/updateReport/UpdateReport";
 import UpdateSupervisor from "./pages/updateSupervisor/UpdateSupervisor";
+import Categories from "./pages/categories/Categories";
 
 function App() {
   const Layout = () => {
@@ -53,6 +54,10 @@ function App() {
         {
           path: "/singleReport/:id",
           element: <SingleReport />,
+        },
+        {
+          path: "/categories/:category",
+          element: <Categories />,
         },
         {
           path: "/addReport",

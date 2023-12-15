@@ -8,11 +8,9 @@
   flex-direction: column;
   padding: 10px 10px;
 
-  .search {
+  .all-items {
     display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
+    gap: 20px;
 
     @include tablet {
       display: flex;
@@ -24,210 +22,177 @@
       flex-direction: column;
     }
 
-    .search-text {
+    .filter {
       display: flex;
+      flex-direction: column;
+      flex: 1;
 
       h3 {
-        font-size: 18px;
+        font-size: 20px;
+        border-bottom: 2px solid $soft-color;
 
         @include tablet {
-          font-size: 16px;
+          font-size: 15px;
         }
 
         @include mobile {
-          font-size: 14px;
+          font-size: 10px;
         }
       }
     }
 
-    .search-box {
-      input {
-        padding: 10px;
-        width: 450px;
-        outline: none;
-        border: none;
-        background-color: $soft-color;
-        border-radius: 5px;
+    .items {
+      display: flex;
+      flex: 4;
+      margin-top: 10px;
+
+      .post {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+
+        @include tablet {
+          display: grid;
+          grid-template-columns: repeat(1, 1fr);
+        }
 
         @include mobile {
-          width: 250px;
-        }
-      }
-    }
-  }
-
-  .items {
-    margin-top: 30px;
-
-    .post {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 20px;
-
-      @include tablet {
-        display: grid;
-        grid-template-columns: repeat(1, 1fr);
-      }
-
-      @include mobile {
-        display: grid;
-        grid-template-columns: repeat(1, 1fr);
-      }
-
-      .post-item {
-        display: flex;
-        flex-direction: column;
-        gap: 10px;
-        padding: 10px;
-        border-radius: 10px;
-        box-shadow: $shadow;
-
-        .info {
-          display: flex;
-          align-items: center;
-          border-bottom: 2px solid $soft-color;
-          gap: 10px;
-
-          .title {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            margin-bottom: 5px;
-
-            h3 {
-              font-size: 16px;
-
-              @include tablet {
-                font-size: 14px;
-              }
-
-              @include mobile {
-                font-size: 12px;
-              }
-            }
-
-            span {
-              font-size: 12px;
-              font-weight: bold;
-              background-color: $button-bg;
-              color: $red-color;
-              padding: 3px 10px;
-              border-radius: 5px;
-              cursor: pointer;
-
-              &:hover {
-                background-color: $soft-red;
-              }
-
-              @include tablet {
-                font-size: 10px;
-              }
-
-              @include mobile {
-                font-size: 8px;
-              }
-            }
-          }
+          display: grid;
+          grid-template-columns: repeat(1, 1fr);
         }
 
-        .post-details {
+        .post-item {
           display: flex;
           flex-direction: column;
           gap: 10px;
+          padding: 10px;
+          border-radius: 10px;
+          box-shadow: $shadow;
 
-          .abstract {
-            background-color: $soft-color;
-            border-radius: 5px;
-          }
-
-          .report-details {
+          .info {
             display: flex;
             align-items: center;
+            border-bottom: 2px solid $soft-color;
             gap: 10px;
+
+            .title {
+              display: flex;
+              align-items: center;
+              gap: 10px;
+              margin-bottom: 5px;
+
+              h3 {
+                font-size: 16px;
+
+                @include tablet {
+                  font-size: 14px;
+                }
+
+                @include mobile {
+                  font-size: 12px;
+                }
+              }
+
+              span {
+                font-size: 12px;
+                font-weight: bold;
+                background-color: $button-bg;
+                color: $red-color;
+                padding: 3px 10px;
+                border-radius: 5px;
+                cursor: pointer;
+
+                &:hover {
+                  background-color: $soft-red;
+                }
+
+                @include tablet {
+                  font-size: 10px;
+                }
+
+                @include mobile {
+                  font-size: 8px;
+                }
+              }
+            }
           }
 
-          .publication {
+          .post-details {
             display: flex;
-            align-items: center;
+            flex-direction: column;
             gap: 10px;
+
+            .abstract {
+              background-color: $soft-color;
+              border-radius: 5px;
+            }
+
+            .report-details {
+              display: flex;
+              align-items: center;
+              gap: 10px;
+            }
+
+            .publication {
+              display: flex;
+              align-items: center;
+              gap: 10px;
+
+              a {
+                font-size: 12px;
+                font-weight: bold;
+                background-color: $button-bg;
+                color: $red-color;
+                padding: 3px 10px;
+                border-radius: 5px;
+
+                &:hover {
+                  background-color: $soft-red;
+                }
+
+                @include tablet {
+                  font-size: 10px;
+                }
+
+                @include mobile {
+                  font-size: 8px;
+                }
+              }
+            }
+          }
+
+          .buttons {
+            display: flex;
+            margin-top: 10px;
+            margin-left: -10px;
 
             a {
-              font-size: 12px;
-              font-weight: bold;
-              background-color: $button-bg;
-              color: $red-color;
-              padding: 3px 10px;
-              border-radius: 5px;
+              margin-left: 10px;
 
-              &:hover {
-                background-color: $soft-red;
+              button {
+                font-size: 15px;
+                padding: 7px 20px;
+                background-color: $button-bg;
+                color: $red-color;
+                font-weight: bold;
+                border: none;
+                border-radius: 5px;
+                cursor: pointer;
+
+                &:hover {
+                  background-color: $soft-red;
+                }
+
+                @include tablet {
+                  font-size: 13px;
+                  padding: 3px 15px;
+                }
+
+                @include mobile {
+                  font-size: 11px;
+                  padding: 3px 15px;
+                }
               }
-
-              @include tablet {
-                font-size: 10px;
-              }
-
-              @include mobile {
-                font-size: 8px;
-              }
-            }
-          }
-        }
-
-        .buttons {
-          display: flex;
-          margin-top: 10px;
-          margin-left: -10px;
-
-          a {
-            button {
-              font-size: 15px;
-              padding: 7px 20px;
-              background-color: $button-bg;
-              color: $red-color;
-              font-weight: bold;
-              border-radius: 5px;
-              cursor: pointer;
-
-              &:hover {
-                background-color: $soft-red;
-              }
-
-              @include tablet {
-                font-size: 13px;
-                padding: 3px 15px;
-              }
-
-              @include mobile {
-                font-size: 11px;
-                padding: 3px 15px;
-              }
-            }
-          }
-
-          button {
-            font-size: 15px;
-            padding: 7px 20px;
-            background-color: $red-color;
-            color: $white-color;
-            font-weight: bold;
-            border-radius: 5px;
-            cursor: pointer;
-            border: none;
-            margin-left: 10px;
-
-            &:hover {
-              background-color: $dark-red;
-            }
-
-            @include tablet {
-              font-size: 13px;
-              padding: 3px 15px;
-            }
-
-            @include mobile {
-              font-size: 11px;
-              padding: 3px 14px;
             }
           }
         }
