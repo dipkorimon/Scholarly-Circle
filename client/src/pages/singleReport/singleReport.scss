@@ -136,7 +136,7 @@
           font-weight: bold;
           color: $red-color;
           background-color: $button-bg;
-          padding: 7px 20px;
+          padding: 3px 10px;
           border-radius: 5px;
           border: none;
           cursor: pointer;
@@ -147,13 +147,13 @@
 
           @include tablet {
             font-size: 13px;
-            padding: 3px 15px;
+            padding: 3px 10px;
             margin-bottom: 10px;
           }
 
           @include mobile {
             font-size: 11px;
-            padding: 3px 15px;
+            padding: 3px 10px;
             margin-bottom: 10px;
           }
 
@@ -167,7 +167,7 @@
           font-weight: bold;
           color: $white-color;
           background-color: $red-color;
-          padding: 7px 20px;
+          padding: 3px 10px;
           border-radius: 5px;
           border: none;
           cursor: pointer;
@@ -178,13 +178,13 @@
 
           @include tablet {
             font-size: 13px;
-            padding: 3px 15px;
+            padding: 3px 10px;
             margin-bottom: 10px;
           }
 
           @include mobile {
             font-size: 11px;
-            padding: 3px 15px;
+            padding: 3px 10px;
             margin-bottom: 10px;
           }
         }

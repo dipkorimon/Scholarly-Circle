@@ -18,6 +18,7 @@ import UpdateAuthor from "./pages/updateAuthor/UpdateAuthor";
 import UpdateReport from "./pages/updateReport/UpdateReport";
 import UpdateSupervisor from "./pages/updateSupervisor/UpdateSupervisor";
 import Categories from "./pages/categories/Categories";
+import Sessions from "./pages/sessions/Sessions";
 
 function App() {
   const Layout = () => {
@@ -58,6 +59,10 @@ function App() {
         {
           path: "/categories/:category",
           element: <Categories />,
+        },
+        {
+          path: "/sessions/:session",
+          element: <Sessions />,
         },
         {
           path: "/addReport",

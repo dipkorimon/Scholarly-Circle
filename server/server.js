@@ -278,6 +278,16 @@ app.get("/categories/:category", (req, res) => {
   });
 });
 
+// For session wise report filtering
+app.get("/sessions/:session", (req, res) => {
+  const sql = "SELECT * FROM report WHERE session = ?";
+  const session = req.params.session;
+  db.query(sql, [session], (err, data) => {
+    if (err) return res.json("Error");
+    return res.json(data);
+  });
+});
+
 // For retrieve supervisors
 app.get("/supervisors", (req, res) => {
   const sql = "SELECT * FROM supervisor";

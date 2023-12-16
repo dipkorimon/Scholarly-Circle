@@ -5,9 +5,11 @@
   span {
     font-size: 12px;
     font-weight: bold;
-    background-color: $soft-color;
+    color: $red-color;
+    background-color: $soft-red;
     padding: 3px 10px;
     border-radius: 5px;
+    cursor: pointer;
 
     @include tablet {
       font-size: 10px;
