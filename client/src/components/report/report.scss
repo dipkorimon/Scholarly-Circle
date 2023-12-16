@@ -4,7 +4,8 @@
 .report-page {
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  max-width: 490px;
+  flex-grow: 1;
 
   .report-list {
     display: flex;
@@ -13,34 +14,40 @@
     padding: 10px;
     box-shadow: $shadow;
     border-radius: 5px;
+    height: 260px;
+
+    @include mobile {
+      height: 220px;
+    }
 
     .report-data {
       h3 {
         display: flex;
         align-items: center;
         gap: 5px;
-        font-size: 20px;
+        font-size: 18px;
         border-bottom: 2px solid $soft-color;
 
         @include tablet {
-          font-size: 18px;
+          font-size: 16px;
         }
 
         @include mobile {
-          font-size: 16px;
+          font-size: 14px;
         }
       }
 
       p {
-        font-size: 16px;
+        font-size: 14px;
         margin-bottom: 5px;
+        margin-top: 5px;
 
         @include tablet {
-          font-size: 14px;
+          font-size: 12px;
         }
 
         @include mobile {
-          font-size: 12px;
+          font-size: 10px;
         }
       }
 

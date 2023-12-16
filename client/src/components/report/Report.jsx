@@ -8,7 +8,11 @@ const Report = (props) => {
       <div className="report-list">
         <div className="report-data">
           <h3>{props.title}</h3>
-          <p>{props.abstract}</p>
+          <p>
+            {props.abstract.length > 250
+              ? `${props.abstract.substring(0, 250)} . . .`
+              : props.abstract}
+          </p>
           <div className="badge">
             <Badge
               value={

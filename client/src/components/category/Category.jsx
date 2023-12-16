@@ -18,7 +18,7 @@ const Category = () => {
 
   return (
     <div className="category">
-      <h3>All reports related to {category} category</h3>
+      <h3 className="cat">All reports related to {category} category</h3>
       <div className="items">
         <div className="post">
           {report.map((item, i) => (

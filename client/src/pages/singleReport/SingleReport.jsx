@@ -1,17 +1,8 @@
 import React, { useEffect, useState } from "react";
 import "./singleReport.scss";
-import PersonIcon from "@mui/icons-material/Person";
-import SupervisorAccountIcon from "@mui/icons-material/SupervisorAccount";
-import DateRangeIcon from "@mui/icons-material/DateRange";
-import AdjustIcon from "@mui/icons-material/Adjust";
-import CategoryIcon from "@mui/icons-material/Category";
-import MergeTypeIcon from "@mui/icons-material/MergeType";
-import LinkIcon from "@mui/icons-material/Link";
 import axios from "axios";
 import moment from "moment";
 import { useParams, useNavigate } from "react-router-dom";
-import Badge from "../../components/badge/Badge";
-import ReportDetails from "../../components/reportDetails/ReportDetails";
 
 const SingleReport = () => {
   const { id } = useParams();
@@ -62,65 +53,6 @@ const SingleReport = () => {
   return (
     <div className="single-report">
       <div className="post-item" key={id}>
-        <div className="info">
-          <div className="title">
-            <h3>{title}</h3>
-          </div>
-        </div>
-        <div className="post-details">
-          <div className="abstract">
-            <p>
-              <span>Abstract: </span>
-              {abstract}
-            </p>
-          </div>
-          <div className="report-details">
-            <SupervisorAccountIcon />
-            <ReportDetails value={supervisor_name} />
-            <Badge value="Supervisor" />
-          </div>
-          <div className="report-details">
-            <PersonIcon />
-            <ReportDetails value={authors_name} />
-            <Badge value="Authors" />
-          </div>
-          <div className="report-details">
-            <DateRangeIcon />
-            <ReportDetails
-              value={moment(defense_date).format("MMMM Do YYYY")}
-            />
-            <Badge value="Defense date" />
-          </div>
-          <div className="report-details">
-            <AdjustIcon />
-            <ReportDetails value={session} />
-            <Badge value="Session" />
-          </div>
-          <div className="report-details">
-            <CategoryIcon />
-            <ReportDetails value={category} />
-            <Badge value="Category" />
-          </div>
-          <div className="report-details">
-            <MergeTypeIcon />
-            <ReportDetails
-              value={report_type.charAt(0).toUpperCase() + report_type.slice(1)}
-            />
-            <Badge value="Report type" />
-          </div>
-          <div className="publication">
-            <LinkIcon />
-            {report_type == "Thesis" ? (
-              <div>
-                <a href={publication}>Publication link</a>
-              </div>
-            ) : (
-              <div>
-                <a href={publication}>Live Demo link</a>
-              </div>
-            )}
-          </div>
-        </div>
         <div className="document">
           <embed src={`http://localhost:8800/documents/` + document} type="" />
         </div>

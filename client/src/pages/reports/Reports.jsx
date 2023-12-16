@@ -15,23 +15,59 @@ const Reports = () => {
       .catch((err) => console.log(err));
   });
 
+  const [uniqueCategories, setUniqueCategories] = useState([]);
+  const [uniqueSessions, setUniqueSessions] = useState([]);
+  const [uniqueReportTypes, setUniqueReportTypes] = useState([]);
+
+  useEffect(() => {
+    const uniqueCategoriesSet = new Set(report.map((item) => item.category));
+    const uniqueCategoriesArray = Array.from(uniqueCategoriesSet);
+    setUniqueCategories(uniqueCategoriesArray);
+  }, [report]);
+
+  useEffect(() => {
+    const uniqueSessionsSet = new Set(report.map((item) => item.session));
+    const uniqueSessionsArray = Array.from(uniqueSessionsSet);
+    setUniqueSessions(uniqueSessionsArray);
+  }, [report]);
+
+  useEffect(() => {
+    const uniqueReportTypesSet = new Set(
+      report.map((item) => item.report_type)
+    );
+    const uniqueReportTypesArray = Array.from(uniqueReportTypesSet);
+    setUniqueReportTypes(uniqueReportTypesArray);
+  }, [report]);
+
   return (
     <div className="reports">
       <div className="all-items">
         <div className="filter">
           <h3>Categories</h3>
-          {report.map((item, i) => (
-            <div className="category-list" key={item.id}>
-              <a href={`/categories/${item.category}`}>
-                <CategoryList category={item.category} />
+          {uniqueCategories.map((category) => (
+            <div className="category-list">
+              <a href={`/categories/${category}`}>
+                <CategoryList category={category} />
               </a>
             </div>
           ))}
           <h3 style={{ marginTop: 20 }}>Sessions</h3>
-          {report.map((item, i) => (
-            <div className="category-list" key={item.id}>
-              <a href={`/sessions/${item.session}`}>
-                <CategoryList category={item.session} />
+          {uniqueSessions.map((session) => (
+            <div className="category-list">
+              <a href={`/sessions/${session}`}>
+                <CategoryList category={session} />
+              </a>
+            </div>
+          ))}
+          <h3 style={{ marginTop: 20 }}>Report Types</h3>
+          {uniqueReportTypes.map((report_type) => (
+            <div className="category-list">
+              <a href={`/reportTypes/${report_type}`}>
+                <CategoryList
+                  category={
+                    report_type.charAt(0).toUpperCase() + report_type.slice(1)
+                  }
+                />
               </a>
             </div>
           ))}

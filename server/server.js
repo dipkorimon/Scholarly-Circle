@@ -288,6 +288,16 @@ app.get("/sessions/:session", (req, res) => {
   });
 });
 
+// For type wise report filtering
+app.get("/reportTypes/:reportType", (req, res) => {
+  const sql = "SELECT * FROM report WHERE report_type = ?";
+  const report_type = req.params.reportType;
+  db.query(sql, [report_type], (err, data) => {
+    if (err) return res.json("Error");
+    return res.json(data);
+  });
+});
+
 // For retrieve supervisors
 app.get("/supervisors", (req, res) => {
   const sql = "SELECT * FROM supervisor";
