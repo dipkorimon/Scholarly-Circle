@@ -37,7 +37,7 @@ Scholarly Circle offers a variety of features, including:
 <strong>Version Control System:</strong>
 
 <ul>
-  <li>Git (For Version Control System)</li>
+  <li>Git & Github(For Version Control System)</li>
 </ul>
 
 # Deployment link
