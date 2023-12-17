@@ -5,7 +5,7 @@ Scholarly Circle is a project and thesis reports sharing platform for the Depart
 Scholarly Circle offers a variety of features, including:
 
 <ul>
-  <li>A project and thesis reports sharing platform: The Chairman and Supervisors can upload project and thesis reports that are under their supervision to Scholarly Circle and share them with other supervisors and authors.</li>
+  <li>A project and thesis reports sharing platform: The Chairman, Supervisors, and Authors can upload project and thesis reports that are under their supervision to Scholarly Circle and share them with other supervisors and authors.</li>
   <li>Report filtering: All users can filter project and thesis reports by categories, sessions, and their types added by supervisors or chairman or authors.</li>
   <li>Download reports: All users can download the project and thesis reports that they need.</li>
   <li>Roles of Chairman: The Chairman can add supervisors and authors and also can share project and thesis reports.</li>
