@@ -3,6 +3,7 @@ import "./singleReport.scss";
 import axios from "axios";
 import moment from "moment";
 import { useParams, useNavigate } from "react-router-dom";
+import Badge from "../../components/badge/Badge";
 
 const SingleReport = () => {
   const { id } = useParams();
@@ -53,6 +54,37 @@ const SingleReport = () => {
   return (
     <div className="single-report">
       <div className="post-item" key={id}>
+        <div className="post-info">
+          <h3>{title}</h3>
+          <div className="session-date">
+            <Badge value={session} />
+            <Badge value={category} />
+            <p>{moment(defense_date).format("MMMM Do YYYY")}</p>
+          </div>
+          <div className="sup-aut">
+            <p>
+              <span>Supervisor: </span>
+              {supervisor_name}
+            </p>
+            <p>
+              <span>Authors: </span>
+              {authors_name}
+            </p>
+          </div>
+          <div className="abstract">
+            <p>
+              <span>Abstract: </span>
+              {abstract}
+            </p>
+          </div>
+          <div className="publication">
+            {report_type == "thesis" ? (
+              <a href="">Publication Link</a>
+            ) : (
+              <a href="">Live Demo Link</a>
+            )}
+          </div>
+        </div>
         <div className="document">
           <embed src={`http://localhost:8800/documents/` + document} type="" />
         </div>

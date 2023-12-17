@@ -24,6 +24,100 @@
       padding: 5px;
     }
 
+    .post-info {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+
+      h3 {
+        font-size: 20px;
+        text-align: center;
+        border-bottom: 2px solid $soft-color;
+
+        @include tablet {
+          font-size: 16px;
+        }
+
+        @include mobile {
+          font-size: 14px;
+        }
+      }
+
+      .session-date {
+        display: flex;
+        justify-content: space-between;
+
+        p {
+          font-size: 16px;
+
+          @include tablet {
+            font-size: 14px;
+          }
+
+          @include mobile {
+            font-size: 12px;
+          }
+        }
+      }
+
+      .sup-aut {
+        display: flex;
+        justify-content: space-between;
+
+        p {
+          font-size: 16px;
+
+          @include tablet {
+            font-size: 14px;
+          }
+
+          @include mobile {
+            font-size: 12px;
+          }
+
+          span {
+            font-weight: bold;
+          }
+        }
+      }
+
+      .abstract {
+        p {
+          font-size: 14px;
+
+          @include tablet {
+            font-size: 12px;
+          }
+
+          @include mobile {
+            font-size: 10px;
+          }
+
+          span {
+            font-weight: bold;
+          }
+        }
+      }
+
+      .publication {
+        a {
+          font-size: 14px;
+          font-weight: bold;
+          background-color: $soft-color;
+          padding: 3px 10px;
+          border-radius: 5px;
+
+          @include tablet {
+            font-size: 12px;
+          }
+
+          @include mobile {
+            font-size: 10px;
+          }
+        }
+      }
+    }
+
     .document {
       embed {
         height: 800px;
