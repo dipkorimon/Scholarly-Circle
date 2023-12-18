@@ -273,7 +273,7 @@
           width: fit-content;
           display: none;
           flex-direction: column;
-          top: 60px;
+          top: 55px;
           right: 20px;
           padding: 10px;
           border-radius: 5px;
@@ -281,12 +281,12 @@
           box-shadow: $shadow;
 
           @include tablet {
-            top: 140px;
+            top: 120px;
             right: 270px;
           }
 
           @include mobile {
-            top: 120px;
+            top: 105px;
             right: 70px;
           }
 

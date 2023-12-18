@@ -79,9 +79,9 @@ const SingleReport = () => {
           </div>
           <div className="publication">
             {report_type == "thesis" ? (
-              <a href="">Publication Link</a>
+              <a href={publication}>Publication Link</a>
             ) : (
-              <a href="">Live Demo Link</a>
+              <a href={publication}>Live Demo Link</a>
             )}
           </div>
         </div>
