@@ -40,10 +40,7 @@ const AddAuthor = () => {
 
   return (
     <div className="addAuthor">
-      <h1>
-        Add author with student ID, full name, email, password, session, batch,
-        phone, blood group, defense date and a photo.
-      </h1>
+      <h1>Add a new Author</h1>
       <p>
         An asterisk (<span>*</span>) indicates a required field
       </p>

@@ -42,11 +42,7 @@ const AddReport = () => {
 
   return (
     <div className="addReport">
-      <h1>
-        Add a new report in Scholarly Circle with a title, abstract, supervisor
-        name, authors name, defense date, category, report type(project or
-        thesis), document(docx or pdf).
-      </h1>
+      <h1>Add a new Report</h1>
       <p>
         An asterisk (<span>*</span>) indicates a required field
       </p>

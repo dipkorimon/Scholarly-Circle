@@ -40,10 +40,7 @@ const AddSupervisor = () => {
 
   return (
     <div className="addSupervisor">
-      <h1>
-        Add supervisor with full name, email, password, current position,
-        education, phone number, joining date, research interests and a photo.
-      </h1>
+      <h1>Add a new Supervisor</h1>
       <p>
         An asterisk (<span>*</span>) indicates a required field
       </p>
