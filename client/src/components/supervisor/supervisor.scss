@@ -4,7 +4,7 @@
 .supervisor {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 20px;
+  gap: 10px;
 
   @include tablet {
     display: grid;
@@ -24,6 +24,15 @@
     background-color: $white-color;
     box-shadow: $shadow;
     border-radius: 10px;
+    max-width: 350px;
+
+    @include tablet {
+      max-width: 325px;
+    }
+
+    @include mobile {
+      max-width: 305px;
+    }
 
     .img {
       display: flex;

@@ -326,6 +326,16 @@ app.get("/authors", (req, res) => {
   });
 });
 
+// For session wise author filtering
+app.get("/authorSessions/:session", (req, res) => {
+  const sql = "SELECT * FROM author WHERE session = ?";
+  const session = req.params.session;
+  db.query(sql, [session], (err, data) => {
+    if (err) return res.json("Error");
+    return res.json(data);
+  });
+});
+
 // For update author
 app.get("/updateAuthor/:id", (req, res) => {
   const sql = "SELECT * FROM author WHERE id = ?";

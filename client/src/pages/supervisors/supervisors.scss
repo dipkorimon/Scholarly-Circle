@@ -12,7 +12,17 @@
     display: flex;
     gap: 20px;
 
-    h3 {
+    @include tablet {
+      display: flex;
+      flex-direction: column;
+    }
+
+    @include mobile {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .cupo {
       font-size: 16px;
       border-bottom: 2px solid $soft-color;
 

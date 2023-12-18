@@ -21,6 +21,7 @@ import Categories from "./pages/categories/Categories";
 import Sessions from "./pages/sessions/Sessions";
 import ReportTypes from "./pages/reportTypes/ReportTypes";
 import CurrentPositions from "./pages/currentPositions/CurrentPositions";
+import AuthorSessions from "./pages/authorSessions/AuthorSessions";
 
 function App() {
   const Layout = () => {
@@ -97,6 +98,10 @@ function App() {
         {
           path: "/currentPositions/:currentPosition",
           element: <CurrentPositions />,
+        },
+        {
+          path: "/authorSessions/:session",
+          element: <AuthorSessions />,
         },
       ],
     },

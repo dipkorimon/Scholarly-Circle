@@ -28,7 +28,7 @@ const Supervisors = () => {
     <div className="supervisors">
       <div className="sup-items">
         <div className="filter">
-          <h3>Categories</h3>
+          <h3 className="cupo">Current Positions</h3>
           {uniquePositions.map((current_position) => (
             <div className="category-list">
               <a href={`/currentPositions/${current_position}`}>
