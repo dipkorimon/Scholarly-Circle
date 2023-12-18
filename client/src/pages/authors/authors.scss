@@ -7,22 +7,4 @@
   justify-content: center;
   flex-direction: column;
   padding: 10px 10px;
-
-  .aut {
-    h3 {
-      font-size: 20px;
-
-      @include tablet {
-        font-size: 15px;
-      }
-
-      @include mobile {
-        font-size: 10px;
-      }
-    }
-  }
-
-  .items {
-    margin-top: 15px;
-  }
 }

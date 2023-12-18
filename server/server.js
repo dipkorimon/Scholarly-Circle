@@ -307,6 +307,16 @@ app.get("/supervisors", (req, res) => {
   });
 });
 
+// For position wise supervisor filtering
+app.get("/currentPositions/:currentPosition", (req, res) => {
+  const sql = "SELECT * FROM supervisor WHERE current_position = ?";
+  const currentPosition = req.params.currentPosition;
+  db.query(sql, [currentPosition], (err, data) => {
+    if (err) return res.json("Error");
+    return res.json(data);
+  });
+});
+
 // For retrieve authors
 app.get("/authors", (req, res) => {
   const sql = "SELECT * FROM author";

@@ -3,6 +3,7 @@ import "./session.scss";
 import { useParams } from "react-router-dom";
 import axios from "axios";
 import Report from "../../components/report/Report";
+import moment from "moment";
 
 const Session = () => {
   const { session } = useParams();
@@ -29,7 +30,7 @@ const Session = () => {
               abstract={item.abstract}
               supervisor_name={item.supervisor_name}
               authors_name={item.authors_name}
-              published_date={item.published_date}
+              defense_date={moment(item.defense_date).format("MMMM Do YYYY")}
               session={item.session}
               category={item.category}
               publication={item.publication}

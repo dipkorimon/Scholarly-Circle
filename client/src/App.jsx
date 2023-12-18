@@ -20,6 +20,7 @@ import UpdateSupervisor from "./pages/updateSupervisor/UpdateSupervisor";
 import Categories from "./pages/categories/Categories";
 import Sessions from "./pages/sessions/Sessions";
 import ReportTypes from "./pages/reportTypes/ReportTypes";
+import CurrentPositions from "./pages/currentPositions/CurrentPositions";
 
 function App() {
   const Layout = () => {
@@ -92,6 +93,10 @@ function App() {
         {
           path: "/updateAuthor/:id",
           element: <UpdateAuthor />,
+        },
+        {
+          path: "/currentPositions/:currentPosition",
+          element: <CurrentPositions />,
         },
       ],
     },
