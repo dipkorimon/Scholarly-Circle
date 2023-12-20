@@ -87,10 +87,11 @@ app.post("/chairmanLogin", (req, res) => {
 // For add supervisor
 app.post("/addSupervisor", upload.single("file"), (req, res) => {
   const sql =
-    "INSERT INTO supervisor (`full_name`, `email`, `password`, `current_position`, `education`, `phone`, `joining_date`, `research_interests`, `photo`) VALUES (?)";
+    "INSERT INTO supervisor (`supervisor_id`, `full_name`, `email`, `password`, `current_position`, `education`, `phone`, `joining_date`, `research_interests`, `photo`) VALUES (?)";
   bcrypt.hash(req.body.password.toString(), salt, (err, hash) => {
     if (err) return res.json({ Error: "Error for hashing password" });
     const values = [
+      req.body.supervisor_id,
       req.body.full_name,
       req.body.email,
       hash,
@@ -228,10 +229,11 @@ app.get("/logout", (req, res) => {
 // For add report
 app.post("/addReport", upload.single("file"), (req, res) => {
   const sql =
-    "INSERT INTO report (`title`, `abstract`, `supervisor_name`, `authors_name`, `session`, `category`, `defense_date`, `report_type`, `publication`, `document`) VALUES (?)";
+    "INSERT INTO report (`title`, `abstract`, `supervisor_id`, `supervisor_name`, `authors_name`, `session`, `category`, `defense_date`, `report_type`, `publication`, `document`) VALUES (?)";
   const values = [
     req.body.title,
     req.body.abstract,
+    req.body.supervisor_id,
     req.body.supervisor_name,
     req.body.authors_name,
     req.body.session,
@@ -293,6 +295,16 @@ app.get("/reportTypes/:reportType", (req, res) => {
   const sql = "SELECT * FROM report WHERE report_type = ?";
   const report_type = req.params.reportType;
   db.query(sql, [report_type], (err, data) => {
+    if (err) return res.json("Error");
+    return res.json(data);
+  });
+});
+
+// For supervisor's reports finding
+app.get("/supervisorReports/:supervisorID", (req, res) => {
+  const sql = "SELECT * FROM report WHERE supervisor_id = ?";
+  const supervisor_id = req.params.supervisorID;
+  db.query(sql, [supervisor_id], (err, data) => {
     if (err) return res.json("Error");
     return res.json(data);
   });

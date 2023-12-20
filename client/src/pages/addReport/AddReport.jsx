@@ -6,6 +6,7 @@ import axios from "axios";
 const AddReport = () => {
   const [title, setTitle] = useState("");
   const [abstract, setAbstract] = useState("");
+  const [supervisor_id, setSupervisorId] = useState("");
   const [supervisor_name, setSupervisorName] = useState("");
   const [authors_name, setAuthorsName] = useState("");
   const [session, setSession] = useState("");
@@ -22,6 +23,7 @@ const AddReport = () => {
     const formData = new FormData();
     formData.append("title", title);
     formData.append("abstract", abstract);
+    formData.append("supervisor_id", supervisor_id);
     formData.append("supervisor_name", supervisor_name);
     formData.append("authors_name", authors_name);
     formData.append("session", session);
@@ -62,6 +64,14 @@ const AddReport = () => {
           type="text"
           required
           onChange={(e) => setAbstract(e.target.value)}
+        />
+        <label htmlFor="">
+          Supervisor ID<span>*</span>
+        </label>
+        <input
+          type="text"
+          required
+          onChange={(e) => setSupervisorId(e.target.value)}
         />
         <label htmlFor="">
           Supervisor name<span>*</span>

@@ -4,6 +4,7 @@ import { useNavigate } from "react-router-dom";
 import axios from "axios";
 
 const AddSupervisor = () => {
+  const [supervisor_id, setSupervisorId] = useState("");
   const [full_name, setFullName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -19,6 +20,7 @@ const AddSupervisor = () => {
   const handleSubmit = (event) => {
     event.preventDefault();
     const formData = new FormData();
+    formData.append("supervisor_id", supervisor_id);
     formData.append("full_name", full_name);
     formData.append("email", email);
     formData.append("password", password);
@@ -45,6 +47,14 @@ const AddSupervisor = () => {
         An asterisk (<span>*</span>) indicates a required field
       </p>
       <form action="" onSubmit={handleSubmit}>
+        <label htmlFor="">
+          Supervisor ID<span>*</span>
+        </label>
+        <input
+          type="text"
+          required
+          onChange={(e) => setSupervisorId(e.target.value)}
+        />
         <label htmlFor="">
           Full name<span>*</span>
         </label>

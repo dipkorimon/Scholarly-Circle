@@ -22,6 +22,7 @@ import Sessions from "./pages/sessions/Sessions";
 import ReportTypes from "./pages/reportTypes/ReportTypes";
 import CurrentPositions from "./pages/currentPositions/CurrentPositions";
 import AuthorSessions from "./pages/authorSessions/AuthorSessions";
+import SupervisorReports from "./pages/supervisorReports/SupervisorReports";
 
 function App() {
   const Layout = () => {
@@ -102,6 +103,10 @@ function App() {
         {
           path: "/authorSessions/:session",
           element: <AuthorSessions />,
+        },
+        {
+          path: "/supervisorReports/:supervisorID",
+          element: <SupervisorReports />,
         },
       ],
     },

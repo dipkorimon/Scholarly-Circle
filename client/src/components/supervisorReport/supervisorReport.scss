@@ -1,0 +1,42 @@
+@import "../../styles/global.scss";
+@import "../../styles/variables.scss";
+
+.supervisor-report {
+  .cat {
+    font-size: 20px;
+    text-align: center;
+    margin-bottom: 20px;
+
+    @include tablet {
+      font-size: 15px;
+    }
+
+    @include mobile {
+      font-size: 10px;
+    }
+  }
+
+  .items {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .post {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-gap: 10px;
+
+      @include tablet {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-gap: 10px;
+      }
+
+      @include mobile {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-gap: 10px;
+      }
+    }
+  }
+}
