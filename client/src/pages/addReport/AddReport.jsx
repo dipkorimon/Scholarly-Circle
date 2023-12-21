@@ -7,8 +7,11 @@ const AddReport = () => {
   const [title, setTitle] = useState("");
   const [abstract, setAbstract] = useState("");
   const [supervisor_id, setSupervisorId] = useState("");
-  const [supervisor_name, setSupervisorName] = useState("");
-  const [authors_name, setAuthorsName] = useState("");
+  const [first_author_id, setFirstAuthorId] = useState("");
+  const [second_author_id, setSecondAuthorId] = useState("");
+  const [third_author_id, setThirdAuthorId] = useState("");
+  const [fourth_author_id, setFourthAuthorId] = useState("");
+  const [fifth_author_id, setFifthAuthorId] = useState("");
   const [session, setSession] = useState("");
   const [category, setCategory] = useState("");
   const [defense_date, setDefenseDate] = useState("");
@@ -24,8 +27,11 @@ const AddReport = () => {
     formData.append("title", title);
     formData.append("abstract", abstract);
     formData.append("supervisor_id", supervisor_id);
-    formData.append("supervisor_name", supervisor_name);
-    formData.append("authors_name", authors_name);
+    formData.append("first_author_id", first_author_id);
+    formData.append("second_author_id", second_author_id);
+    formData.append("third_author_id", third_author_id);
+    formData.append("fourth_author_id", fourth_author_id);
+    formData.append("fifth_author_id", fifth_author_id);
     formData.append("session", session);
     formData.append("category", category);
     formData.append("defense_date", defense_date);
@@ -68,67 +74,41 @@ const AddReport = () => {
         <label htmlFor="">
           Supervisor ID<span>*</span>
         </label>
-        <select name="" id="" onChange={(e) => setSupervisorId(e.target.value)}>
-          <option value="">Select Supervisor ID</option>
-          <option value="s01">s01</option>
-          <option value="s02">s02</option>
-          <option value="s03">s03</option>
-          <option value="s04">s04</option>
-          <option value="s05">s05</option>
-          <option value="s06">s06</option>
-          <option value="s07">s07</option>
-          <option value="s08">s08</option>
-          <option value="s09">s09</option>
-          <option value="s10">s10</option>
-          <option value="s11">s11</option>
-          <option value="s12">s12</option>
-          <option value="s13">s13</option>
-          <option value="s14">s14</option>
-          <option value="s15">s15</option>
-        </select>
+        <input
+          type="text"
+          required
+          onChange={(e) => setSupervisorId(e.target.value)}
+        />
         <label htmlFor="">
-          Supervisor name<span>*</span>
-        </label>
-        <select
-          name=""
-          id=""
-          onChange={(e) => setSupervisorName(e.target.value)}
-        >
-          <option value="">Select Supervisor Name</option>
-          <option value="Dr. Mohammed Humayun Kabir">
-            Dr. Mohammed Humayun Kabir
-          </option>
-          <option value="Md. Javed Hossain">Md. Javed Hossain</option>
-          <option value="Dr. Md. Ashadun Nobi">Dr. Md. Ashadun Nobi</option>
-          <option value="Dr. Nahid Akter">Dr. Nahid Akter</option>
-          <option value="Dr. Nazia Majadi">Dr. Nazia Majadi</option>
-          <option value="Dr. Md. Kamal Uddin">Dr. Md. Kamal Uddin</option>
-          <option value="Dr. Fateha Khanam Bappy">
-            Dr. Fateha Khanam Bappy
-          </option>
-          <option value="Abul Kalam Azad">Abul Kalam Azad</option>
-          <option value="Iftekhar Mahmud Tawhid">Iftekhar Mahmud Tawhid</option>
-          <option value="Md. Hasnat Riaz">Md. Hasnat Riaz</option>
-          <option value="Koushik Chandra Howlader">
-            Koushik Chandra Howlader
-          </option>
-          <option value="A.R.M Mahamudul Hasan Rana">
-            A.R.M Mahamudul Hasan Rana
-          </option>
-          <option value="Ratnadip Kuri">Ratnadip Kuri</option>
-          <option value="A Q M SALA UDDIN PATHAN">
-            A Q M SALA UDDIN PATHAN
-          </option>
-          <option value="Sharmin Akter Milu">Sharmin Akter Milu</option>
-        </select>
-        <label htmlFor="">
-          Authors name<span>*</span>
+          First Author ID<span>*</span>
         </label>
         <input
           type="text"
           required
-          onChange={(e) => setAuthorsName(e.target.value)}
+          onChange={(e) => setFirstAuthorId(e.target.value)}
         />
+        <label htmlFor="">
+          Second Author ID<span></span>
+        </label>
+        <input
+          type="text"
+          onChange={(e) => setSecondAuthorId(e.target.value)}
+        />
+        <label htmlFor="">
+          Third Author ID<span></span>
+        </label>
+        <input type="text" onChange={(e) => setThirdAuthorId(e.target.value)} />
+        <label htmlFor="">
+          Fourth Author ID<span></span>
+        </label>
+        <input
+          type="text"
+          onChange={(e) => setFourthAuthorId(e.target.value)}
+        />
+        <label htmlFor="">
+          Fifth Author ID<span></span>
+        </label>
+        <input type="text" onChange={(e) => setFifthAuthorId(e.target.value)} />
         <label htmlFor="">
           Session<span>*</span>
         </label>
@@ -221,14 +201,9 @@ const AddReport = () => {
           <option value="project">Project</option>
         </select>
         <label htmlFor="">
-          Thesis Publication link or Project live demo link<span>*</span>
+          Thesis Publication link or Project live demo link<span></span>
         </label>
-        <input
-          type="text"
-          required
-          onChange={(e) => setPublication(e.target.value)}
-        />
-
+        <input type="text" onChange={(e) => setPublication(e.target.value)} />
         <div className="doc-upload">
           <label htmlFor="file">
             Upload Document<span>*</span>

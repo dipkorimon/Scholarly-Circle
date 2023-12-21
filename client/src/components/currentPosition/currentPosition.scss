@@ -75,9 +75,10 @@
         justify-content: center;
         gap: 10px;
 
-        h3 {
+        a {
           font-size: 20px;
           text-align: center;
+          font-weight: bold;
 
           @include tablet {
             font-size: 18px;

@@ -46,7 +46,9 @@ const CurrentPosition = () => {
               />
             </div>
             <div className="name">
-              <h3>{item.full_name}</h3>
+              <a href={`/supervisorReports/${item.supervisor_id}`}>
+                {item.full_name}
+              </a>
             </div>
             <div className="info">
               <div className="info-desc">

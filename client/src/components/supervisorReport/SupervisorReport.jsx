@@ -19,9 +19,7 @@ const SupervisorReport = () => {
 
   return (
     <div className="supervisor-report">
-      <h3 className="cat">
-        All reports under the supervision of {report[0].supervisor_name}
-      </h3>
+      <h3 className="cat">All reports under the supervision of</h3>
       <div className="items">
         <div className="post">
           {report.map((item, i) => (
