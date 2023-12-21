@@ -81,6 +81,7 @@ const AddAuthor = () => {
           Session<span>*</span>
         </label>
         <select name="" id="" onChange={(e) => setSession(e.target.value)}>
+          <option value="">Select Session</option>
           <option value="2006-2007">2006-2007</option>
           <option value="2007-2008">2007-2008</option>
           <option value="2008-2009">2008-2009</option>
@@ -103,6 +104,7 @@ const AddAuthor = () => {
           Batch<span>*</span>
         </label>
         <select name="" id="" onChange={(e) => setBatch(e.target.value)}>
+          <option value="">Select Batch</option>
           <option value="01">01</option>
           <option value="02">02</option>
           <option value="03">03</option>
