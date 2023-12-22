@@ -119,6 +119,23 @@ const NavBar = () => {
             </div>
           ) : (
             <div className="in-up">
+              <div className="request">
+                <button className="name">Make a Request</button>
+                <div id="drop-down">
+                  <a href="/chairmanLogin">
+                    <LoginIcon />
+                    Sign in as Chairman
+                  </a>
+                  <a href="/supervisorLogin">
+                    <LoginIcon />
+                    Sign in as Supervisor
+                  </a>
+                  <a href="/authorLogin">
+                    <LoginIcon />
+                    Sign in as Author
+                  </a>
+                </div>
+              </div>
               <a href="/chairmanRegister" className="regi">
                 <button>Sign up</button>
               </a>

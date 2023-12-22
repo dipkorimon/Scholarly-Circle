@@ -185,7 +185,7 @@ const AddReport = () => {
           <option value="Bioinformatics">Bioinformatics</option>
           <option value="Deep Learning">Deep Learning</option>
           <option value="Big Data">Big Data</option>
-          <option value="Cloud Computring">Cloud Computring</option>
+          <option value="Cloud Computring">Cloud Computing</option>
           <option value="Mobile Computing">Mobile Computing</option>
           <option value="Blockchain Technology">Blockchain Technology</option>
           <option value="Data Analysis">Data Analysis</option>

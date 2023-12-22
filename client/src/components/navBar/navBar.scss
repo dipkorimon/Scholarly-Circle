@@ -123,126 +123,39 @@
       align-items: center;
       justify-content: center;
       gap: 10px;
+    }
 
-      .in-up {
-        display: flex;
-        gap: 10px;
+    .in-up {
+      display: flex;
+      gap: 10px;
 
-        .regi {
-          button {
-            font-size: 15px;
-            font-weight: bold;
-            color: $white-color;
-            background-color: $red-color;
-            padding: 7px 20px;
-            border-radius: 5px;
-            cursor: pointer;
-            border: none;
+      .request {
+        button {
+          font-size: 15px;
+          font-weight: bold;
+          color: $dark-color;
+          background-color: $soft-color;
+          padding: 7px 20px;
+          border-radius: 5px;
+          border: none;
+          cursor: pointer;
 
-            &:hover {
-              background-color: $dark-red;
-            }
+          &:hover {
+            background-color: $soft-hover;
+          }
 
-            @include tablet {
-              font-size: 13px;
-              padding: 3px 15px;
-              margin-bottom: 10px;
-            }
+          @include tablet {
+            font-size: 13px;
+            padding: 3px 15px;
+            margin-bottom: 10px;
+          }
 
-            @include mobile {
-              font-size: 11px;
-              padding: 3px 15px;
-              margin-bottom: 10px;
-            }
+          @include mobile {
+            font-size: 11px;
+            padding: 3px 15px;
+            margin-bottom: 10px;
           }
         }
-
-        .login-as {
-          button {
-            font-size: 15px;
-            font-weight: bold;
-            color: $red-color;
-            background-color: $button-bg;
-            padding: 7px 20px;
-            border-radius: 5px;
-            border: none;
-            cursor: pointer;
-
-            &:hover {
-              background-color: $soft-red;
-            }
-
-            @include tablet {
-              font-size: 13px;
-              padding: 3px 15px;
-              margin-bottom: 10px;
-            }
-
-            @include mobile {
-              font-size: 11px;
-              padding: 3px 15px;
-              margin-bottom: 10px;
-            }
-          }
-
-          &:hover #drop-down {
-            display: flex;
-          }
-
-          &:focus-within #drop-down {
-            display: flex;
-          }
-
-          #drop-down {
-            position: absolute;
-            width: fit-content;
-            display: none;
-            flex-direction: column;
-            top: 60px;
-            right: 20px;
-            padding: 10px;
-            border-radius: 5px;
-            background-color: $soft-color;
-            box-shadow: $shadow;
-
-            @include tablet {
-              top: 140px;
-              right: 270px;
-            }
-
-            @include mobile {
-              top: 120px;
-              right: 70px;
-            }
-
-            a {
-              display: flex;
-              font-weight: bold;
-              font-size: 15px;
-              padding: 5px;
-              border-radius: 5px;
-              gap: 10px;
-
-              &:hover {
-                background-color: $soft-red;
-              }
-
-              @include tablet {
-                font-size: 13px;
-              }
-
-              @include mobile {
-                font-size: 11px;
-              }
-            }
-          }
-        }
-      }
-
-      .profile {
-        display: flex;
-        align-items: center;
-        gap: 10px;
 
         &:hover #drop-down {
           display: flex;
@@ -252,20 +165,85 @@
           display: flex;
         }
 
-        span {
-          font-size: 12px;
-          font-weight: bold;
-          background-color: $soft-color;
-          padding: 3px 10px;
+        #drop-down {
+          position: absolute;
+          width: fit-content;
+          display: none;
+          flex-direction: column;
+          top: 60px;
+          right: 165px;
+          padding: 10px;
           border-radius: 5px;
+          background-color: $soft-color;
+          box-shadow: $shadow;
 
           @include tablet {
-            font-size: 10px;
+            top: 140px;
+            right: 270px;
           }
 
           @include mobile {
-            font-size: 8px;
+            top: 120px;
+            right: 70px;
           }
+
+          a {
+            display: flex;
+            font-weight: bold;
+            font-size: 15px;
+            padding: 5px;
+            border-radius: 5px;
+            gap: 10px;
+
+            &:hover {
+              background-color: $soft-red;
+            }
+
+            @include tablet {
+              font-size: 13px;
+            }
+
+            @include mobile {
+              font-size: 11px;
+            }
+          }
+        }
+      }
+
+      .regi {
+        button {
+          font-size: 15px;
+          font-weight: bold;
+          color: $white-color;
+          background-color: $red-color;
+          padding: 7px 20px;
+          border-radius: 5px;
+          cursor: pointer;
+          border: none;
+
+          &:hover {
+            background-color: $dark-red;
+          }
+
+          @include tablet {
+            font-size: 13px;
+            padding: 3px 15px;
+            margin-bottom: 10px;
+          }
+
+          @include mobile {
+            font-size: 11px;
+            padding: 3px 15px;
+            margin-bottom: 10px;
+          }
+        }
+
+        &:hover #drop-down {
+          display: flex;
+        }
+
+        &:focus-within #drop-down {
+          display: flex;
         }
 
         #drop-down {
@@ -273,7 +251,7 @@
           width: fit-content;
           display: none;
           flex-direction: column;
-          top: 55px;
+          top: 60px;
           right: 20px;
           padding: 10px;
           border-radius: 5px;
@@ -281,101 +259,256 @@
           box-shadow: $shadow;
 
           @include tablet {
-            top: 120px;
+            top: 140px;
             right: 270px;
           }
 
           @include mobile {
-            top: 105px;
+            top: 120px;
             right: 70px;
           }
 
           a {
             display: flex;
-            align-items: center;
-            cursor: pointer;
-
-            button {
-              font-weight: bold;
-              font-size: 15px;
-              padding: 5px;
-              border: none;
-              border-radius: 5px;
-              gap: 10px;
-              cursor: pointer;
-
-              &:hover {
-                background-color: $soft-red;
-              }
-
-              @include tablet {
-                font-size: 13px;
-              }
-
-              @include mobile {
-                font-size: 11px;
-              }
-            }
-          }
-
-          .icon {
-            font-size: 15px;
             font-weight: bold;
-            color: $white-color;
-            background-color: $red-color;
-            padding: 7px 20px;
+            font-size: 15px;
+            padding: 5px;
             border-radius: 5px;
-            outline: none;
-            border: none;
-            cursor: pointer;
-            margin-top: 5px;
+            gap: 10px;
 
             &:hover {
-              background-color: $dark-red;
+              background-color: $soft-red;
             }
 
             @include tablet {
               font-size: 13px;
-              padding: 3px 15px;
-              margin-bottom: 5px;
             }
 
             @include mobile {
               font-size: 11px;
-              padding: 3px 15px;
-              margin-bottom: 5px;
+            }
+          }
+        }
+      }
+
+      .login-as {
+        button {
+          font-size: 15px;
+          font-weight: bold;
+          color: $red-color;
+          background-color: $button-bg;
+          padding: 7px 20px;
+          border-radius: 5px;
+          border: none;
+          cursor: pointer;
+
+          &:hover {
+            background-color: $soft-red;
+          }
+
+          @include tablet {
+            font-size: 13px;
+            padding: 3px 15px;
+            margin-bottom: 10px;
+          }
+
+          @include mobile {
+            font-size: 11px;
+            padding: 3px 15px;
+            margin-bottom: 10px;
+          }
+        }
+
+        &:hover #drop-down {
+          display: flex;
+        }
+
+        &:focus-within #drop-down {
+          display: flex;
+        }
+
+        #drop-down {
+          position: absolute;
+          width: fit-content;
+          display: none;
+          flex-direction: column;
+          top: 60px;
+          right: 20px;
+          padding: 10px;
+          border-radius: 5px;
+          background-color: $soft-color;
+          box-shadow: $shadow;
+
+          @include tablet {
+            top: 140px;
+            right: 270px;
+          }
+
+          @include mobile {
+            top: 120px;
+            right: 70px;
+          }
+
+          a {
+            display: flex;
+            font-weight: bold;
+            font-size: 15px;
+            padding: 5px;
+            border-radius: 5px;
+            gap: 10px;
+
+            &:hover {
+              background-color: $soft-red;
+            }
+
+            @include tablet {
+              font-size: 13px;
+            }
+
+            @include mobile {
+              font-size: 11px;
+            }
+          }
+        }
+      }
+    }
+
+    .profile {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+
+      &:hover #drop-down {
+        display: flex;
+      }
+
+      &:focus-within #drop-down {
+        display: flex;
+      }
+
+      span {
+        font-size: 12px;
+        font-weight: bold;
+        background-color: $soft-color;
+        padding: 3px 10px;
+        border-radius: 5px;
+
+        @include tablet {
+          font-size: 10px;
+        }
+
+        @include mobile {
+          font-size: 8px;
+        }
+      }
+
+      #drop-down {
+        position: absolute;
+        width: fit-content;
+        display: none;
+        flex-direction: column;
+        top: 55px;
+        right: 20px;
+        padding: 10px;
+        border-radius: 5px;
+        background-color: $soft-color;
+        box-shadow: $shadow;
+
+        @include tablet {
+          top: 120px;
+          right: 270px;
+        }
+
+        @include mobile {
+          top: 105px;
+          right: 70px;
+        }
+
+        a {
+          display: flex;
+          align-items: center;
+          cursor: pointer;
+
+          button {
+            font-weight: bold;
+            font-size: 15px;
+            padding: 5px;
+            border: none;
+            border-radius: 5px;
+            gap: 10px;
+            cursor: pointer;
+
+            &:hover {
+              background-color: $soft-red;
+            }
+
+            @include tablet {
+              font-size: 13px;
+            }
+
+            @include mobile {
+              font-size: 11px;
             }
           }
         }
 
-        .name {
-          border: none;
-          background: none;
-          color: $dark-color;
-          font-size: 18px;
+        .icon {
+          font-size: 15px;
           font-weight: bold;
+          color: $white-color;
+          background-color: $red-color;
+          padding: 7px 20px;
+          border-radius: 5px;
+          outline: none;
+          border: none;
           cursor: pointer;
+          margin-top: 5px;
+
+          &:hover {
+            background-color: $dark-red;
+          }
 
           @include tablet {
-            font-size: 16px;
+            font-size: 13px;
+            padding: 3px 15px;
+            margin-bottom: 5px;
           }
 
           @include mobile {
-            font-size: 14px;
+            font-size: 11px;
+            padding: 3px 15px;
+            margin-bottom: 5px;
           }
         }
+      }
 
-        .logInfo {
+      .name {
+        border: none;
+        background: none;
+        color: $dark-color;
+        font-size: 18px;
+        font-weight: bold;
+        cursor: pointer;
+
+        @include tablet {
+          font-size: 16px;
+        }
+
+        @include mobile {
           font-size: 14px;
-          color: $dark-color;
+        }
+      }
 
-          @include tablet {
-            font-size: 12px;
-          }
+      .logInfo {
+        font-size: 14px;
+        color: $dark-color;
 
-          @include mobile {
-            font-size: 10px;
-          }
+        @include tablet {
+          font-size: 12px;
+        }
+
+        @include mobile {
+          font-size: 10px;
         }
       }
     }
