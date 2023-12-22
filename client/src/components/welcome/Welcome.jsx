@@ -5,7 +5,7 @@ import welcome from "/welcome.svg";
 const Welcome = () => {
   return (
     <div className="welcome">
-      <h1>A project and thesis reports sharing platform</h1>
+      <h1>A Project and Thesis Reports Sharing Platform</h1>
       <div className="about">
         <p>
           For the Department of Computer Science and Telecommunication
