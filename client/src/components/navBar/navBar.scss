@@ -115,6 +115,10 @@
         &:hover::after {
           width: 100%;
         }
+
+        &:visited {
+          background: $red-color;
+        }
       }
     }
 
