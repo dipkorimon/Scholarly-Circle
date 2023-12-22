@@ -6,6 +6,7 @@ import PersonIcon from "@mui/icons-material/Person";
 import ArticleIcon from "@mui/icons-material/Article";
 import LoginIcon from "@mui/icons-material/Login";
 import AccountBoxIcon from "@mui/icons-material/AccountBox";
+import RequestPageIcon from "@mui/icons-material/RequestPage";
 
 const NavBar = () => {
   const [auth, setAuth] = useState(false);
@@ -122,17 +123,13 @@ const NavBar = () => {
               <div className="request">
                 <button className="name">Make a Request</button>
                 <div id="drop-down">
-                  <a href="/chairmanLogin">
-                    <LoginIcon />
-                    Sign in as Chairman
+                  <a href="">
+                    <RequestPageIcon />
+                    Request for Supervisor Account
                   </a>
-                  <a href="/supervisorLogin">
-                    <LoginIcon />
-                    Sign in as Supervisor
-                  </a>
-                  <a href="/authorLogin">
-                    <LoginIcon />
-                    Sign in as Author
+                  <a href="">
+                    <RequestPageIcon />
+                    Request for Author Account
                   </a>
                 </div>
               </div>
