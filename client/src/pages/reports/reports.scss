@@ -28,6 +28,9 @@
       flex: 1;
 
       h3 {
+        display: flex;
+        align-items: center;
+        gap: 10px;
         font-size: 16px;
         border-bottom: 2px solid $soft-color;
 

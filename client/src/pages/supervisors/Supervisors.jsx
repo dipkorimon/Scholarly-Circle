@@ -3,6 +3,7 @@ import "./supervisors.scss";
 import Supervisor from "../../components/supervisor/Supervisor";
 import axios from "axios";
 import CategoryList from "../../components/categoryList/CategoryList";
+import PersonIcon from "@mui/icons-material/Person";
 
 const Supervisors = () => {
   const [supervisor, setSupervisor] = useState([]);
@@ -28,7 +29,10 @@ const Supervisors = () => {
     <div className="supervisors">
       <div className="sup-items">
         <div className="filter">
-          <h3 className="cupo">Current Positions</h3>
+          <h3 className="cupo">
+            <PersonIcon />
+            Current Positions
+          </h3>
           {uniquePositions.map((current_position) => (
             <div className="category-list">
               <a href={`/currentPositions/${current_position}`}>

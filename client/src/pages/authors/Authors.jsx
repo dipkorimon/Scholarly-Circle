@@ -3,6 +3,7 @@ import "./authors.scss";
 import Author from "../../components/author/Author";
 import axios from "axios";
 import CategoryList from "../../components/categoryList/CategoryList";
+import ClassIcon from "@mui/icons-material/Class";
 
 const Authors = () => {
   const [author, setAuthor] = useState([]);
@@ -26,7 +27,10 @@ const Authors = () => {
     <div className="authors">
       <div className="aut-items">
         <div className="filter">
-          <h3 className="sess">Sessions</h3>
+          <h3 className="sess">
+            <ClassIcon />
+            Sessions
+          </h3>
           {uniqueSessions.map((session) => (
             <div className="category-list">
               <a href={`/authorSessions/${session}`}>

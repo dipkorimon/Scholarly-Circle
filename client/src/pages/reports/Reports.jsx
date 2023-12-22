@@ -4,6 +4,9 @@ import axios from "axios";
 import CategoryList from "../../components/categoryList/CategoryList";
 import Report from "../../components/report/Report";
 import moment from "moment";
+import CategoryIcon from "@mui/icons-material/Category";
+import ClassIcon from "@mui/icons-material/Class";
+import TypeSpecimenIcon from "@mui/icons-material/TypeSpecimen";
 
 const Reports = () => {
   const [report, setReport] = useState([]);
@@ -43,7 +46,10 @@ const Reports = () => {
     <div className="reports">
       <div className="all-items">
         <div className="filter">
-          <h3>Categories</h3>
+          <h3>
+            <CategoryIcon />
+            Categories
+          </h3>
           {uniqueCategories.map((category) => (
             <div className="category-list">
               <a href={`/categories/${category}`}>
@@ -51,7 +57,10 @@ const Reports = () => {
               </a>
             </div>
           ))}
-          <h3 style={{ marginTop: 20 }}>Sessions</h3>
+          <h3 style={{ marginTop: 20 }}>
+            <ClassIcon />
+            Sessions
+          </h3>
           {uniqueSessions.map((session) => (
             <div className="category-list">
               <a href={`/sessions/${session}`}>
@@ -59,7 +68,10 @@ const Reports = () => {
               </a>
             </div>
           ))}
-          <h3 style={{ marginTop: 20 }}>Report Types</h3>
+          <h3 style={{ marginTop: 20 }}>
+            <TypeSpecimenIcon />
+            Report Types
+          </h3>
           {uniqueReportTypes.map((report_type) => (
             <div className="category-list">
               <a href={`/reportTypes/${report_type}`}>
