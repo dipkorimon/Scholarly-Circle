@@ -294,6 +294,16 @@ app.get("/sessions/:session", (req, res) => {
   });
 });
 
+// For degree wise report filtering
+app.get("/degrees/:degree", (req, res) => {
+  const sql = "SELECT * FROM report WHERE degree = ?";
+  const degree = req.params.degree;
+  db.query(sql, [degree], (err, data) => {
+    if (err) return res.json("Error");
+    return res.json(data);
+  });
+});
+
 // For type wise report filtering
 app.get("/reportTypes/:reportType", (req, res) => {
   const sql = "SELECT * FROM report WHERE report_type = ?";

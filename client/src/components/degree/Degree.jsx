@@ -1,25 +1,25 @@
 import React, { useEffect, useState } from "react";
-import "./category.scss";
+import "./degree.scss";
 import { useParams } from "react-router-dom";
 import axios from "axios";
-import Report from "../report/Report";
 import moment from "moment";
+import Report from "../../components/report/Report";
 
-const Category = () => {
-  const { category } = useParams();
+const Degree = () => {
+  const { degree } = useParams();
 
   const [report, setReport] = useState([]);
 
   useEffect(() => {
     axios
-      .get("http://localhost:8800/categories/" + category)
+      .get("http://localhost:8800/degrees/" + degree)
       .then((res) => setReport(res.data))
       .catch((err) => console.log(err));
   });
 
   return (
-    <div className="category">
-      <h3 className="cat">All reports related to {category} category</h3>
+    <div className="degree">
+      <h3 className="cat">All reports related to {degree}</h3>
       <div className="items">
         <div className="post">
           {report.map((item, i) => (
@@ -42,4 +42,4 @@ const Category = () => {
   );
 };
 
-export default Category;
+export default Degree;

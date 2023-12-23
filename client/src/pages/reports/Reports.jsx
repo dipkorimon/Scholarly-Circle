@@ -7,6 +7,7 @@ import moment from "moment";
 import CategoryIcon from "@mui/icons-material/Category";
 import ClassIcon from "@mui/icons-material/Class";
 import TypeSpecimenIcon from "@mui/icons-material/TypeSpecimen";
+import WorkspacePremiumIcon from "@mui/icons-material/WorkspacePremium";
 
 const Reports = () => {
   const [report, setReport] = useState([]);
@@ -20,6 +21,7 @@ const Reports = () => {
 
   const [uniqueCategories, setUniqueCategories] = useState([]);
   const [uniqueSessions, setUniqueSessions] = useState([]);
+  const [uniqueDegrees, setUniqueDegrees] = useState([]);
   const [uniqueReportTypes, setUniqueReportTypes] = useState([]);
 
   useEffect(() => {
@@ -32,6 +34,12 @@ const Reports = () => {
     const uniqueSessionsSet = new Set(report.map((item) => item.session));
     const uniqueSessionsArray = Array.from(uniqueSessionsSet);
     setUniqueSessions(uniqueSessionsArray);
+  }, [report]);
+
+  useEffect(() => {
+    const uniqueDegreesSet = new Set(report.map((item) => item.degree));
+    const uniqueDegreesArray = Array.from(uniqueDegreesSet);
+    setUniqueDegrees(uniqueDegreesArray);
   }, [report]);
 
   useEffect(() => {
@@ -69,6 +77,17 @@ const Reports = () => {
             </div>
           ))}
           <h3 style={{ marginTop: 20 }}>
+            <WorkspacePremiumIcon />
+            Degrees
+          </h3>
+          {uniqueDegrees.map((degree) => (
+            <div className="category-list">
+              <a href={`/degrees/${degree}`}>
+                <CategoryList category={degree} />
+              </a>
+            </div>
+          ))}
+          <h3 style={{ marginTop: 20 }}>
             <TypeSpecimenIcon />
             Report Types
           </h3>
@@ -92,6 +111,7 @@ const Reports = () => {
               report_type={item.report_type}
               abstract={item.abstract}
               category={item.category}
+              degree={item.degree}
               defense_date={moment(item.defense_date).format("MMMM Do YYYY")}
             />
           ))}

@@ -21,6 +21,7 @@ const Report = (props) => {
               }
             />
             <Badge value={props.category} />
+            <Badge value={props.degree} />
           </div>
         </div>
         <div className="buttons">

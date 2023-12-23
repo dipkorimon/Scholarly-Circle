@@ -28,8 +28,6 @@ const SupervisorReport = () => {
               title={item.title}
               report_type={item.report_type}
               abstract={item.abstract}
-              supervisor_name={item.supervisor_name}
-              authors_name={item.authors_name}
               defense_date={moment(item.defense_date).format("MMMM Do YYYY")}
               session={item.session}
               category={item.category}

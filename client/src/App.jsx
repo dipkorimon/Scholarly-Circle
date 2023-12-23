@@ -23,6 +23,7 @@ import ReportTypes from "./pages/reportTypes/ReportTypes";
 import CurrentPositions from "./pages/currentPositions/CurrentPositions";
 import AuthorSessions from "./pages/authorSessions/AuthorSessions";
 import SupervisorReports from "./pages/supervisorReports/SupervisorReports";
+import Degrees from "./pages/degrees/Degrees";
 
 function App() {
   const Layout = () => {
@@ -67,6 +68,10 @@ function App() {
         {
           path: "/sessions/:session",
           element: <Sessions />,
+        },
+        {
+          path: "/degrees/:degree",
+          element: <Degrees />,
         },
         {
           path: "/reportTypes/:reportType",

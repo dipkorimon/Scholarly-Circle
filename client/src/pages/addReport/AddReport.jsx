@@ -217,8 +217,8 @@ const AddReport = () => {
           onChange={(e) => setDegree(e.target.value)}
         >
           <option value="">Select Degree</option>
-          <option value="thesis">Bachelor of Science</option>
-          <option value="project">Master of Science</option>
+          <option value="Bachelor of Science">Bachelor of Science</option>
+          <option value="Master of Science">Master of Science</option>
         </select>
         <label htmlFor="">
           Thesis Publication link or Project live demo link<span></span>

@@ -9,12 +9,17 @@ const SingleReport = () => {
   const { id } = useParams();
   const [title, setTitle] = useState("");
   const [abstract, setAbstract] = useState("");
-  const [supervisor_name, setSupervisorName] = useState("");
-  const [authors_name, setAuthorsName] = useState("");
+  const [supervisor_id, setSupervisorId] = useState("");
+  const [first_author_id, setFirstAuthorId] = useState("");
+  const [second_author_id, setSecondAuthorId] = useState("");
+  const [third_author_id, setThirdAuthorId] = useState("");
+  const [fourth_author_id, setFourthAuthorId] = useState("");
+  const [fifth_author_id, setFifthAuthorId] = useState("");
   const [session, setSession] = useState("");
   const [category, setCategory] = useState("");
   const [defense_date, setDefenseDate] = useState("");
   const [report_type, setReportType] = useState("");
+  const [degree, setDegree] = useState("");
   const [publication, setPublication] = useState("");
   const [document, setDocument] = useState("");
 
@@ -26,12 +31,17 @@ const SingleReport = () => {
       .then((res) => {
         setTitle(res.data[0].title);
         setAbstract(res.data[0].abstract);
-        setSupervisorName(res.data[0].supervisor_name);
-        setAuthorsName(res.data[0].authors_name);
+        setSupervisorId(res.data[0].supervisor_id);
+        setFirstAuthorId(res.data[0].first_author_id);
+        setSecondAuthorId(res.data[0].second_author_id);
+        setThirdAuthorId(res.data[0].third_author_id);
+        setFourthAuthorId(res.data[0].fourth_author_id);
+        setFifthAuthorId(res.data[0].fifth_author_id);
         setSession(res.data[0].session);
         setCategory(res.data[0].category);
         setDefenseDate(res.data[0].defense_date);
         setReportType(res.data[0].report_type);
+        setDegree(res.data[0].degree);
         setPublication(res.data[0].publication);
         setDocument(res.data[0].document);
       })
@@ -59,16 +69,15 @@ const SingleReport = () => {
           <div className="session-date">
             <Badge value={session} />
             <Badge value={category} />
+            <Badge value={degree} />
             <p>{moment(defense_date).format("MMMM Do YYYY")}</p>
           </div>
           <div className="sup-aut">
             <p>
               <span>Supervisor: </span>
-              {supervisor_name}
             </p>
             <p>
               <span>Authors: </span>
-              {authors_name}
             </p>
           </div>
           <div className="abstract">
