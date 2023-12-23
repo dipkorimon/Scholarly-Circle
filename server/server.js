@@ -229,7 +229,7 @@ app.get("/logout", (req, res) => {
 // For add report
 app.post("/addReport", upload.single("file"), (req, res) => {
   const sql =
-    "INSERT INTO report (`title`, `abstract`, `supervisor_id`, `first_author_id`, `second_author_id`, `third_author_id`, `fourth_author_id`, `fifth_author_id`, `session`, `category`, `defense_date`, `report_type`, `publication`, `document`) VALUES (?)";
+    "INSERT INTO report (`title`, `abstract`, `supervisor_id`, `first_author_id`, `second_author_id`, `third_author_id`, `fourth_author_id`, `fifth_author_id`, `session`, `category`, `defense_date`, `report_type`, `degree`, `publication`, `document`) VALUES (?)";
   const values = [
     req.body.title,
     req.body.abstract,
@@ -243,6 +243,7 @@ app.post("/addReport", upload.single("file"), (req, res) => {
     req.body.category,
     req.body.defense_date,
     req.body.report_type,
+    req.body.degree,
     req.body.publication,
     req.file.filename,
   ];

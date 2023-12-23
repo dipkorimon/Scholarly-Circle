@@ -16,6 +16,7 @@ const AddReport = () => {
   const [category, setCategory] = useState("");
   const [defense_date, setDefenseDate] = useState("");
   const [report_type, setReportType] = useState("");
+  const [degree, setDegree] = useState("");
   const [publication, setPublication] = useState("");
   const [file, setFile] = useState("");
 
@@ -36,6 +37,7 @@ const AddReport = () => {
     formData.append("category", category);
     formData.append("defense_date", defense_date);
     formData.append("report_type", report_type);
+    formData.append("degree", degree);
     formData.append("publication", publication);
     formData.append("file", file);
     axios
@@ -195,10 +197,28 @@ const AddReport = () => {
         <label htmlFor="">
           Report type<span>*</span>
         </label>
-        <select name="" id="" onChange={(e) => setReportType(e.target.value)}>
+        <select
+          name=""
+          id=""
+          required
+          onChange={(e) => setReportType(e.target.value)}
+        >
           <option value="">Select Report Type</option>
           <option value="thesis">Thesis</option>
           <option value="project">Project</option>
+        </select>
+        <label htmlFor="">
+          Degree<span>*</span>
+        </label>
+        <select
+          name=""
+          id=""
+          required
+          onChange={(e) => setDegree(e.target.value)}
+        >
+          <option value="">Select Degree</option>
+          <option value="thesis">Bachelor of Science</option>
+          <option value="project">Master of Science</option>
         </select>
         <label htmlFor="">
           Thesis Publication link or Project live demo link<span></span>
