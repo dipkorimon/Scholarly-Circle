@@ -94,21 +94,13 @@ const AddSupervisor = () => {
           <option value="Lecturer">Lecturer</option>
         </select>
         <label htmlFor="">
-          Education (University name)<span>*</span>
+          Education (University name)<span></span>
         </label>
-        <input
-          type="text"
-          required
-          onChange={(e) => setEducation(e.target.value)}
-        />
+        <input type="text" onChange={(e) => setEducation(e.target.value)} />
         <label htmlFor="">
-          Phone<span>*</span>
+          Phone<span></span>
         </label>
-        <input
-          type="text"
-          required
-          onChange={(e) => setPhone(e.target.value)}
-        />
+        <input type="text" onChange={(e) => setPhone(e.target.value)} />
         <label htmlFor="">
           Joining date<span>*</span>
         </label>
@@ -118,11 +110,10 @@ const AddSupervisor = () => {
           onChange={(e) => setJoiningDate(e.target.value)}
         />
         <label htmlFor="">
-          Research in interests<span>*</span>
+          Research in interests<span></span>
         </label>
         <input
           type="text"
-          required
           onChange={(e) => setResearchInterests(e.target.value)}
         />
         <div className="photo-upload">
