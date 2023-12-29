@@ -32,6 +32,7 @@ const SupervisorReport = () => {
               session={item.session}
               category={item.category}
               publication={item.publication}
+              degree={item.degree}
               i={i}
             />
           ))}
