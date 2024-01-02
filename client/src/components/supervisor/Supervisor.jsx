@@ -1,13 +1,8 @@
 import React, { useEffect, useState } from "react";
 import "./supervisor.scss";
-import PersonIcon from "@mui/icons-material/Person";
-import SchoolIcon from "@mui/icons-material/School";
-import EmailIcon from "@mui/icons-material/Email";
-import PhoneIcon from "@mui/icons-material/Phone";
-import DateRangeIcon from "@mui/icons-material/DateRange";
-import ArchitectureIcon from "@mui/icons-material/Architecture";
 import axios from "axios";
-import moment from "moment";
+import EditIcon from "@mui/icons-material/Edit";
+import DeleteIcon from "@mui/icons-material/Delete";
 
 const Supervisor = () => {
   const [supervisor, setSupervisor] = useState([]);
@@ -43,44 +38,33 @@ const Supervisor = () => {
             </a>
           </div>
           <div className="info">
-            <div className="info-desc">
-              <PersonIcon />
-              <p style={{ fontWeight: "bold" }}>{item.current_position}</p>
+            <div className="info-pos">
+              <p>{item.current_position}</p>
             </div>
-            <div className="info-desc">
-              <SchoolIcon />
-              <p>{item.education}</p>
-            </div>
-            <div className="info-desc">
-              <EmailIcon />
+            <div className="info-email">
               <p>{item.email}</p>
-            </div>
-            <div className="info-desc">
-              <PhoneIcon />
-              <p>{item.phone}</p>
-            </div>
-            <div className="info-desc">
-              <DateRangeIcon />
-              <p>
-                Joining Date: {moment(item.joining_date).format("MMMM Do YYYY")}
-              </p>
-            </div>
-            <div className="research">
-              <div className="r-int">
-                <ArchitectureIcon />
-                <p>Research Interests:</p>
-              </div>
-              <p className="r-desc">{item.research_interests}</p>
             </div>
           </div>
           {login ? (
             <div className="update-delete">
-              <button className="update">
-                <a href={`/updateSupervisor/${item.id}`}>Update details</a>
+              <button className="view-profile">
+                <a href={`/supervisorReports/${item.supervisor_id}`}>
+                  View Profile
+                </a>
               </button>
-              <button className="remove" onClick={() => handleDelete(item.id)}>
-                Remove
-              </button>
+              <div className="icons">
+                <button className="update">
+                  <a href={`/updateSupervisor/${item.id}`}>
+                    <EditIcon style={{ fontSize: 20 }} />
+                  </a>
+                </button>
+                <button
+                  className="remove"
+                  onClick={() => handleDelete(item.id)}
+                >
+                  <DeleteIcon style={{ fontSize: 20 }} />
+                </button>
+              </div>
             </div>
           ) : (
             <div></div>

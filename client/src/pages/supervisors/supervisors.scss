@@ -3,13 +3,12 @@
 
 .supervisors {
   display: flex;
-  align-items: center;
-  justify-content: center;
   flex-direction: column;
   padding: 10px 10px;
 
   .sup-items {
     display: flex;
+    justify-content: space-between;
     gap: 20px;
 
     @include tablet {
@@ -42,11 +41,30 @@
       display: flex;
       flex-direction: column;
       flex: 1;
+
+      h3 {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        font-size: 16px;
+        border-bottom: 2px solid $soft-color;
+
+        @include tablet {
+          font-size: 14px;
+        }
+
+        @include mobile {
+          font-size: 12px;
+        }
+      }
     }
 
     .items {
       display: flex;
-      flex: 4;
+      flex-direction: row;
+      flex: 3;
+      flex-wrap: wrap;
+      gap: 10px;
     }
   }
 }
