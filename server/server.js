@@ -310,11 +310,16 @@ app.get("/reportTypes/:reportType", (req, res) => {
 
 // For supervisor's reports finding
 app.get("/supervisorReports/:supervisorID", (req, res) => {
-  const sql = "SELECT * FROM report WHERE supervisor_id = ?";
+  const sql1 = "SELECT * FROM report WHERE supervisor_id = ?";
+  const sql2 = "SELECT * FROM supervisor WHERE supervisor_id = ?";
   const supervisor_id = req.params.supervisorID;
-  db.query(sql, [supervisor_id], (err, data) => {
-    if (err) return res.json("Error");
-    return res.json(data);
+  db.query(sql1, [supervisor_id], (err, data1) => {
+    if (err) throw err;
+    db.query(sql2, [supervisor_id], (err, data2) => {
+      if (err) throw err;
+      const objectData = data2[0].full_name;
+      res.json({ data1, objectData });
+    });
   });
 });
 
@@ -431,7 +436,6 @@ app.get("/home", (req, res) => {
       if (err) throw err;
       db.query(sql + "report", (err, result3) => {
         if (err) throw err;
-
         const counts = {
           table1: result1[0].count,
           table2: result2[0].count,

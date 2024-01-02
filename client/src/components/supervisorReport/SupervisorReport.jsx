@@ -8,18 +8,24 @@ import moment from "moment";
 const SupervisorReport = () => {
   const { supervisorID } = useParams();
 
+  const [fullName, setFullName] = useState("");
   const [report, setReport] = useState([]);
 
   useEffect(() => {
     axios
       .get("http://localhost:8800/supervisorReports/" + supervisorID)
-      .then((res) => setReport(res.data))
+      .then((res) => {
+        setFullName(res.data.objectData);
+        setReport(res.data.data1);
+      })
       .catch((err) => console.log(err));
   });
 
   return (
     <div className="supervisor-report">
-      <h3 className="cat">All reports under the supervision of</h3>
+      <h3 className="supervision">
+        All reports under the supervision of {fullName}
+      </h3>
       <div className="items">
         <div className="post">
           {report.map((item, i) => (
@@ -31,8 +37,8 @@ const SupervisorReport = () => {
               defense_date={moment(item.defense_date).format("MMMM Do YYYY")}
               session={item.session}
               category={item.category}
-              publication={item.publication}
               degree={item.degree}
+              publication={item.publication}
               i={i}
             />
           ))}

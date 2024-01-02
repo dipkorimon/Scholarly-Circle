@@ -26,7 +26,7 @@
     max-width: 200px;
 
     @include tablet {
-      max-width: 180px;
+      max-width: 160px;
     }
 
     @include mobile {
@@ -48,7 +48,7 @@
 
         @include tablet {
           width: 80px;
-          height: 70px;
+          height: 80px;
         }
 
         @include mobile {
@@ -143,11 +143,17 @@
 
     .update-delete {
       display: flex;
-      justify-content: space-between;
+      align-items: center;
+      justify-content: center;
       gap: 5px;
       margin-top: 10px;
 
-      .view-profile {
+      @include mobile {
+        display: flex;
+        flex-direction: column;
+      }
+
+      .view-reports {
         border: none;
         background: none;
 

@@ -46,8 +46,8 @@ const Author = () => {
           </div>
           {chairmanLogin || supervisorLogin ? (
             <div className="update-delete">
-              <button className="view-profile">
-                <a>View Profile</a>
+              <button className="view-reports">
+                <a>View Reports</a>
               </button>
               <div className="icons">
                 <button className="update">

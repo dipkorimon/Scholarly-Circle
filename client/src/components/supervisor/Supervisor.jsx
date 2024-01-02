@@ -47,9 +47,9 @@ const Supervisor = () => {
           </div>
           {login ? (
             <div className="update-delete">
-              <button className="view-profile">
+              <button className="view-reports">
                 <a href={`/supervisorReports/${item.supervisor_id}`}>
-                  View Profile
+                  View Reports
                 </a>
               </button>
               <div className="icons">
