@@ -9,10 +9,6 @@ const AddSupervisor = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [current_position, setCurrentPosition] = useState("");
-  const [education, setEducation] = useState("");
-  const [phone, setPhone] = useState("");
-  const [joining_date, setJoiningDate] = useState("");
-  const [research_interests, setResearchInterests] = useState([]);
   const [file, setFile] = useState("");
 
   const navigate = useNavigate();
@@ -25,10 +21,6 @@ const AddSupervisor = () => {
     formData.append("email", email);
     formData.append("password", password);
     formData.append("current_position", current_position);
-    formData.append("education", education);
-    formData.append("phone", phone);
-    formData.append("joining_date", joining_date);
-    formData.append("research_interests", research_interests);
     formData.append("file", file);
     axios
       .post("http://localhost:8800/addSupervisor", formData)
@@ -93,29 +85,6 @@ const AddSupervisor = () => {
           <option value="Assistant Professor">Assistant Professor</option>
           <option value="Lecturer">Lecturer</option>
         </select>
-        <label htmlFor="">
-          Education (University name)<span></span>
-        </label>
-        <input type="text" onChange={(e) => setEducation(e.target.value)} />
-        <label htmlFor="">
-          Phone<span></span>
-        </label>
-        <input type="text" onChange={(e) => setPhone(e.target.value)} />
-        <label htmlFor="">
-          Joining date<span>*</span>
-        </label>
-        <input
-          type="date"
-          required
-          onChange={(e) => setJoiningDate(e.target.value)}
-        />
-        <label htmlFor="">
-          Research in interests<span></span>
-        </label>
-        <input
-          type="text"
-          onChange={(e) => setResearchInterests(e.target.value)}
-        />
         <div className="photo-upload">
           <label htmlFor="file">
             Upload Photo<span>*</span>

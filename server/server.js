@@ -87,7 +87,7 @@ app.post("/chairmanLogin", (req, res) => {
 // For add supervisor
 app.post("/addSupervisor", upload.single("file"), (req, res) => {
   const sql =
-    "INSERT INTO supervisor (`supervisor_id`, `full_name`, `email`, `password`, `current_position`, `education`, `phone`, `joining_date`, `research_interests`, `photo`) VALUES (?)";
+    "INSERT INTO supervisor (`supervisor_id`, `full_name`, `email`, `password`, `current_position`, `photo`) VALUES (?)";
   bcrypt.hash(req.body.password.toString(), salt, (err, hash) => {
     if (err) return res.json({ Error: "Error for hashing password" });
     const values = [
@@ -96,10 +96,6 @@ app.post("/addSupervisor", upload.single("file"), (req, res) => {
       req.body.email,
       hash,
       req.body.current_position,
-      req.body.education,
-      req.body.phone,
-      req.body.joining_date,
-      req.body.research_interests,
       req.file.filename,
     ];
     db.query(sql, [values], (err, data) => {
@@ -145,7 +141,7 @@ app.post("/supervisorLogin", (req, res) => {
 // For add author
 app.post("/addAuthor", upload.single("file"), (req, res) => {
   const sql =
-    "INSERT INTO author (`student_id`, `full_name`, `email`, `password`, `session`, `batch`, `phone`, `defense_date`, `photo`) VALUES (?)";
+    "INSERT INTO author (`student_id`, `full_name`, `email`, `password`, `session`, `defense_date`, `photo`) VALUES (?)";
   bcrypt.hash(req.body.password.toString(), salt, (err, hash) => {
     if (err) return res.json({ Error: "Error for hashing password" });
     const values = [
@@ -154,8 +150,6 @@ app.post("/addAuthor", upload.single("file"), (req, res) => {
       req.body.email,
       hash,
       req.body.session,
-      req.body.batch,
-      req.body.phone,
       req.body.defense_date,
       req.file.filename,
     ];

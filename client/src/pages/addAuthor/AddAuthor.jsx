@@ -9,8 +9,6 @@ const AddAuthor = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [session, setSession] = useState("");
-  const [batch, setBatch] = useState("");
-  const [phone, setPhone] = useState("");
   const [defense_date, setDefenseDate] = useState("");
   const [file, setFile] = useState("");
 
@@ -24,8 +22,6 @@ const AddAuthor = () => {
     formData.append("email", email);
     formData.append("password", password);
     formData.append("session", session);
-    formData.append("batch", batch);
-    formData.append("phone", phone);
     formData.append("defense_date", defense_date);
     formData.append("file", file);
     axios
@@ -100,38 +96,6 @@ const AddAuthor = () => {
           <option value="2021-2022">2021-2022</option>
           <option value="2022-2023">2022-2023</option>
         </select>
-        <label htmlFor="">
-          Batch<span>*</span>
-        </label>
-        <select name="" id="" onChange={(e) => setBatch(e.target.value)}>
-          <option value="">Select Batch</option>
-          <option value="01">01</option>
-          <option value="02">02</option>
-          <option value="03">03</option>
-          <option value="04">04</option>
-          <option value="05">05</option>
-          <option value="06">06</option>
-          <option value="07">07</option>
-          <option value="08">08</option>
-          <option value="09">09</option>
-          <option value="10">10</option>
-          <option value="11">11</option>
-          <option value="12">12</option>
-          <option value="13">13</option>
-          <option value="14">14</option>
-          <option value="15">15</option>
-          <option value="16">16</option>
-          <option value="17">17</option>
-          <option value="18">18</option>
-        </select>
-        <label htmlFor="">
-          Phone<span>*</span>
-        </label>
-        <input
-          type="text"
-          required
-          onChange={(e) => setPhone(e.target.value)}
-        />
         <label htmlFor="">
           Defense date<span>*</span>
         </label>
