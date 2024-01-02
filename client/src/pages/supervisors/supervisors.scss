@@ -8,7 +8,6 @@
 
   .sup-items {
     display: flex;
-    justify-content: space-between;
     gap: 20px;
 
     @include tablet {
@@ -61,10 +60,9 @@
 
     .items {
       display: flex;
-      flex-direction: row;
-      flex: 3;
-      flex-wrap: wrap;
-      gap: 10px;
+      align-items: center;
+      justify-content: center;
+      flex: 4;
     }
   }
 }

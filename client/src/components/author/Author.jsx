@@ -1,14 +1,8 @@
 import React, { useEffect, useState } from "react";
 import "./author.scss";
-import PersonIcon from "@mui/icons-material/Person";
-import EmailIcon from "@mui/icons-material/Email";
-import PhoneIcon from "@mui/icons-material/Phone";
-import DateRangeIcon from "@mui/icons-material/DateRange";
-import BatchPredictionIcon from "@mui/icons-material/BatchPrediction";
-import AdjustIcon from "@mui/icons-material/Adjust";
-import NumbersIcon from "@mui/icons-material/Numbers";
 import axios from "axios";
-import moment from "moment";
+import EditIcon from "@mui/icons-material/Edit";
+import DeleteIcon from "@mui/icons-material/Delete";
 
 const Author = () => {
   const [author, setAuthor] = useState([]);
@@ -43,45 +37,31 @@ const Author = () => {
             <h3>{item.full_name}</h3>
           </div>
           <div className="info">
-            <div className="info-desc">
-              <PersonIcon />
-              <p style={{ fontWeight: "bold" }}>Student</p>
-            </div>
-            <div className="info-desc">
-              <NumbersIcon />
+            <div className="info-id">
               <p>{item.student_id}</p>
             </div>
-            <div className="info-desc">
-              <EmailIcon />
+            <div className="info-email">
               <p>{item.email}</p>
-            </div>
-            <div className="info-desc">
-              <PhoneIcon />
-              <p>{item.phone}</p>
-            </div>
-            <div className="info-desc">
-              <AdjustIcon />
-              <p>Session: {item.session}</p>
-            </div>
-            <div className="info-desc">
-              <BatchPredictionIcon />
-              <p>Batch: {item.batch}</p>
-            </div>
-            <div className="info-desc">
-              <DateRangeIcon />
-              <p>
-                Defense Date: {moment(item.defense_date).format("MMMM Do YYYY")}
-              </p>
             </div>
           </div>
           {chairmanLogin || supervisorLogin ? (
             <div className="update-delete">
-              <button className="update">
-                <a href={`/updateAuthor/${item.id}`}>Update details</a>
+              <button className="view-profile">
+                <a>View Profile</a>
               </button>
-              <button className="remove" onClick={() => handleDelete(item.id)}>
-                Remove
-              </button>
+              <div className="icons">
+                <button className="update">
+                  <a href={`/updateAuthor/${item.id}`}>
+                    <EditIcon style={{ fontSize: 20 }} />
+                  </a>
+                </button>
+                <button
+                  className="remove"
+                  onClick={() => handleDelete(item.id)}
+                >
+                  <DeleteIcon style={{ fontSize: 20 }} />
+                </button>
+              </div>
             </div>
           ) : (
             <div></div>

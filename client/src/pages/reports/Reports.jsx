@@ -54,7 +54,7 @@ const Reports = () => {
     <div className="reports">
       <div className="all-items">
         <div className="filter">
-          <h3>
+          <h3 className="cat">
             <CategoryIcon />
             Categories
           </h3>
@@ -65,7 +65,7 @@ const Reports = () => {
               </a>
             </div>
           ))}
-          <h3 style={{ marginTop: 20 }}>
+          <h3 className="cat" style={{ marginTop: 20 }}>
             <ClassIcon />
             Sessions
           </h3>
@@ -76,7 +76,7 @@ const Reports = () => {
               </a>
             </div>
           ))}
-          <h3 style={{ marginTop: 20 }}>
+          <h3 className="cat" style={{ marginTop: 20 }}>
             <WorkspacePremiumIcon />
             Degrees
           </h3>
@@ -87,7 +87,7 @@ const Reports = () => {
               </a>
             </div>
           ))}
-          <h3 style={{ marginTop: 20 }}>
+          <h3 className="cat" style={{ marginTop: 20 }}>
             <TypeSpecimenIcon />
             Report Types
           </h3>

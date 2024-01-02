@@ -27,7 +27,7 @@
       flex-direction: column;
       flex: 1;
 
-      h3 {
+      .cat {
         display: flex;
         align-items: center;
         gap: 10px;
@@ -46,6 +46,8 @@
 
     .items {
       display: flex;
+      align-items: center;
+      justify-content: center;
       flex-direction: row;
       flex: 4;
       flex-wrap: wrap;
