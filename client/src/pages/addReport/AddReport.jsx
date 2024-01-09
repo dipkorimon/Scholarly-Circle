@@ -158,7 +158,7 @@ const AddReport = () => {
           <option value="Data mining">Data Mining</option>
           <option value="Complex network">Complex Network</option>
           <option value="Time series analysis">Time Series Analysis</option>
-          <option value="machine learning">Machine Learning</option>
+          <option value="Machine learning">Machine Learning</option>
           <option value="Renewable Energy (Solar Cell)">
             Renewable Energy (Solar Cell)
           </option>
