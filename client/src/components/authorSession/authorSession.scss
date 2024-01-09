@@ -2,188 +2,226 @@
 @import "../../styles/variables.scss";
 
 .author-session {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  .all-items {
+    display: flex;
+    flex-direction: column;
 
-  h3 {
-    font-size: 20px;
-    text-align: center;
-    margin-bottom: 20px;
+    .sess {
+      h3 {
+        font-size: 20px;
+        text-align: center;
+        margin-bottom: 20px;
 
-    @include tablet {
-      font-size: 15px;
+        @include tablet {
+          font-size: 15px;
+        }
+
+        @include mobile {
+          font-size: 10px;
+        }
+      }
     }
 
-    @include mobile {
-      font-size: 10px;
-    }
-  }
-
-  .aut-items {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-gap: 10px;
-
-    @include tablet {
+    .aut-items {
       display: grid;
-      grid-template-columns: 1fr 1fr;
-    }
-
-    @include mobile {
-      display: grid;
-      grid-template-columns: 1fr;
-    }
-
-    .aut-info {
-      display: flex;
-      flex-direction: column;
+      grid-template-columns: repeat(4, 1fr);
       gap: 10px;
-      padding: 10px;
-      background-color: $white-color;
-      box-shadow: $shadow;
-      border-radius: 10px;
-      max-width: 350px;
 
       @include tablet {
-        max-width: 325px;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
       }
 
       @include mobile {
-        max-width: 305px;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
       }
 
-      .img {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-
-        img {
-          width: 80px;
-          height: 80px;
-          object-fit: cover;
-          border-radius: 50%;
-          border: 1px solid $soft-red;
-
-          @include tablet {
-            width: 70px;
-            height: 70px;
-          }
-
-          @include mobile {
-            width: 60px;
-            height: 60px;
-          }
-        }
-      }
-
-      .name {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        gap: 10px;
-
-        h3 {
-          font-size: 20px;
-          text-align: center;
-
-          @include tablet {
-            font-size: 18px;
-          }
-
-          @include mobile {
-            font-size: 16px;
-          }
-        }
-
-        button {
-          background: none;
-          border: none;
-          cursor: pointer;
-        }
-      }
-
-      .info {
+      .aut-info {
         display: flex;
         flex-direction: column;
-        gap: 5px;
+        padding: 10px;
+        background-color: $white-color;
+        box-shadow: $shadow;
+        border-radius: 10px;
+        max-width: 200px;
 
-        .info-desc {
+        @include tablet {
+          max-width: 160px;
+        }
+
+        @include mobile {
+          max-width: 140px;
+        }
+
+        .img {
           display: flex;
-          gap: 10px;
+          align-items: center;
+          justify-content: center;
+          margin-bottom: 10px;
 
-          p {
-            font-size: 15px;
+          img {
+            width: 100px;
+            height: 100px;
+            object-fit: cover;
+            border-radius: 50%;
+            border: 1px solid $soft-red;
 
             @include tablet {
-              font-size: 13px;
+              width: 80px;
+              height: 80px;
             }
 
             @include mobile {
-              font-size: 11px;
+              width: 60px;
+              height: 60px;
             }
           }
         }
-      }
 
-      .update-delete {
-        display: flex;
-        gap: 10px;
-        margin-top: 10px;
+        .name {
+          display: flex;
+          align-items: center;
+          justify-content: center;
 
-        .update {
-          border: none;
-          background: none;
-          font-size: 15px;
-          padding: 3px 10px;
-          background-color: $button-bg;
-          color: $red-color;
-          font-weight: bold;
-          border-radius: 5px;
-          cursor: pointer;
+          h3 {
+            font-size: 16px;
+            text-align: center;
+            font-weight: bold;
+            width: 250px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
 
-          &:hover {
-            background-color: $soft-red;
+            @include tablet {
+              font-size: 14px;
+            }
+
+            @include mobile {
+              font-size: 12px;
+            }
           }
 
-          @include tablet {
-            font-size: 13px;
-            padding: 3px 15px;
-          }
-
-          @include mobile {
-            font-size: 11px;
-            padding: 3px 15px;
-          }
-
-          a {
-            color: $red-color;
+          button {
+            background: none;
+            border: none;
+            cursor: pointer;
           }
         }
 
-        .remove {
-          font-size: 15px;
-          padding: 3px 10px;
-          background-color: $red-color;
-          color: $white-color;
-          font-weight: bold;
-          border-radius: 5px;
-          cursor: pointer;
-          border: none;
+        .info {
+          display: flex;
+          flex-direction: column;
 
-          &:hover {
-            background-color: $dark-red;
+          .info-id {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 10px;
+
+            p {
+              font-size: 15px;
+              width: 250px;
+              white-space: nowrap;
+              overflow: hidden;
+              text-overflow: ellipsis;
+              text-align: center;
+
+              @include tablet {
+                font-size: 13px;
+              }
+
+              @include mobile {
+                font-size: 11px;
+              }
+            }
           }
 
-          @include tablet {
-            font-size: 13px;
-            padding: 3px 10px;
+          .info-email {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 5px;
+
+            p {
+              font-size: 15px;
+              width: 250px;
+              white-space: nowrap;
+              overflow: hidden;
+              text-overflow: ellipsis;
+              text-align: center;
+
+              @include tablet {
+                font-size: 13px;
+              }
+
+              @include mobile {
+                font-size: 11px;
+              }
+            }
           }
+        }
+
+        .update-delete {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          gap: 5px;
+          margin-top: 10px;
 
           @include mobile {
-            font-size: 11px;
-            padding: 3px 10px;
+            display: flex;
+            flex-direction: column;
+          }
+
+          .view-reports {
+            border: none;
+            background: none;
+
+            a {
+              font-size: 13px;
+              font-weight: bold;
+              color: $red-color;
+              background-color: $button-bg;
+              padding: 3px 10px;
+              border-radius: 5px;
+              border: none;
+              cursor: pointer;
+
+              &:hover {
+                background-color: $soft-red;
+              }
+
+              @include tablet {
+                font-size: 11px;
+                padding: 3px 10px;
+                margin-bottom: 10px;
+              }
+
+              @include mobile {
+                font-size: 9px;
+                padding: 3px 10px;
+                margin-bottom: 10px;
+              }
+            }
+          }
+
+          .icons {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            .update {
+              border: none;
+              background: none;
+            }
+
+            .remove {
+              background: none;
+              cursor: pointer;
+              border: none;
+              color: $red-color;
+            }
           }
         }
       }

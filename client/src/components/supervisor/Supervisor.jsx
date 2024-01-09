@@ -45,13 +45,14 @@ const Supervisor = () => {
               <p>{item.email}</p>
             </div>
           </div>
-          {login ? (
-            <div className="update-delete">
-              <button className="view-reports">
-                <a href={`/supervisorReports/${item.supervisor_id}`}>
-                  View Reports
-                </a>
-              </button>
+
+          <div className="update-delete">
+            <button className="view-reports">
+              <a href={`/supervisorReports/${item.supervisor_id}`}>
+                View Reports
+              </a>
+            </button>
+            {login ? (
               <div className="icons">
                 <button className="update">
                   <a href={`/updateSupervisor/${item.id}`}>
@@ -65,10 +66,10 @@ const Supervisor = () => {
                   <DeleteIcon style={{ fontSize: 20 }} />
                 </button>
               </div>
-            </div>
-          ) : (
-            <div></div>
-          )}
+            ) : (
+              <div></div>
+            )}
+          </div>
         </div>
       ))}
     </div>

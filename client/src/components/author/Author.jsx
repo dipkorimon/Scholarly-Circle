@@ -44,11 +44,12 @@ const Author = () => {
               <p>{item.email}</p>
             </div>
           </div>
-          {chairmanLogin || supervisorLogin ? (
-            <div className="update-delete">
-              <button className="view-reports">
-                <a>View Reports</a>
-              </button>
+
+          <div className="update-delete">
+            <button className="view-reports">
+              <a>View Reports</a>
+            </button>
+            {chairmanLogin || supervisorLogin ? (
               <div className="icons">
                 <button className="update">
                   <a href={`/updateAuthor/${item.id}`}>
@@ -62,10 +63,10 @@ const Author = () => {
                   <DeleteIcon style={{ fontSize: 20 }} />
                 </button>
               </div>
-            </div>
-          ) : (
-            <div></div>
-          )}
+            ) : (
+              <div></div>
+            )}
+          </div>
         </div>
       ))}
     </div>

@@ -30,7 +30,7 @@
       .cat {
         display: flex;
         align-items: center;
-        gap: 10px;
+        gap: 5px;
         font-size: 16px;
         border-bottom: 2px solid $soft-color;
 
@@ -46,7 +46,6 @@
 
     .items {
       display: flex;
-      align-items: center;
       justify-content: center;
       flex-direction: row;
       flex: 4;
