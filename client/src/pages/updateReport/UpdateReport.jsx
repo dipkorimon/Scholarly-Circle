@@ -21,7 +21,7 @@ const AddReport = () => {
         <sup>title</sup>
       </h1>
       <p>
-        An asterisk (<span>*</span>) indicates a required field
+        An asterisk (<span>*</span>) indicates required field
       </p>
       <form action="">
         <label htmlFor="">

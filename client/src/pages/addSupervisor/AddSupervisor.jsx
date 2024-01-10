@@ -36,7 +36,7 @@ const AddSupervisor = () => {
     <div className="addSupervisor">
       <h1>Add a new Supervisor</h1>
       <p>
-        An asterisk (<span>*</span>) indicates a required field
+        An asterisk (<span>*</span>) indicates required field
       </p>
       <form action="" onSubmit={handleSubmit}>
         <label htmlFor="">

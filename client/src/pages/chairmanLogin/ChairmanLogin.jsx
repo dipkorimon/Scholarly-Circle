@@ -31,7 +31,7 @@ const ChairmanLogin = () => {
     <div className="login">
       <h1>Sign in as Chairman</h1>
       <p>
-        An asterisk (<span>*</span>) indicates a required field
+        An asterisk (<span>*</span>) indicates required field
       </p>
       <form action="" onSubmit={handleSubmit}>
         <label htmlFor="email">

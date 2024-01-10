@@ -123,13 +123,13 @@ const NavBar = () => {
               <div className="request">
                 <button className="name">Make a Request</button>
                 <div id="drop-down">
-                  <a href="">
+                  <a href="/requestSupervisors">
                     <RequestPageIcon />
-                    Request for Supervisor Account
+                    Request for a Supervisor Account
                   </a>
-                  <a href="">
+                  <a href="/requestAuthors">
                     <RequestPageIcon />
-                    Request for Author Account
+                    Request for an Author Account
                   </a>
                 </div>
               </div>
