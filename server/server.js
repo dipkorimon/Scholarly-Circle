@@ -263,8 +263,8 @@ app.get("/reports/:id", (req, res) => {
   const sql = "SELECT * FROM report WHERE id = ?";
   const id = req.params.id;
   db.query(sql, [id], (err, data) => {
-    if (err) return res.json("Error");
-    return res.json(data);
+    if (err) throw err;
+    res.json(data);
   });
 });
 
