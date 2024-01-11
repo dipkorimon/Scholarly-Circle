@@ -262,9 +262,14 @@ app.get("/reports", (req, res) => {
 app.get("/reports/:id", (req, res) => {
   const sql = "SELECT * FROM report WHERE id = ?";
   const id = req.params.id;
+  const sql2 =
+    "SELECT * FROM supervisor JOIN report ON supervisor.supervisor_id = report.supervisor_id WHERE report.id = id";
   db.query(sql, [id], (err, data) => {
     if (err) throw err;
-    res.json(data);
+    db.query(sql2, [id], (err, data2) => {
+      if (err) throw err;
+      res.json({ data, data2 });
+    });
   });
 });
 
