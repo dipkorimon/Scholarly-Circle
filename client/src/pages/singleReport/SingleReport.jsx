@@ -4,6 +4,10 @@ import axios from "axios";
 import moment from "moment";
 import { useParams, useNavigate } from "react-router-dom";
 import Badge from "../../components/badge/Badge";
+import CategoryIcon from "@mui/icons-material/Category";
+import ClassIcon from "@mui/icons-material/Class";
+import TypeSpecimenIcon from "@mui/icons-material/TypeSpecimen";
+import WorkspacePremiumIcon from "@mui/icons-material/WorkspacePremium";
 
 const SingleReport = () => {
   const { id } = useParams();
@@ -145,9 +149,30 @@ const SingleReport = () => {
               </div>
             </div>
             <div className="date">
-              <p>{moment(defenseDate).format("MMMM Do YYYY")}</p>
-              <div className="session-degree">
-                <Badge value={session} />
+              <Badge value={moment(defenseDate).format("MMMM Do YYYY")} />
+              <div className="info-items">
+                <a href="">
+                  <CategoryIcon />
+                  {category}
+                </a>
+              </div>
+              <div className="info-items">
+                <a href="">
+                  <ClassIcon />
+                  {degree}
+                </a>
+              </div>
+              <div className="info-items">
+                <a href="">
+                  <TypeSpecimenIcon />
+                  {session}
+                </a>
+              </div>
+              <div className="info-items">
+                <a href="">
+                  <WorkspacePremiumIcon />
+                  {reportType.charAt(0).toUpperCase() + reportType.slice(1)}
+                </a>
               </div>
             </div>
           </div>

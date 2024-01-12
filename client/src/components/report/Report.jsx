@@ -9,20 +9,10 @@ const Report = (props) => {
         <div className="report-data">
           <h3>{props.title}</h3>
           <p>
-            {props.abstract.length > 250
-              ? `${props.abstract.substring(0, 250)} . . .`
+            {props.abstract.length > 300
+              ? `${props.abstract.substring(0, 300)} . . .`
               : props.abstract}
           </p>
-          <div className="badge">
-            <Badge
-              value={
-                props.report_type.charAt(0).toUpperCase() +
-                props.report_type.slice(1)
-              }
-            />
-            <Badge value={props.category} />
-            <Badge value={props.degree} />
-          </div>
         </div>
         <div className="buttons">
           <a href={`/singleReport/${props.id}`}>

@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import Category from "../../components/category/Category";
 import "./categories.scss";
 import axios from "axios";
 import CategoryList from "../../components/categoryList/CategoryList";
@@ -7,8 +6,12 @@ import CategoryIcon from "@mui/icons-material/Category";
 import ClassIcon from "@mui/icons-material/Class";
 import TypeSpecimenIcon from "@mui/icons-material/TypeSpecimen";
 import WorkspacePremiumIcon from "@mui/icons-material/WorkspacePremium";
+import { useParams } from "react-router-dom";
+import Category from "../../components/category/Category";
 
 const Categories = () => {
+  const { category } = useParams();
+
   const [report, setReport] = useState([]);
 
   useEffect(() => {

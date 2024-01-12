@@ -195,7 +195,7 @@ const AddReport = () => {
           <option value="Information Theory">Information Theory</option>
           <option value="Web Application">Web Application</option>
           <option value="Mobile Application">Mobile Application</option>
-          <option value="Desktop Application">Desktop APplication</option>
+          <option value="Desktop Application">Desktop Application</option>
         </select>
         <label htmlFor="">
           Report type<span>*</span>

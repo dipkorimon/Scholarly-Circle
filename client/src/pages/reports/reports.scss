@@ -8,6 +8,7 @@
 
   .all-items {
     display: flex;
+
     gap: 20px;
 
     @include tablet {
