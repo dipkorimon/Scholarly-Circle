@@ -51,58 +51,60 @@ const Categories = () => {
 
   return (
     <div className="categories">
-      <div className="filter">
-        <h3 className="cat">
-          <CategoryIcon />
-          Categories
-        </h3>
-        {uniqueCategories.map((category) => (
-          <div className="category-list">
-            <a href={`/categories/${category}`}>
-              <CategoryList category={category} />
-            </a>
-          </div>
-        ))}
-        <h3 className="cat" style={{ marginTop: 20 }}>
-          <ClassIcon />
-          Sessions
-        </h3>
-        {uniqueSessions.map((session) => (
-          <div className="category-list">
-            <a href={`/sessions/${session}`}>
-              <CategoryList category={session} />
-            </a>
-          </div>
-        ))}
-        <h3 className="cat" style={{ marginTop: 20 }}>
-          <WorkspacePremiumIcon />
-          Degrees
-        </h3>
-        {uniqueDegrees.map((degree) => (
-          <div className="category-list">
-            <a href={`/degrees/${degree}`}>
-              <CategoryList category={degree} />
-            </a>
-          </div>
-        ))}
-        <h3 className="cat" style={{ marginTop: 20 }}>
-          <TypeSpecimenIcon />
-          Report Types
-        </h3>
-        {uniqueReportTypes.map((report_type) => (
-          <div className="category-list">
-            <a href={`/reportTypes/${report_type}`}>
-              <CategoryList
-                category={
-                  report_type.charAt(0).toUpperCase() + report_type.slice(1)
-                }
-              />
-            </a>
-          </div>
-        ))}
-      </div>
-      <div className="items">
-        <Category />
+      <div className="all-items">
+        <div className="filter">
+          <h3 className="cat">
+            <CategoryIcon />
+            Categories
+          </h3>
+          {uniqueCategories.map((category) => (
+            <div className="category-list">
+              <a href={`/categories/${category}`}>
+                <CategoryList category={category} />
+              </a>
+            </div>
+          ))}
+          <h3 className="cat" style={{ marginTop: 20 }}>
+            <ClassIcon />
+            Sessions
+          </h3>
+          {uniqueSessions.map((session) => (
+            <div className="category-list">
+              <a href={`/sessions/${session}`}>
+                <CategoryList category={session} />
+              </a>
+            </div>
+          ))}
+          <h3 className="cat" style={{ marginTop: 20 }}>
+            <WorkspacePremiumIcon />
+            Degrees
+          </h3>
+          {uniqueDegrees.map((degree) => (
+            <div className="category-list">
+              <a href={`/degrees/${degree}`}>
+                <CategoryList category={degree} />
+              </a>
+            </div>
+          ))}
+          <h3 className="cat" style={{ marginTop: 20 }}>
+            <TypeSpecimenIcon />
+            Report Types
+          </h3>
+          {uniqueReportTypes.map((report_type) => (
+            <div className="category-list">
+              <a href={`/reportTypes/${report_type}`}>
+                <CategoryList
+                  category={
+                    report_type.charAt(0).toUpperCase() + report_type.slice(1)
+                  }
+                />
+              </a>
+            </div>
+          ))}
+        </div>
+        <div className="items">
+          <Category />
+        </div>
       </div>
     </div>
   );

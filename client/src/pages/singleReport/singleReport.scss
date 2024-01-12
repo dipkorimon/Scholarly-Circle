@@ -27,7 +27,7 @@
     .post-info {
       display: flex;
       flex-direction: column;
-      gap: 10px;
+      gap: 20px;
 
       h3 {
         font-size: 20px;
@@ -43,40 +43,120 @@
         }
       }
 
-      .session-date {
+      .sup-date {
         display: flex;
         justify-content: space-between;
 
-        p {
-          font-size: 16px;
+        .sup-aut {
+          display: flex;
+          flex-direction: column;
+          gap: 20px;
 
-          @include tablet {
-            font-size: 14px;
+          .sup-name {
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+
+            p {
+              font-size: 16px;
+              font-weight: bold;
+
+              @include tablet {
+                font-size: 14px;
+              }
+
+              @include mobile {
+                font-size: 12px;
+              }
+            }
+
+            a {
+              display: flex;
+              align-items: center;
+              gap: 10px;
+              font-size: 16px;
+
+              &:hover {
+                color: $red-color;
+              }
+
+              img {
+                width: 40px;
+                height: 40px;
+                object-fit: cover;
+                border-radius: 50%;
+                border: 1px solid $soft-red;
+              }
+            }
           }
 
-          @include mobile {
-            font-size: 12px;
+          .aut-name {
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+
+            p {
+              font-size: 16px;
+              font-weight: bold;
+
+              @include tablet {
+                font-size: 14px;
+              }
+
+              @include mobile {
+                font-size: 12px;
+              }
+            }
+
+            a {
+              display: flex;
+              align-items: center;
+              gap: 10px;
+
+              &:hover {
+                color: $red-color;
+              }
+
+              img {
+                width: 40px;
+                height: 40px;
+                object-fit: cover;
+                border-radius: 50%;
+                border: 1px solid $soft-red;
+              }
+            }
           }
         }
-      }
 
-      .sup-aut {
-        display: flex;
-        justify-content: space-between;
-
-        p {
-          font-size: 16px;
-
-          @include tablet {
+        .date {
+          p {
             font-size: 14px;
+
+            @include tablet {
+              font-size: 12px;
+            }
+
+            @include mobile {
+              font-size: 10px;
+            }
           }
 
-          @include mobile {
-            font-size: 12px;
-          }
+          .session-degree {
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
 
-          span {
-            font-weight: bold;
+            p {
+              font-size: 16px;
+
+              @include tablet {
+                font-size: 14px;
+              }
+
+              @include mobile {
+                font-size: 12px;
+              }
+            }
           }
         }
       }

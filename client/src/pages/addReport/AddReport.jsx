@@ -82,7 +82,7 @@ const AddReport = () => {
           onChange={(e) => setSupervisorId(e.target.value)}
         />
         <label htmlFor="">
-          First Author ID<span>*</span>
+          First author ID<span>*</span>
         </label>
         <input
           type="text"
@@ -90,25 +90,25 @@ const AddReport = () => {
           onChange={(e) => setFirstAuthorId(e.target.value)}
         />
         <label htmlFor="">
-          Second Author ID<span></span>
+          Second author ID<span></span>
         </label>
         <input
           type="text"
           onChange={(e) => setSecondAuthorId(e.target.value)}
         />
         <label htmlFor="">
-          Third Author ID<span></span>
+          Third author ID<span></span>
         </label>
         <input type="text" onChange={(e) => setThirdAuthorId(e.target.value)} />
         <label htmlFor="">
-          Fourth Author ID<span></span>
+          Fourth author ID<span></span>
         </label>
         <input
           type="text"
           onChange={(e) => setFourthAuthorId(e.target.value)}
         />
         <label htmlFor="">
-          Fifth Author ID<span></span>
+          Fifth author ID<span></span>
         </label>
         <input type="text" onChange={(e) => setFifthAuthorId(e.target.value)} />
         <label htmlFor="">
@@ -224,7 +224,7 @@ const AddReport = () => {
           <option value="Master of Science">Master of Science</option>
         </select>
         <label htmlFor="">
-          Thesis Publication link or Project live demo link<span></span>
+          Thesis publication link or project live demo link<span></span>
         </label>
         <input type="text" onChange={(e) => setPublication(e.target.value)} />
         <div className="doc-upload">

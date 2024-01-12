@@ -261,14 +261,47 @@ app.get("/reports", (req, res) => {
 // For retrieve single report
 app.get("/reports/:id", (req, res) => {
   const sql = "SELECT * FROM report WHERE id = ?";
+  const sql2 = "SELECT * FROM supervisor WHERE supervisor_id = ?";
+  const sql3 = "SELECT * FROM author WHERE student_id = ?";
+  const sql4 = "SELECT * FROM author WHERE student_id = ?";
+  const sql5 = "SELECT * FROM author WHERE student_id = ?";
+  const sql6 = "SELECT * FROM author WHERE student_id = ?";
+  const sql7 = "SELECT * FROM author WHERE student_id = ?";
   const id = req.params.id;
-  const sql2 =
-    "SELECT * FROM supervisor JOIN report ON supervisor.supervisor_id = report.supervisor_id WHERE report.id = id";
-  db.query(sql, [id], (err, data) => {
+  db.query(sql, [id], (err, report) => {
     if (err) throw err;
-    db.query(sql2, [id], (err, data2) => {
+    const supervisorId = report[0].supervisor_id;
+    db.query(sql2, [supervisorId], (err, supervisor) => {
       if (err) throw err;
-      res.json({ data, data2 });
+      const firstAuthorId = report[0].first_author_id;
+      db.query(sql3, [firstAuthorId], (err, firstAuthor) => {
+        if (err) throw err;
+        const secondAuthorId = report[0].second_author_id;
+        db.query(sql4, [secondAuthorId], (err, secondAuthor) => {
+          if (err) throw err;
+          const thirdAuthorId = report[0].third_author_id;
+          db.query(sql5, [thirdAuthorId], (err, thirdAuthor) => {
+            if (err) throw err;
+            const fourthAuthorId = report[0].fourth_author_id;
+            db.query(sql6, [fourthAuthorId], (err, fourthAuthor) => {
+              if (err) throw err;
+              const fifthAuthorId = report[0].fifth_author_id;
+              db.query(sql7, [fifthAuthorId], (err, fifthAuthor) => {
+                if (err) throw err;
+                res.json({
+                  report,
+                  supervisor,
+                  firstAuthor,
+                  secondAuthor,
+                  thirdAuthor,
+                  fourthAuthor,
+                  fifthAuthor,
+                });
+              });
+            });
+          });
+        });
+      });
     });
   });
 });

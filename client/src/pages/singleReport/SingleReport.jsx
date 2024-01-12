@@ -19,21 +19,44 @@ const SingleReport = () => {
   const [document, setDocument] = useState("");
 
   const [supervisor, setSupervisor] = useState("");
+  const [supervisorImg, setSupervisorImg] = useState("");
+
+  const [firstAuthor, setFirstAuthor] = useState("");
+  const [firstAuthorImg, setFirstAuthorImg] = useState("");
+  const [secondAuthor, setSecondAuthor] = useState("");
+  const [secondAuthorImg, setSecondAuthorImg] = useState("");
+  const [thirdAuthor, setThirdAuthor] = useState("");
+  const [thirdAuthorImg, setThirdAuthorImg] = useState("");
+  const [fourthAuthor, setFourthAuthor] = useState("");
+  const [fourthAuthorImg, setFourthAuthorImg] = useState("");
+  const [fifthAuthor, setFifthAuthor] = useState("");
+  const [fifthAuthorImg, setFifthAuthorImg] = useState("");
 
   useEffect(() => {
     axios
       .get("http://localhost:8800/reports/" + id)
       .then((res) => {
-        setTitle(res.data.data[0].title);
-        setSession(res.data.data[0].session);
-        setDegree(res.data.data[0].degree);
-        setCategory(res.data.data[0].category);
-        setDefenseDate(res.data.data[0].defense_date);
-        setReportType(res.data.data[0].report_type);
-        setAbstract(res.data.data[0].abstract);
-        setPublicatin(res.data.data[0].publication);
-        setDocument(res.data.data[0].document);
-        setSupervisor(res.data.data1[0].full_name);
+        setTitle(res.data.report[0].title);
+        setSession(res.data.report[0].session);
+        setDegree(res.data.report[0].degree);
+        setCategory(res.data.report[0].category);
+        setDefenseDate(res.data.report[0].defense_date);
+        setReportType(res.data.report[0].report_type);
+        setAbstract(res.data.report[0].abstract);
+        setPublicatin(res.data.report[0].publication);
+        setDocument(res.data.report[0].document);
+        setSupervisor(res.data.supervisor[0].full_name);
+        setSupervisorImg(res.data.supervisor[0].photo);
+        setFirstAuthor(res.data.firstAuthor[0].full_name);
+        setFirstAuthorImg(res.data.firstAuthor[0].photo);
+        setSecondAuthor(res.data.secondAuthor[0].full_name);
+        setSecondAuthorImg(res.data.secondAuthor[0].photo);
+        setThirdAuthor(res.data.thirdAuthor[0].full_name);
+        setThirdAuthorImg(res.data.thirdAuthor[0].photo);
+        setFourthAuthor(res.data.fourthAuthor[0].full_name);
+        setFourthAuthorImg(res.data.fourthAuthor[0].photo);
+        setFifthAuthor(res.data.fifthAuthor[0].full_name);
+        setFifthAuthorImg(res.data.fifthAuthor[0].photo);
       })
       .catch((err) => console.log(err));
   });
@@ -58,19 +81,75 @@ const SingleReport = () => {
       <div className="post-item" key={id}>
         <div className="post-info">
           <h3>{title}</h3>
-          <div className="session-date">
-            <Badge value={session} />
-            <Badge value={degree} />
-            <Badge value={category} />
-            <p>{moment(defenseDate).format("MMMM Do YYYY")}</p>
-          </div>
-          <div className="sup-aut">
-            <p>
-              <span>Supervisor: {supervisor}</span>
-            </p>
-            <p>
-              <span>Authors: </span>
-            </p>
+          <div className="sup-date">
+            <div className="sup-aut">
+              <div className="sup-name">
+                <p>Supervisor</p>
+                {supervisor && (
+                  <a href="">
+                    <img
+                      src={`http://localhost:8800/documents/` + supervisorImg}
+                      alt=""
+                    />
+                    {supervisor}
+                  </a>
+                )}
+              </div>
+              <div className="aut-name">
+                <p>Authors</p>
+                {firstAuthor && (
+                  <a href="">
+                    <img
+                      src={`http://localhost:8800/documents/` + firstAuthorImg}
+                      alt=""
+                    />
+                    {firstAuthor}{" "}
+                  </a>
+                )}
+                {secondAuthor && (
+                  <a href="">
+                    <img
+                      src={`http://localhost:8800/documents/` + secondAuthorImg}
+                      alt=""
+                    />
+                    {secondAuthor}{" "}
+                  </a>
+                )}
+                {thirdAuthor && (
+                  <a href="">
+                    <img
+                      src={`http://localhost:8800/documents/` + thirdAuthorImg}
+                      alt=""
+                    />
+                    {thirdAuthor}{" "}
+                  </a>
+                )}
+                {fourthAuthor && (
+                  <a href="">
+                    <img
+                      src={`http://localhost:8800/documents/` + fourthAuthorImg}
+                      alt=""
+                    />
+                    {fourthAuthor}{" "}
+                  </a>
+                )}
+                {fifthAuthor && (
+                  <a href="">
+                    <img
+                      src={`http://localhost:8800/documents/` + fifthAuthorImg}
+                      alt=""
+                    />
+                    {fifthAuthor}
+                  </a>
+                )}
+              </div>
+            </div>
+            <div className="date">
+              <p>{moment(defenseDate).format("MMMM Do YYYY")}</p>
+              <div className="session-degree">
+                <Badge value={session} />
+              </div>
+            </div>
           </div>
           <div className="abstract">
             <p>

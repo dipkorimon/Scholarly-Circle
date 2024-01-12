@@ -3,36 +3,56 @@
 
 .categories {
   display: flex;
+  flex-direction: column;
+  align-items: center;
   padding: 10px 10px;
 
-  .filter {
+  .all-items {
     display: flex;
-    flex-direction: column;
-    flex: 1;
+    max-width: 1200px;
+    gap: 20px;
 
-    .cat {
+    @include tablet {
       display: flex;
-      align-items: center;
-      gap: 5px;
-      font-size: 16px;
-      border-bottom: 2px solid $soft-color;
+      gap: 10px;
+      flex-direction: column;
+    }
 
-      @include tablet {
-        font-size: 14px;
-      }
+    @include mobile {
+      display: flex;
+      gap: 10px;
+      flex-direction: column;
+    }
 
-      @include mobile {
-        font-size: 12px;
+    .filter {
+      display: flex;
+      flex-direction: column;
+      flex: 2;
+
+      .cat {
+        display: flex;
+        align-items: center;
+        gap: 5px;
+        font-size: 16px;
+        border-bottom: 2px solid $soft-color;
+
+        @include tablet {
+          font-size: 14px;
+        }
+
+        @include mobile {
+          font-size: 12px;
+        }
       }
     }
-  }
 
-  .items {
-    display: flex;
-    justify-content: center;
-    flex-direction: row;
-    flex: 4;
-    flex-wrap: wrap;
-    gap: 10px;
+    .items {
+      display: flex;
+      flex-direction: column;
+      flex-direction: row;
+      flex: 6;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
   }
 }
