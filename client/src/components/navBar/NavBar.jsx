@@ -7,6 +7,7 @@ import ArticleIcon from "@mui/icons-material/Article";
 import LoginIcon from "@mui/icons-material/Login";
 import AccountBoxIcon from "@mui/icons-material/AccountBox";
 import RequestPageIcon from "@mui/icons-material/RequestPage";
+import NotificationsActiveIcon from "@mui/icons-material/NotificationsActive";
 
 const NavBar = () => {
   const [auth, setAuth] = useState(false);
@@ -64,59 +65,66 @@ const NavBar = () => {
         </div>
         <div className="right">
           {auth ? (
-            <div className="profile">
-              <AccountBoxIcon />
-              <button className="name">{name}</button>
-              {chairman ? (
-                <span className="logInfo">Chairman</span>
-              ) : supervisor ? (
-                <span className="logInfo">Supervisor</span>
-              ) : (
-                <span className="logInfo">Author</span>
-              )}
-              {chairman ? (
-                <div id="drop-down">
-                  <a href="/addSupervisor">
-                    <SupervisorAccountIcon />
-                    <button>Add Supervisor</button>
-                  </a>
-                  <a href="/addAuthor">
-                    <PersonIcon />
-                    <button>Add Author</button>
-                  </a>
-                  <a href="/addReport">
-                    <ArticleIcon />
-                    <button>Add Report</button>
-                  </a>
-                  <button onClick={handleLogout} className="icon">
-                    Sign Out
-                  </button>
-                </div>
-              ) : supervisor ? (
-                <div id="drop-down">
-                  <a href="/addAuthor">
-                    <PersonIcon />
-                    <button>Add Author</button>
-                  </a>
-                  <a href="/addReport">
-                    <ArticleIcon />
-                    <button>Add Report</button>
-                  </a>
-                  <button onClick={handleLogout} className="icon">
-                    Sign Out
-                  </button>
-                </div>
-              ) : (
-                <div id="drop-down">
-                  <a href="/addReport">
-                    <ArticleIcon />
-                    <button>Add Report</button>
-                  </a>
-                  <button onClick={handleLogout} className="icon">
-                    Sign Out
-                  </button>
-                </div>
-              )}
+            <div className="notify-profile">
+              <div className="notify">
+                <button>
+                  <NotificationsActiveIcon />
+                </button>
+              </div>
+              <div className="profile">
+                <AccountBoxIcon />
+                <button className="name">{name}</button>
+                {chairman ? (
+                  <span className="logInfo">Chairman</span>
+                ) : supervisor ? (
+                  <span className="logInfo">Supervisor</span>
+                ) : (
+                  <span className="logInfo">Author</span>
+                )}
+                {chairman ? (
+                  <div id="drop-down">
+                    <a href="/addSupervisor">
+                      <SupervisorAccountIcon />
+                      <button>Add Supervisor</button>
+                    </a>
+                    <a href="/addAuthor">
+                      <PersonIcon />
+                      <button>Add Author</button>
+                    </a>
+                    <a href="/addReport">
+                      <ArticleIcon />
+                      <button>Add Report</button>
+                    </a>
+                    <button onClick={handleLogout} className="icon">
+                      Sign Out
+                    </button>
+                  </div>
+                ) : supervisor ? (
+                  <div id="drop-down">
+                    <a href="/addAuthor">
+                      <PersonIcon />
+                      <button>Add Author</button>
+                    </a>
+                    <a href="/addReport">
+                      <ArticleIcon />
+                      <button>Add Report</button>
+                    </a>
+                    <button onClick={handleLogout} className="icon">
+                      Sign Out
+                    </button>
+                  </div>
+                ) : (
+                  <div id="drop-down">
+                    <a href="/addReport">
+                      <ArticleIcon />
+                      <button>Add Report</button>
+                    </a>
+                    <button onClick={handleLogout} className="icon">
+                      Sign Out
+                    </button>
+                  </div>
+                )}
+              </div>
             </div>
           ) : (
             <div className="in-up">

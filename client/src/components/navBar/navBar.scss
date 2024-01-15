@@ -377,142 +377,169 @@
       }
     }
 
-    .profile {
+    .notify-profile {
       display: flex;
-      align-items: center;
-      gap: 10px;
+      gap: 20px;
 
-      &:hover #drop-down {
+      @include tablet {
         display: flex;
+        gap: 15px;
       }
 
-      &:focus-within #drop-down {
+      @include mobile {
         display: flex;
+        gap: 10px;
       }
 
-      span {
-        font-size: 12px;
-        font-weight: bold;
-        background-color: $soft-color;
-        padding: 3px 10px;
-        border-radius: 5px;
-
-        @include tablet {
-          font-size: 10px;
-        }
-
-        @include mobile {
-          font-size: 8px;
-        }
-      }
-
-      #drop-down {
-        position: absolute;
-        width: fit-content;
-        display: none;
-        flex-direction: column;
-        top: 55px;
-        right: 20px;
-        padding: 10px;
-        border-radius: 5px;
-        background-color: $soft-color;
-        box-shadow: $shadow;
-
-        @include tablet {
-          top: 120px;
-          right: 270px;
-        }
-
-        @include mobile {
-          top: 105px;
-          right: 70px;
-        }
-
-        a {
-          display: flex;
-          align-items: center;
+      .notify {
+        button {
+          border: none;
+          background: none;
+          color: $dark-color;
+          background-color: $soft-color;
+          padding: 5px 8px;
+          border-radius: 50%;
           cursor: pointer;
+        }
+      }
 
-          button {
-            font-weight: bold;
-            font-size: 15px;
-            padding: 5px;
-            border: none;
-            border-radius: 5px;
-            gap: 10px;
+      .profile {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+
+        &:hover #drop-down {
+          display: flex;
+        }
+
+        &:focus-within #drop-down {
+          display: flex;
+        }
+
+        span {
+          font-size: 12px;
+          font-weight: bold;
+          background-color: $soft-color;
+          padding: 3px 10px;
+          border-radius: 5px;
+
+          @include tablet {
+            font-size: 10px;
+          }
+
+          @include mobile {
+            font-size: 8px;
+          }
+        }
+
+        #drop-down {
+          position: absolute;
+          width: fit-content;
+          display: none;
+          flex-direction: column;
+          top: 55px;
+          right: 20px;
+          padding: 10px;
+          border-radius: 5px;
+          background-color: $soft-color;
+          box-shadow: $shadow;
+
+          @include tablet {
+            top: 120px;
+            right: 270px;
+          }
+
+          @include mobile {
+            top: 105px;
+            right: 70px;
+          }
+
+          a {
+            display: flex;
+            align-items: center;
             cursor: pointer;
 
+            button {
+              font-weight: bold;
+              font-size: 15px;
+              padding: 5px;
+              border: none;
+              border-radius: 5px;
+              gap: 10px;
+              cursor: pointer;
+
+              &:hover {
+                background-color: $soft-red;
+              }
+
+              @include tablet {
+                font-size: 13px;
+              }
+
+              @include mobile {
+                font-size: 11px;
+              }
+            }
+          }
+
+          .icon {
+            font-size: 15px;
+            font-weight: bold;
+            color: $white-color;
+            background-color: $red-color;
+            padding: 7px 20px;
+            border-radius: 5px;
+            outline: none;
+            border: none;
+            cursor: pointer;
+            margin-top: 5px;
+
             &:hover {
-              background-color: $soft-red;
+              background-color: $dark-red;
             }
 
             @include tablet {
               font-size: 13px;
+              padding: 3px 15px;
+              margin-bottom: 5px;
             }
 
             @include mobile {
               font-size: 11px;
+              padding: 3px 15px;
+              margin-bottom: 5px;
             }
           }
         }
 
-        .icon {
-          font-size: 15px;
-          font-weight: bold;
-          color: $white-color;
-          background-color: $red-color;
-          padding: 7px 20px;
-          border-radius: 5px;
-          outline: none;
+        .name {
           border: none;
+          background: none;
+          color: $dark-color;
+          font-size: 18px;
+          font-weight: bold;
           cursor: pointer;
-          margin-top: 5px;
-
-          &:hover {
-            background-color: $dark-red;
-          }
 
           @include tablet {
-            font-size: 13px;
-            padding: 3px 15px;
-            margin-bottom: 5px;
+            font-size: 16px;
           }
 
           @include mobile {
-            font-size: 11px;
-            padding: 3px 15px;
-            margin-bottom: 5px;
+            font-size: 14px;
           }
         }
-      }
 
-      .name {
-        border: none;
-        background: none;
-        color: $dark-color;
-        font-size: 18px;
-        font-weight: bold;
-        cursor: pointer;
-
-        @include tablet {
-          font-size: 16px;
-        }
-
-        @include mobile {
+        .logInfo {
           font-size: 14px;
-        }
-      }
+          color: $dark-color;
 
-      .logInfo {
-        font-size: 14px;
-        color: $dark-color;
+          @include tablet {
+            font-size: 12px;
+          }
 
-        @include tablet {
-          font-size: 12px;
-        }
-
-        @include mobile {
-          font-size: 10px;
+          @include mobile {
+            font-size: 10px;
+          }
         }
       }
     }
