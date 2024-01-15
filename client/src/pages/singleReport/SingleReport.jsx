@@ -22,17 +22,27 @@ const SingleReport = () => {
   const [publication, setPublicatin] = useState("");
   const [document, setDocument] = useState("");
 
+  const [supervisorId, setSupervisorId] = useState("");
   const [supervisor, setSupervisor] = useState("");
   const [supervisorImg, setSupervisorImg] = useState("");
 
+  const [firstAuthorId, setFirstAuthorId] = useState("");
   const [firstAuthor, setFirstAuthor] = useState("");
   const [firstAuthorImg, setFirstAuthorImg] = useState("");
+
+  const [secondAuthorId, setSecondAuthorId] = useState("");
   const [secondAuthor, setSecondAuthor] = useState("");
   const [secondAuthorImg, setSecondAuthorImg] = useState("");
+
+  const [thirdAuthorId, setThirdAuthorId] = useState("");
   const [thirdAuthor, setThirdAuthor] = useState("");
   const [thirdAuthorImg, setThirdAuthorImg] = useState("");
+
+  const [fourthAuthorId, setFourthAuthorId] = useState("");
   const [fourthAuthor, setFourthAuthor] = useState("");
   const [fourthAuthorImg, setFourthAuthorImg] = useState("");
+
+  const [fifthAuthorId, setFifthAuthorId] = useState("");
   const [fifthAuthor, setFifthAuthor] = useState("");
   const [fifthAuthorImg, setFifthAuthorImg] = useState("");
 
@@ -49,16 +59,22 @@ const SingleReport = () => {
         setAbstract(res.data.report[0].abstract);
         setPublicatin(res.data.report[0].publication);
         setDocument(res.data.report[0].document);
+        setSupervisorId(res.data.supervisor[0].supervisor_id);
         setSupervisor(res.data.supervisor[0].full_name);
         setSupervisorImg(res.data.supervisor[0].photo);
+        setFirstAuthorId(res.data.firstAuthor[0].student_id);
         setFirstAuthor(res.data.firstAuthor[0].full_name);
         setFirstAuthorImg(res.data.firstAuthor[0].photo);
+        setSecondAuthorId(res.data.secondAuthor[0].student_id);
         setSecondAuthor(res.data.secondAuthor[0].full_name);
         setSecondAuthorImg(res.data.secondAuthor[0].photo);
+        setThirdAuthorId(res.data.thirdAuthor[0].student_id);
         setThirdAuthor(res.data.thirdAuthor[0].full_name);
         setThirdAuthorImg(res.data.thirdAuthor[0].photo);
+        setFourthAuthorId(res.data.fourthAuthor[0].student_id);
         setFourthAuthor(res.data.fourthAuthor[0].full_name);
         setFourthAuthorImg(res.data.fourthAuthor[0].photo);
+        setFifthAuthorId(res.data.fifthAuthor[0].student_id);
         setFifthAuthor(res.data.fifthAuthor[0].full_name);
         setFifthAuthorImg(res.data.fifthAuthor[0].photo);
       })
@@ -90,7 +106,7 @@ const SingleReport = () => {
               <div className="sup-name">
                 <p>Supervisor</p>
                 {supervisor && (
-                  <a href="">
+                  <a href={`/supervisorReports/${supervisorId}`}>
                     <img
                       src={`http://localhost:8800/documents/` + supervisorImg}
                       alt=""
@@ -102,7 +118,7 @@ const SingleReport = () => {
               <div className="aut-name">
                 <p>Authors</p>
                 {firstAuthor && (
-                  <a href="">
+                  <a href={`/authorReports/${firstAuthorId}`}>
                     <img
                       src={`http://localhost:8800/documents/` + firstAuthorImg}
                       alt=""
@@ -111,7 +127,7 @@ const SingleReport = () => {
                   </a>
                 )}
                 {secondAuthor && (
-                  <a href="">
+                  <a href={`/authorReports/${secondAuthorId}`}>
                     <img
                       src={`http://localhost:8800/documents/` + secondAuthorImg}
                       alt=""
@@ -120,7 +136,7 @@ const SingleReport = () => {
                   </a>
                 )}
                 {thirdAuthor && (
-                  <a href="">
+                  <a href={`/authorReports/${thirdAuthorId}`}>
                     <img
                       src={`http://localhost:8800/documents/` + thirdAuthorImg}
                       alt=""
@@ -129,7 +145,7 @@ const SingleReport = () => {
                   </a>
                 )}
                 {fourthAuthor && (
-                  <a href="">
+                  <a href={`/authorReports/${fourthAuthorId}`}>
                     <img
                       src={`http://localhost:8800/documents/` + fourthAuthorImg}
                       alt=""
@@ -138,7 +154,7 @@ const SingleReport = () => {
                   </a>
                 )}
                 {fifthAuthor && (
-                  <a href="">
+                  <a href={`/authorReports/${fifthAuthorId}`}>
                     <img
                       src={`http://localhost:8800/documents/` + fifthAuthorImg}
                       alt=""
@@ -151,25 +167,25 @@ const SingleReport = () => {
             <div className="date">
               <Badge value={moment(defenseDate).format("MMMM Do YYYY")} />
               <div className="info-items">
-                <a href="">
+                <a href={`/categories/${category}`}>
                   <CategoryIcon />
                   {category}
                 </a>
               </div>
               <div className="info-items">
-                <a href="">
+                <a href={`/degrees/${degree}`}>
                   <ClassIcon />
                   {degree}
                 </a>
               </div>
               <div className="info-items">
-                <a href="">
+                <a href={`/sessions/${session}`}>
                   <TypeSpecimenIcon />
                   {session}
                 </a>
               </div>
               <div className="info-items">
-                <a href="">
+                <a href={`/reportTypes/${reportType}`}>
                   <WorkspacePremiumIcon />
                   {reportType.charAt(0).toUpperCase() + reportType.slice(1)}
                 </a>

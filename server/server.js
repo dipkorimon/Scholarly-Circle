@@ -361,6 +361,37 @@ app.get("/supervisorReports/:supervisorID", (req, res) => {
   });
 });
 
+// For author's reports finding
+app.get("/authorReports/:studentID", (req, res) => {
+  const sql1 =
+    "SELECT * FROM report WHERE first_author_id = ? OR second_author_id = ? OR third_author_id = ? OR fourth_author_id = ? OR fifth_author_id = ?";
+  const sql2 = "SELECT * FROM author WHERE student_id = ?";
+  const student_id = req.params.studentID;
+  const first_author_id_value = req.params.studentID;
+  const second_author_id_value = req.params.studentID;
+  const third_author_id_value = req.params.studentID;
+  const fourth_author_id_value = req.params.studentID;
+  const fifth_author_id_value = req.params.studentID;
+  db.query(
+    sql1,
+    [
+      first_author_id_value,
+      second_author_id_value,
+      third_author_id_value,
+      fourth_author_id_value,
+      fifth_author_id_value,
+    ],
+    (err, data1) => {
+      if (err) throw err;
+      db.query(sql2, [student_id], (err, data2) => {
+        if (err) throw err;
+        const objectData = data2[0].full_name;
+        res.json({ data1, objectData });
+      });
+    }
+  );
+});
+
 // For retrieve supervisors
 app.get("/supervisors", (req, res) => {
   const sql = "SELECT * FROM supervisor";

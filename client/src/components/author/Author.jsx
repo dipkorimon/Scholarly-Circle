@@ -34,7 +34,7 @@ const Author = () => {
             <img src={`http://localhost:8800/documents/` + item.photo} alt="" />
           </div>
           <div className="name">
-            <h3>{item.full_name}</h3>
+            <a href={`/authorReports/${item.student_id}`}>{item.full_name}</a>
           </div>
           <div className="info">
             <div className="info-id">
@@ -47,7 +47,7 @@ const Author = () => {
 
           <div className="update-delete">
             <button className="view-reports">
-              <a>View Reports</a>
+              <a href={`/authorReports/${item.student_id}`}>View Reports</a>
             </button>
             {chairmanLogin || supervisorLogin ? (
               <div className="icons">

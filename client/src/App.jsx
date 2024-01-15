@@ -23,6 +23,7 @@ import ReportTypes from "./pages/reportTypes/ReportTypes";
 import CurrentPositions from "./pages/currentPositions/CurrentPositions";
 import AuthorSessions from "./pages/authorSessions/AuthorSessions";
 import SupervisorReports from "./pages/supervisorReports/SupervisorReports";
+import AuthorReports from "./pages/authorReports/AuthorReports";
 import Degrees from "./pages/degrees/Degrees";
 import RequestSupervisors from "./pages/requestSupervisors/RequestSupervisors";
 import RequestAuthors from "./pages/requestAuthors/RequestAuthors";
@@ -114,6 +115,10 @@ function App() {
         {
           path: "/supervisorReports/:supervisorID",
           element: <SupervisorReports />,
+        },
+        {
+          path: "/authorReports/:studentID",
+          element: <AuthorReports />,
         },
         {
           path: "/requestSupervisors",
