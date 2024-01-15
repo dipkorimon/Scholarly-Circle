@@ -70,6 +70,17 @@ const NavBar = () => {
                 <button>
                   <NotificationsActiveIcon />
                 </button>
+                <div id="drop-down">
+                  <p className="message">
+                    An Account creation request received from{" "}
+                    <span>Dip Kor Imon</span>.
+                  </p>
+                  <div className="buttons">
+                    <button className="view-user">View User</button>
+                    <button className="accept">Accept</button>
+                    <button className="reject">Reject</button>
+                  </div>
+                </div>
               </div>
               <div className="profile">
                 <AccountBoxIcon />
