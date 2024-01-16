@@ -392,7 +392,7 @@
       }
 
       .notify {
-        button {
+        .notify-btn {
           border: none;
           background: none;
           color: $dark-color;
@@ -483,13 +483,11 @@
               @include tablet {
                 font-size: 11px;
                 padding: 3px 10px;
-                margin-bottom: 10px;
               }
 
               @include mobile {
                 font-size: 9px;
                 padding: 3px 10px;
-                margin-bottom: 10px;
               }
             }
 
@@ -510,13 +508,11 @@
               @include tablet {
                 font-size: 11px;
                 padding: 3px 10px;
-                margin-bottom: 10px;
               }
 
               @include mobile {
                 font-size: 9px;
                 padding: 3px 10px;
-                margin-bottom: 10px;
               }
             }
 
@@ -537,13 +533,11 @@
               @include tablet {
                 font-size: 11px;
                 padding: 3px 10px;
-                margin-bottom: 10px;
               }
 
               @include mobile {
                 font-size: 9px;
                 padding: 3px 10px;
-                margin-bottom: 10px;
               }
             }
           }

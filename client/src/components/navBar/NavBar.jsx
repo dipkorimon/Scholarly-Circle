@@ -8,6 +8,7 @@ import LoginIcon from "@mui/icons-material/Login";
 import AccountBoxIcon from "@mui/icons-material/AccountBox";
 import RequestPageIcon from "@mui/icons-material/RequestPage";
 import NotificationsActiveIcon from "@mui/icons-material/NotificationsActive";
+import PopupWindow from "../popupWindow/PopupWindow";
 
 const NavBar = () => {
   const [auth, setAuth] = useState(false);
@@ -45,6 +46,16 @@ const NavBar = () => {
       });
   };
 
+  const [isPopupOpen, setPopupOpen] = useState(false);
+
+  const openPopup = () => {
+    setPopupOpen(true);
+  };
+
+  const closePopup = () => {
+    setPopupOpen(false);
+  };
+
   const chairman = localStorage.getItem("ChairmanLogin");
   const supervisor = localStorage.getItem("SupervisorLogin");
 
@@ -67,7 +78,7 @@ const NavBar = () => {
           {auth ? (
             <div className="notify-profile">
               <div className="notify">
-                <button>
+                <button className="notify-btn">
                   <NotificationsActiveIcon />
                 </button>
                 <div id="drop-down">
@@ -76,7 +87,10 @@ const NavBar = () => {
                     <span>Dip Kor Imon</span>.
                   </p>
                   <div className="buttons">
-                    <button className="view-user">View User</button>
+                    <button className="view-user" onClick={openPopup}>
+                      View User
+                    </button>
+                    {isPopupOpen && <PopupWindow onClose={closePopup} />}
                     <button className="accept">Accept</button>
                     <button className="reject">Reject</button>
                   </div>

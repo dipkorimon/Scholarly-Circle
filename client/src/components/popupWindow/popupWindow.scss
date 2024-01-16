@@ -1,0 +1,94 @@
+@import "../../styles/global.scss";
+@import "../../styles/variables.scss";
+
+.popup {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: $soft-color;
+  padding: 10px;
+  box-shadow: $shadow;
+  border-radius: 5px;
+
+  .popup-content {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+    .img {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      img {
+        width: 80px;
+        height: 80px;
+        object-fit: cover;
+        border-radius: 50%;
+        border: 1px solid $soft-red;
+
+        @include tablet {
+          width: 70px;
+          height: 70px;
+        }
+
+        @include mobile {
+          width: 60px;
+          height: 60px;
+        }
+      }
+    }
+
+    .info {
+      display: flex;
+      flex-direction: column;
+
+      p {
+        font-size: 15px;
+        font-weight: bold;
+
+        @include tablet {
+          font-size: 13px;
+        }
+
+        @include mobile {
+          font-size: 11px;
+        }
+      }
+    }
+  }
+
+  .close {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    .close-btn {
+      font-size: 13px;
+      font-weight: bold;
+      color: $white-color;
+      background-color: $red-color;
+      padding: 3px 10px;
+      border-radius: 5px;
+      border: none;
+      cursor: pointer;
+
+      &:hover {
+        background-color: $dark-red;
+      }
+
+      @include tablet {
+        font-size: 11px;
+        padding: 3px 10px;
+      }
+
+      @include mobile {
+        font-size: 9px;
+        padding: 3px 10px;
+      }
+    }
+  }
+}
