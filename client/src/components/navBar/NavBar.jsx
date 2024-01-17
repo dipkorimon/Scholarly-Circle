@@ -80,6 +80,7 @@ const NavBar = () => {
               <div className="notify">
                 <button className="notify-btn">
                   <NotificationsActiveIcon />
+                  <span>0</span>
                 </button>
                 <div id="drop-down">
                   <p className="message">

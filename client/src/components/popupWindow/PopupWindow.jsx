@@ -1,6 +1,6 @@
 import React from "react";
 import "./popupWindow.scss";
-import Photo from "../../../public/imon.jpg";
+import Photo from "/imon.jpg";
 
 const PopupWindow = ({ onClose }) => {
   return (
