@@ -27,8 +27,13 @@ import AuthorReports from "./pages/authorReports/AuthorReports";
 import Degrees from "./pages/degrees/Degrees";
 import RequestSupervisors from "./pages/requestSupervisors/RequestSupervisors";
 import RequestAuthors from "./pages/requestAuthors/RequestAuthors";
+import Protected from "./protectedRoutes/Protected";
 
 function App() {
+  const chairmanLogin = localStorage.getItem("ChairmanLogin");
+  const supervisorLogin = localStorage.getItem("SupervisorLogin");
+  const authorLogin = localStorage.getItem("AuthorLogin");
+
   const Layout = () => {
     return (
       <div className="main">
@@ -82,27 +87,57 @@ function App() {
         },
         {
           path: "/addReport",
-          element: <AddReport />,
+          element: (
+            <Protected
+              login={chairmanLogin || supervisorLogin || authorLogin}
+              url={<Home />}
+            >
+              <AddReport />
+            </Protected>
+          ),
         },
         {
           path: "/addSupervisor",
-          element: <AddSupervisor />,
+          element: (
+            <Protected login={chairmanLogin} url={<Home />}>
+              <AddSupervisor />
+            </Protected>
+          ),
         },
         {
           path: "/addAuthor",
-          element: <AddAuthor />,
+          element: (
+            <Protected login={chairmanLogin || supervisorLogin} url={<Home />}>
+              <AddAuthor />
+            </Protected>
+          ),
         },
         {
           path: "/updateReport/:id",
-          element: <UpdateReport />,
+          element: (
+            <Protected
+              login={chairmanLogin || supervisorLogin || authorLogin}
+              url={<Home />}
+            >
+              <UpdateReport />
+            </Protected>
+          ),
         },
         {
           path: "/updateSupervisor/:id",
-          element: <UpdateSupervisor />,
+          element: (
+            <Protected login={chairmanLogin} url={<Home />}>
+              <UpdateSupervisor />
+            </Protected>
+          ),
         },
         {
           path: "/updateAuthor/:id",
-          element: <UpdateAuthor />,
+          element: (
+            <Protected login={chairmanLogin || supervisorLogin} url={<Home />}>
+              <UpdateAuthor />
+            </Protected>
+          ),
         },
         {
           path: "/currentPositions/:currentPosition",
