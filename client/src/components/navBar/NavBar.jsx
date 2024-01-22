@@ -46,16 +46,6 @@ const NavBar = () => {
       });
   };
 
-  const [isPopupOpen, setPopupOpen] = useState(false);
-
-  const openPopup = () => {
-    setPopupOpen(true);
-  };
-
-  const closePopup = () => {
-    setPopupOpen(false);
-  };
-
   const chairman = localStorage.getItem("ChairmanLogin");
   const supervisor = localStorage.getItem("SupervisorLogin");
 
@@ -82,20 +72,6 @@ const NavBar = () => {
                   <NotificationsActiveIcon />
                   <span>0</span>
                 </button>
-                <div id="drop-down">
-                  <p className="message">
-                    An Account creation request received from{" "}
-                    <span>Dip Kor Imon</span>.
-                  </p>
-                  <div className="buttons">
-                    <button className="view-user" onClick={openPopup}>
-                      View User
-                    </button>
-                    {isPopupOpen && <PopupWindow onClose={closePopup} />}
-                    <button className="accept">Accept</button>
-                    <button className="reject">Reject</button>
-                  </div>
-                </div>
               </div>
               <div className="profile">
                 <AccountBoxIcon />

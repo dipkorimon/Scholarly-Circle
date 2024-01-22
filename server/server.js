@@ -226,6 +226,29 @@ app.post("/addSupervisor", upload.single("file"), (req, res) => {
   });
 });
 
+// For handling supervisor account request
+app.post("/requestSupervisors", upload.single("file"), (req, res) => {
+  const sql =
+    "INSERT INTO supervisor_requests (`supervisor_id`, `full_name`, `email`, `password`, `current_position`, `photo`) VALUES (?)";
+  bcrypt.hash(req.body.password.toString(), salt, (err, hash) => {
+    if (err) return res.json({ Error: "Error for hashing password" });
+    const values = [
+      req.body.supervisor_id,
+      req.body.full_name,
+      req.body.email,
+      hash,
+      req.body.current_position,
+      req.file.filename,
+    ];
+    db.query(sql, [values], (err, data) => {
+      if (err) {
+        return res.json({ Error: "Inserting data error in server" });
+      }
+      return res.json({ Status: "Success" });
+    });
+  });
+});
+
 // For supervisor login
 app.post("/supervisorLogin", (req, res) => {
   const sql = "SELECT * FROM supervisor WHERE email = ?";
