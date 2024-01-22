@@ -166,7 +166,11 @@ function App() {
         },
         {
           path: "/userRequests",
-          element: <UserRequests />,
+          element: (
+            <Protected login={chairmanLogin || supervisorLogin} url={<Home />}>
+              <UserRequests />
+            </Protected>
+          ),
         },
       ],
     },

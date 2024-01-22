@@ -249,6 +249,14 @@ app.post("/requestSupervisors", upload.single("file"), (req, res) => {
   });
 });
 
+app.get("/userRequests", (req, res) => {
+  const sql = "SELECT * FROM supervisor_requests";
+  db.query(sql, (err, data) => {
+    if (err) throw err;
+    res.json(data);
+  });
+});
+
 // For supervisor login
 app.post("/supervisorLogin", (req, res) => {
   const sql = "SELECT * FROM supervisor WHERE email = ?";
