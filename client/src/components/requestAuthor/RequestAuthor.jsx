@@ -1,38 +1,95 @@
-import React from "react";
+import React, { useState } from "react";
 import "./requestAuthor.scss";
+import { useNavigate } from "react-router-dom";
+import axios from "axios";
 
 const RequestAuthor = () => {
+  const [student_id, setStudentId] = useState("");
+  const [full_name, setFullName] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [supervisor_id, setSupervisorId] = useState("");
+  const [session, setSession] = useState("");
+  const [defense_date, setDefenseDate] = useState("");
+  const [file, setFile] = useState("");
+
+  const navigate = useNavigate();
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    const formData = new FormData();
+    formData.append("student_id", student_id);
+    formData.append("full_name", full_name);
+    formData.append("email", email);
+    formData.append("password", password);
+    formData.append("supervisor_id", supervisor_id);
+    formData.append("session", session);
+    formData.append("defense_date", defense_date);
+    formData.append("file", file);
+    axios
+      .post("http://localhost:8800/requestAuthors", formData)
+      .then((res) => {
+        if (res.data.Status === "Success") {
+          navigate("/");
+          alert("Account request submitted successfully.");
+        }
+      })
+      .catch((err) =>
+        alert("Error submitting account request. Please try again.")
+      );
+  };
+
   return (
     <div className="request-author">
       <h1>Request for an Author account</h1>
       <p>
         An asterisk (<span>*</span>) indicates required field
       </p>
-      <form action="">
+      <form action="" onSubmit={handleSubmit}>
         <label htmlFor="">
           Student ID<span>*</span>
         </label>
-        <input type="text" required />
+        <input
+          type="text"
+          required
+          onChange={(e) => setStudentId(e.target.value)}
+        />
         <label htmlFor="">
           Full name<span>*</span>
         </label>
-        <input type="text" required />
+        <input
+          type="text"
+          required
+          onChange={(e) => setFullName(e.target.value)}
+        />
         <label htmlFor="">
           Email<span>*</span>
         </label>
-        <input type="email" required />
+        <input
+          type="email"
+          required
+          onChange={(e) => setEmail(e.target.value)}
+        />
         <label htmlFor="">
           Password<span>*</span>
         </label>
-        <input type="password" required />
+        <input
+          type="password"
+          required
+          onChange={(e) => setPassword(e.target.value)}
+        />
         <label htmlFor="">
           Supervisor ID<span>*</span>
         </label>
-        <input type="text" required />
+        <input
+          type="text"
+          required
+          onChange={(e) => setSupervisorId(e.target.value)}
+        />
         <label htmlFor="">
           Session<span>*</span>
         </label>
-        <select name="" id="">
+        <select name="" id="" onChange={(e) => setSession(e.target.value)}>
           <option value="">Select Session</option>
           <option value="2006-2007">2006-2007</option>
           <option value="2007-2008">2007-2008</option>
@@ -55,12 +112,21 @@ const RequestAuthor = () => {
         <label htmlFor="">
           Defense date<span>*</span>
         </label>
-        <input type="date" required />
+        <input
+          type="date"
+          required
+          onChange={(e) => setDefenseDate(e.target.value)}
+        />
         <div className="photo-upload">
           <label htmlFor="file">
             Upload Photo<span>*</span>
           </label>
-          <input type="file" id="file" required />
+          <input
+            type="file"
+            id="file"
+            required
+            onChange={(e) => setFile(e.target.files[0])}
+          />
         </div>
         <button type="submit">Submit</button>
       </form>

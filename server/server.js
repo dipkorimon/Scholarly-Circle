@@ -145,6 +145,7 @@ db.query(
     full_name VARCHAR(255),
     email VARCHAR(255),
     password VARCHAR(255),
+    supervisor_id VARCHAR(255),
     session VARCHAR(255),
     defense_date DATETIME,
     photo VARCHAR(255),
@@ -155,6 +156,61 @@ db.query(
     if (err) throw err;
   }
 );
+
+// For handling supervisors & authors account request
+app.post("/requestSupervisors", upload.single("file"), (req, res) => {
+  const sql =
+    "INSERT INTO supervisor_requests (`supervisor_id`, `full_name`, `email`, `password`, `current_position`, `photo`) VALUES (?)";
+  bcrypt.hash(req.body.password.toString(), salt, (err, hash) => {
+    if (err) return res.json({ Error: "Error for hashing password" });
+    const values = [
+      req.body.supervisor_id,
+      req.body.full_name,
+      req.body.email,
+      hash,
+      req.body.current_position,
+      req.file.filename,
+    ];
+    db.query(sql, [values], (err, data) => {
+      if (err) {
+        return res.json({ Error: "Inserting data error in server" });
+      }
+      return res.json({ Status: "Success" });
+    });
+  });
+});
+
+app.post("/requestAuthors", upload.single("file"), (req, res) => {
+  const sql =
+    "INSERT INTO author_requests (`student_id`, `full_name`, `email`, `password`, `supervisor_id`, `session`, `defense_date`, `photo`) VALUES (?)";
+  bcrypt.hash(req.body.password.toString(), salt, (err, hash) => {
+    if (err) return res.json({ Error: "Error for hashing password" });
+    const values = [
+      req.body.student_id,
+      req.body.full_name,
+      req.body.email,
+      hash,
+      req.body.supervisor_id,
+      req.body.session,
+      req.body.defense_date,
+      req.file.filename,
+    ];
+    db.query(sql, [values], (err, data) => {
+      if (err) {
+        return res.json({ Error: "Inserting data error in server" });
+      }
+      return res.json({ Status: "Success" });
+    });
+  });
+});
+
+app.get("/userRequests", (req, res) => {
+  const sql = "SELECT * FROM supervisor_requests";
+  db.query(sql, (err, data) => {
+    if (err) throw err;
+    res.json(data);
+  });
+});
 
 // For chairman register
 app.post("/chairmanRegister", (req, res) => {
@@ -223,37 +279,6 @@ app.post("/addSupervisor", upload.single("file"), (req, res) => {
       }
       return res.json({ Status: "Success" });
     });
-  });
-});
-
-// For handling supervisor account request
-app.post("/requestSupervisors", upload.single("file"), (req, res) => {
-  const sql =
-    "INSERT INTO supervisor_requests (`supervisor_id`, `full_name`, `email`, `password`, `current_position`, `photo`) VALUES (?)";
-  bcrypt.hash(req.body.password.toString(), salt, (err, hash) => {
-    if (err) return res.json({ Error: "Error for hashing password" });
-    const values = [
-      req.body.supervisor_id,
-      req.body.full_name,
-      req.body.email,
-      hash,
-      req.body.current_position,
-      req.file.filename,
-    ];
-    db.query(sql, [values], (err, data) => {
-      if (err) {
-        return res.json({ Error: "Inserting data error in server" });
-      }
-      return res.json({ Status: "Success" });
-    });
-  });
-});
-
-app.get("/userRequests", (req, res) => {
-  const sql = "SELECT * FROM supervisor_requests";
-  db.query(sql, (err, data) => {
-    if (err) throw err;
-    res.json(data);
   });
 });
 
