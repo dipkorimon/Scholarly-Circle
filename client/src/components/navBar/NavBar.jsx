@@ -68,10 +68,12 @@ const NavBar = () => {
           {auth ? (
             <div className="notify-profile">
               <div className="notify">
-                <button className="notify-btn">
-                  <NotificationsActiveIcon />
-                  <span>0</span>
-                </button>
+                <a href="/userRequests">
+                  <button className="notify-btn">
+                    <NotificationsActiveIcon />
+                    <span>0</span>
+                  </button>
+                </a>
               </div>
               <div className="profile">
                 <AccountBoxIcon />

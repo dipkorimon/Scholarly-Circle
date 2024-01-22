@@ -28,6 +28,7 @@ import Degrees from "./pages/degrees/Degrees";
 import RequestSupervisors from "./pages/requestSupervisors/RequestSupervisors";
 import RequestAuthors from "./pages/requestAuthors/RequestAuthors";
 import Protected from "./protectedRoutes/Protected";
+import UserRequests from "./pages/userRequests/UserRequests";
 
 function App() {
   const chairmanLogin = localStorage.getItem("ChairmanLogin");
@@ -162,6 +163,10 @@ function App() {
         {
           path: "/requestAuthors",
           element: <RequestAuthors />,
+        },
+        {
+          path: "/userRequests",
+          element: <UserRequests />,
         },
       ],
     },
