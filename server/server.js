@@ -37,6 +37,125 @@ const storage = multer.diskStorage({
 
 const upload = multer({ storage });
 
+// Queries for create tables if not exists
+// 1. Chairman table
+db.query(
+  `
+  CREATE TABLE IF NOT EXISTS chairman (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    full_name VARCHAR(255),
+    email VARCHAR(255),
+    password VARCHAR(255)
+  )
+`,
+  (err) => {
+    if (err) throw err;
+  }
+);
+
+// 2. Author table
+db.query(
+  `
+  CREATE TABLE IF NOT EXISTS author (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    student_id VARCHAR(255),
+    full_name VARCHAR(255),
+    email VARCHAR(255),
+    password VARCHAR(255),
+    session VARCHAR(255),
+    defense_date DATETIME,
+    photo VARCHAR(255)
+  )
+`,
+  (err) => {
+    if (err) throw err;
+  }
+);
+
+// 3. Supervisor table
+db.query(
+  `
+  CREATE TABLE IF NOT EXISTS supervisor (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    supervisor_id VARCHAR(255),
+    full_name VARCHAR(255),
+    email VARCHAR(255),
+    password VARCHAR(255),
+    current_position VARCHAR(255),
+    photo VARCHAR(255)
+  )
+`,
+  (err) => {
+    if (err) throw err;
+  }
+);
+
+// 4. Report table
+db.query(
+  `
+  CREATE TABLE IF NOT EXISTS report (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    title VARCHAR(255),
+    abstract LONGTEXT,
+    supervisor_id VARCHAR(255),
+    first_author_id VARCHAR(255),
+    second_author_id VARCHAR(255),
+    third_author_id VARCHAR(255),
+    fourth_author_id VARCHAR(255),
+    fifth_author_id VARCHAR(255),
+    session VARCHAR(255),
+    category VARCHAR(255),
+    defense_date DATETIME,
+    report_type VARCHAR(255),
+    degree VARCHAR(255),
+    publication VARCHAR(255),
+    document VARCHAR(255)
+  )
+`,
+  (err) => {
+    if (err) throw err;
+  }
+);
+
+// 5. Supervisor Requests table
+db.query(
+  `
+  CREATE TABLE IF NOT EXISTS supervisor_requests (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    supervisor_id VARCHAR(255),
+    full_name VARCHAR(255),
+    email VARCHAR(255),
+    password VARCHAR(255),
+    current_position VARCHAR(255),
+    photo VARCHAR(255),
+    status ENUM('pending', 'approved', 'rejected') DEFAULT 'pending'
+  )
+`,
+  (err) => {
+    if (err) throw err;
+  }
+);
+
+// 5. Author Requests table
+db.query(
+  `
+  CREATE TABLE IF NOT EXISTS author_requests (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    student_id VARCHAR(255),
+    full_name VARCHAR(255),
+    email VARCHAR(255),
+    password VARCHAR(255),
+    session VARCHAR(255),
+    defense_date DATETIME,
+    photo VARCHAR(255),
+    status ENUM('pending', 'approved', 'rejected') DEFAULT 'pending'
+  )
+`,
+  (err) => {
+    if (err) throw err;
+  }
+);
+
 // For chairman register
 app.post("/chairmanRegister", (req, res) => {
   const sql =
