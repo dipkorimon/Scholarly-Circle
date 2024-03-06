@@ -135,13 +135,9 @@ const NavBar = () => {
               <div className="request">
                 <button className="name">Make a Request</button>
                 <div id="drop-down">
-                  <a href="/requestSupervisors">
+                  <a href="/usersRequest">
                     <RequestPageIcon />
-                    Request for a Supervisor Account
-                  </a>
-                  <a href="/requestAuthors">
-                    <RequestPageIcon />
-                    Request for an Author Account
+                    Request for an Account
                   </a>
                 </div>
               </div>

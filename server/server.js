@@ -117,29 +117,10 @@ db.query(
   }
 );
 
-// 5. Supervisor Requests table
-db.query(
-  `
-  CREATE TABLE IF NOT EXISTS supervisor_requests (
-    id INT AUTO_INCREMENT PRIMARY KEY,
-    supervisor_id VARCHAR(255),
-    full_name VARCHAR(255),
-    email VARCHAR(255),
-    password VARCHAR(255),
-    current_position VARCHAR(255),
-    photo VARCHAR(255),
-    status ENUM('pending', 'approved', 'rejected') DEFAULT 'pending'
-  )
-`,
-  (err) => {
-    if (err) throw err;
-  }
-);
-
 // 5. Author Requests table
 db.query(
   `
-  CREATE TABLE IF NOT EXISTS author_requests (
+  CREATE TABLE IF NOT EXISTS user_requests (
     id INT AUTO_INCREMENT PRIMARY KEY,
     student_id VARCHAR(255),
     full_name VARCHAR(255),
@@ -158,31 +139,9 @@ db.query(
 );
 
 // For handling supervisors & authors account request
-app.post("/requestSupervisors", upload.single("file"), (req, res) => {
+app.post("/userRequests", upload.single("file"), (req, res) => {
   const sql =
-    "INSERT INTO supervisor_requests (`supervisor_id`, `full_name`, `email`, `password`, `current_position`, `photo`) VALUES (?)";
-  bcrypt.hash(req.body.password.toString(), salt, (err, hash) => {
-    if (err) return res.json({ Error: "Error for hashing password" });
-    const values = [
-      req.body.supervisor_id,
-      req.body.full_name,
-      req.body.email,
-      hash,
-      req.body.current_position,
-      req.file.filename,
-    ];
-    db.query(sql, [values], (err, data) => {
-      if (err) {
-        return res.json({ Error: "Inserting data error in server" });
-      }
-      return res.json({ Status: "Success" });
-    });
-  });
-});
-
-app.post("/requestAuthors", upload.single("file"), (req, res) => {
-  const sql =
-    "INSERT INTO author_requests (`student_id`, `full_name`, `email`, `password`, `supervisor_id`, `session`, `defense_date`, `photo`) VALUES (?)";
+    "INSERT INTO user_requests (`student_id`, `full_name`, `email`, `password`, `supervisor_id`, `session`, `defense_date`, `photo`) VALUES (?)";
   bcrypt.hash(req.body.password.toString(), salt, (err, hash) => {
     if (err) return res.json({ Error: "Error for hashing password" });
     const values = [
@@ -205,11 +164,37 @@ app.post("/requestAuthors", upload.single("file"), (req, res) => {
 });
 
 app.get("/userRequests", (req, res) => {
-  const sql = "SELECT * FROM supervisor_requests";
+  const sql = "SELECT * FROM user_requests";
   db.query(sql, (err, data) => {
     if (err) throw err;
     res.json(data);
   });
+});
+
+app.put("/approve-request/:id", (req, res) => {
+  const requestId = req.params.id;
+  db.query(
+    "UPDATE user_requests SET status = ? WHERE id = ?",
+    ["approved", requestId],
+    (err) => {
+      if (err) throw err;
+
+      res.json({ message: "Request approved successfully." });
+    }
+  );
+});
+
+app.put("/reject-request/:id", (req, res) => {
+  const requestId = req.params.id;
+  db.query(
+    "UPDATE user_requests SET status = ? WHERE id = ?",
+    ["rejected", requestId],
+    (err) => {
+      if (err) throw err;
+
+      res.json({ message: "Request rejected successfully." });
+    }
+  );
 });
 
 // For chairman register

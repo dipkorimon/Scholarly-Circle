@@ -1,9 +1,9 @@
 import React, { useState } from "react";
-import "./requestAuthor.scss";
-import { useNavigate } from "react-router-dom";
+import "./userRequest.scss";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
-const RequestAuthor = () => {
+const UserRequest = () => {
   const [student_id, setStudentId] = useState("");
   const [full_name, setFullName] = useState("");
   const [email, setEmail] = useState("");
@@ -27,7 +27,7 @@ const RequestAuthor = () => {
     formData.append("defense_date", defense_date);
     formData.append("file", file);
     axios
-      .post("http://localhost:8800/requestAuthors", formData)
+      .post("http://localhost:8800/userRequests", formData)
       .then((res) => {
         if (res.data.Status === "Success") {
           navigate("/");
@@ -41,7 +41,7 @@ const RequestAuthor = () => {
 
   return (
     <div className="request-author">
-      <h1>Request for an Author account</h1>
+      <h1>Request for an account</h1>
       <p>
         An asterisk (<span>*</span>) indicates required field
       </p>
@@ -134,4 +134,4 @@ const RequestAuthor = () => {
   );
 };
 
-export default RequestAuthor;
+export default UserRequest;

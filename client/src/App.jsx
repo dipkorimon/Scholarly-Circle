@@ -25,10 +25,9 @@ import AuthorSessions from "./pages/authorSessions/AuthorSessions";
 import SupervisorReports from "./pages/supervisorReports/SupervisorReports";
 import AuthorReports from "./pages/authorReports/AuthorReports";
 import Degrees from "./pages/degrees/Degrees";
-import RequestSupervisors from "./pages/requestSupervisors/RequestSupervisors";
-import RequestAuthors from "./pages/requestAuthors/RequestAuthors";
 import Protected from "./protectedRoutes/Protected";
 import UserRequests from "./pages/userRequests/UserRequests";
+import UsersRequest from "./pages/usersRequest/UsersRequest";
 
 function App() {
   const chairmanLogin = localStorage.getItem("ChairmanLogin");
@@ -157,13 +156,10 @@ function App() {
           element: <AuthorReports />,
         },
         {
-          path: "/requestSupervisors",
-          element: <RequestSupervisors />,
+          path: "usersRequest",
+          element: <UsersRequest />,
         },
-        {
-          path: "/requestAuthors",
-          element: <RequestAuthors />,
-        },
+
         {
           path: "/userRequests",
           element: (
