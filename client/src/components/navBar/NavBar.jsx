@@ -7,6 +7,7 @@ import ArticleIcon from "@mui/icons-material/Article";
 import LoginIcon from "@mui/icons-material/Login";
 import AccountBoxIcon from "@mui/icons-material/AccountBox";
 import NotificationsActiveIcon from "@mui/icons-material/NotificationsActive";
+import SearchIcon from "@mui/icons-material/Search";
 
 const NavBar = () => {
   const [auth, setAuth] = useState(false);
@@ -61,6 +62,9 @@ const NavBar = () => {
           <a href="/supervisors">Supervisors</a>
           <a href="/authors">Authors</a>
           <a href="/reports">Reports</a>
+          <a href="/search" className="search">
+            <SearchIcon />
+          </a>
         </div>
         <div className="right">
           {auth ? (

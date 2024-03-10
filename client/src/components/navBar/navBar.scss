@@ -120,6 +120,15 @@
           background: $red-color;
         }
       }
+
+      .search {
+        color: $dark-color;
+        background: none;
+
+        &:hover::after {
+          width: 0%;
+        }
+      }
     }
 
     .right {

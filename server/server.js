@@ -656,6 +656,16 @@ app.delete("/reports/:id", (req, res) => {
   });
 });
 
+// For searching tool
+app.get("/search", (req, res) => {
+  const searchTerm = req.query.term;
+  const sql = `SELECT * from report WHERE session LIKE '%${searchTerm}%'`;
+  db.query(sql, (err, data) => {
+    if (err) return err;
+    return res.json(data);
+  });
+});
+
 // For view statistics
 app.get("/home", (req, res) => {
   const sql = "SELECT COUNT(*) as count FROM ";

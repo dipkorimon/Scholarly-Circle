@@ -28,6 +28,7 @@ import Degrees from "./pages/degrees/Degrees";
 import Protected from "./protectedRoutes/Protected";
 import UserRequests from "./pages/userRequests/UserRequests";
 import UsersRequest from "./pages/usersRequest/UsersRequest";
+import Search from "./pages/search/Search";
 
 function App() {
   const chairmanLogin = localStorage.getItem("ChairmanLogin");
@@ -159,7 +160,6 @@ function App() {
           path: "usersRequest",
           element: <UsersRequest />,
         },
-
         {
           path: "/userRequests",
           element: (
@@ -167,6 +167,10 @@ function App() {
               <UserRequests />
             </Protected>
           ),
+        },
+        {
+          path: "/search",
+          element: <Search />,
         },
       ],
     },
