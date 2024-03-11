@@ -23,8 +23,7 @@ const About = () => {
           />
           <AboutInfo
             title="A search tool"
-            desc="All users can search project and thesis reports by sessions, authors,
-        and their categories added by supervisors or chairman."
+            desc="All users can search project and thesis reports by keywords related to reports."
           />
           <AboutInfo
             title="Download reports"
@@ -38,6 +37,10 @@ const About = () => {
           <AboutInfo
             title="Roles of supervisors"
             desc="Supervisors can add authors and can share project and thesis reports."
+          />
+          <AboutInfo
+            title="Request for an account"
+            desc="Supervisors and authors can make account creation requests which will be accepted by the Chairman and supervisors if the person is valid."
           />
           <AboutInfo
             title="Statistics of Scholarly Circle"
