@@ -34,13 +34,15 @@ const Search = () => {
         <button onClick={handleSearch}>Search</button>
       </div>
       <div className="desc">
-        <p>
+        <p className="show-result">
           You are showing results for <span>'</span>
           {searchTerm} <span>'</span>
         </p>
         {searchResults.length == 0 ? (
           <div className="wrong">
-            <p>No reports were found. Please try again.</p>
+            <p className="wrong-msg">
+              No reports were found. Please try again.
+            </p>
           </div>
         ) : (
           <div className="report-info">

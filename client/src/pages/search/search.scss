@@ -73,7 +73,7 @@
   }
 
   .desc {
-    p {
+    .show-result {
       font-size: 16px;
       font-weight: bold;
       margin-bottom: 20px;
@@ -95,7 +95,7 @@
     }
 
     .wrong {
-      p {
+      .wrong-msg {
         font-size: 16px;
         font-weight: bold;
         color: $red-color;
