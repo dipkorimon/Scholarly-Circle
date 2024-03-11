@@ -659,7 +659,7 @@ app.delete("/reports/:id", (req, res) => {
 // For searching tool
 app.get("/search", (req, res) => {
   const searchTerm = req.query.term;
-  const sql = `SELECT * from report WHERE session LIKE '%${searchTerm}%'`;
+  const sql = `SELECT * from report WHERE title LIKE '%${searchTerm}%' OR abstract LIKE '%${searchTerm}%' OR session LIKE '%${searchTerm}%' OR category LIKE '%${searchTerm}%' OR report_type LIKE '%${searchTerm}%' OR degree LIKE '%${searchTerm}%'`;
   db.query(sql, (err, data) => {
     if (err) return err;
     return res.json(data);
