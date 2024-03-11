@@ -13,6 +13,7 @@ const NavBar = () => {
   const [auth, setAuth] = useState(false);
   const [message, setMessage] = useState("");
   const [name, setName] = useState("");
+  const [pendingCount, setPendingCount] = useState("");
 
   axios.defaults.withCredentials = true;
 
@@ -23,6 +24,7 @@ const NavBar = () => {
         if (res.data.Status === "Success") {
           setAuth(true);
           setName(res.data.full_name);
+          setPendingCount(res.data.pendingCount);
         } else {
           setAuth(false);
           setMessage(res.data.Error);
@@ -73,7 +75,7 @@ const NavBar = () => {
                 <a href="/userRequests">
                   <button className="notify-btn">
                     <NotificationsActiveIcon />
-                    <span>0</span>
+                    <span>{pendingCount}</span>
                   </button>
                 </a>
               </div>

@@ -396,7 +396,16 @@ const verifyUser = (req, res, next) => {
 };
 
 app.get("/", verifyUser, (req, res) => {
-  return res.json({ Status: "Success", full_name: req.name });
+  const sql =
+    "SELECT COUNT(status) as count FROM user_requests WHERE status = 'pending'";
+  db.query(sql, (err, data) => {
+    if (err) return err;
+    return res.json({
+      Status: "Success",
+      full_name: req.name,
+      pendingCount: data[0].count,
+    });
+  });
 });
 
 // For logout
