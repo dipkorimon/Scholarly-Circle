@@ -324,32 +324,57 @@ app.post("/addAuthor", upload.single("file"), (req, res) => {
 
 // For author login
 app.post("/authorLogin", (req, res) => {
-  const sql = "SELECT * FROM author WHERE email = ?";
-  db.query(sql, [req.body.email], (err, data) => {
+  const author = "SELECT * FROM author WHERE email = ?";
+  const req_author =
+    "SELECT * FROM user_requests WHERE email = ? AND status = 'approved'";
+  db.query(author, [req.body.email], (err, data) => {
     if (err) {
       return res.json({ Error: "Login error in server" });
     }
-    if (data.length > 0) {
-      bcrypt.compare(
-        req.body.password.toString(),
-        data[0].password,
-        (err, response) => {
-          if (err) return res.json({ Error: "Password compare error" });
-          if (response) {
-            const name = data[0].full_name;
-            const token = jwt.sign({ name }, "jwt-secret-key", {
-              expiresIn: "1d",
-            });
-            res.cookie("token", token);
-            return res.json({ Status: "Success" });
-          } else {
-            return res.json({ Error: "Password not matched" });
+    db.query(req_author, [req.body.email], (err, data1) => {
+      if (err) {
+        return res.json({ Error: "Login error in server" });
+      }
+      if (data.length > 0) {
+        bcrypt.compare(
+          req.body.password.toString(),
+          data[0].password,
+          (err, response) => {
+            if (err) return res.json({ Error: "Password compare error" });
+            if (response) {
+              const name = data[0].full_name;
+              const token = jwt.sign({ name }, "jwt-secret-key", {
+                expiresIn: "1d",
+              });
+              res.cookie("token", token);
+              return res.json({ Status: "Success" });
+            } else {
+              return res.json({ Error: "Password not matched" });
+            }
           }
-        }
-      );
-    } else {
-      return res.json({ Error: "Login Failed" });
-    }
+        );
+      } else if (data1.length > 0) {
+        bcrypt.compare(
+          req.body.password.toString(),
+          data1[0].password,
+          (err, response) => {
+            if (err) return res.json({ Error: "Password compare error" });
+            if (response) {
+              const name = data1[0].full_name;
+              const token = jwt.sign({ name }, "jwt-secret-key", {
+                expiresIn: "1d",
+              });
+              res.cookie("token", token);
+              return res.json({ Status: "Success" });
+            } else {
+              return res.json({ Error: "Password not matched" });
+            }
+          }
+        );
+      } else {
+        return res.json({ Error: "Login Failed" });
+      }
+    });
   });
 });
 
