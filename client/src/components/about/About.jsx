@@ -16,36 +16,32 @@ const About = () => {
         </div>
         <div className="info">
           <AboutInfo
-            title="A project and research paper sharing platform"
-            desc="The Chairman and Supervisors can upload project and thesis reports that
-        are under their supervision to Scholarly Circle and share them with
-        other supervisors and authors."
+            title="Role-Based Access Control"
+            desc="Differentiated access levels ensure that users can perform tasks according to their roles and responsibilities, promoting efficient collaboration and accountability."
           />
           <AboutInfo
-            title="A search tool"
-            desc="All users can search project and thesis reports by keywords related to reports."
+            title="Comprehensive Search Functionality"
+            desc="Advanced search tools enable users to
+quickly locate relevant project and thesis reports based on keywords, authors,
+supervisors, and other criteria, enhancing discoverability and accessibility."
           />
           <AboutInfo
-            title="Download reports"
-            desc="All users can download the project and thesis reports that they need."
+            title="Secure Report Management"
+            desc="Robust security measures and version control
+mechanisms safeguard sensitive data and ensure the integrity of uploaded reports,
+fostering trust and confidence among users."
           />
           <AboutInfo
-            title="Roles of Chairman"
-            desc="The Chairman can add supervisors and authors and also can share project
-        and thesis reports."
+            title="User Account Management"
+            desc="Seamless account creation and approval processes
+facilitate user onboarding, while profile management tools empower users to
+customize their experience and track their contributions."
           />
           <AboutInfo
-            title="Roles of supervisors"
-            desc="Supervisors can add authors and can share project and thesis reports."
-          />
-          <AboutInfo
-            title="Request for an account"
-            desc="Supervisors and authors can make account creation requests which will be accepted by the Chairman and supervisors if the person is valid."
-          />
-          <AboutInfo
-            title="Statistics of Scholarly Circle"
-            desc="Statistics of Scholarly Circle is a study of data describing
-        the total number of Supervisors, Authors, and Reports added."
+            title="Actionable Statistics"
+            desc="Detailed analytics and reporting capabilities provide valuable
+insights into platform usage and engagement, enabling stakeholders to make informed
+decisions and drive continuous improvement."
           />
         </div>
       </div>
