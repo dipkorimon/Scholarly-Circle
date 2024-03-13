@@ -71,14 +71,18 @@ const NavBar = () => {
         <div className="right">
           {auth ? (
             <div className="notify-profile">
-              <div className="notify">
-                <a href="/userRequests">
-                  <button className="notify-btn">
-                    <NotificationsActiveIcon />
-                    <span>{pendingCount}</span>
-                  </button>
-                </a>
-              </div>
+              {chairman || supervisor ? (
+                <div className="notify">
+                  <a href="/userRequests">
+                    <button className="notify-btn">
+                      <NotificationsActiveIcon />
+                      <span>{pendingCount}</span>
+                    </button>
+                  </a>
+                </div>
+              ) : (
+                <div></div>
+              )}
               <div className="profile">
                 <AccountBoxIcon />
                 <button className="name">{name}</button>
