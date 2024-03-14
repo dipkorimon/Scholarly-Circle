@@ -74,13 +74,26 @@ const AddReport = () => {
           onChange={(e) => setAbstract(e.target.value)}
         />
         <label htmlFor="">
-          Supervisor ID<span>*</span>
+          Select supervisor<span>*</span>
         </label>
-        <input
-          type="text"
-          required
-          onChange={(e) => setSupervisorId(e.target.value)}
-        />
+        <select name="" id="" onChange={(e) => setSupervisorId(e.target.value)}>
+          <option value="">Select Session</option>
+          <option value="s01">Dr. Mohammed Humayun Kabir</option>
+          <option value="s02">Md. Javed Hossain</option>
+          <option value="s03">Dr. Md. Ashadun Nobi</option>
+          <option value="s04">Dr. Nahid Akter</option>
+          <option value="s05">Dr. Nazia Majadi</option>
+          <option value="s06">Dr. Md. Kamal Uddin</option>
+          <option value="s07">Dr. Fateha Khanam Bappy</option>
+          <option value="s08">Abul Kalam Azad</option>
+          <option value="s09">Iftekhar Mahmud Tawhid</option>
+          <option value="s10">Md. Hasnat Riaz</option>
+          <option value="s11">Koushik Chandra Howlader</option>
+          <option value="s12">A.R.M Mahamudul Hasan Rana</option>
+          <option value="s13">Ratnadip Kuri</option>
+          <option value="s14">A Q M SALA UDDIN PATHAN</option>
+          <option value="s15">Sharmin Akter Milu</option>
+        </select>
         <label htmlFor="">
           First author ID<span>*</span>
         </label>
