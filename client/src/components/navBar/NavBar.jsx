@@ -146,7 +146,7 @@ const NavBar = () => {
                 </button>
               </div>
               <a href="/chairmanRegister" className="regi">
-                <button>Sign up</button>
+                {/* <button>Sign up</button> */}
               </a>
               <div className="login-as">
                 <button className="name">Sign in</button>
