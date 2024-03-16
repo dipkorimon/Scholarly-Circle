@@ -45,6 +45,7 @@ Scholarly Circle offers a variety of features, including:
 </ul>
 
 # Screenshots
+
 ![Screenshot from 2024-03-16 21-25-37](https://github.com/dipkorimon/Scholarly-Circle/assets/73662586/6c7fa6c8-c329-411f-adf2-d7ff1de031bb)
 ![Screenshot from 2024-03-16 21-25-47](https://github.com/dipkorimon/Scholarly-Circle/assets/73662586/20d5c469-a329-4aa8-8a08-fb99bbf51e63)
 ![Screenshot from 2024-03-16 21-25-54](https://github.com/dipkorimon/Scholarly-Circle/assets/73662586/91df3d55-a07f-469d-b42e-32134605cd0c)
