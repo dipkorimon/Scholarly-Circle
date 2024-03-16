@@ -42,11 +42,6 @@ Scholarly Circle offers a variety of features, including:
     <li>Authors can request account creation on Scholarly Circle. These requests are subject to approval by the Chairman and supervisors to ensure that only valid individuals associated with the department are granted access to the platform. This process helps maintain the integrity and security of the platform.
     </li>
   </ul>
-  <li>Statistics of Scholarly Circle</li>
-  <ul>
-    <li>The platform maintains statistics on various metrics such as the total number of Supervisors, Authors, and Reports added. These statistics provide insights into the usage and growth of the platform over time, which can be valuable for administrators and stakeholders in assessing its impact and effectiveness.
-    </li>
-  </ul>
 </ul>
 
 # Technologies and Tools:
