@@ -37,12 +37,6 @@ fostering trust and confidence among users."
 facilitate user onboarding, while profile management tools empower users to
 customize their experience and track their contributions."
           />
-          <AboutInfo
-            title="Actionable Statistics"
-            desc="Detailed analytics and reporting capabilities provide valuable
-insights into platform usage and engagement, enabling stakeholders to make informed
-decisions and drive continuous improvement."
-          />
         </div>
       </div>
     </div>
