@@ -703,18 +703,28 @@ app.get("/search", (req, res) => {
 // For view statistics
 app.get("/home", (req, res) => {
   const sql = "SELECT COUNT(*) as count FROM ";
-  db.query(sql + "supervisor", (err, result1) => {
+  db.query(sql + "supervisor", (err, supervisor) => {
     if (err) throw err;
-    db.query(sql + "author", (err, result2) => {
+    db.query(sql + "author", (err, author) => {
       if (err) throw err;
-      db.query(sql + "report", (err, result3) => {
+      db.query(sql + "report", (err, report) => {
         if (err) throw err;
-        const counts = {
-          table1: result1[0].count,
-          table2: result2[0].count,
-          table3: result3[0].count,
-        };
-        res.json(counts);
+        const topSupervisors =
+          "SELECT supervisor_id, COUNT(*) AS post_count FROM report GROUP BY supervisor_id ORDER BY post_count DESC LIMIT 3";
+        db.query(topSupervisors, (err, supervisorList) => {
+          if (err) throw err;
+          const topAuthors =
+            "SELECT first_author_id, COUNT(*) AS post_count_author FROM report GROUP BY first_author_id ORDER BY post_count_author DESC LIMIT 3";
+          db.query(topAuthors, (err, authorList) => {
+            if (err) throw err;
+            const counts = {
+              table1: supervisor[0].count,
+              table2: author[0].count,
+              table3: report[0].count,
+            };
+            res.json({ counts, supervisorList, authorList });
+          });
+        });
       });
     });
   });
