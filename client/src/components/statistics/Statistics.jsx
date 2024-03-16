@@ -13,8 +13,11 @@ const Statistics = () => {
           <div className="info">
             <BlurOnIcon style={{ color: "rgb(229, 18, 46)" }} />
             <p>
-              Statistics of Scholarly Circle is a study of data: describing
-              total number of Supervisors, Authors and Reports are added.
+              The platform maintains statistics on various metrics such as the
+              total number of Supervisors, Authors, and Reports added. These
+              statistics provide insights into the usage and growth of the
+              platform over time, which can be valuable for administrators and
+              stakeholders in assessing its impact and effectiveness.
             </p>
           </div>
         </div>
