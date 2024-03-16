@@ -52,7 +52,6 @@ Scholarly Circle offers a variety of features, including:
 ![Screenshot from 2024-03-16 21-25-59](https://github.com/dipkorimon/Scholarly-Circle/assets/73662586/8ed4eaee-8239-4ba9-853c-4a8b90e24308)
 ![Screenshot from 2024-03-16 21-26-04](https://github.com/dipkorimon/Scholarly-Circle/assets/73662586/8c088004-3504-484f-87ef-36520d5cab5d)
 ![Screenshot from 2024-03-16 21-26-24](https://github.com/dipkorimon/Scholarly-Circle/assets/73662586/df0ac1c4-9094-4a81-831d-ee88e42d3128)
-![Screenshot from 2024-03-16 21-26-50](https://github.com/dipkorimon/Scholarly-Circle/assets/73662586/b48759c1-c77e-4ea5-a02d-13d9774ad994)
 
 
 # Technologies and Tools:
