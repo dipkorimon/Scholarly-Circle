@@ -44,6 +44,10 @@ Scholarly Circle offers a variety of features, including:
   </ul>
 </ul>
 
+# Entity Relationship Diagram
+![Scholarly Circle drawio](https://github.com/dipkorimon/Scholarly-Circle/assets/73662586/1d0a37c5-ccc2-44af-a063-9115f52c6d06)
+
+
 # Screenshots
 
 ![Screenshot from 2024-03-16 21-25-37](https://github.com/dipkorimon/Scholarly-Circle/assets/73662586/6c7fa6c8-c329-411f-adf2-d7ff1de031bb)
